@@ -1,13 +1,23 @@
 import { Brain } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => (
-  <footer className="border-t border-border py-10 mt-10">
-    <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-      <div className="flex items-center gap-2">
-        <Brain className="w-5 h-5 text-primary" />
-        <span className="font-semibold text-foreground">BrainCapsule</span>
+  <footer className="border-t border-border py-12 mt-10 bg-card/50">
+    <div className="container mx-auto px-4">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+            <Brain className="w-4 h-4 text-primary-foreground" />
+          </div>
+          <span className="font-bold text-foreground">BrainCapsule</span>
+        </div>
+        <div className="flex items-center gap-6 text-sm text-muted-foreground">
+          <Link to="/categories" className="hover:text-primary transition-colors">Категорії</Link>
+          <Link to="/progress" className="hover:text-primary transition-colors">Прогрес</Link>
+          <Link to="/random" className="hover:text-primary transition-colors">Випадкова тема</Link>
+        </div>
+        <p className="text-sm text-muted-foreground">© 2026 BrainCapsule</p>
       </div>
-      <p>© 2026 BrainCapsule — Ультрашвидке навчання</p>
     </div>
   </footer>
 );

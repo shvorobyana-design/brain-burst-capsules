@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Search, Zap, Clock, Brain } from "lucide-react";
+import { Search, Zap, Clock, Brain, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { capsules } from "@/data/capsules";
 
@@ -19,12 +19,12 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
-      {/* Background effects */}
+    <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-hero">
+      {/* Decorative blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute top-40 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-40 bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute -top-20 -left-20 w-[500px] h-[500px] bg-primary/8 rounded-full blur-3xl animate-float" />
+        <div className="absolute top-10 right-0 w-[400px] h-[400px] bg-secondary/8 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }} />
+        <div className="absolute -bottom-20 left-1/3 w-[350px] h-[350px] bg-accent/6 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -34,11 +34,17 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs font-medium text-muted-foreground mb-6">
-            <Zap className="w-3.5 h-3.5 text-accent" />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary mb-6"
+          >
+            <Sparkles className="w-3.5 h-3.5" />
             Ультрашвидке навчання нового покоління
-          </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6">
+          </motion.div>
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6 text-foreground">
             Вивчай будь-яку тему{" "}
             <span className="gradient-text">за 5 хвилин</span>
           </h1>
@@ -47,8 +53,13 @@ const Hero = () => {
           </p>
 
           {/* Search */}
-          <div className="relative max-w-xl mx-auto">
-            <div className="glass neon-glow-purple flex items-center gap-3 px-5 py-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="relative max-w-xl mx-auto"
+          >
+            <div className="bg-card rounded-2xl border-2 border-primary/20 shadow-lg shadow-primary/5 flex items-center gap-3 px-5 py-4 transition-all focus-within:border-primary/40 focus-within:shadow-xl focus-within:shadow-primary/10">
               <Search className="w-5 h-5 text-muted-foreground shrink-0" />
               <input
                 type="text"
@@ -59,7 +70,7 @@ const Hero = () => {
               />
             </div>
             {suggestions.length > 0 && (
-              <div className="absolute top-full left-0 right-0 mt-2 glass-strong rounded-xl overflow-hidden z-20">
+              <div className="absolute top-full left-0 right-0 mt-2 bg-card border border-border rounded-xl shadow-xl overflow-hidden z-20">
                 {suggestions.map(s => (
                   <button
                     key={s.id}
@@ -75,23 +86,28 @@ const Hero = () => {
                 ))}
               </div>
             )}
-          </div>
+          </motion.div>
 
           {/* Stats */}
-          <div className="flex items-center justify-center gap-8 mt-12 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <Brain className="w-4 h-4 text-primary" />
-              <span>{capsules.length}+ капсул</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4 text-secondary" />
-              <span>1-5 хвилин</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Zap className="w-4 h-4 text-accent" />
-              <span>Безкоштовно</span>
-            </div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="flex items-center justify-center gap-8 mt-12"
+          >
+            {[
+              { icon: Brain, label: `${capsules.length}+ капсул`, color: "text-primary", bg: "bg-primary/10" },
+              { icon: Clock, label: "1-5 хвилин", color: "text-secondary", bg: "bg-secondary/10" },
+              { icon: Zap, label: "Безкоштовно", color: "text-accent", bg: "bg-accent/10" },
+            ].map((s, i) => (
+              <div key={i} className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+                <div className={`w-8 h-8 rounded-lg ${s.bg} flex items-center justify-center`}>
+                  <s.icon className={`w-4 h-4 ${s.color}`} />
+                </div>
+                <span>{s.label}</span>
+              </div>
+            ))}
+          </motion.div>
         </motion.div>
       </div>
     </section>
