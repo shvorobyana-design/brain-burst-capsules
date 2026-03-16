@@ -108,6 +108,15 @@ const CapsulePage = () => {
           </Link>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
+            {/* Hero Image */}
+            <div className="rounded-2xl overflow-hidden mb-6 border border-border shadow-sm">
+              <img
+                src={heroImageUrl}
+                alt={capsule.title}
+                className="w-full h-48 md:h-64 object-cover"
+              />
+            </div>
+
             {/* Header */}
             <div className="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6 shadow-sm">
               <div className="flex items-start gap-4 mb-4">
