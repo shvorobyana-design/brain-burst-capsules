@@ -1,8 +1,14 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Brain, Sparkles } from "lucide-react";
+import { Brain, Sparkles, Search } from "lucide-react";
+import SearchDialog from "./SearchDialog";
 
 const Navbar = () => {
+  const [searchOpen, setSearchOpen] = useState(false);
+
   return (
+    <>
+      <SearchDialog open={searchOpen} onClose={() => setSearchOpen(false)} />
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-xl border-b border-border shadow-sm">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <Link to="/" className="flex items-center gap-2 group">
