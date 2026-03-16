@@ -34,6 +34,29 @@ const CapsulePage = () => {
 
   const category = categories.find(c => c.id === capsule.category);
 
+  // Get related/next capsules from same category
+  const relatedCapsules = useMemo(() => {
+    const sameCat = capsules.filter(c => c.category === capsule.category && c.id !== capsule.id);
+    // Try same section first
+    const sameSection = sameCat.filter(c => c.section === capsule.section);
+    if (sameSection.length > 0) return sameSection.slice(0, 3);
+    return sameCat.slice(0, 3);
+  }, [capsule]);
+
+  // Generate a themed illustration URL based on the topic
+  const heroImageUrl = useMemo(() => {
+    const subjectImages: Record<string, string> = {
+      biology: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&h=400&fit=crop",
+      math: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=400&fit=crop",
+      ukrainian: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&h=400&fit=crop",
+      english: "https://images.unsplash.com/photo-1543109740-4bdb38fda756?w=800&h=400&fit=crop",
+      history: "https://images.unsplash.com/photo-1461360370896-922624d12ebb?w=800&h=400&fit=crop",
+      chemistry: "https://images.unsplash.com/photo-1532187863486-abf4dbce1253?w=800&h=400&fit=crop",
+      physics: "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=800&h=400&fit=crop",
+    };
+    return subjectImages[capsule.category] || subjectImages.biology;
+  }, [capsule.category]);
+
   const handleAnswer = (idx: number) => {
     if (answered !== null) return;
     setAnswered(idx);
