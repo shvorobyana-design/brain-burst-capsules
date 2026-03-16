@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { Search, X, Clock, BarChart3 } from "lucide-react";
+import { Search, X, Clock } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { capsules, categories } from "@/data/capsules";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface SearchDialogProps {
   open: boolean;
@@ -12,6 +13,8 @@ interface SearchDialogProps {
 const SearchDialog = ({ open, onClose }: SearchDialogProps) => {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
+  const inputRef = useRef<HTMLInputElement>(null);
+  const { t } = useLanguage();
 
   const results = query.length > 1
     ? capsules.filter(c =>
@@ -22,19 +25,16 @@ const SearchDialog = ({ open, onClose }: SearchDialogProps) => {
 
   useEffect(() => {
     if (!open) setQuery("");
+    if (open) setTimeout(() => inputRef.current?.focus(), 100);
   }, [open]);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
-        e.preventDefault();
-        onClose();
-      }
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape" && open) onClose();
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [onClose]);
+  }, [onClose, open]);
 
   const goTo = (id: string) => {
     navigate(`/capsule/${id}`);
@@ -70,11 +70,12 @@ const SearchDialog = ({ open, onClose }: SearchDialogProps) => {
           <div className="flex items-center gap-3 px-4 py-3 border-b border-border">
             <Search className="w-5 h-5 text-muted-foreground shrink-0" />
             <input
+              ref={inputRef}
               type="text"
               autoFocus
               value={query}
               onChange={e => setQuery(e.target.value)}
-              placeholder="Шукай тему..."
+              placeholder={t.searchPlaceholder}
               className="flex-1 bg-transparent outline-none text-foreground placeholder:text-muted-foreground text-sm"
             />
             <button onClick={onClose} className="p-1 rounded-lg hover:bg-muted transition-colors">
@@ -85,7 +86,7 @@ const SearchDialog = ({ open, onClose }: SearchDialogProps) => {
           <div className="max-h-[50vh] overflow-y-auto">
             {query.length > 1 && results.length === 0 && (
               <div className="py-8 text-center text-sm text-muted-foreground">
-                Нічого не знайдено 😕
+                {t.nothingFound}
               </div>
             )}
             {results.map(r => {
@@ -106,7 +107,7 @@ const SearchDialog = ({ open, onClose }: SearchDialogProps) => {
                       {r.difficulty}
                     </span>
                     <span className="text-xs text-muted-foreground flex items-center gap-0.5">
-                      <Clock className="w-3 h-3" />{r.readTime}хв
+                      <Clock className="w-3 h-3" />{r.readTime}{t.min}
                     </span>
                   </div>
                 </button>
@@ -114,7 +115,7 @@ const SearchDialog = ({ open, onClose }: SearchDialogProps) => {
             })}
             {query.length <= 1 && (
               <div className="py-6 text-center text-sm text-muted-foreground">
-                Почніть вводити назву теми...
+                {t.startTyping}
               </div>
             )}
           </div>

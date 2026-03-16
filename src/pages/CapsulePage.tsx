@@ -3,12 +3,60 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ArrowLeft, Clock, BarChart3, Lightbulb, BookOpen, CheckCircle, XCircle,
-  Sparkles, BookMarked, FlaskConical, PenTool, Image, Zap, List, Brain, ArrowRight
+  Sparkles, BookMarked, FlaskConical, PenTool, Zap, List, Brain, ArrowRight
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AIChatButton from "@/components/AIChatButton";
 import { capsules, categories } from "@/data/capsules";
+import { useLanguage } from "@/contexts/LanguageContext";
+
+// Topic-specific hero images from Unsplash
+const topicHeroImages: Record<string, string> = {
+  // Biology
+  "what-is-biology": "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800&h=400&fit=crop",
+  "levels-of-life": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&h=400&fit=crop",
+  "cell-structure": "https://images.unsplash.com/photo-1614935151651-0bea6508db6b?w=800&h=400&fit=crop",
+  "photosynthesis": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&h=400&fit=crop",
+  "mitosis": "https://images.unsplash.com/photo-1579154204601-01588f351e67?w=800&h=400&fit=crop",
+  "dna-structure": "https://images.unsplash.com/photo-1628595351029-c2bf17511435?w=800&h=400&fit=crop",
+  "genetics-basics": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop",
+  "evolution": "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&h=400&fit=crop",
+  "ecology-basics": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=400&fit=crop",
+  // Math
+  "natural-numbers": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=400&fit=crop",
+  "fractions": "https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=800&h=400&fit=crop",
+  "quadratic-equations": "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&h=400&fit=crop",
+  "pythagorean-theorem": "https://images.unsplash.com/photo-1635372722256-16f6b1a6d02c?w=800&h=400&fit=crop",
+  "linear-functions": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+  // Chemistry
+  "what-is-chemistry": "https://images.unsplash.com/photo-1532187863486-abf4dbce1253?w=800&h=400&fit=crop",
+  "atom-structure-topic": "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=800&h=400&fit=crop",
+  "periodic-table": "https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?w=800&h=400&fit=crop",
+  "chemical-bonds-topic": "https://images.unsplash.com/photo-1554475901-4538ddfbccc2?w=800&h=400&fit=crop",
+  // Physics
+  "kinematics": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop",
+  "newtons-laws": "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=800&h=400&fit=crop",
+  "electricity-basics": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=400&fit=crop",
+  "optics-light": "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800&h=400&fit=crop",
+  // History
+  "ancient-egypt": "https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=800&h=400&fit=crop",
+  "ancient-greece": "https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&h=400&fit=crop",
+  "kyivan-rus": "https://images.unsplash.com/photo-1561542320-9a18cd340e98?w=800&h=400&fit=crop",
+  // Languages
+  "phonetics-sounds": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&h=400&fit=crop",
+  "present-simple": "https://images.unsplash.com/photo-1543109740-4bdb38fda756?w=800&h=400&fit=crop",
+};
+
+const subjectFallbackImages: Record<string, string> = {
+  biology: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&h=400&fit=crop",
+  math: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=400&fit=crop",
+  ukrainian: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&h=400&fit=crop",
+  english: "https://images.unsplash.com/photo-1543109740-4bdb38fda756?w=800&h=400&fit=crop",
+  history: "https://images.unsplash.com/photo-1461360370896-922624d12ebb?w=800&h=400&fit=crop",
+  chemistry: "https://images.unsplash.com/photo-1532187863486-abf4dbce1253?w=800&h=400&fit=crop",
+  physics: "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=800&h=400&fit=crop",
+};
 
 const CapsulePage = () => {
   const { id } = useParams();
@@ -20,6 +68,7 @@ const CapsulePage = () => {
   const [answered, setAnswered] = useState<number | null>(null);
   const [quizDone, setQuizDone] = useState(false);
   const [activeSection, setActiveSection] = useState("intro");
+  const { t } = useLanguage();
 
   const category = capsule ? categories.find(c => c.id === capsule.category) : null;
 
@@ -33,24 +82,15 @@ const CapsulePage = () => {
 
   const heroImageUrl = useMemo(() => {
     if (!capsule) return "";
-    const subjectImages: Record<string, string> = {
-      biology: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&h=400&fit=crop",
-      math: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=400&fit=crop",
-      ukrainian: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&h=400&fit=crop",
-      english: "https://images.unsplash.com/photo-1543109740-4bdb38fda756?w=800&h=400&fit=crop",
-      history: "https://images.unsplash.com/photo-1461360370896-922624d12ebb?w=800&h=400&fit=crop",
-      chemistry: "https://images.unsplash.com/photo-1532187863486-abf4dbce1253?w=800&h=400&fit=crop",
-      physics: "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=800&h=400&fit=crop",
-    };
-    return subjectImages[capsule.category] || subjectImages.biology;
+    return topicHeroImages[capsule.id] || subjectFallbackImages[capsule.category] || subjectFallbackImages.biology;
   }, [capsule]);
 
   if (!capsule) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Капсулу не знайдено</h1>
-          <Link to="/" className="text-primary underline">На головну</Link>
+          <h1 className="text-2xl font-bold mb-4">{t.notFound}</h1>
+          <Link to="/" className="text-primary underline">{t.toHome}</Link>
         </div>
       </div>
     );
@@ -79,15 +119,14 @@ const CapsulePage = () => {
   };
 
   const sections = [
-    { id: "intro", label: "Вступ", icon: BookOpen, show: true },
-    { id: "theory", label: "Теорія", icon: Brain, show: !!capsule.theory },
-    { id: "simple", label: "Просто", icon: Sparkles, show: true },
-    { id: "terms", label: "Терміни", icon: BookMarked, show: capsule.keyTerms.length > 0 },
-    { id: "formulas", label: "Формули", icon: FlaskConical, show: capsule.formulas.length > 0 },
-    { id: "examples", label: "Приклади", icon: PenTool, show: capsule.examples.length > 0 || capsule.problemSolving.length > 0 },
-    { id: "images", label: "Ілюстрації", icon: Image, show: capsule.images.length > 0 },
-    { id: "facts", label: "Факти", icon: Lightbulb, show: true },
-    { id: "quiz", label: "Тест", icon: CheckCircle, show: true },
+    { id: "intro", label: t.intro, icon: BookOpen, show: true },
+    { id: "theory", label: t.theory, icon: Brain, show: !!capsule.theory },
+    { id: "simple", label: t.simple, icon: Sparkles, show: true },
+    { id: "terms", label: t.terms, icon: BookMarked, show: capsule.keyTerms.length > 0 },
+    { id: "formulas", label: t.formulas, icon: FlaskConical, show: capsule.formulas.length > 0 },
+    { id: "examples", label: t.examples, icon: PenTool, show: capsule.examples.length > 0 || capsule.problemSolving.length > 0 },
+    { id: "facts", label: t.facts, icon: Lightbulb, show: true },
+    { id: "quiz", label: t.quiz, icon: CheckCircle, show: true },
   ].filter(s => s.show);
 
   const scrollToSection = (sectionId: string) => {
@@ -104,7 +143,7 @@ const CapsulePage = () => {
             to={category ? `/category/${category.id}` : "/"}
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-6"
           >
-            <ArrowLeft className="w-4 h-4" /> {category ? category.name : "Назад"}
+            <ArrowLeft className="w-4 h-4" /> {category ? category.name : t.back}
           </Link>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
@@ -130,14 +169,14 @@ const CapsulePage = () => {
               </div>
               <div className="flex flex-wrap items-center gap-3 text-sm">
                 <div className="flex items-center gap-1.5 text-muted-foreground">
-                  <Clock className="w-4 h-4" /> {capsule.readTime} хв
+                  <Clock className="w-4 h-4" /> {capsule.readTime} {t.min}
                 </div>
                 <div className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium ${diffColor[capsule.difficulty]}`}>
                   <BarChart3 className="w-3.5 h-3.5" /> {capsule.difficulty}
                 </div>
                 {capsule.quiz.length > 0 && (
                   <div className="flex items-center gap-1.5 text-muted-foreground">
-                    <CheckCircle className="w-4 h-4" /> {capsule.quiz.length} запитань
+                    <CheckCircle className="w-4 h-4" /> {capsule.quiz.length} {t.questions}
                   </div>
                 )}
               </div>
@@ -147,7 +186,7 @@ const CapsulePage = () => {
             <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl border border-primary/20 p-5 md:p-6 mb-6">
               <div className="flex items-center gap-2 mb-3">
                 <Zap className="w-5 h-5 text-primary" />
-                <h2 className="font-semibold text-foreground">⚡ За 60 секунд</h2>
+                <h2 className="font-semibold text-foreground">{t.in60sec}</h2>
               </div>
               <p className="text-foreground/80 text-sm leading-relaxed">{capsule.quickSummary}</p>
             </div>
@@ -172,14 +211,14 @@ const CapsulePage = () => {
 
             {/* Introduction */}
             <section id="section-intro" className="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6 shadow-sm">
-              <SectionHeader icon={BookOpen} title="Вступ" color="primary" />
+              <SectionHeader icon={BookOpen} title={t.intro} color="primary" />
               <p className="text-foreground/80 leading-relaxed text-[15px]">{capsule.introduction}</p>
             </section>
 
             {/* Theory */}
             {capsule.theory && (
               <section id="section-theory" className="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6 shadow-sm">
-                <SectionHeader icon={Brain} title="Основна теорія" color="secondary" />
+                <SectionHeader icon={Brain} title={t.mainTheory} color="secondary" />
                 <div className="prose-custom text-foreground/80 text-[15px] leading-relaxed whitespace-pre-line">
                   {capsule.theory}
                 </div>
@@ -188,13 +227,13 @@ const CapsulePage = () => {
 
             {/* Simple Explanation */}
             <section id="section-simple" className="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6 shadow-sm">
-              <SectionHeader icon={Sparkles} title="Пояснення простими словами" color="accent" />
+              <SectionHeader icon={Sparkles} title={t.simpleExplanation} color="accent" />
               <button
                 onClick={() => setShowSimple(!showSimple)}
                 className="flex items-center gap-2 px-4 py-2.5 mb-4 rounded-xl bg-accent/10 text-accent text-sm font-medium hover:bg-accent/20 transition-all"
               >
                 <Sparkles className="w-4 h-4" />
-                {showSimple ? "Показати звичайне пояснення" : "🧒 Поясни ще простіше"}
+                {showSimple ? t.showNormal : t.explainSimpler}
               </button>
               <p className="text-foreground/80 leading-relaxed text-[15px]">
                 {showSimple ? capsule.simpleExplanation : capsule.beginnerExplanation}
@@ -202,7 +241,7 @@ const CapsulePage = () => {
               {!showSimple && (
                 <div className="border-t border-border mt-6 pt-6">
                   <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <BarChart3 className="w-4 h-4 text-secondary" /> Детальніше
+                    <BarChart3 className="w-4 h-4 text-secondary" /> {t.moreDetails}
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{capsule.detailedExplanation}</p>
                 </div>
@@ -212,7 +251,7 @@ const CapsulePage = () => {
             {/* Key Terms */}
             {capsule.keyTerms.length > 0 && (
               <section id="section-terms" className="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6 shadow-sm">
-                <SectionHeader icon={BookMarked} title="Ключові терміни" color="primary" />
+                <SectionHeader icon={BookMarked} title={t.keyTerms} color="primary" />
                 <div className="space-y-3">
                   {capsule.keyTerms.map((kt, i) => (
                     <div key={i} className="bg-muted/30 rounded-xl p-4 border border-border/50">
@@ -227,7 +266,7 @@ const CapsulePage = () => {
             {/* Formulas */}
             {capsule.formulas.length > 0 && (
               <section id="section-formulas" className="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6 shadow-sm">
-                <SectionHeader icon={FlaskConical} title="Формули та правила" color="secondary" />
+                <SectionHeader icon={FlaskConical} title={t.formulasAndRules} color="secondary" />
                 <div className="space-y-2">
                   {capsule.formulas.map((f, i) => (
                     <div key={i} className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl px-4 py-3 border border-primary/10 font-mono text-sm text-foreground">
@@ -241,10 +280,10 @@ const CapsulePage = () => {
             {/* Examples & Problem Solving */}
             {(capsule.examples.length > 0 || capsule.problemSolving.length > 0) && (
               <section id="section-examples" className="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6 shadow-sm">
-                <SectionHeader icon={PenTool} title="Приклади та задачі" color="accent" />
+                <SectionHeader icon={PenTool} title={t.examplesAndProblems} color="accent" />
                 {capsule.examples.length > 0 && (
                   <div className="mb-6">
-                    <h3 className="font-semibold text-foreground text-sm mb-3">📝 Приклади:</h3>
+                    <h3 className="font-semibold text-foreground text-sm mb-3">{t.examplesLabel}</h3>
                     <ul className="space-y-2">
                       {capsule.examples.map((ex, i) => (
                         <li key={i} className="flex items-start gap-3 text-sm">
@@ -259,7 +298,7 @@ const CapsulePage = () => {
                 )}
                 {capsule.problemSolving.length > 0 && (
                   <div>
-                    <h3 className="font-semibold text-foreground text-sm mb-3">🧮 Розв'язування задач:</h3>
+                    <h3 className="font-semibold text-foreground text-sm mb-3">{t.problemSolving}</h3>
                     <div className="space-y-4">
                       {capsule.problemSolving.map((ps, i) => (
                         <div key={i} className="bg-muted/30 rounded-xl p-4 border border-border/50">
@@ -275,29 +314,9 @@ const CapsulePage = () => {
               </section>
             )}
 
-            {/* Images */}
-            {capsule.images.length > 0 && (
-              <section id="section-images" className="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6 shadow-sm">
-                <SectionHeader icon={Image} title="Ілюстрації" color="primary" />
-                <div className="grid gap-4">
-                  {capsule.images.map((img, i) => (
-                    <figure key={i} className="rounded-xl overflow-hidden border border-border">
-                      <img
-                        src={img.url}
-                        alt={img.caption}
-                        className="w-full h-48 md:h-64 object-cover"
-                        loading="lazy"
-                      />
-                      <figcaption className="px-4 py-2.5 bg-muted/30 text-xs text-muted-foreground">{img.caption}</figcaption>
-                    </figure>
-                  ))}
-                </div>
-              </section>
-            )}
-
             {/* Facts */}
             <section id="section-facts" className="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6 shadow-sm">
-              <SectionHeader icon={Lightbulb} title="Цікаві факти" color="accent" />
+              <SectionHeader icon={Lightbulb} title={t.interestingFacts} color="accent" />
               <ul className="space-y-3">
                 {capsule.facts.map((f, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm">
@@ -312,31 +331,30 @@ const CapsulePage = () => {
 
             {/* Quiz */}
             <section id="section-quiz" className="bg-card rounded-2xl border border-border p-6 md:p-8 shadow-sm">
-              <SectionHeader icon={CheckCircle} title="Міні-тест" color="primary" />
+              <SectionHeader icon={CheckCircle} title={t.miniTest} color="primary" />
               {!quizStarted ? (
                 <div className="text-center py-8">
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mx-auto mb-4">
                     <List className="w-7 h-7 text-primary" />
                   </div>
-                  <p className="text-sm text-muted-foreground mb-2">{capsule.quiz.length} запитань для перевірки знань</p>
-                  <p className="text-xs text-muted-foreground mb-6">Перевір, чи засвоїв матеріал</p>
+                  <p className="text-sm text-muted-foreground mb-2">{capsule.quiz.length} {t.questionsForCheck}</p>
+                  <p className="text-xs text-muted-foreground mb-6">{t.checkIfLearned}</p>
                   <button onClick={() => setQuizStarted(true)} className="px-8 py-3 rounded-xl bg-gradient-to-r from-primary to-secondary text-primary-foreground font-medium text-sm shadow-md shadow-primary/20 hover:shadow-lg hover:-translate-y-0.5 transition-all">
-                    Почати тест
+                    {t.startTest}
                   </button>
                 </div>
               ) : quizDone ? (
                 <div className="text-center py-8">
                   <div className="text-5xl font-bold gradient-text mb-3">{score}/{capsule.quiz.length}</div>
                   <p className="text-muted-foreground text-sm mb-4">
-                    {score === capsule.quiz.length ? "Чудово! Ти все знаєш! 🎉" :
-                     score >= capsule.quiz.length * 0.7 ? "Гарний результат! 👍" :
-                     "Спробуй перечитати капсулу та пройти тест ще раз."}
+                    {score === capsule.quiz.length ? t.excellent :
+                     score >= capsule.quiz.length * 0.7 ? t.goodResult : t.tryAgain}
                   </p>
                   <button
                     onClick={() => { setQuizDone(false); setQuizStarted(false); setCurrentQ(0); setScore(0); setAnswered(null); }}
                     className="px-6 py-2.5 rounded-xl bg-muted text-foreground text-sm font-medium hover:bg-muted/80 transition-all"
                   >
-                    Пройти ще раз
+                    {t.retake}
                   </button>
                 </div>
               ) : (
@@ -370,7 +388,7 @@ const CapsulePage = () => {
                   </div>
                   {answered !== null && (
                     <button onClick={nextQuestion} className="px-6 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-medium shadow-sm hover:shadow-md transition-all">
-                      {currentQ + 1 >= capsule.quiz.length ? "Результат" : "Далі"}
+                      {currentQ + 1 >= capsule.quiz.length ? t.result : t.next}
                     </button>
                   )}
                 </div>
@@ -384,7 +402,7 @@ const CapsulePage = () => {
                   <div className="w-8 h-8 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center">
                     <Sparkles className="w-4 h-4" />
                   </div>
-                  <h2 className="text-lg font-semibold text-foreground">Можливо вам буде цікаво</h2>
+                  <h2 className="text-lg font-semibold text-foreground">{t.maybeInteresting}</h2>
                 </div>
                 <div className="grid gap-3">
                   {relatedCapsules.map(rc => (
@@ -408,10 +426,17 @@ const CapsulePage = () => {
         </div>
       </div>
 
-      {/* AI Chat Button */}
       <AIChatButton
         topicTitle={capsule.title}
         topicContext={capsule.introduction + " " + (capsule.theory || "")}
+        capsuleData={{
+          theory: capsule.theory,
+          simpleExplanation: capsule.simpleExplanation,
+          keyTerms: capsule.keyTerms,
+          formulas: capsule.formulas,
+          examples: capsule.examples,
+          facts: capsule.facts,
+        }}
       />
 
       <Footer />
