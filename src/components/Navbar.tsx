@@ -40,8 +40,10 @@ const Navbar = () => {
           <Sparkles className="w-4 h-4" />
           <span className="hidden sm:inline">Випадкова тема</span>
         </Link>
+        </div>
       </div>
     </nav>
+    </>
   );
 };
 
