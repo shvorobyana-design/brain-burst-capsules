@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ArrowLeft, Clock, BarChart3, Lightbulb, BookOpen, CheckCircle, XCircle,
-  Sparkles, BookMarked, FlaskConical, PenTool, Image, Zap, List, Brain
+  Sparkles, BookMarked, FlaskConical, PenTool, Image, Zap, List, Brain, ArrowRight
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AIChatButton from "@/components/AIChatButton";
 import { capsules, categories } from "@/data/capsules";
 
 const CapsulePage = () => {
