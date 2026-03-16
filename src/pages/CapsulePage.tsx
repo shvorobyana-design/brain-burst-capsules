@@ -376,9 +376,44 @@ const CapsulePage = () => {
                 </div>
               )}
             </section>
+
+            {/* Related Topics */}
+            {relatedCapsules.length > 0 && (
+              <section className="bg-card rounded-2xl border border-border p-6 md:p-8 mt-6 shadow-sm">
+                <div className="flex items-center gap-2 mb-5">
+                  <div className="w-8 h-8 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center">
+                    <Sparkles className="w-4 h-4" />
+                  </div>
+                  <h2 className="text-lg font-semibold text-foreground">Можливо вам буде цікаво</h2>
+                </div>
+                <div className="grid gap-3">
+                  {relatedCapsules.map(rc => (
+                    <Link
+                      key={rc.id}
+                      to={`/capsule/${rc.id}`}
+                      className="flex items-center gap-3 p-3 rounded-xl hover:bg-muted/50 transition-colors border border-border/50 group"
+                    >
+                      <span className="text-xl">{rc.icon}</span>
+                      <div className="flex-1 min-w-0">
+                        <div className="font-medium text-sm text-foreground group-hover:text-primary transition-colors">{rc.title}</div>
+                        <div className="text-xs text-muted-foreground truncate">{rc.shortDescription}</div>
+                      </div>
+                      <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            )}
           </motion.div>
         </div>
       </div>
+
+      {/* AI Chat Button */}
+      <AIChatButton
+        topicTitle={capsule.title}
+        topicContext={capsule.introduction + " " + (capsule.theory || "")}
+      />
+
       <Footer />
     </div>
   );
