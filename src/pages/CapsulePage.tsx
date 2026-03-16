@@ -21,30 +21,18 @@ const CapsulePage = () => {
   const [quizDone, setQuizDone] = useState(false);
   const [activeSection, setActiveSection] = useState("intro");
 
-  if (!capsule) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Капсулу не знайдено</h1>
-          <Link to="/" className="text-primary underline">На головну</Link>
-        </div>
-      </div>
-    );
-  }
+  const category = capsule ? categories.find(c => c.id === capsule.category) : null;
 
-  const category = categories.find(c => c.id === capsule.category);
-
-  // Get related/next capsules from same category
   const relatedCapsules = useMemo(() => {
+    if (!capsule) return [];
     const sameCat = capsules.filter(c => c.category === capsule.category && c.id !== capsule.id);
-    // Try same section first
     const sameSection = sameCat.filter(c => c.section === capsule.section);
     if (sameSection.length > 0) return sameSection.slice(0, 3);
     return sameCat.slice(0, 3);
   }, [capsule]);
 
-  // Generate a themed illustration URL based on the topic
   const heroImageUrl = useMemo(() => {
+    if (!capsule) return "";
     const subjectImages: Record<string, string> = {
       biology: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&h=400&fit=crop",
       math: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=400&fit=crop",
@@ -55,7 +43,18 @@ const CapsulePage = () => {
       physics: "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=800&h=400&fit=crop",
     };
     return subjectImages[capsule.category] || subjectImages.biology;
-  }, [capsule.category]);
+  }, [capsule]);
+
+  if (!capsule) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-4">Капсулу не знайдено</h1>
+          <Link to="/" className="text-primary underline">На головну</Link>
+        </div>
+      </div>
+    );
+  }
 
   const handleAnswer = (idx: number) => {
     if (answered !== null) return;
