@@ -24,6 +24,15 @@ const Navbar = () => {
           <Link to="/categories" className="hover:text-primary transition-colors">Категорії</Link>
           <Link to="/progress" className="hover:text-primary transition-colors">Прогрес</Link>
         </div>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setSearchOpen(true)}
+            className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-muted/60 text-muted-foreground text-sm hover:bg-muted transition-colors border border-border"
+          >
+            <Search className="w-4 h-4" />
+            <span className="hidden sm:inline">Пошук</span>
+            <kbd className="hidden md:inline text-[10px] bg-background px-1.5 py-0.5 rounded border border-border ml-1">⌘K</kbd>
+          </button>
         <Link
           to="/random"
           className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-primary to-secondary text-primary-foreground text-sm font-medium shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all hover:-translate-y-0.5"
