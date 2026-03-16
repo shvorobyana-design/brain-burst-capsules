@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ArrowLeft, Clock, BarChart3, Lightbulb, BookOpen, CheckCircle, XCircle,
-  Sparkles, BookMarked, FlaskConical, PenTool, Image, Zap, List, Brain
+  Sparkles, BookMarked, FlaskConical, PenTool, Image, Zap, List, Brain, ArrowRight
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AIChatButton from "@/components/AIChatButton";
 import { capsules, categories } from "@/data/capsules";
 
 const CapsulePage = () => {
@@ -20,6 +21,30 @@ const CapsulePage = () => {
   const [quizDone, setQuizDone] = useState(false);
   const [activeSection, setActiveSection] = useState("intro");
 
+  const category = capsule ? categories.find(c => c.id === capsule.category) : null;
+
+  const relatedCapsules = useMemo(() => {
+    if (!capsule) return [];
+    const sameCat = capsules.filter(c => c.category === capsule.category && c.id !== capsule.id);
+    const sameSection = sameCat.filter(c => c.section === capsule.section);
+    if (sameSection.length > 0) return sameSection.slice(0, 3);
+    return sameCat.slice(0, 3);
+  }, [capsule]);
+
+  const heroImageUrl = useMemo(() => {
+    if (!capsule) return "";
+    const subjectImages: Record<string, string> = {
+      biology: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&h=400&fit=crop",
+      math: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=400&fit=crop",
+      ukrainian: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&h=400&fit=crop",
+      english: "https://images.unsplash.com/photo-1543109740-4bdb38fda756?w=800&h=400&fit=crop",
+      history: "https://images.unsplash.com/photo-1461360370896-922624d12ebb?w=800&h=400&fit=crop",
+      chemistry: "https://images.unsplash.com/photo-1532187863486-abf4dbce1253?w=800&h=400&fit=crop",
+      physics: "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=800&h=400&fit=crop",
+    };
+    return subjectImages[capsule.category] || subjectImages.biology;
+  }, [capsule]);
+
   if (!capsule) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
@@ -30,8 +55,6 @@ const CapsulePage = () => {
       </div>
     );
   }
-
-  const category = categories.find(c => c.id === capsule.category);
 
   const handleAnswer = (idx: number) => {
     if (answered !== null) return;
@@ -85,6 +108,15 @@ const CapsulePage = () => {
           </Link>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
+            {/* Hero Image */}
+            <div className="rounded-2xl overflow-hidden mb-6 border border-border shadow-sm">
+              <img
+                src={heroImageUrl}
+                alt={capsule.title}
+                className="w-full h-48 md:h-64 object-cover"
+              />
+            </div>
+
             {/* Header */}
             <div className="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6 shadow-sm">
               <div className="flex items-start gap-4 mb-4">
@@ -344,9 +376,44 @@ const CapsulePage = () => {
                 </div>
               )}
             </section>
+
+            {/* Related Topics */}
+            {relatedCapsules.length > 0 && (
+              <section className="bg-card rounded-2xl border border-border p-6 md:p-8 mt-6 shadow-sm">
+                <div className="flex items-center gap-2 mb-5">
+                  <div className="w-8 h-8 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center">
+                    <Sparkles className="w-4 h-4" />
+                  </div>
+                  <h2 className="text-lg font-semibold text-foreground">Можливо вам буде цікаво</h2>
+                </div>
+                <div className="grid gap-3">
+                  {relatedCapsules.map(rc => (
+                    <Link
+                      key={rc.id}
+                      to={`/capsule/${rc.id}`}
+                      className="flex items-center gap-3 p-3 rounded-xl hover:bg-muted/50 transition-colors border border-border/50 group"
+                    >
+                      <span className="text-xl">{rc.icon}</span>
+                      <div className="flex-1 min-w-0">
+                        <div className="font-medium text-sm text-foreground group-hover:text-primary transition-colors">{rc.title}</div>
+                        <div className="text-xs text-muted-foreground truncate">{rc.shortDescription}</div>
+                      </div>
+                      <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            )}
           </motion.div>
         </div>
       </div>
+
+      {/* AI Chat Button */}
+      <AIChatButton
+        topicTitle={capsule.title}
+        topicContext={capsule.introduction + " " + (capsule.theory || "")}
+      />
+
       <Footer />
     </div>
   );

@@ -14,6 +14,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <Hero />
+      <HowItWorks />
 
       {/* Popular */}
       <section className="py-16">
@@ -47,7 +48,6 @@ const Index = () => {
         </div>
       </section>
 
-      <HowItWorks />
       <Footer />
     </div>
   );
