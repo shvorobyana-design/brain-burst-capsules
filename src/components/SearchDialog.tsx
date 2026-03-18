@@ -14,7 +14,7 @@ const SearchDialog = ({ open, onClose }: SearchDialogProps) => {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
   const inputRef = useRef<HTMLInputElement>(null);
-  const { t } = useLanguage();
+  const { t, translateDifficulty } = useLanguage();
 
   const results = query.length > 1
     ? capsules.filter(c =>
