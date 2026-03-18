@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CapsuleCard from "@/components/CapsuleCard";
 import { categories, getCapsulesBySection } from "@/data/capsules";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const difficulties = ["усі", "базовий", "середній", "поглиблений", "олімпіадний"] as const;
 
@@ -23,13 +24,14 @@ const CategoryPage = () => {
   const { id } = useParams();
   const category = categories.find(c => c.id === id);
   const [difficulty, setDifficulty] = useState<string>("усі");
+  const { t, translateCategory, translateSection, translateDifficulty } = useLanguage();
 
   if (!category) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Категорію не знайдено</h1>
-          <Link to="/" className="text-primary underline">На головну</Link>
+          <h1 className="text-2xl font-bold mb-4">{t.categoryNotFound}</h1>
+          <Link to="/" className="text-primary underline">{t.toHome}</Link>
         </div>
       </div>
     );
@@ -41,18 +43,17 @@ const CategoryPage = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Subject header with gradient */}
       <div className={`pt-24 pb-10 bg-gradient-to-br ${gradient} relative overflow-hidden`}>
         <div className="absolute inset-0 bg-white/10" />
         <div className="container mx-auto px-4 relative z-10">
           <Link to="/categories" className="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors mb-6">
-            <ArrowLeft className="w-4 h-4" /> Усі категорії
+            <ArrowLeft className="w-4 h-4" /> {t.allCategoriesLink}
           </Link>
           <div className="flex items-center gap-4">
             <span className="text-5xl drop-shadow-lg">{category.icon}</span>
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-white">{category.name}</h1>
-              <p className="text-white/80 text-sm mt-1">{category.count} капсул знань · {category.sections.length} розділів</p>
+              <h1 className="text-3xl md:text-4xl font-bold text-white">{translateCategory(category.id)}</h1>
+              <p className="text-white/80 text-sm mt-1">{category.count} {t.capsuleKnowledge} · {category.sections.length} {t.sections_word}</p>
             </div>
           </div>
         </div>
@@ -60,10 +61,9 @@ const CategoryPage = () => {
 
       <div className="pb-16">
         <div className="container mx-auto px-4">
-          {/* Filters */}
           <div className="bg-card rounded-xl border border-border shadow-sm p-4 -mt-5 relative z-10 mb-8 flex flex-wrap items-center gap-3">
             <Filter className="w-4 h-4 text-muted-foreground" />
-            <span className="text-sm text-muted-foreground mr-2">Складність:</span>
+            <span className="text-sm text-muted-foreground mr-2">{t.difficultyLabel}</span>
             {difficulties.map(d => (
               <button
                 key={d}
@@ -74,12 +74,11 @@ const CategoryPage = () => {
                     : "bg-muted text-muted-foreground hover:text-foreground hover:bg-muted/80"
                 }`}
               >
-                {d === "усі" ? "Усі рівні" : d}
+                {d === "усі" ? t.allLevels : translateDifficulty(d)}
               </button>
             ))}
           </div>
 
-          {/* Sections */}
           {category.sections.map((section, si) => {
             let items = getCapsulesBySection(category.id, section.id);
             if (difficulty !== "усі") {
@@ -98,7 +97,7 @@ const CategoryPage = () => {
               >
                 <h2 className="text-xl font-bold mb-5 flex items-center gap-3">
                   <span className={`w-1.5 h-7 rounded-full bg-gradient-to-b ${gradient}`} />
-                  {section.name}
+                  {translateSection(section.id)}
                   <span className="text-xs font-normal text-muted-foreground ml-1">({items.length})</span>
                 </h2>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
