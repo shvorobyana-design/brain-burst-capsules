@@ -16,38 +16,45 @@ interface AIChatButtonProps {
   };
 }
 
-function findAnswer(query: string, capsuleData: AIChatButtonProps["capsuleData"], topicTitle: string, t: ReturnType<typeof useLanguage>["t"]): string {
-  if (!capsuleData) return `${t.noDataAbout} "${topicTitle}".`;
+function findAnswer(query: string, capsuleData: AIChatButtonProps["capsuleData"], topicTitle: string): string {
+  if (!capsuleData) return `На жаль, я не маю достатньо даних про "${topicTitle}".`;
 
   const q = query.toLowerCase();
   const { theory, simpleExplanation, keyTerms, formulas, examples, facts } = capsuleData;
 
+  // Check for simple explanation requests
   if (q.includes("прост") || q.includes("simple") || q.includes("explain")) {
-    if (simpleExplanation) return `🧒 **${t.simpleExplanation}:**\n\n${simpleExplanation}`;
+    if (simpleExplanation) return `🧒 **Просте пояснення:**\n\n${simpleExplanation}`;
   }
 
+  // Check for formula requests
   if (q.includes("формул") || q.includes("formula") || q.includes("правил")) {
-    if (formulas && formulas.length > 0) return `📐 **${t.formulas}:**\n\n${formulas.join("\n\n")}`;
-    return `${t.noFormulasButTheory}\n\n${theory?.slice(0, 300) || ""}...`;
+    if (formulas && formulas.length > 0) return `📐 **Формули:**\n\n${formulas.join("\n\n")}`;
+    return `У цій темі формул немає, але ось ключова теорія:\n\n${theory?.slice(0, 300) || ""}...`;
   }
 
+  // Check for term definitions
   if (keyTerms && keyTerms.length > 0) {
     const matchedTerm = keyTerms.find(kt => q.includes(kt.term.toLowerCase()));
     if (matchedTerm) return `📖 **${matchedTerm.term}** — ${matchedTerm.definition}`;
   }
 
+  // Check for example requests
   if (q.includes("приклад") || q.includes("example")) {
-    if (examples && examples.length > 0) return `📝 **${t.examples}:**\n\n${examples.map((e, i) => `${i + 1}. ${e}`).join("\n")}`;
+    if (examples && examples.length > 0) return `📝 **Приклади:**\n\n${examples.map((e, i) => `${i + 1}. ${e}`).join("\n")}`;
   }
 
+  // Check for fact requests
   if (q.includes("факт") || q.includes("fact") || q.includes("цікав")) {
-    if (facts && facts.length > 0) return `💡 **${t.funFactsLabel}**\n\n${facts.map((f, i) => `${i + 1}. ${f}`).join("\n")}`;
+    if (facts && facts.length > 0) return `💡 **Цікаві факти:**\n\n${facts.map((f, i) => `${i + 1}. ${f}`).join("\n")}`;
   }
 
+  // Check for term list
   if (q.includes("термін") || q.includes("term") || q.includes("визнач") || q.includes("defin")) {
-    if (keyTerms && keyTerms.length > 0) return `📖 **${t.keyTermsLabel}**\n\n${keyTerms.map(kt => `• **${kt.term}** — ${kt.definition}`).join("\n")}`;
+    if (keyTerms && keyTerms.length > 0) return `📖 **Ключові терміни:**\n\n${keyTerms.map(kt => `• **${kt.term}** — ${kt.definition}`).join("\n")}`;
   }
 
+  // Default: search through theory
   if (theory) {
     const sentences = theory.split(/[.!?]\s+/);
     const relevant = sentences.filter(s => {
@@ -55,12 +62,13 @@ function findAnswer(query: string, capsuleData: AIChatButtonProps["capsuleData"]
       return words.some(w => s.toLowerCase().includes(w));
     });
     if (relevant.length > 0) {
-      return `📚 ${t.foundForQuery}\n\n${relevant.slice(0, 4).join(". ")}.`;
+      return `📚 Ось що я знайшов по вашому запиту:\n\n${relevant.slice(0, 4).join(". ")}.`;
     }
   }
 
-  if (theory) return `📚 **${t.aboutTopic} "${topicTitle}":**\n\n${theory.slice(0, 500)}...`;
-  return t.tryAskingHint;
+  // Fallback: give a summary
+  if (theory) return `📚 **Про тему "${topicTitle}":**\n\n${theory.slice(0, 500)}...`;
+  return `Спробуйте запитати про терміни, формули, приклади або факти цієї теми! 🧠`;
 }
 
 const AIChatButton = ({ topicTitle, topicContext, capsuleData }: AIChatButtonProps) => {
@@ -88,8 +96,9 @@ const AIChatButton = ({ topicTitle, topicContext, capsuleData }: AIChatButtonPro
     setInput("");
     setLoading(true);
 
+    // Smart local AI based on capsule content
     setTimeout(() => {
-      const answer = findAnswer(text, capsuleData, topicTitle, t);
+      const answer = findAnswer(text, capsuleData, topicTitle);
       setMessages(prev => [...prev, { role: "ai", text: answer }]);
       setLoading(false);
     }, 600 + Math.random() * 800);

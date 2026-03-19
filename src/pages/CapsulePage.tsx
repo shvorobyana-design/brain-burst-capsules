@@ -11,7 +11,9 @@ import AIChatButton from "@/components/AIChatButton";
 import { capsules, categories } from "@/data/capsules";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+// Topic-specific hero images from Unsplash
 const topicHeroImages: Record<string, string> = {
+  // Biology
   "what-is-biology": "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800&h=400&fit=crop",
   "levels-of-life": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&h=400&fit=crop",
   "cell-structure": "https://images.unsplash.com/photo-1614935151651-0bea6508db6b?w=800&h=400&fit=crop",
@@ -21,22 +23,27 @@ const topicHeroImages: Record<string, string> = {
   "genetics-basics": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop",
   "evolution": "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&h=400&fit=crop",
   "ecology-basics": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=400&fit=crop",
+  // Math
   "natural-numbers": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=400&fit=crop",
   "fractions": "https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=800&h=400&fit=crop",
   "quadratic-equations": "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&h=400&fit=crop",
   "pythagorean-theorem": "https://images.unsplash.com/photo-1635372722256-16f6b1a6d02c?w=800&h=400&fit=crop",
   "linear-functions": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+  // Chemistry
   "what-is-chemistry": "https://images.unsplash.com/photo-1532187863486-abf4dbce1253?w=800&h=400&fit=crop",
   "atom-structure-topic": "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=800&h=400&fit=crop",
   "periodic-table": "https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?w=800&h=400&fit=crop",
   "chemical-bonds-topic": "https://images.unsplash.com/photo-1554475901-4538ddfbccc2?w=800&h=400&fit=crop",
+  // Physics
   "kinematics": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop",
   "newtons-laws": "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=800&h=400&fit=crop",
   "electricity-basics": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=400&fit=crop",
   "optics-light": "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=800&h=400&fit=crop",
+  // History
   "ancient-egypt": "https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=800&h=400&fit=crop",
   "ancient-greece": "https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&h=400&fit=crop",
   "kyivan-rus": "https://images.unsplash.com/photo-1561542320-9a18cd340e98?w=800&h=400&fit=crop",
+  // Languages
   "phonetics-sounds": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&h=400&fit=crop",
   "present-simple": "https://images.unsplash.com/photo-1543109740-4bdb38fda756?w=800&h=400&fit=crop",
 };
@@ -51,13 +58,6 @@ const subjectFallbackImages: Record<string, string> = {
   physics: "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=800&h=400&fit=crop",
 };
 
-const diffColor: Record<string, string> = {
-  "базовий": "text-accent bg-accent/10",
-  "середній": "text-secondary bg-secondary/10",
-  "поглиблений": "text-primary bg-primary/10",
-  "олімпіадний": "text-destructive bg-destructive/10",
-};
-
 const CapsulePage = () => {
   const { id } = useParams();
   const capsule = capsules.find(c => c.id === id);
@@ -68,7 +68,7 @@ const CapsulePage = () => {
   const [answered, setAnswered] = useState<number | null>(null);
   const [quizDone, setQuizDone] = useState(false);
   const [activeSection, setActiveSection] = useState("intro");
-  const { t, translateCategory, translateDifficulty } = useLanguage();
+  const { t } = useLanguage();
 
   const category = capsule ? categories.find(c => c.id === capsule.category) : null;
 
@@ -111,6 +111,13 @@ const CapsulePage = () => {
     }
   };
 
+  const diffColor: Record<string, string> = {
+    "базовий": "text-accent bg-accent/10",
+    "середній": "text-secondary bg-secondary/10",
+    "поглиблений": "text-primary bg-primary/10",
+    "олімпіадний": "text-destructive bg-destructive/10",
+  };
+
   const sections = [
     { id: "intro", label: t.intro, icon: BookOpen, show: true },
     { id: "theory", label: t.theory, icon: Brain, show: !!capsule.theory },
@@ -136,13 +143,17 @@ const CapsulePage = () => {
             to={category ? `/category/${category.id}` : "/"}
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-6"
           >
-            <ArrowLeft className="w-4 h-4" /> {category ? translateCategory(category.id) : t.back}
+            <ArrowLeft className="w-4 h-4" /> {category ? category.name : t.back}
           </Link>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
             {/* Hero Image */}
             <div className="rounded-2xl overflow-hidden mb-6 border border-border shadow-sm">
-              <img src={heroImageUrl} alt={capsule.title} className="w-full h-48 md:h-64 object-cover" />
+              <img
+                src={heroImageUrl}
+                alt={capsule.title}
+                className="w-full h-48 md:h-64 object-cover"
+              />
             </div>
 
             {/* Header */}
@@ -161,7 +172,7 @@ const CapsulePage = () => {
                   <Clock className="w-4 h-4" /> {capsule.readTime} {t.min}
                 </div>
                 <div className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium ${diffColor[capsule.difficulty]}`}>
-                  <BarChart3 className="w-3.5 h-3.5" /> {translateDifficulty(capsule.difficulty)}
+                  <BarChart3 className="w-3.5 h-3.5" /> {capsule.difficulty}
                 </div>
                 {capsule.quiz.length > 0 && (
                   <div className="flex items-center gap-1.5 text-muted-foreground">

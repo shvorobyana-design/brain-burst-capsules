@@ -3,13 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { Search, Zap, Clock, Brain, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { capsules } from "@/data/capsules";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState<typeof capsules>([]);
   const navigate = useNavigate();
-  const { t } = useLanguage();
 
   const handleSearch = (value: string) => {
     setQuery(value);
@@ -22,6 +20,7 @@ const Hero = () => {
 
   return (
     <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-hero">
+      {/* Decorative blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-20 -left-20 w-[500px] h-[500px] bg-primary/8 rounded-full blur-3xl animate-float" />
         <div className="absolute top-10 right-0 w-[400px] h-[400px] bg-secondary/8 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }} />
@@ -42,17 +41,18 @@ const Hero = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary mb-6"
           >
             <Sparkles className="w-3.5 h-3.5" />
-            {t.heroTagline}
+            Ультрашвидке навчання нового покоління
           </motion.div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6 text-foreground">
-            {t.heroTitle}{" "}
-            <span className="gradient-text">{t.heroHighlight}</span>
+            Вивчай будь-яку тему{" "}
+            <span className="gradient-text">за 5 хвилин</span>
           </h1>
           <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
-            {t.heroDescription}
+            Капсули знань — короткі структуровані уроки, які пояснюють складні теми просто, зрозуміло та візуально.
           </p>
 
+          {/* Search */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -65,7 +65,7 @@ const Hero = () => {
                 type="text"
                 value={query}
                 onChange={e => handleSearch(e.target.value)}
-                placeholder={t.heroSearchPlaceholder}
+                placeholder="Шукай тему: фотосинтез, ДНК, чорні діри..."
                 className="flex-1 bg-transparent outline-none text-foreground placeholder:text-muted-foreground"
               />
             </div>
@@ -88,6 +88,7 @@ const Hero = () => {
             )}
           </motion.div>
 
+          {/* Stats */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -95,9 +96,9 @@ const Hero = () => {
             className="flex items-center justify-center gap-8 mt-12"
           >
             {[
-              { icon: Brain, label: `${capsules.length}+ ${t.statCapsules}`, color: "text-primary", bg: "bg-primary/10" },
-              { icon: Clock, label: t.statMinutes, color: "text-secondary", bg: "bg-secondary/10" },
-              { icon: Zap, label: t.statFree, color: "text-accent", bg: "bg-accent/10" },
+              { icon: Brain, label: `${capsules.length}+ капсул`, color: "text-primary", bg: "bg-primary/10" },
+              { icon: Clock, label: "1-5 хвилин", color: "text-secondary", bg: "bg-secondary/10" },
+              { icon: Zap, label: "Безкоштовно", color: "text-accent", bg: "bg-accent/10" },
             ].map((s, i) => (
               <div key={i} className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
                 <div className={`w-8 h-8 rounded-lg ${s.bg} flex items-center justify-center`}>
