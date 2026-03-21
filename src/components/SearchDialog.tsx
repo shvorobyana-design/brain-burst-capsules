@@ -14,7 +14,7 @@ const SearchDialog = ({ open, onClose }: SearchDialogProps) => {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
   const inputRef = useRef<HTMLInputElement>(null);
-  const { t } = useLanguage();
+  const { t, translateDifficulty } = useLanguage();
 
   const results = query.length > 1
     ? capsules.filter(c =>
@@ -104,7 +104,7 @@ const SearchDialog = ({ open, onClose }: SearchDialogProps) => {
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
                     <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded-full ${diffColor[r.difficulty]}`}>
-                      {r.difficulty}
+                      {translateDifficulty(r.difficulty)}
                     </span>
                     <span className="text-xs text-muted-foreground flex items-center gap-0.5">
                       <Clock className="w-3 h-3" />{r.readTime}{t.min}

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Clock, BarChart3 } from "lucide-react";
 import { motion } from "framer-motion";
 import type { Capsule } from "@/data/capsules";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const difficultyColor: Record<string, string> = {
   "базовий": "text-accent",
@@ -18,6 +19,8 @@ const difficultyBg: Record<string, string> = {
 };
 
 const CapsuleCard = ({ capsule, index = 0 }: { capsule: Capsule; index?: number }) => {
+  const { t, translateDifficulty } = useLanguage();
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 25 }}
@@ -32,7 +35,7 @@ const CapsuleCard = ({ capsule, index = 0 }: { capsule: Capsule; index?: number 
           </div>
           {capsule.isNew && (
             <span className="px-2.5 py-1 rounded-full bg-accent/10 text-accent text-[10px] font-bold uppercase tracking-wider">
-              Нове
+              {t.newBadge}
             </span>
           )}
         </div>
@@ -45,11 +48,11 @@ const CapsuleCard = ({ capsule, index = 0 }: { capsule: Capsule; index?: number 
         <div className="flex items-center justify-between text-xs">
           <div className="flex items-center gap-1.5 text-muted-foreground">
             <Clock className="w-3.5 h-3.5" />
-            <span>{capsule.readTime} хв</span>
+            <span>{capsule.readTime} {t.minShort}</span>
           </div>
           <div className={`flex items-center gap-1.5 px-2 py-0.5 rounded-full ${difficultyBg[capsule.difficulty]} ${difficultyColor[capsule.difficulty]} font-medium`}>
             <BarChart3 className="w-3 h-3" />
-            <span>{capsule.difficulty}</span>
+            <span>{translateDifficulty(capsule.difficulty)}</span>
           </div>
         </div>
       </Link>
