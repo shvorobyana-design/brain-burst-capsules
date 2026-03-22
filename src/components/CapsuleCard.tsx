@@ -22,12 +22,12 @@ const difficultyBg: Record<string, string> = {
 const CapsuleCard = ({ capsule, index = 0 }: { capsule: Capsule; index?: number }) => {
   const { t, lang, translateDifficulty } = useLanguage();
 
-  // Використовуємо переклад, якщо мова англійська
-  const title = lang === "en" && capsuleTranslationsEn[capsule.id]
+  // Функція, яка повертає текст залежно від мови
+  const getTitle = () => lang === "en" && capsuleTranslationsEn[capsule.id]
     ? capsuleTranslationsEn[capsule.id].title
     : capsule.title;
 
-  const shortDesc = lang === "en" && capsuleTranslationsEn[capsule.id]
+  const getShortDescription = () => lang === "en" && capsuleTranslationsEn[capsule.id]
     ? capsuleTranslationsEn[capsule.id].shortDescription
     : capsule.shortDescription;
 
@@ -54,10 +54,10 @@ const CapsuleCard = ({ capsule, index = 0 }: { capsule: Capsule; index?: number 
         </div>
 
         <h3 className="font-semibold text-foreground mb-1.5 group-hover:text-primary transition-colors">
-          {title}
+          {getTitle()}
         </h3>
         <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
-          {shortDesc}
+          {getShortDescription()}
         </p>
 
         <div className="flex items-center justify-between text-xs">
