@@ -3,6 +3,7 @@ import { Clock, BarChart3 } from "lucide-react";
 import { motion } from "framer-motion";
 import type { Capsule } from "@/data/capsules";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { capsuleTranslationsEn } from "@/data/capsules-en";
 
 const difficultyColor: Record<string, string> = {
   "базовий": "text-accent",
@@ -19,7 +20,16 @@ const difficultyBg: Record<string, string> = {
 };
 
 const CapsuleCard = ({ capsule, index = 0 }: { capsule: Capsule; index?: number }) => {
-  const { t, translateDifficulty } = useLanguage();
+  const { t, lang, translateDifficulty } = useLanguage();
+
+  // Використовуємо переклад, якщо мова англійська
+  const title = lang === "en" && capsuleTranslationsEn[capsule.id]
+    ? capsuleTranslationsEn[capsule.id].title
+    : capsule.title;
+
+  const shortDesc = lang === "en" && capsuleTranslationsEn[capsule.id]
+    ? capsuleTranslationsEn[capsule.id].shortDescription
+    : capsule.shortDescription;
 
   return (
     <motion.div
@@ -28,7 +38,10 @@ const CapsuleCard = ({ capsule, index = 0 }: { capsule: Capsule; index?: number 
       viewport={{ once: true, margin: "-40px" }}
       transition={{ delay: index * 0.06, duration: 0.45 }}
     >
-      <Link to={`/capsule/${capsule.id}`} className="block bg-card rounded-xl border border-border p-5 shadow-sm hover:shadow-lg hover:shadow-primary/8 hover:-translate-y-1 transition-all duration-300 group">
+      <Link
+        to={`/capsule/${capsule.id}`}
+        className="block bg-card rounded-xl border border-border p-5 shadow-sm hover:shadow-lg hover:shadow-primary/8 hover:-translate-y-1 transition-all duration-300 group"
+      >
         <div className="flex items-start justify-between mb-3">
           <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center text-2xl">
             {capsule.icon}
@@ -39,12 +52,14 @@ const CapsuleCard = ({ capsule, index = 0 }: { capsule: Capsule; index?: number 
             </span>
           )}
         </div>
+
         <h3 className="font-semibold text-foreground mb-1.5 group-hover:text-primary transition-colors">
-          {capsule.title}
+          {title}
         </h3>
         <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
-          {capsule.shortDescription}
+          {shortDesc}
         </p>
+
         <div className="flex items-center justify-between text-xs">
           <div className="flex items-center gap-1.5 text-muted-foreground">
             <Clock className="w-3.5 h-3.5" />
