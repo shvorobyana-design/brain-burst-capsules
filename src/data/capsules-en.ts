@@ -152,7 +152,7 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quiz: [q("Where does photosynthesis occur?", ["Mitochondria", "Chloroplasts", "Nucleus", "Ribosome"], 1), q("What is released?", ["CO₂", "Oxygen", "Nitrogen", "Hydrogen"], 1), q("What is needed?", ["Oxygen", "Light + CO₂ + H₂O", "Only water", "Only soil"], 1), q("In what phase is oxygen released?", ["Dark", "Light", "Both", "Neither"], 1)],
   },
 
-  "mitosis": {
+  "cell-division": {
     title: "Cell Division (Mitosis)",
     shortDescription: "How cells multiply",
     introduction: "Cell division is the foundation of growth, development, and repair. Without mitosis, a wound wouldn't heal and an organism couldn't grow.",
@@ -167,6 +167,117 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "Mitosis: 1 cell → 2 identical. Phases: prophase → metaphase → anaphase → telophase + cytokinesis. Before: DNA replication in interphase. Purpose: growth, repair.",
     facts: ["The human body produces millions of cells every second", "Some cells never divide (neurons)", "Cancer is uncontrolled mitosis"],
     quiz: [q("The result of mitosis?", ["1 cell", "2 identical cells", "4 cells", "8 cells"], 1), q("In what phase do chromosomes align?", ["Prophase", "Metaphase", "Anaphase", "Telophase"], 1), q("When is DNA copied?", ["Interphase", "Metaphase", "During division", "Anaphase"], 0)],
+  },
+
+  "cell-respiration": {
+    title: "Cellular Respiration",
+    shortDescription: "How cells obtain energy",
+    introduction: "Cellular respiration is the opposite process of photosynthesis. While photosynthesis stores energy in glucose, cellular respiration releases this energy to power the cell's work. This process occurs in every cell of every living organism — from bacteria to humans.",
+    theory: "**General equation:**\nC₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + 36-38 ATP\n\n**Three stages of cellular respiration:**\n\n**1. Glycolysis** (in the cytoplasm):\n- Glucose (6C) → 2 molecules of pyruvic acid (3C)\n- Output: 2 ATP + 2 NADH\n- Does not require oxygen (anaerobic)\n\n**2. Krebs Cycle** (in the mitochondrial matrix):\n- Pyruvate → acetyl-CoA → series of reactions\n- Output: 2 ATP + 8 NADH + 2 FADH₂ + 6CO₂\n- Requires oxygen\n\n**3. Electron Transport Chain (ETC)** (on the inner mitochondrial membrane):\n- NADH and FADH₂ donate electrons\n- Electrons pass through a chain of proteins\n- H⁺ gradient is used by ATP synthase\n- Output: 32-34 ATP\n- Oxygen is the final electron acceptor\n\n**Anaerobic respiration (fermentation):**\nWithout oxygen: glycolysis → lactic acid fermentation (in muscles) or alcoholic fermentation (in yeast). Output: only 2 ATP.",
+    beginnerExplanation: "Cellular respiration is the process by which cells 'burn' glucose to obtain energy (ATP). Oxygen is required for this process to be most efficient.",
+    detailedExplanation: "Cellular respiration includes glycolysis, the Krebs cycle, and the electron transport chain. The general equation is: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + 36-38 ATP.",
+    simpleExplanation: "When you eat a candy, your cells take the sugar and, with the help of oxygen, turn it into energy. It's like a tiny motor running inside every cell!",
+    keyTerms: [
+      { term: "Glycolysis", definition: "The breakdown of glucose into 2 molecules of pyruvic acid" },
+      { term: "Krebs Cycle", definition: "A series of chemical reactions used by all aerobic organisms to generate energy" },
+      { term: "ATP synthase", definition: "An enzyme that creates the energy storage molecule ATP" },
+      { term: "Fermentation", definition: "An anaerobic process of energy production without oxygen" },
+    ],
+    formulas: [
+      "C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + 36-38 ATP",
+      "Glycolysis: C₆H₁₂O₆ → 2C₃H₄O₃ + 2ATP + 2NADH",
+      "Alcoholic fermentation: C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂ + 2ATP",
+    ],
+    examples: [
+      "During a sprint, muscles need a lot of ATP. When oxygen is low, lactic acid fermentation begins → lactic acid accumulates → muscle soreness",
+      "Yeast in baking: fermentation releases CO₂ → the dough rises",
+    ],
+    problemSolving: [
+      { 
+        problem: "Why do muscles ache after intense exercise?", 
+        solution: "During rapid exertion, there isn't enough oxygen for aerobic respiration. Cells switch to lactic acid fermentation: glucose → lactic acid + 2 ATP. Lactic acid builds up in the muscles and causes pain." 
+      },
+    ],
+    quickSummary: "Cellular respiration: glucose + O₂ → CO₂ + H₂O + 36-38 ATP. Three stages: glycolysis (cytoplasm), Krebs cycle (mitochondria), ETC (mitochondrial membrane). Without O₂ — fermentation (2 ATP).",
+    facts: [
+      "One glucose molecule provides up to 38 ATP molecules", 
+      "Without oxygen, cells switch to fermentation", 
+      "Mitochondria have their own DNA", 
+      "ATP is recycled in the body ~500 times a day"
+    ],
+    quiz: [
+      q("What is required for cellular respiration?", ["Only water", "Glucose and oxygen", "Only light", "CO₂"], 1), 
+      q("Where does the main stage occur?", ["In the nucleus", "In the mitochondria", "In the membrane", "In the vacuole"], 1), 
+      q("What is the main product?", ["DNA", "ATP (energy)", "Protein", "Fat"], 1), 
+      q("How much ATP does fermentation yield?", ["38", "2", "10", "0"], 1)
+    ],
+  },
+
+  "tissue-types": {
+    title: "Human Tissue Types",
+    shortDescription: "The four primary types of tissue",
+    introduction: "A tissue is a group of cells with a similar structure that work together to perform a specific function. Understanding tissues is the foundation of anatomy and medicine. All body organs are constructed from combinations of four basic tissue types.",
+    theory: "**The 4 Types of Tissue:**\n\n**1. Epithelial Tissue:**\n- Covers body surfaces and lines internal cavities.\n- Consists of tightly packed cells with minimal intercellular substance.\n- Types: simple, stratified, glandular.\n- Examples: skin, mouth lining, blood vessel walls.\n- Functions: protection, absorption, secretion.\n\n**2. Connective Tissue:**\n- The most diverse type! Contains a large amount of intercellular matrix.\n- Subtypes: loose and dense fibrous, cartilage, bone, blood, adipose (fat).\n- Examples: bones, tendons, blood, fat tissue.\n- Functions: support, protection, transport, energy storage.\n\n**3. Muscle Tissue:**\n- Specialized for contraction and movement.\n- Skeletal (striated): voluntary control, attached to bones, enables movement.\n- Smooth: involuntary, lines organ walls (stomach, intestines, vessels).\n- Cardiac: automatic, found only in the heart, highly resistant to fatigue.\n\n**4. Nervous Tissue:**\n- Composed of neurons and glial cells.\n- Neuron structure: dendrites (receive signals) → cell body → axon (transmits signals).\n- Synapses: specialized junctions for communication between neurons.\n- Function: receiving, processing, and transmitting information throughout the body.",
+    beginnerExplanation: "The human body is made of four main types of tissue: epithelial (covering surfaces), connective (linking and supporting), muscle (enabling movement), and nervous (transmitting signals).",
+    detailedExplanation: "Epithelial tissue lines surfaces and cavities. Connective tissue includes specialized forms like blood, bone, and cartilage. Muscle tissue is categorized into skeletal, smooth, and cardiac types. Nervous tissue consists of signal-conducting neurons and supporting glial cells.",
+    simpleExplanation: "Tissue is like a team of identical cells working together. Think of them as specialized units: some protect, some move, and others send messages!",
+    keyTerms: [
+      { term: "Tissue", definition: "A group of cells with similar structure and function" },
+      { term: "Epithelium", definition: "Tissue that covers body surfaces and lines internal cavities" },
+      { term: "Neuron", definition: "A specialized nerve cell that transmits electrical impulses" },
+      { term: "Intercellular matrix", definition: "The substance found between cells, especially prominent in connective tissue" },
+    ],
+    examples: [
+      "Skin — stratified squamous epithelium: protects against mechanical damage and microbes",
+      "Blood — a liquid connective tissue: erythrocytes carry oxygen, while leukocytes fight infection",
+      "Biceps — skeletal muscle: contracts to bend the arm",
+    ],
+    quickSummary: "The 4 tissue types are: 1) Epithelial — protection and lining. 2) Connective — support and transport (bones, blood). 3) Muscle — movement (skeletal, smooth, cardiac). 4) Nervous — signal transmission.",
+    facts: [
+      "Blood is technically a specialized type of connective tissue", 
+      "The cardiac muscle works continuously without rest for a lifetime", 
+      "Nerve impulses can travel at speeds up to 120 m/s"
+    ],
+    quiz: [
+      q("How many primary tissue types are in the human body?", ["2", "4", "6", "8"], 1), 
+      q("Which tissue is responsible for transmitting signals?", ["Muscle", "Nervous", "Epithelial", "Connective"], 1), 
+      q("Which of the following is a type of connective tissue?", ["Skin", "Blood", "Muscle", "Nerve"], 1), 
+      q("Which muscle type does not get fatigued?", ["Skeletal", "Smooth", "Cardiac", "All of them"], 2)
+    ],
+  },
+
+  "nervous-system": {
+    title: "The Nervous System",
+    shortDescription: "The body's main computer",
+    introduction: "The nervous system is the most complex system in the body. It coordinates all functions: from heartbeat to thinking, from movement to emotions. The human brain remains the most complex object in the known universe.",
+    theory: "**Structure of the Nervous System:**\n\n**Central NS (CNS):**\n- Brain: cerebral hemispheres (cortex — thinking, memory), cerebellum (coordination), brainstem (vital functions)\n- Spinal cord: responsible for reflexes and acts as a conductor between the brain and the body\n\n**Peripheral NS (PNS):**\n- Somatic: controls voluntary movements (e.g., deciding to raise your hand)\n- Autonomic (autonomic): controls involuntary functions\n  - Sympathetic: 'fight or flight' (accelerates heart rate, dilates pupils)\n  - Parasympathetic: 'rest and digest' (slows heart rate, stimulates digestion)\n\n**The Neuron:**\n- Dendrites → cell body → axon (can be up to 1 meter long!)\n- Myelin sheath: an insulating layer that accelerates impulse transmission\n- Synapse: the junction between an axon and a dendrite. Neurotransmitters (dopamine, serotonin, acetylcholine) transmit signals chemically across the synaptic cleft.\n\n**Reflex Arc:**\nReceptor → afferent nerve → CNS → efferent nerve → effector (muscle or gland)",
+    beginnerExplanation: "The nervous system is a network of nerves and the brain that controls your entire body. The brain receives information from the senses, processes it, and sends commands to muscles and organs.",
+    detailedExplanation: "The system is divided into the CNS (brain and spinal cord) and the PNS (nerves). Neurons consist of dendrites, a cell body, and an axon. Communication occurs at synapses using chemical messengers called neurotransmitters.",
+    simpleExplanation: "The nervous system is like the body's internet. The brain is the server, and the nerves are the wires carrying messages to your hands, feet, and eyes!",
+    keyTerms: [
+      { term: "CNS", definition: "Central Nervous System — consisting of the brain and spinal cord" },
+      { term: "Synapse", definition: "The junction where signals are transmitted from one neuron to another" },
+      { term: "Neurotransmitter", definition: "A chemical substance that transmits signals across a synapse" },
+      { term: "Reflex", definition: "An automatic, involuntary response to a stimulus" },
+      { term: "Myelin sheath", definition: "An insulating cover for axons that speeds up electrical impulses" },
+    ],
+    examples: [
+      "The withdrawal reflex: pulling your hand away from a hot surface (receptor in skin → spinal cord → arm muscle) without involving the brain!",
+      "Dopamine release: triggered when you experience something pleasant, creating motivation to repeat the action",
+    ],
+    quickSummary: "NS = CNS (brain + spinal cord) + PNS (nerves). Neuron structure: dendrites → body → axon. Signals are transmitted via electrical impulses and chemical neurotransmitters at synapses. There are 86 billion neurons in the brain.",
+    facts: [
+      "The brain uses 20% of the body's total energy", 
+      "The total length of all nerves in the body is about 75 km", 
+      "Nerve signals travel in milliseconds", 
+      "The brain processes information faster than any current computer"
+    ],
+    quiz: [
+      q("What is the center of the nervous system?", ["Heart", "Brain", "Liver", "Stomach"], 1), 
+      q("How is a nerve signal transmitted?", ["Through blood", "By electrical impulses", "Through the air", "By water"], 1), 
+      q("Approximately how many neurons are in the brain?", ["1 million", "86 billion", "100 thousand", "1 trillion"], 1), 
+      q("What is a synapse?", ["A type of cell", "The site of signal transmission", "A part of the brain", "A hormone"], 1)
+    ],
   },
 
   "dna-structure": {
