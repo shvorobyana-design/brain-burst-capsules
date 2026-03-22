@@ -26,7 +26,11 @@ const Navbar = () => {
         <div className="container mx-auto flex items-center justify-between h-16 px-4">
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-md shadow-primary/20">
-              <Brain className="w-5 h-5 text-primary-foreground" />
+              <img 
+                src="/logo.png" 
+                alt="Brain Burst Logo" 
+                className="w-5 h-5 object-contain" 
+              />
             </div>
             <span className="text-lg font-bold tracking-tight text-foreground">
               Brain<span className="gradient-text">Capsule</span>
