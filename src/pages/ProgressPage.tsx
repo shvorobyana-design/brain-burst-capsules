@@ -1,37 +1,36 @@
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BookOpen, CheckCircle, Trophy, Star, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useProgress } from "@/hooks/useProgress";
 import { capsules } from "@/data/capsules";
 import { capsuleTranslationsEn } from "@/data/capsules-en";
 import { Progress } from "@/components/ui/progress";
 
 const ProgressPage = () => {
   const { lang, t } = useLanguage();
-  const { progress, getLevel } = useProgress();
 
-  const level = getLevel();
-  const levelLabel = lang === "en" ? level.en : level.ua;
-  const readCount = progress.readCapsules.length;
-  const testsCount = Object.keys(progress.quizResults).length;
+  // Локальний стан завершених капсул
+  const [completedCapsules, setCompletedCapsules] = useState<string[]>([]);
+
+  const markDone = (id: string) => {
+    setCompletedCapsules(prev => (prev.includes(id) ? prev : [...prev, id]));
+  };
+
   const totalCapsules = capsules.length;
+  const completedCount = completedCapsules.length;
+  const progressPercent = (completedCount / totalCapsules) * 100;
 
-  const avgScore = testsCount > 0
-    ? Math.round(Object.values(progress.quizResults).reduce((sum, r) => sum + (r.score / r.total) * 100, 0) / testsCount)
-    : 0;
+  // Показ статистики (можна адаптувати під твої старі stats)
+  const readCount = completedCount;
+  const levelLabel = `${completedCount}/${totalCapsules}`;
 
   const stats = [
     { icon: BookOpen, label: t.readCapsulesLabel, value: `${readCount}/${totalCapsules}`, gradient: "from-primary to-primary/60" },
-    { icon: CheckCircle, label: t.testsPassed, value: String(testsCount), gradient: "from-secondary to-secondary/60" },
     { icon: Trophy, label: t.knowledgeLevel, value: levelLabel, gradient: "from-accent to-accent/60" },
   ];
-
-  const recentQuizzes = Object.entries(progress.quizResults)
-    .sort(([, a], [, b]) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 10);
 
   const getCapsuleTitle = (id: string) => {
     const c = capsules.find(cap => cap.id === id);
@@ -45,7 +44,9 @@ const ProgressPage = () => {
       <Navbar />
       <div className="pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-2xl">
-          <h1 className="text-3xl font-bold mb-8">{t.yourProgress} <span className="gradient-text">{t.yourProgressHighlight}</span></h1>
+          <h1 className="text-3xl font-bold mb-8">
+            {t.yourProgress} <span className="gradient-text">{t.yourProgressHighlight}</span>
+          </h1>
 
           {/* Stats */}
           <div className="grid gap-4 mb-8">
@@ -74,63 +75,30 @@ const ProgressPage = () => {
               <span className="text-sm font-medium text-foreground">
                 {lang === "en" ? "Overall progress" : "Загальний прогрес"}
               </span>
-              <span className="text-sm text-muted-foreground">{Math.round((readCount / totalCapsules) * 100)}%</span>
+              <span className="text-sm text-muted-foreground">{Math.round(progressPercent)}%</span>
             </div>
-            <Progress value={(readCount / totalCapsules) * 100} className="h-3" />
+            <Progress value={progressPercent} className="h-4" />
           </div>
 
-          {/* Average quiz score */}
-          {testsCount > 0 && (
-            <div className="bg-card rounded-xl border border-border p-6 mb-8 shadow-sm">
-              <div className="flex items-center gap-3 mb-4">
-                <Star className="w-5 h-5 text-accent" />
-                <span className="font-semibold text-foreground">
-                  {lang === "en" ? "Average quiz score" : "Середній бал тестів"}
-                </span>
-              </div>
-              <div className="text-4xl font-bold gradient-text mb-2">{avgScore}%</div>
-              <Progress value={avgScore} className="h-2" />
-            </div>
-          )}
+          {/* Capsule buttons */}
+          <div className="bg-card rounded-xl border border-border p-6 shadow-sm grid grid-cols-2 gap-3">
+            {capsules.map((cap) => (
+              <button
+                key={cap.id}
+                onClick={() => markDone(cap.id)}
+                disabled={completedCapsules.includes(cap.id)}
+                className={`p-3 rounded-lg font-medium text-sm transition-colors ${
+                  completedCapsules.includes(cap.id)
+                    ? "bg-green-500 text-white cursor-not-allowed"
+                    : "bg-gray-200 text-foreground hover:bg-gray-300"
+                }`}
+              >
+                {getCapsuleTitle(cap.id)}
+              </button>
+            ))}
+          </div>
 
-          {/* Recent quiz results */}
-          {recentQuizzes.length > 0 && (
-            <div className="bg-card rounded-xl border border-border p-6 shadow-sm">
-              <h2 className="font-semibold text-foreground mb-4 flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-secondary" />
-                {lang === "en" ? "Quiz results" : "Результати тестів"}
-              </h2>
-              <div className="space-y-3">
-                {recentQuizzes.map(([capsuleId, result]) => {
-                  const pct = Math.round((result.score / result.total) * 100);
-                  return (
-                    <Link
-                      key={capsuleId}
-                      to={`/capsule/${capsuleId}`}
-                      className="flex items-center gap-3 p-3 rounded-xl hover:bg-muted/50 transition-colors border border-border/50 group"
-                    >
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold ${
-                        pct >= 80 ? "bg-accent/10 text-accent" : pct >= 50 ? "bg-secondary/10 text-secondary" : "bg-destructive/10 text-destructive"
-                      }`}>
-                        {pct}%
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="font-medium text-sm text-foreground group-hover:text-primary transition-colors truncate">
-                          {getCapsuleTitle(capsuleId)}
-                        </div>
-                        <div className="text-xs text-muted-foreground">
-                          {result.score}/{result.total} • {new Date(result.date).toLocaleDateString()}
-                        </div>
-                      </div>
-                      <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary shrink-0" />
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-
-          {readCount === 0 && (
+          {completedCount === 0 && (
             <p className="text-center text-muted-foreground text-sm mt-8">
               {t.startReadingProgress}
             </p>
