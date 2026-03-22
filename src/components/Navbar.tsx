@@ -25,15 +25,12 @@ const Navbar = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-xl border-b border-border shadow-sm">
         <div className="container mx-auto flex items-center justify-between h-16 px-4">
           <Link to="/" className="flex items-center gap-2 group">
-<div className="flex items-center gap-2">
+          <div className="flex items-center gap-2">
   <img 
-    src="/logo.jpg" 
+    src="src="https://img.icons8.com/external-flat-land-kalash/64/external-brain-business-concepts-flat-land-kalash.png" alt="external-brain-business-concepts-flat-land-kalash"" 
     alt="Brain Burst Logo" 
     className="w-10 h-10 object-contain hover:scale-105 transition-transform duration-200" 
   />
-  <span className="font-bold text-2xl tracking-tighter">
-    Brain<span className="text-primary">Burst</span>
-  </span>
 </div>
             <span className="text-lg font-bold tracking-tight text-foreground">
               Brain<span className="gradient-text">Capsule</span>
