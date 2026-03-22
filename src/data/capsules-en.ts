@@ -279,8 +279,61 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
       q("What is a synapse?", ["A type of cell", "The site of signal transmission", "A part of the brain", "A hormone"], 1)
     ],
   },
+  "immune-system": {
+    title: "The Immune System",
+    shortDescription: "The body's protective army",
+    introduction: "The immune system is a complex network of cells, tissues, and organs that protects the body from pathogenic microorganisms. Every day, it fends off attacks from thousands of viruses and bacteria attempting to penetrate the body.",
+    theory: "**Components of the Immune System:**\n\n**1. Innate Immunity (Non-specific):**\n- Your first line of defense.\n- Includes physical barriers (skin, mucous membranes) and specialized cells like phagocytes and natural killer (NK) cells.\n- Acts immediately but doesn't 'remember' specific threats.\n\n**2. Adaptive Immunity (Specific):**\n- Targeted defense that develops over time.\n- **B-lymphocytes**: Produce antibodies to neutralize pathogens.\n- **T-lymphocytes**: Directly destroy infected cells (cytotoxic T-cells) or coordinate the immune response (helper T-cells).\n- Creates **Immune Memory**, allowing the body to react faster upon re-exposure.\n\n**3. Organs of the Immune System:**\n- Bone marrow (site of cell production).\n- Thymus (where T-cells mature).\n- Lymph nodes and spleen (filtration and activation centers).",
+    beginnerExplanation: "The immune system is the body's defender against disease. White blood cells act like soldiers, constantly patrolling for viruses and bacteria to find and destroy them.",
+    detailedExplanation: "Immunity is divided into innate (skin, phagocytes, NK cells) and adaptive (T and B-lymphocytes). Adaptive immunity relies on antibodies and immune memory, which is the scientific basis for vaccination.",
+    simpleExplanation: "Imagine your body has tiny soldiers inside. When an enemy virus enters, they hunt it down and eliminate it to keep you healthy!",
+    keyTerms: [
+      { term: "Antibody", definition: "A protein produced by B-cells that recognizes and binds to a specific antigen" },
+      { term: "Antigen", definition: "A foreign molecule or substance that triggers an immune response" },
+      { term: "Phagocytosis", definition: "The process by which certain cells engulf and digest microbes or cellular debris" },
+      { term: "Vaccination", definition: "Introducing a weakened or inactivated pathogen to train the immune system and create memory" },
+    ],
+    quickSummary: "Immunity = Innate (general protection) + Adaptive (specific memory). B-cells produce antibodies, while T-cells handle cellular defense. Immune memory is what makes vaccines effective.",
+    facts: [
+      "Every day, your immune system identifies and destroys potentially cancerous cells", 
+      "An antibody can distinguish one specific virus from millions of other molecules", 
+      "Vaccination saves between 3.5 and 5 million lives globally every year"
+    ],
+    quiz: [
+      q("What protects the body from diseases?", ["Bones", "Immune system", "Muscles", "Skin"], 1), 
+      q("Which cells are primarily responsible for fighting infections?", ["Erythrocytes", "Leukocytes", "Platelets", "Neurons"], 1), 
+      q("What is the scientific principle behind vaccination?", ["Antibiotics", "Immune memory", "Surgery", "Special diet"], 1)
+    ],
+  },
 
-  "dna-structure": {
+  "hormones": {
+    title: "Human Hormones",
+    shortDescription: "The body's chemical messengers",
+    introduction: "Hormones are chemical substances that regulate virtually all processes in the body: from growth to mood, from sleep to reproduction. The endocrine system works more slowly than the nervous system, but its effects are long-lasting and global.",
+    theory: "**The Endocrine System and Its Functions:**\n\n**1. Major Glands:**\n- **Hypothalamus & Pituitary**: The control centers. The pituitary is often called the 'master gland' because it regulates other endocrine glands.\n- **Thyroid**: Regulates metabolism and energy levels.\n- **Adrenal Glands**: Produce adrenaline (epinephrine) for stress response.\n- **Pancreas**: Secretes insulin to regulate blood sugar.\n- **Gonads**: Produce sex hormones (estrogen, testosterone).\n\n**2. Mechanism of Action:**\n- Hormones are secreted into the bloodstream and travel to target organs.\n- They act by binding to specific receptors on target cells, similar to a key fitting into a lock.\n\n**3. Regulation:**\n- Most hormones are regulated by **Negative Feedback Loops**. When the level of a hormone is high enough, the system shuts down its production to maintain balance (homeostasis).",
+    beginnerExplanation: "Hormones are chemical substances produced by glands that travel through your blood, controlling various processes like growth, mood, appetite, and sleep.",
+    detailedExplanation: "The endocrine system includes the hypothalamus, pituitary, thyroid, adrenals, pancreas, and gonads. Hormones act via specific receptors on target cells, and their levels are primarily regulated through feedback mechanisms.",
+    simpleExplanation: "Hormones are like mail carriers delivering messages throughout your body. One says 'grow!', another says 'time to sleep!'",
+    keyTerms: [
+      { term: "Endocrine system", definition: "The network of glands that produce and secrete hormones directly into the blood" },
+      { term: "Pituitary gland", definition: "A small, pea-sized gland at the base of the brain that acts as the 'master gland' controlling others" },
+      { term: "Insulin", definition: "A hormone produced by the pancreas that lowers blood glucose levels" },
+      { term: "Feedback loop", definition: "A biological mechanism where the output of a process regulates the process itself" },
+    ],
+    quickSummary: "Hormones are chemical messengers traveling via the blood. Key glands include the pituitary (master), thyroid, adrenals, and pancreas. Regulation occurs primarily through feedback loops to maintain homeostasis.",
+    facts: [
+      "Adrenaline can significantly increase physical strength during a life-or-death crisis", 
+      "Serotonin influences mood and is often called the 'happiness hormone'", 
+      "The pituitary gland is about the size of a pea but controls almost all other glands"
+    ],
+    quiz: [
+      q("How do hormones travel through the body?", ["Via nerves", "Through the blood", "Through the skin", "Through the air"], 1), 
+      q("Which hormone regulates blood sugar levels?", ["Adrenaline", "Insulin", "Melatonin", "Serotonin"], 1), 
+      q("Which gland is referred to as the 'master gland'?", ["Thyroid", "Pituitary", "Adrenals", "Pancreas"], 1)
+    ],
+  },
+
+  "dna": {
     title: "DNA Structure",
     shortDescription: "The code of life in every cell",
     introduction: "DNA (deoxyribonucleic acid) is the molecule that stores all genetic information of a living organism. It determines eye color, height, disease predisposition, and thousands of other traits.",
@@ -464,6 +517,84 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quiz: [q("1/2 + 1/3 = ?", ["2/5", "5/6", "1/5", "3/6"], 1), q("3/4 of 100 = ?", ["25", "50", "75", "34"], 2), q("What is the numerator?", ["Bottom", "Top number", "Sign", "Whole part"], 1)],
   },
 
+  "percentages": {
+    title: "Percentages",
+    shortDescription: "A part of 100",
+    introduction: "Percentages are everywhere: store discounts, test scores, and interest rates on loans. They provide a universal way to compare parts of a whole.",
+    theory: "A **percentage** is a way of expressing a number as a fraction of 100. The symbol **%** is used to denote it.\n\n**Basic Operations:**\n* **Finding a percentage of a number**: To find $a\%$ of $b$, use the formula: $\\frac{a \\times b}{100}$.\n* **Finding a number from its percentage**: If $a\\%$ of a number is $x$, the whole number is $x \\times \\frac{100}{a}$.\n* **Percentage ratio**: To find what percentage $a$ is of $b$: $\\frac{a}{b} \\times 100\\%$.",
+    beginnerExplanation: "A percentage is one-hundredth of a number. For example, 50% is half, 25% is a quarter, and 100% is the entire whole.",
+    detailedExplanation: "1% equals 1/100. To find a percentage: $a\\% \\text{ of } b = \\frac{a}{100} \\times b$. To find the total value from a percentage: if $a\\% = x$, then $100\\% = x \\times \\frac{100}{a}$.",
+    simpleExplanation: "A percentage is like dividing something into 100 tiny pieces. 50% means you have 50 pieces out of 100!",
+    keyTerms: [
+      { term: "Percentage", definition: "One-hundredth part of a number, denoted by the % symbol" },
+    ],
+    formulas: [
+      "$a\\% \\text{ of number } b = \\frac{a \\times b}{100}$",
+      "$\\text{What part } a \\text{ is of } b: (\\frac{a}{b}) \\times 100\\%$",
+      "$\\text{Discount: new price} = \\text{price} \\times (1 - \\frac{\\text{discount}}{100})$",
+    ],
+    problemSolving: [
+      { 
+        problem: "Find 15% of 200", 
+        solution: "$15\\% \\text{ of } 200 = \\frac{15}{100} \\times 200 = 0.15 \\times 200 = 30$" 
+      },
+      { 
+        problem: "An item costs 500 UAH with a 20% discount. What is the new price?", 
+        solution: "Discount = $20\\% \\text{ of } 500 = 100$ UAH. New price = $500 - 100 = 400$ UAH. Alternatively: $500 \\times 0.8 = 400$ UAH." 
+      },
+    ],
+    quickSummary: "1% = 1/100. Percentage of a number: $(\\% \\times \\text{number}) / 100$. Used for discounts, taxes, and statistics.",
+    facts: [
+      "The % symbol appeared in 15th-century Italy", 
+      "Banks calculate interest rates on a daily basis", 
+      "100% represents the whole, while 200% means double the amount"
+    ],
+    quiz: [
+      q("50% of 80 = ?", ["40", "50", "30", "60"], 0), 
+      q("What is 1%?", ["One tenth", "One hundredth", "One thousandth", "The whole"], 1), 
+      q("A 25% discount on 400 UAH =", ["100 UAH", "200 UAH", "75 UAH", "300 UAH"], 0)
+    ],
+  },
+
+"equations-linear": {
+    title: "Linear Equations",
+    shortDescription: "Find the unknown x",
+    introduction: "Equations are the foundation of algebra. A linear equation is the simplest type: find the value of x where the left side equals the right. This is an essential skill for math, physics, chemistry, and everyday logic.",
+    theory: "**Linear equation** — an equation of the form ax + b = 0 or ax + b = cx + d.\n\n**Solving rules:**\n1. Move all x-terms to one side and numbers to the other (remember to change the sign when crossing the '=').\n2. Combine like terms on both sides.\n3. Divide both sides of the equation by the coefficient of x.\n\n**Number of solutions:**\n- One solution: a ≠ 0 → x = -b/a\n- Infinitely many solutions: occurs when a = 0 and b = 0 (e.g., 0 = 0)\n- No solutions: occurs when a = 0 and b ≠ 0 (e.g., 0 = 5)\n\n**Verification:** Always substitute the found value of x back into the original equation to ensure the identity holds true.",
+    beginnerExplanation: "A linear equation is a mathematical statement with an unknown x, like 2x + 3 = 7. Your goal is to find what number x represents to make the statement true.",
+    detailedExplanation: "For the standard form ax + b = 0, the solution is x = -b/a. The process involves transposing terms with the opposite sign and simplifying the expression through basic arithmetic.",
+    simpleExplanation: "An equation is like a riddle: 'I thought of a number, added 3, and got 7. What was the number?' In this case, x = 4!",
+    keyTerms: [
+      { term: "Equation", definition: "A mathematical statement that asserts the equality of two expressions" },
+      { term: "Root of an equation", definition: "The specific value of the unknown that makes the equation true" },
+    ],
+    formulas: [
+      "ax + b = 0 → x = -b/a (a ≠ 0)",
+      "ax + b = cx + d → (a-c)x = d-b → x = (d-b)/(a-c)",
+    ],
+    problemSolving: [
+      { 
+        problem: "Solve: 3x - 7 = 2x + 5", 
+        solution: "1. Move terms: 3x - 2x = 5 + 7\n2. Simplify: x = 12\nCheck: 3(12) - 7 = 29, 2(12) + 5 = 29 ✓" 
+      },
+      { 
+        problem: "Solve: 2(x + 3) = 5x - 9", 
+        solution: "1. Expand: 2x + 6 = 5x - 9\n2. Move terms: 6 + 9 = 5x - 2x\n3. Simplify: 15 = 3x\n4. Divide: x = 5\nCheck: 2(5+3) = 16, 5(5)-9 = 16 ✓" 
+      },
+    ],
+    quickSummary: "Linear equation: ax + b = 0 → x = -b/a. Core rules: transpose with sign change, combine terms, divide by the coefficient. Always verify your solution.",
+    facts: [
+      "Algebra originated in the 9th century thanks to the scholar al-Khwarizmi", 
+      "The '=' sign was first introduced by Robert Recorde in 1557", 
+      "Linear equations are used in computer programming logic every single day"
+    ],
+    quiz: [
+      q("x + 5 = 12, what is x?", ["5", "7", "12", "17"], 1), 
+      q("2x = 10, what is x?", ["2", "5", "10", "20"], 1), 
+      q("Solve 3x - 6 = 0:", ["2", "3", "6", "-2"], 0)
+    ],
+  },
+
   "quadratic-equations": {
     title: "Quadratic Equations",
     shortDescription: "ax² + bx + c = 0",
@@ -490,7 +621,7 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quiz: [q("D = b²−4ac. If D < 0?", ["2 roots", "1 root", "No real roots", "Infinitely many"], 2), q("x²−4 = 0. x = ?", ["±2", "±4", "2", "4"], 0), q("What does D determine?", ["Coefficients", "Number of roots", "Parabola direction", "Vertex"], 1)],
   },
 
-  "linear-functions": {
+  "linear-function": {
     title: "Linear Function",
     shortDescription: "The simplest function — a straight line",
     introduction: "A linear function is the simplest function whose graph is a straight line. It describes uniform motion and directly proportional relationships.",
@@ -638,22 +769,232 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quiz: [q("How many vowel sounds?", ["5", "6", "7", "10"], 1), q("How many letters in the alphabet?", ["26", "33", "30", "36"], 1)],
   },
 
-  "ua-parts-of-speech": {
-    title: "Parts of Speech",
-    shortDescription: "Nouns, verbs, adjectives and more",
-    introduction: "Parts of speech are the basic categories that words are divided into based on their meaning, grammatical features, and syntactic role.",
-    beginnerExplanation: "10 parts of speech: 6 independent (noun, verb, adjective, numeral, pronoun, adverb) and 4 functional (preposition, conjunction, particle, interjection).",
-    detailedExplanation: "Independent: noun (who? what?), adjective (what kind?), numeral (how many?), pronoun (replaces noun), verb (what does?), adverb (how?). Functional: preposition, conjunction, particle, interjection.",
-    simpleExplanation: "Words play different roles: nouns name things, verbs show actions, adjectives describe!",
+  "ua-stress": {
+    title: "Word Stress in Ukrainian",
+    shortDescription: "Which syllable is pronounced more strongly",
+    introduction: "Word stress is one of the most challenging topics to master in Ukrainian. Unlike languages with fixed stress, Ukrainian stress is 'free' (it can fall on any syllable) and 'mobile' (it can shift when the word changes form).",
+    theory: "**Characteristics of Ukrainian Word Stress:**\n\n1. **Dynamic**: The stressed syllable is pronounced with greater force, duration, and clarity compared to unstressed ones.\n2. **Free**: Stress is not fixed to a specific position (like the first or last syllable). It can appear anywhere: **мОре** (sea), **дорОга** (road), **молокО** (milk).\n3. **Mobile**: Stress can move to a different syllable when a word is inflected (declined or conjugated): **рУка** (hand) → **рукИ** (of the hand).\n4. **Meaning-Distinguishing**: Changing the stress can completely change the meaning of a word (**semantic role**) or its grammatical form.\n\n**Double Stress:**\nSome words in Ukrainian officially allow two correct stress positions, for example: **зАвжди** and **завждИ** (always), **пОмилка** and **помИлка** (mistake).",
+    beginnerExplanation: "Word stress is when we emphasize one syllable in a word by saying it louder and longer. In Ukrainian, this stress can move around depending on how the word is used.",
+    detailedExplanation: "Ukrainian stress is characterized by being dynamic, free, and mobile. Its mobility means it can shift between the root and the ending during declension. Crucially, stress serves a phonological function, distinguishing homographs like **зАмок** (castle) and **замОк** (lock).",
+    simpleExplanation: "Stress is like a spotlight on one part of a word. You say that part louder than the others!",
     keyTerms: [
-      { term: "Noun", definition: "A word denoting an object, person, or phenomenon" },
-      { term: "Verb", definition: "A word denoting an action or state" },
-      { term: "Adjective", definition: "A word denoting a property or quality" },
+      { term: "Free Stress", definition: "Stress that can fall on any syllable of a word" },
+      { term: "Mobile Stress", definition: "Stress that changes its position depending on the word form" },
+      { term: "Homographs", definition: "Words that are spelled the same but have different meanings and pronunciations" },
     ],
-    quickSummary: "10 parts of speech: noun, adjective, numeral, pronoun, verb, adverb + preposition, conjunction, particle, interjection. Independent and functional.",
-    facts: ["Verb has the most grammatical forms", "Pronouns replace nouns", "Interjections express emotions"],
-    quiz: [q("'Cat' is what part of speech?", ["Verb", "Noun", "Adjective", "Pronoun"], 1), q("'Run' is...", ["Noun", "Adjective", "Verb", "Adverb"], 2)],
+    examples: [
+      "Distinguishing meaning: **зАмок** (castle) vs. **замОк** (lock)",
+      "Distinguishing meaning: **мУка** (torment) vs. **мукА** (flour)",
+      "Mobile stress: **нОга** (foot) — **ногИ** (of the foot) — **нОги** (feet)",
+    ],
+    quickSummary: "Ukrainian stress is free (can be on any syllable) and mobile (shifts between word forms). It is dynamic (force-based) and can change the meaning of a word (e.g., mUka vs. mukA).",
+    facts: [
+      "Incorrect stress can completely change the meaning of a word", 
+      "Some Ukrainian words officially allow two different stress positions", 
+      "Stress is considered one of the hardest topics for foreigners learning Ukrainian"
+    ],
+    quiz: [
+      q("Word stress in the Ukrainian language is...", ["Always on the first syllable", "Free and mobile", "On the last syllable", "Non-existent"], 1), 
+      q("What can word stress change in Ukrainian?", ["Letters", "Word meaning", "Number of syllables", "The language itself"], 1),
+      q("Which word can have two correct stress positions?", ["Молоко", "Завжди", "Книга", "Дерево"], 1)
+    ],
   },
+
+  "ua-synonyms": {
+    title: "Synonyms, Antonyms, and Homonyms",
+    shortDescription: "The richness of word meanings",
+    introduction: "Lexicology studies the vocabulary of a language. Understanding synonyms, antonyms, and homonyms enriches your speech and helps you express thoughts with much greater precision.",
+    theory: "**Basic Lexical Groups:**\n\n1. **Synonyms**: Words with identical or very similar meanings but different sounds and spellings. They help avoid repetition and add subtle nuances to speech. Example: *brave* — *courageous*.\n2. **Antonyms**: Words with opposite meanings. They are used to contrast ideas and emphasize differences. Example: *day* — *night*.\n3. **Homonyms**: Words that sound or are spelled the same but have completely different, unrelated meanings.\n   - **Homophones**: Sound the same but have different spellings (e.g., *sun* — *son*).\n   - **Homographs**: Spelled the same but may have different pronunciations or meanings (e.g., *lead* as a metal vs. *lead* as a verb).\n   - **Homoforms**: Words that coincide only in specific grammatical forms.",
+    beginnerExplanation: "Synonyms are 'word friends' with the same meaning. Antonyms are 'word rivals' with opposite meanings. Homonyms are 'word twins'—they look or sound the same but mean totally different things!",
+    detailedExplanation: "Synonyms can be absolute (total) or relative (partial). Antonyms are categorized as lexical or grammatical. Homonyms include full homonyms and partial varieties like homophones, homographs, and homoforms.",
+    simpleExplanation: "Synonyms mean the same thing, antonyms are the exact opposite, and homonyms are words that look identical but have a secret second meaning!",
+    keyTerms: [
+      { term: "Synonyms", definition: "Words with identical or very similar meanings" },
+      { term: "Antonyms", definition: "Words with opposite meanings" },
+      { term: "Homonyms", definition: "Words that sound or are spelled the same but differ in meaning" },
+    ],
+    quickSummary: "Synonyms: same meaning (brave = courageous). Antonyms: opposite meaning (day ≠ night). Homonyms: same sound/spelling but different meaning (e.g., a river 'bank' vs. a financial 'bank').",
+    facts: [
+      "The Ukrainian language contains over 200,000 words",
+      "The word 'to go' (йти) has one of the highest numbers of synonyms in the Ukrainian language"
+    ],
+    quiz: [
+      q("Synonyms are words with...", ["Opposite meanings", "The same meaning", "The same sound", "The same spelling"], 1), 
+      q("Day and Night are examples of...", ["Synonyms", "Antonyms", "Homonyms", "Paronyms"], 1), 
+      q("A 'bank' (of a river) and a 'bank' (financial) are...", ["Synonyms", "Antonyms", "Homonyms", "Paronyms"], 2)
+    ],
+  },
+
+"ua-phraseology": {
+    title: "Ukrainian Idioms (Phraseologisms)",
+    shortDescription: "Fixed expressions with unique meanings",
+    introduction: "Idioms are the pearls of a language. These are fixed expressions whose meaning cannot be determined by looking at the individual words alone. They make speech vivid, colorful, and deeply cultural.",
+    theory: "**Types of Phraseological Units:**\n\n1. **Phraseological Fusions (Zroshchennia)**: Expressions where the meaning is completely detached from the literal words (e.g., 'to beat the thumbs' — to idle).\n2. **Phraseological Unities (Yednosti)**: Expressions with a figurative meaning that still has a visible link to the literal sense (e.g., 'to hold a stone in one's bosom' — to harbor a grudge).\n3. **Phraseological Combinations (Spoluchennia)**: Words that can only be used together in specific contexts.\n\n**Sources of Ukrainian Idioms:**\n- **Folk origin**: Derived from ancient crafts and daily life.\n- **Biblical and Mythological**: From world culture and religion.\n- **Literature**: Famous quotes that became fixed expressions.",
+    beginnerExplanation: "Idioms are set phrases that mean something different from the literal words. For example, 'to beat the thumbs' means to be lazy, and 'to sit in a puddle' means to disgrace yourself.",
+    detailedExplanation: "Ukrainian phraseology is classified into fusions, unities, and combinations. Their etymology often traces back to historical trades, Cossack traditions, or classic literature, reflecting the unique worldview of the Ukrainian people.",
+    simpleExplanation: "Idioms are like secret codes! When someone says they are 'biting their tongue,' they aren't actually hurting themselves—they are just staying quiet!",
+    keyTerms: [
+      { term: "Phraseology", definition: "The study of set expressions and idioms in a language" },
+      { term: "Fixed Expression", definition: "A phrase whose words cannot be changed without losing its special meaning" },
+      { term: "Etymology", definition: "The origin and historical development of a word or expression" },
+    ],
+    examples: [
+      "Бити байдики (To beat the thumbs) — To waste time or do nothing.",
+      "Пекти раків (To bake crawfish) — To blush from embarrassment.",
+      "Як кіт наплакав (As much as a cat cried) — A very tiny amount of something.",
+    ],
+    quickSummary: "Idioms (phraseologisms) are stable expressions with figurative meanings. They enrich speech and make it more expressive. Examples include 'biting your tongue' (to shut up) or 'beating the thumbs' (to idle).",
+    facts: [
+      "There are over 5,000 unique idioms in the Ukrainian language",
+      "The word 'pankatysia' (to fuss over someone) is a unique Ukrainian term often found in idioms"
+    ],
+    quiz: [
+      q("What does the idiom 'to beat the thumbs' (бити байдики) mean?", ["To break objects", "To be lazy", "To work hard", "To play music"], 1), 
+      q("An idiom (phraseologism) is best described as...", ["A single word", "A fixed expression", "A long sentence", "A whole paragraph"], 1)
+    ],
+  },
+
+  "ua-word-parts": {
+    title: "Word Structure (Morphemics)",
+    shortDescription: "Root, prefix, suffix, and ending",
+    introduction: "Morphemics is the branch of linguistics that studies the internal structure of words. Understanding morphemes helps you grasp the meaning of unfamiliar words, spell correctly, and create new words using established patterns.",
+    theory: "**Basic Components of a Word (Morphemes):**\n\n1. **Root (Корінь)**: The primary part of a word that carries its fundamental lexical meaning. All related (cognate) words share the same root. Example: *read*, *reader*, *reading*.\n2. **Prefix (Префікс)**: A part placed before the root to modify its meaning or create a new word. Examples: *un-*, *re-*, *pre-*.\n3. **Suffix (Суфікс)**: A part placed after the root. It often determines the word's grammatical category (like turning a verb into a noun). Examples: *-er*, *-ist*, *-ness*.\n4. **Ending/Inflection (Закінчення)**: The variable part at the end of a word that indicates its grammatical relationship to other words (case, number, gender, person). **The Stem (Основа)** is the entire word minus the ending.\n\n**Additional Morphemes:**\n- **Postfix**: A morpheme following the ending (e.g., *-ся* in Ukrainian verbs).\n- **Interfix**: A linking element used to combine two roots (e.g., the *o* in *speedometer*).",
+    beginnerExplanation: "A word is made of building blocks: the root (the main idea), a prefix (comes before), a suffix (comes after), and an ending (the part that changes).",
+    detailedExplanation: "Words consist of morphemes: the root, prefix, suffix, and ending. Some words also include postfixes and interfixes. The 'Stem' is the core part of the word that excludes the inflection (ending).",
+    simpleExplanation: "A word is like a LEGO set: the root is the main brick, and prefixes or suffixes are extra pieces you snap on to change what it does!",
+    keyTerms: [
+      { term: "Root", definition: "The core part of a word that holds its main meaning" },
+      { term: "Prefix", definition: "A morpheme added to the beginning of a word" },
+      { term: "Suffix", definition: "A morpheme added to the end of a word stem" },
+      { term: "Stem", definition: "The part of a word that remains after removing the ending" },
+    ],
+    examples: [
+      "при-літ-н-ій: при- (prefix), -літ- (root), -н- (suffix), -ій (ending)",
+      "пере-біг-ти: пере- (prefix), -біг- (root), -ти (infinitive suffix/ending)",
+    ],
+    quickSummary: "Morphemes: Root (meaning), Prefix (before), Suffix (after), Ending (variable part). The Stem is the word without its ending. Cognate words share the same root.",
+    facts: [
+      "The root is a mandatory part of every word", 
+      "Related (cognate) words must share the same root and have a semantic connection"
+    ],
+    quiz: [
+      q("Which part of a word is mandatory?", ["Prefix", "Suffix", "Root", "Ending"], 2), 
+      q("Where is the prefix located?", ["After the root", "Before the root", "At the very end", "In the middle"], 1), 
+      q("The Stem is everything in a word except for the...", ["Root", "Suffix", "Ending", "Prefix"], 2)
+    ],
+  },
+
+  "ua-nouns": {
+    title: "The Noun",
+    shortDescription: "Who? What? — names of objects and phenomena",
+    introduction: "The noun is the fundamental part of speech upon which all communication rests. Without nouns, it is impossible to name objects, physical phenomena, or abstract feelings. It is statistically the most frequent part of speech in any text.",
+    theory: "**Grammatical Categories of the Ukrainian Noun:**\n\n1. **Gender (Рід)**: Every noun has a fixed gender: Masculine (**чоловічий**), Feminine (**жіночий**), or Neuter (**середній**). Unlike English, gender is grammatical, not just biological.\n2. **Number (Число)**: Nouns change their forms to indicate Singular (**однина**) or Plural (**множина**).\n3. **Case (Відмінок)**: Ukrainian has **7 cases** that indicate the noun's function in a sentence. \n   - Nominative (Who? What?)\n   - Genitive\n   - Dative\n   - Accusative\n   - Instrumental\n   - Locative\n   - **Vocative (Кличний)** — used for direct address, a unique and beautiful feature of the Ukrainian language.\n4. **Declension (Відміна)**: All nouns are grouped into 4 declension types based on their gender and endings.",
+    beginnerExplanation: "A noun is a word that names a person, place, thing, or idea, answering the questions 'who?' or 'what?'. Nouns can be proper (like 'Kyiv') or common (like 'city').",
+    detailedExplanation: "Ukrainian nouns possess gender, number, and case. There are 7 cases and 4 main declension groups. Some nouns remain indeclinable (e.g., 'kafe', 'metro'), maintaining the same form regardless of their role in the sentence.",
+    simpleExplanation: "A noun is a 'name' for everything around you! Cat, book, rain, and friend—these are all nouns!",
+    keyTerms: [
+      { term: "Case", definition: "A grammatical category of a noun that shows its relationship to other words in a sentence" },
+      { term: "Declension", definition: "A group of nouns that share similar patterns of case endings" },
+      { term: "Vocative Case", definition: "The 7th case in Ukrainian used specifically for calling or addressing someone" },
+    ],
+    quickSummary: "Noun answers 'who?' or 'what?'. It has gender (M/F/N), number (Sing/Pl), and 7 cases. There are 4 declension groups. Proper nouns are capitalized. The Vocative case is used for addressing people.",
+    facts: [
+      "Ukrainian has 7 grammatical cases, while English largely relies on word order", 
+      "The noun is the most frequently used part of speech in the Ukrainian language", 
+      "The Vocative case is a distinctive feature that sets Ukrainian apart from many other Slavic languages"
+    ],
+    quiz: [
+      q("What questions does a noun answer?", ["Which?", "Who? What?", "What to do?", "Where?"], 1), 
+      q("How many cases are there in the Ukrainian language?", ["4", "6", "7", "5"], 2), 
+      q("Is 'Kyiv' a proper or a common noun?", ["Common", "Proper", "Collective", "Abstract"], 1)
+    ],
+  },
+
+  "ua-verbs": {
+    title: "The Verb",
+    shortDescription: "What to do? — action words",
+    introduction: "The verb is the 'engine' of the sentence. It provides dynamic movement, describing actions, states, and processes. Without a verb, a sentence is often incomplete and lacks direction.",
+    theory: "**Grammatical Categories of the Ukrainian Verb:**\n\n1. **Infinitive (Інфінітив)**: The initial, non-finite form that answers the question 'what to do?' or 'what to have done?'. Ends in **-ти** or **-тись/-ться**.\n2. **Aspect (Вид)**:\n   - **Imperfective**: Ongoing or repeated actions (*писати* — to write).\n   - **Perfective**: Completed actions with a result (*написати* — to have written).\n3. **Tense (Час)**:\n   - **Past**: Action occurred before the moment of speech.\n   - **Present**: Action occurring now (only for imperfective verbs).\n   - **Future**: Action that will occur later.\n4. **Mood (Спосіб)**:\n   - **Indicative**: Real actions.\n   - **Conditional**: Possible actions under certain conditions (*писав би*).\n   - **Imperative**: Commands or requests (*пиши*).\n5. **Conjugation (Дієвідміна)**: Verbs are grouped into two main conjugation classes (I and II) based on their endings in the 3rd person plural.",
+    beginnerExplanation: "A verb is a word that describes an action or a state, like 'to run' or 'to think'. It changes depending on when the action happens and who is doing it.",
+    detailedExplanation: "Ukrainian verbs possess categories of aspect, tense, mood, person, number, and gender (in the past tense). There are two main conjugation classes. The system also includes verbal forms like participles and gerunds.",
+    simpleExplanation: "A verb is an 'action word'! Jump, sing, eat—anything you can DO is a verb!",
+    keyTerms: [
+      { term: "Infinitive", definition: "The basic form of a verb that does not indicate tense or person" },
+      { term: "Conjugation", definition: "The variation of the form of a verb by which the voice, mood, tense, number, and person are identified" },
+      { term: "Aspect", definition: "A category that indicates whether an action is completed or ongoing" },
+    ],
+    quickSummary: "Verb answers 'what to do?'. Tenses: Past, Present, Future. Moods: Indicative, Conditional, Imperative. There are 2 conjugation classes and 2 aspects (perfective/imperfective).",
+    facts: [
+      "The verb is the second most frequently used part of speech in Ukrainian", 
+      "Ukrainian verbs have two main conjugation patterns based on their vowel endings"
+    ],
+    quiz: [
+      q("What does a verb signify?", ["An object", "A characteristic", "An action or state", "A quantity"], 2), 
+      q("How many primary tenses are there in Ukrainian?", ["2", "3", "4", "5"], 1), 
+      q("The Ukrainian infinitive typically ends in...", ["-ий", "-ти", "-но", "-ся"], 1)
+    ],
+  },
+
+  "ua-sentence-members": {
+    title: "Sentence Members (Syntax)",
+    shortDescription: "Subject, predicate, object, and more",
+    introduction: "Syntax is the study of how words combine to form sentences. Understanding sentence members is the absolute foundation for grammatical writing and correct punctuation.",
+    theory: "**Classification of Sentence Members:**\n\n**1. Principal Members (The Grammatical Base):**\n- **Subject (Підмет)**: The main character of the sentence. Answers: *Who? What?* Usually a noun or pronoun in the Nominative case.\n- **Predicate (Присудок)**: What the subject does or what is said about it. Answers: *What is the subject doing? What is it like?*\n\n**2. Secondary Members:**\n- **Object (Додаток)**: An object affected by the action. Answers oblique cases: *Whom? What? To whom? By what?*\n- **Modifier/Attribute (Означення)**: Describes a noun. Answers: *Which? What kind of? Whose?*\n- **Adverbial (Обставина)**: Describes the circumstances of an action. Answers: *Where? When? Why? How?*\n\n**Word Order:** In Ukrainian, word order is relatively free, but changing it often shifts the emphasis (logical stress) of the sentence.",
+    beginnerExplanation: "A sentence is built from main parts: the Subject (who/what?) and the Predicate (the action). Extra parts like Objects and Modifiers add more detail to the story.",
+    detailedExplanation: "The grammatical core consists of the Subject (Nominative) and the Predicate (simple or compound). Secondary members include Objects (direct/indirect), Modifiers (agreed/unagreed), and various types of Adverbials.",
+    simpleExplanation: "A sentence is like a theater play: the Subject is the actor, and the Predicate is what the actor is doing on stage!",
+    keyTerms: [
+      { term: "Subject", definition: "The principal member of a sentence that identifies who or what performs the action" },
+      { term: "Predicate", definition: "The principal member that tells something about the subject (action or state)" },
+      { term: "Grammatical Base", definition: "The core of the sentence consisting of the subject and the predicate" },
+      { term: "Modifier", definition: "A secondary member that characterizes an object or person" },
+    ],
+    examples: [
+      "The boy (subject) reads (predicate) an interesting (modifier) book (object) at home (adverbial).",
+    ],
+    quickSummary: "Principal members: Subject + Predicate = Grammatical Base. Secondary members: Object (whom? what?), Modifier (which?), Adverbial (where? when? how?).",
+    facts: [
+      "The subject and predicate together form the grammatical core of a sentence", 
+      "Ukrainian has a flexible word order, but the meaning can change depending on which word you put first"
+    ],
+    quiz: [
+      q("Which members form the grammatical base?", ["Object and Modifier", "Subject and Predicate", "Adverbial and Object", "Modifier and Predicate"], 1), 
+      q("What question does a Modifier (Attribute) answer?", ["Who?", "What to do?", "Which / What kind of?", "Where?"], 2)
+    ],
+  },
+
+"ua-comma-rules": {
+    title: "Comma Rules (Punctuation)",
+    shortDescription: "When and where to place a comma",
+    introduction: "Punctuation is a system of marks that clarifies the structure and meaning of sentences. The comma is the most frequently used punctuation mark in Ukrainian. Correct usage ensures your text is professional and prevents misunderstandings.",
+    theory: "**Key Comma Rules in Ukrainian:**\n\n1. **Homogeneous Members (Enumeration)**: Commas are placed between items in a list. *Example: Apples, pears, and plums grew in the garden.*\n2. **Conjunctions 'a', 'ale', 'protest'**: A comma is **always** placed before these contrasting conjunctions.\n3. **Vocatives (Addressing someone)**: Use a comma to set off the name or title of the person you are speaking to. *Example: Mother, look! or Look, mother, at this!*\n4. **Introductory Words (Vstavni Slova)**: Words like 'perhaps', 'unfortunately', or 'of course' are set off by commas. *Example: Perhaps, it will rain.*\n5. **Complex Sentences**:\n   - **Compound**: Between parts of a sentence joined by conjunctions like 'and', 'but', 'or' (if they have different subjects).\n   - **Complex**: Before subordinating conjunctions like 'that', 'because', 'which', 'if'. *Example: I know that you will come.*\n6. **Participial & Adverbial Phrases**: To set off descriptive phrases that provide extra information about an action or a noun.",
+    beginnerExplanation: "A comma is used between items in a list, before words like 'but', and when you are calling someone by name or using 'filler' words like 'maybe'.",
+    detailedExplanation: "Ukrainian punctuation requires commas for: 1) lists; 2) compound and complex sentence structures; 3) isolated secondary members; 4) direct address (vocatives); 5) parenthetical/introductory words; 6) comparative constructions starting with 'as' (як).",
+    simpleExplanation: "A comma is like a tiny pause in a sentence. It helps the reader see where one thought ends and another begins!",
+    keyTerms: [
+      { term: "Punctuation", definition: "The marks used in writing to separate sentences and clarify meaning" },
+      { term: "Homogeneous members", definition: "Words in a sentence that perform the same function and answer the same question" },
+      { term: "Vocative", definition: "A word or phrase used to address someone directly" },
+      { term: "Introductory words", definition: "Words that express the speaker's attitude or provide context but aren't part of the core grammar" },
+    ],
+    examples: [
+      "Enumeration: Apples, pears, plums.",
+      "Direct address: Mother, look!",
+      "Introductory word: Perhaps, it will rain.",
+      "Complex sentence: I know that you will come.",
+    ],
+    quickSummary: "Use commas: between list items, before 'but' (а, але, проте), before 'that/because' (що, бо, щоб), for direct addresses (Mom,...), and for introductory words (maybe, of course).",
+    facts: [
+      "The classic 'Execute, not possible to pardon' is a prime example of how one comma changes everything", 
+      "There are over 20 distinct sets of rules for comma usage in the Ukrainian language"
+    ],
+    quiz: [
+      q("A comma is always placed before...", ["Every single word", "Conjunctions 'a', 'ale'", "A period", "Every verb"], 1), 
+      q("Where should the comma be in 'Mother look'?", ["Before Mother", "After Mother", "After look", "Not needed"], 1)
+    ],
+  },
+
+
 
   "en-articles": {
     title: "Articles (a, an, the)",
@@ -843,6 +1184,32 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quiz: [q("How many sounds in English?", ["26", "33", "44", "52"], 2), q("'Th' in 'think' is...", ["/t/", "/s/", "/θ/", "/f/"], 2)],
   },
 
+  "primitive-humans": {
+    title: "Primitive Humans",
+    shortDescription: "From early hominids to Homo sapiens",
+    introduction: "The history of humanity began millions of years ago in Africa. The journey from the first human-like creatures to modern humans is a fascinating evolutionary process filled with discoveries, adaptations, and survival.",
+    theory: "**Stages of Human Evolution:**\n\n1. **Australopithecus** (4–2 million years ago): The first creatures to walk upright (bipedalism). Brain size: ~500 cm³.\n2. **Homo habilis** (2.4 million years ago): 'Handy man.' The first to create and use primitive stone tools.\n3. **Homo erectus** (1.9 million years ago): 'Upright man.' Mastered fire and was the first to migrate out of Africa into Eurasia.\n4. **Neanderthals** (400,000–40,000 years ago): Inhabited Europe and Asia. They had large brains, complex tools, and were the first to bury their dead.\n5. **Homo sapiens** (~300,000 years ago): 'Wise man' or modern humans. Characterized by complex speech, art, and abstract thinking.\n\n**The Stone Age:**\n- **Paleolithic** (Old Stone Age): Humans lived as hunter-gatherers, moving constantly and using basic stone tools.\n- **Mesolithic** (Middle Stone Age): Development of the bow and arrow, and the domestication of the first animal—the dog.\n- **Neolithic** (New Stone Age): **The Neolithic Revolution** — the monumental shift from gathering and hunting to agriculture and cattle breeding (~10,000 years ago). This led to a sedentary lifestyle and the first permanent settlements.",
+    beginnerExplanation: "Human history started in Africa. Over millions of years, early humans learned to walk on two legs, use tools, and control fire. Modern humans (Homo sapiens) appeared about 300,000 years ago.",
+    detailedExplanation: "Human evolution progressed through key species: Australopithecus, Homo habilis, Homo erectus, and Neanderthals, culminating in Homo sapiens. The Stone Age is divided into the Paleolithic, Mesolithic, and Neolithic periods, with the Neolithic Revolution marking the birth of farming.",
+    simpleExplanation: "A long time ago, people lived in caves and hunted mammoths. Later, they learned how to grow their own food, and that changed everything!",
+    keyTerms: [
+      { term: "Neolithic Revolution", definition: "The transition from hunting and gathering to farming and permanent settlements (~10,000 years ago)" },
+      { term: "Homo sapiens", definition: "The species name for modern humans ('Wise Man')" },
+      { term: "Paleolithic", definition: "The earliest period of the Stone Age, characterized by the use of chipped stone tools" },
+    ],
+    quickSummary: "Evolutionary path: Australopithecus → Homo habilis → Homo erectus → Homo sapiens. The Stone Age stages: Paleolithic, Mesolithic, Neolithic. The Neolithic Revolution brought agriculture. Homo sapiens appeared ~300,000 years ago.",
+    facts: [
+      "The oldest known stone tools are about 3.3 million years old", 
+      "Humans began controlling fire approximately 1 million years ago", 
+      "The Neolithic Revolution is considered the most important turning point in human history"
+    ],
+    quiz: [
+      q("Where did the first humans appear?", ["In Europe", "In Africa", "In Asia", "In America"], 1), 
+      q("Approximately when did Homo sapiens appear?", ["1 million years ago", "300,000 years ago", "10,000 years ago", "5,000 years ago"], 1), 
+      q("What was the 'Neolithic Revolution'?", ["A great war", "The transition to agriculture", "The discovery of fire", "The invention of the wheel"], 1)
+    ],
+  },
+
   "ancient-egypt": {
     title: "Ancient Egypt",
     shortDescription: "Civilization on the banks of the Nile",
@@ -860,6 +1227,87 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quiz: [q("The main river of Egypt?", ["Tigris", "Nile", "Amazon", "Danube"], 1), q("Who ruled Egypt?", ["Kings", "Pharaohs", "Emperors", "Presidents"], 1), q("What did Egyptians invent?", ["Compass", "365-day calendar", "Printing", "Gunpowder"], 1)],
   },
 
+  "ancient-rome": {
+    title: "The Roman Empire",
+    shortDescription: "From a small city-state to the world's greatest empire",
+    introduction: "Rome is a civilization that fundamentally reshaped the world. Roman law, the Latin language, innovative architecture, and disciplined military organization left an indelible mark on history that still influences modern society today.",
+    theory: "**The Three Eras of Rome:**\n\n1. **The Kingdom (753–509 BC)**: The legendary period of the seven kings. It ended when the Romans overthrew the monarchy to establish self-rule.\n2. **The Republic (509–27 BC)**: A period of massive expansion and internal power struggles between the **Patricians** (aristocrats) and **Plebeians** (commoners). This era saw the Punic Wars against Carthage and the rise of powerful generals like Julius Caesar.\n3. **The Empire (27 BC – 476 AD)**: Started by Augustus, the first Emperor. This period included the **Pax Romana** (Roman Peace)—two centuries of relative stability and peak territorial expansion.\n\n**Key Achievements:**\n- **Roman Law**: The basis for most modern legal systems (Twelve Tables, Justinian Code).\n- **Engineering**: Aqueducts, concrete, and a vast network of roads (50,000 miles) that connected the empire.\n- **Architecture**: Mastery of the arch and dome, exemplified by the Colosseum and the Pantheon.\n- **Language**: Latin became the foundation for the Romance languages (Italian, French, Spanish, etc.).",
+    beginnerExplanation: "Rome started as a small village in Italy and grew into a massive empire covering three continents. The Romans were master builders, lawmakers, and soldiers who created roads and buildings that still stand today.",
+    detailedExplanation: "Roman history is divided into three distinct phases: the Monarchy, the Republic, and the Empire. Key figures like Julius Caesar paved the way for emperors like Augustus. The Western Roman Empire eventually fell in 476 AD, but its cultural and legal legacy endured in the East (Byzantium) and Western Europe.",
+    simpleExplanation: "Ancient Rome was the superpower of the ancient world! They conquered almost everything around them and built amazing things like the Colosseum and roads that people still use today!",
+    keyTerms: [
+      { term: "Republic", definition: "A form of government where power is held by the people and their elected representatives" },
+      { term: "Legion", definition: "The basic military unit of the Roman army, consisting of roughly 5,000 heavy infantrymen" },
+      { term: "Pax Romana", definition: "A long period of relative peace and stability across the Roman Empire" },
+      { term: "Senate", definition: "A political institution in ancient Rome, one of the most enduring institutions in Roman history" },
+    ],
+    quickSummary: "Timeline: 753 BC - 476 AD. Evolution: Kingdom → Republic → Empire. Key figures: Julius Caesar, Augustus. Legacy: Civil law, Latin, engineering (roads, aqueducts), and military tactics.",
+    facts: [
+      "Many Roman roads are still in use after 2,000 years because of their advanced multi-layer construction", 
+      "The Colosseum could hold over 50,000 spectators and had a retractable roof (velarium)", 
+      "Latin is the ancestor of all Romance languages and is still used in scientific and legal terminology"
+    ],
+    quiz: [
+      q("When did the Western Roman Empire formally fall?", ["100 AD", "476 AD", "1000 AD", "1453 AD"], 1), 
+      q("Who was Julius Caesar?", ["A famous philosopher", "A brilliant general and statesman", "An Egyptian Pharaoh", "A Greek scientist"], 1),
+      q("What was the main combat unit of the Roman Army?", ["Phalanx", "Legion", "Horde", "Knight"], 1)
+    ],
+  },
+
+  "medieval-europe": {
+    title: "Medieval Europe",
+    shortDescription: "Knights, castles, and feudalism",
+    introduction: "The Middle Ages span a thousand years between the fall of Rome and the beginning of the Modern Era. It was an era of knights, crusades, the Black Death, and the birth of the first universities.",
+    theory: "**The Structure of the Middle Ages:**\n\n**1. Feudalism**: The dominant social and economic system. It was a hierarchy: \n- **King**: The supreme landowner.\n- **Vassals (Lords/Barons)**: Received land (fiefs) from the king in exchange for military service.\n- **Knights**: Professional warriors who protected the lords' lands.\n- **Peasants (Serfs)**: Worked the land and provided food in exchange for protection.\n\n**2. The Role of the Church**: The Catholic Church was the most powerful institution in Europe, controlling education, art, and politics. It was the only force that unified the fragmented European kingdoms.\n\n**3. Key Events:**\n- **The Crusades (1096–1291)**: Military expeditions to the Holy Land that significantly changed trade and cultural exchange between East and West.\n- **The Black Death (1347–1351)**: A devastating bubonic plague pandemic that wiped out roughly one-third of Europe's population, leading to massive social and economic shifts.\n- **The Rise of Universities**: Despite the 'Dark Ages' label, the 11th-12th centuries saw the founding of legendary universities in Bologna, Paris, and Oxford.",
+    beginnerExplanation: "The Middle Ages (5th–15th centuries) was a time of knights, grand castles, and strict social order. The Church held immense power, and the society was organized like a pyramid with the king at the top and peasants at the bottom.",
+    detailedExplanation: "Historians divide this era into the Early, High, and Late Middle Ages. It is defined by the feudal system, the dominance of Christianity, the Crusades, and the catastrophic impact of the Black Death. The period ended with the Fall of Constantinople in 1453 and the dawn of the Renaissance.",
+    simpleExplanation: "A time of knights in shining armor, stone castles, and... the plague. It was a long thousand-year bridge between the ancient world and our modern times!",
+    keyTerms: [
+      { term: "Feudalism", definition: "A social system in which people worked and fought for nobles who gave them protection and land in return" },
+      { term: "Serf", definition: "An agricultural laborer bound under the feudal system to work on his lord's estate" },
+      { term: "Vassal", definition: "A person who held land under the feudal system on conditions of homage and allegiance" },
+      { term: "The Black Death", definition: "A plague pandemic that killed millions in the mid-14th century" },
+    ],
+    quickSummary: "5th–15th centuries. Key features: Feudalism hierarchy (King → Lords → Knights → Peasants), dominance of the Church, Crusades, and the Black Death (1/3 population died). The era ended around 1453.",
+    facts: [
+      "The Black Death killed between 75 and 200 million people across Eurasia", 
+      "A full suit of plate armor could weigh up to 30 kg, but knights were trained to be surprisingly agile in it", 
+      "Most medieval peasants never traveled further than 10 km from their place of birth in their entire lives"
+    ],
+    quiz: [
+      q("Approximately how long did the Middle Ages last?", ["100 years", "~1000 years", "50 years", "2000 years"], 1), 
+      q("What was the 'Black Death'?", ["A great war", "A plague epidemic", "A period of famine", "A massive flood"], 1),
+      q("Who was at the bottom of the feudal hierarchy?", ["Knights", "Lords", "Peasants", "Kings"], 2)
+    ],
+  },
+
+  "industrial-revolution": {
+    title: "The Industrial Revolution",
+    shortDescription: "When machines changed the world",
+    introduction: "The Industrial Revolution was one of the most significant turning points in human history. It transformed agrarian societies into industrial ones and laid the foundations of the modern world as we know it today.",
+    theory: "**The Two Waves of the Industrial Revolution:**\n\n1. **The First Industrial Revolution (1760–1840)**:\n   - **Origin**: Began in Great Britain due to its coal reserves and colonial trade.\n   - **Key Inventions**: James Watt's improved steam engine (1769), the spinning jenny, and the power loom.\n   - **Primary Industries**: Textiles and coal mining.\n   - **Transportation**: Invention of the steam locomotive and steamships.\n\n2. **The Second Industrial Revolution (1870–1914)**:\n   - **Key Drivers**: Electricity, petroleum (oil), and steel.\n   - **Mass Production**: Introduction of the assembly line (notably by Henry Ford).\n   - **Communications**: Invention of the telegraph, telephone, and radio.\n\n**Social and Economic Impacts:**\n- **Urbanization**: Massive migration from rural areas to rapidly growing industrial cities.\n- **Labor Movement**: Formation of trade unions to fight for better working conditions and the end of child labor.\n- **Environmental Change**: The beginning of significant human impact on the global climate due to fossil fuel consumption.",
+    beginnerExplanation: "The Industrial Revolution started in Britain in the 18th century. It was a time when people stopped making everything by hand and started using steam engines, factories, and railways. This changed where people lived and how they worked.",
+    detailedExplanation: "The transition occurred in two main stages. The first was characterized by steam power and textile manufacturing, while the second introduced electricity, chemical production, and mass assembly lines. This period saw a massive shift in population from farms to cities (urbanization) and the birth of modern capitalism.",
+    simpleExplanation: "Before this, almost everything was made by hand. Then came machines—and one machine could do the work of a hundred people! It was the birth of the modern world.",
+    keyTerms: [
+      { term: "Urbanization", definition: "The large-scale movement of people from rural areas to cities" },
+      { term: "Industrialization", definition: "The process of developing machine production of goods on a large scale" },
+      { term: "Assembly Line", definition: "A manufacturing process where parts are added to a product in a sequential manner to create a finished product faster" },
+      { term: "Steam Engine", definition: "A machine that uses the expansion or rapid condensation of steam to generate power" },
+    ],
+    quickSummary: "18th–19th centuries, started in Britain. Key invention: James Watt’s steam engine (1769). Led to factories, railways, and urbanization. Two waves: 1) Steam & Textiles, 2) Electricity & Assembly lines.",
+    facts: [
+      "James Watt's steam engine became the primary symbol of the revolution", 
+      "London's population exploded from 1 million to 6 million in just one century", 
+      "During the early days, children as young as 6 often worked 12–16 hours a day in factories"
+    ],
+    quiz: [
+      q("Where did the Industrial Revolution begin?", ["France", "Great Britain", "Germany", "USA"], 1), 
+      q("Which invention was the primary driver of the first revolution?", ["The computer", "The steam engine", "The telephone", "The airplane"], 1),
+      q("What is urbanization?", ["Building more farms", "Moving from country to city", "Planting trees", "Staying in one place"], 1)
+    ],
+  },
+
   "ancient-greece": {
     title: "Ancient Greece",
     shortDescription: "The cradle of European civilization",
@@ -875,23 +1323,6 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "Greece: city-states (poleis). Athens — democracy. Sparta — military. Philosophers: Socrates, Plato, Aristotle. Olympics from 776 BC. Theater, architecture, science.",
     facts: ["The Olympics were held since 776 BC", "Sparta raised warriors from age 7", "The word 'democracy' is Greek"],
     quiz: [q("Who invented democracy?", ["Romans", "Egyptians", "Greeks", "Persians"], 2), q("What is a polis?", ["Temple", "City-state", "Market", "Army"], 1)],
-  },
-
-  "kyivan-rus": {
-    title: "Kyivan Rus'",
-    shortDescription: "The medieval Eastern European state",
-    introduction: "Kyivan Rus' — a medieval state that became the cradle of Ukrainian statehood. Kyiv was one of the largest cities in Europe.",
-    beginnerExplanation: "Kyivan Rus' (9th-13th century). Princes: Oleh, Olha, Volodymyr (baptism), Yaroslav the Wise. Kyiv — capital, one of Europe's largest cities.",
-    detailedExplanation: "Formation: unification of Slavic tribes. Princes, veche (assembly), boyars. Baptism of Rus' 988. Ruska Pravda — first laws. Mongol invasion 1240.",
-    simpleExplanation: "Kyivan Rus' is when Kyiv was a great capital, and Prince Volodymyr baptized the people!",
-    keyTerms: [
-      { term: "Rus'", definition: "A medieval state with its capital in Kyiv" },
-      { term: "Prince", definition: "The ruler of Rus'" },
-      { term: "Veche", definition: "A people's assembly for resolving important matters" },
-    ],
-    quickSummary: "Kyivan Rus' 9th-13th c. Capital: Kyiv. Key rulers: Oleh, Olha, Volodymyr (baptism 988), Yaroslav the Wise (Ruska Pravda). Fell to Mongol invasion in 1240.",
-    facts: ["Kyiv was one of Europe's largest cities", "Yaroslav the Wise's daughter became Queen of France", "St. Sophia Cathedral is a UNESCO site"],
-    quiz: [q("When was Rus' baptized?", ["988", "1240", "862", "1000"], 0), q("Who baptized Rus'?", ["Oleh", "Yaroslav", "Volodymyr", "Olha"], 2)],
   },
 
   "world-war-1": {
@@ -1208,25 +1639,62 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quiz: [q("Speed of light ≈ ?", ["300 km/s", "300,000 km/s", "1,000 km/s", "Speed of sound"], 1), q("Light is...", ["Only a wave", "Only a particle", "Both wave and particle", "Neither"], 2)],
   },
 
-  "nuclear-physics": {
-    title: "Nuclear Physics",
-    shortDescription: "The energy of the atomic nucleus",
-    introduction: "Nuclear physics studies the structure and properties of atomic nuclei. Nuclear energy can be used both for peaceful purposes and for weapons.",
-    beginnerExplanation: "The nucleus contains protons and neutrons. Radioactivity — spontaneous decay of nuclei. Types: alpha (α), beta (β), gamma (γ).",
-    detailedExplanation: "Radioactive decay: α (He nucleus), β (electron), γ (photon). Half-life. Nuclear reactions: fission and fusion. E=mc².",
-    simpleExplanation: "Inside the atom hides tremendous energy! Nuclear power plants use it for electricity!",
+  "black-holes": {
+    title: "Black Holes",
+    shortDescription: "The most mysterious objects in the Universe",
+    introduction: "Black holes are regions in space where gravity is so intense that nothing—not even light—can escape its pull. They typically form from the remnants of massive stars and remain among the most enigmatic phenomena in modern physics.",
+    theory: "**Anatomy and Physics of a Black Hole:**\n\n1. **The Event Horizon**: The 'point of no return.' Once an object crosses this boundary, the escape velocity required to leave exceeds the speed of light, making escape physically impossible.\n2. **The Singularity**: The center of the black hole where, according to General Relativity, matter is crushed into a point of infinite density and zero volume. Here, the known laws of physics cease to function.\n3. **The Accretion Disk**: A swirling disk of gas and dust spiraling into the black hole at relativistic speeds, emitting intense X-rays and visible light due to friction.\n4. **Schwarzschild Radius**: The specific radius to which any mass must be compressed to become a black hole.\n5. **Spaghettification**: The process where extreme tidal forces stretch an object into a thin ribbon as it approaches the singularity.",
+    beginnerExplanation: "A black hole is a region of space where gravity is so strong that even light cannot escape. It forms when a massive star dies and collapses under its own weight.",
+    detailedExplanation: "Black holes are described by the Schwarzschild and Kerr metrics in General Relativity. Key concepts include the Event Horizon, the central Singularity, and Hawking Radiation—a theoretical thermal radiation emitted by black holes due to quantum effects near the horizon.",
+    simpleExplanation: "Imagine a place in space with gravity so powerful it acts like a cosmic drain that swallows everything, including light itself!",
     keyTerms: [
-      { term: "Radioactivity", definition: "Spontaneous decay of unstable nuclei with radiation emission" },
-      { term: "Half-life", definition: "Time for half of radioactive atoms to decay" },
-      { term: "Nuclear fission", definition: "Splitting a heavy nucleus into lighter ones with energy release" },
-      { term: "Nuclear fusion", definition: "Combining light nuclei into a heavier one (as in stars)" },
+      { term: "Event Horizon", definition: "The outer boundary of a black hole beyond which nothing can escape" },
+      { term: "Singularity", definition: "The core of a black hole where density becomes infinite" },
+      { term: "Relativistic speeds", definition: "Speeds that are a significant fraction of the speed of light" },
+      { term: "Spaghettification", definition: "The vertical stretching and horizontal compression of objects falling into a black hole" },
+    ],
+    quickSummary: "Black Hole: Intense gravity traps everything, including light. Key parts: Event Horizon (boundary) and Singularity (center). Time slows down significantly near the horizon. The first-ever image was captured in 2019.",
+    facts: [
+      "There is a supermassive black hole called Sagittarius A* at the center of our Galaxy with a mass of 4 million Suns", 
+      "Time dilation: Time passes much slower near a black hole compared to an observer far away", 
+      "The first actual image of a black hole (M87*) was released in 2019 by the Event Horizon Telescope"
+    ],
+    quiz: [
+      q("What is the only thing that CANNOT escape a black hole?", ["Planets", "Even light", "Stars", "Asteroids"], 1), 
+      q("What is the name of the 'point of no return' boundary?", ["Atmosphere", "Event Horizon", "The Ring", "The Belt"], 1),
+      q("What happens to time near a black hole?", ["It stops", "It slows down", "It speeds up", "It goes backward"], 1)
+    ],
+  },
+
+  "relativity-basics": {
+    title: "Theory of Relativity",
+    shortDescription: "E = mc² and the curvature of spacetime",
+    introduction: "Einstein's Theory of Relativity is one of the greatest achievements of the human mind. It demonstrated that space and time are not absolute constants but are interwoven into a four-dimensional fabric, and gravity is the curvature of that very fabric.",
+    theory: "**Special Theory of Relativity (1905):**\n\nBased on two fundamental postulates:\n1. The laws of physics are invariant in all **Inertial Reference Frames**.\n2. The speed of light in a vacuum ($c$) is constant for all observers, regardless of their motion.\n\n**Key Consequences:**\n- **Time Dilation**: Time passes slower for an object in motion relative to a stationary observer: $t' = t / \\sqrt{1 - v^2/c^2}$.\n- **Length Contraction**: Objects appear shorter in the direction of motion: $l' = l \\cdot \\sqrt{1 - v^2/c^2}$.\n- **Mass-Energy Equivalence**: $E = mc^2$ — energy and mass are two forms of the same thing.\n\n**General Theory of Relativity (1916):**\n- Gravity is not a force acting at a distance, but a geometric property of spacetime.\n- Massive objects (like stars and planets) warp the fabric of spacetime, causing other objects to move along curved paths called **geodesics**.\n\n**Experimental Evidence:**\n- **Mercury’s Orbit**: Its precession couldn't be fully explained by Newton's laws.\n- **Gravitational Lensing**: Light from distant stars bends as it passes near the Sun.\n- **Gravitational Time Dilation**: Clocks on GPS satellites run slightly faster than those on Earth due to weaker gravity.\n- **Gravitational Waves**: Ripples in spacetime detected by LIGO in 2015.",
+    beginnerExplanation: "Space and time are linked and can change depending on how fast you move or how much gravity is around you. The famous equation $E = mc^2$ shows that a tiny bit of matter can be turned into a massive amount of energy.",
+    detailedExplanation: "Special Relativity focuses on the constant speed of light and its effects on time and mass. General Relativity explains gravity as the curvature of the spacetime fabric. Both have been proven through experiments like light deflection, GPS clock corrections, and the detection of gravitational waves.",
+    simpleExplanation: "Think of time like a rubber band: the faster you fly through space, the more that 'band' stretches, and the slower you age compared to people on Earth!",
+    keyTerms: [
+      { term: "Spacetime", definition: "A four-dimensional continuum combining three dimensions of space and one dimension of time" },
+      { term: "E = mc²", definition: "Einstein's equation proving that mass and energy are interchangeable" },
+      { term: "Inertial Frame", definition: "A frame of reference in which an object remains at rest or moves at a constant velocity unless acted upon by a force" },
+      { term: "Gravitational Waves", definition: "Ripples in the fabric of spacetime caused by massive accelerating objects" },
     ],
     formulas: [
-      "E = mc² (mass-energy equivalence)",
-      "N = N₀ · (1/2)^(t/T½)",
+      "E = mc^2",
+      "Time Dilation: t' = t / \\sqrt{1 - v^2/c^2}",
+      "Length Contraction: l' = l \\cdot \\sqrt{1 - v^2/c^2}",
     ],
-    quickSummary: "Radioactivity: α, β, γ decay. Half-life T½. Fission (NPPs) and fusion (Sun). E=mc². Nuclear energy — powerful but dangerous.",
-    facts: ["The Sun works on nuclear fusion", "Chernobyl — 1986", "E=mc² — a tiny mass = enormous energy"],
-    quiz: [q("What is radioactivity?", ["Magnetic field", "Nuclear decay", "Electric current", "Light"], 1), q("E=mc² — what does this mean?", ["Speed of light", "Mass = energy", "Mass of atom", "Charge"], 1)],
+    quickSummary: "Special Relativity: time slows down at high speeds, and mass equals energy. General Relativity: gravity is the warping of spacetime. This isn't just theory—GPS systems wouldn't work without accounting for these effects!",
+    facts: [
+      "GPS satellites must adjust their clocks by about 38 microseconds per day to account for relativity, or your location would be off by kilometers", 
+      "If you traveled at 99% of the speed of light, one year for you would be seven years for people on Earth", 
+      "The energy contained in 1 kg of mass is equivalent to a 21-megaton nuclear explosion"
+    ],
+    quiz: [
+      q("What does E=mc² primarily represent?", ["Energy equals mass times the speed of light squared", "Mass never changes", "Light is slow", "Time is absolute"], 0), 
+      q("What happens to time as an object approaches the speed of light?", ["It speeds up", "It slows down", "It stops completely", "It stays the same"], 1),
+      q("Who is the primary author of the Theory of Relativity?", ["Isaac Newton", "Albert Einstein", "Stephen Hawking", "Niels Bohr"], 1)
+    ],
   },
 };
