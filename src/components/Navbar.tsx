@@ -27,7 +27,7 @@ const Navbar = () => {
           <Link to="/" className="flex items-center gap-2 group">
           <div className="flex items-center gap-2">
   <img 
-    src="src="https://img.icons8.com/external-flat-land-kalash/64/external-brain-business-concepts-flat-land-kalash.png" alt="external-brain-business-concepts-flat-land-kalash"" 
+    src="https://img.icons8.com/external-flat-land-kalash/64/external-brain-business-concepts-flat-land-kalash.png"
     alt="Brain Burst Logo" 
     className="w-10 h-10 object-contain hover:scale-105 transition-transform duration-200" 
   />
