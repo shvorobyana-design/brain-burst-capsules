@@ -70,14 +70,19 @@ const SearchDialog = ({ open, onClose }: SearchDialogProps) => {
           <div className="flex items-center gap-3 px-4 py-3 border-b border-border">
             <Search className="w-5 h-5 text-muted-foreground shrink-0" />
             <input
-              ref={inputRef}
-              type="text"
-              autoFocus
-              value={query}
-              onChange={e => setQuery(e.target.value)}
-              placeholder={t.searchPlaceholder}
-              className="flex-1 bg-transparent outline-none text-foreground placeholder:text-muted-foreground text-sm"
-            />
+            ref={inputRef}
+            type="text"
+            autoFocus
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && results.length > 0) {
+                goTo(results[0].id);
+              }
+            }}
+            placeholder={t.searchPlaceholder}
+            className="flex-1 bg-transparent outline-none text-foreground placeholder:text-muted-foreground text-sm"
+          />
             <button onClick={onClose} className="p-1 rounded-lg hover:bg-muted transition-colors">
               <X className="w-4 h-4 text-muted-foreground" />
             </button>
