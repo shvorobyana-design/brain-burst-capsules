@@ -14,7 +14,11 @@ const Hero = () => {
   const handleSearch = (value: string) => {
     setQuery(value);
     if (value.length > 1) {
-      setSuggestions(capsules.filter(c => c.title.toLowerCase().includes(value.toLowerCase())).slice(0, 5));
+      setSuggestions(
+  capsules
+    .filter(c => (c.title || "").toLowerCase().includes(value.toLowerCase()))
+    .slice(0, 5)
+);
     } else {
       setSuggestions([]);
     }
@@ -62,12 +66,19 @@ const Hero = () => {
             <div className="bg-card rounded-2xl border-2 border-primary/20 shadow-lg shadow-primary/5 flex items-center gap-3 px-5 py-4 transition-all focus-within:border-primary/40 focus-within:shadow-xl focus-within:shadow-primary/10">
               <Search className="w-5 h-5 text-muted-foreground shrink-0" />
               <input
-                type="text"
-                value={query}
-                onChange={e => handleSearch(e.target.value)}
-                placeholder={t.heroSearchPlaceholder}
-                className="flex-1 bg-transparent outline-none text-foreground placeholder:text-muted-foreground"
-              />
+              type="text"
+              value={query}
+              onChange={e => handleSearch(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && suggestions.length > 0) {
+                  navigate(`/capsule/${suggestions[0].id}`);
+                  setSuggestions([]);
+                  setQuery("");
+                }
+              }}
+              placeholder={t.heroSearchPlaceholder}
+              className="flex-1 bg-transparent outline-none text-foreground placeholder:text-muted-foreground"
+            />
             </div>
             {suggestions.length > 0 && (
               <div className="absolute top-full left-0 right-0 mt-2 bg-card border border-border rounded-xl shadow-xl overflow-hidden z-20">
