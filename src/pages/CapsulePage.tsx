@@ -134,21 +134,17 @@ const CapsulePage = () => {
     return sameCat.slice(0, 3);
   }, [capsule]);
 
-  const heroImageUrl = useMemo(() => {
-    if (!capsule) return "";
-    return topicHeroImages[capsule.id] || subjectFallbackImages[capsule.category] || subjectFallbackImages.biology;
-  }, [capsule]);
-
-  if (!capsule) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">{t.notFound}</h1>
-          <Link to="/" className="text-primary underline">{t.toHome}</Link>
-        </div>
-      </div>
-    );
+ const heroImageUrl = useMemo(() => {
+  if (!capsule) return "";
+  
+  // 1. Спершу перевіряємо, чи є картинка в даних капсули (те, що ти вставляв)
+  if (capsule.images && capsule.images.length > 0 && capsule.images[0].url) {
+    return capsule.images[0].url;
   }
+  
+  // 2. Якщо там порожньо — беремо з хардкодженого списку або фолбек
+  return topicHeroImages[capsule.id] || subjectFallbackImages[capsule.category] || subjectFallbackImages.biology;
+}, [capsule]);
 
   const handleAnswer = (idx: number) => {
     if (answered !== null) return;
