@@ -24,7 +24,7 @@ const CategoryPage = () => {
   const { id } = useParams();
   const category = categories.find(c => c.id === id);
   const [difficulty, setDifficulty] = useState<string>("усі");
-  const { t, translateCategory, translateSection, translateDifficulty } = useLanguage();
+  const { lang, t, translateCategory, translateSection, translateDifficulty } = useLanguage();
 
   if (!category) {
     return (
@@ -97,7 +97,7 @@ const CategoryPage = () => {
               >
                 <h2 className="text-xl font-bold mb-5 flex items-center gap-3">
                   <span className={`w-1.5 h-7 rounded-full bg-gradient-to-b ${gradient}`} />
-                  {translateSection(section.id)}
+                  {lang === 'ua' ? section.name : (translateSection(section.id) || section.name)}
                   <span className="text-xs font-normal text-muted-foreground ml-1">({items.length})</span>
                 </h2>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
