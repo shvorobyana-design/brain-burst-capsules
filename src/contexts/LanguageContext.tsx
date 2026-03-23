@@ -424,9 +424,13 @@ export const sectionNameMap: Record<string, Record<Lang, string>> = {
   "chemical-bonds": { ua: "Хімічні зв'язки", en: "Chemical Bonds" },
   "reactions": { ua: "Хімічні реакції", en: "Chemical Reactions" },
   "organic": { ua: "Органічна хімія", en: "Organic Chemistry" },
-  "mechanics": { ua: "Механіка", en: "Mechanics" },
   "thermodynamics": { ua: "Термодинаміка", en: "Thermodynamics" },
-  "electromagnetism": { ua: "Електромагнетизм", en: "Electromagnetism" },
+  "mechanics": { ua: "Механіка", en: "Mechanics" },
+  "molecular": { ua: "Молекулярна фізика", en: "Molecular Physics" },
+  "electricity": { ua: "Електрика", en: "Electricity" },
+  "magnetism": { ua: "Магнетизм", en: "Magnetism" },
+  "optics": { ua: "Оптика", en: "Optics" },
+  "modern-physics": { ua: "Сучасна фізика", en: "Modern Physics"
   "optics": { ua: "Оптика", en: "Optics" },
   "nuclear": { ua: "Ядерна фізика", en: "Nuclear Physics" },
 };
