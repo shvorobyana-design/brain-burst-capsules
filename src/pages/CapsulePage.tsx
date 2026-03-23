@@ -132,10 +132,17 @@ const CapsulePage = () => {
     return sameCat.slice(0, 3);
   }, [capsule]);
 
-  const heroImageUrl = useMemo(() => {
-    if (!capsule) return "";
-    return topicHeroImages[capsule.id] || subjectFallbackImages[capsule.category] || subjectFallbackImages.biology;
-  }, [capsule]);
+const heroImageUrl = useMemo(() => {
+  if (!capsule) return "";
+
+  // 1. Спершу перевіряємо, чи є картинка в масиві images самої капсули (з capsules.ts)
+  if (capsule.images && capsule.images.length > 0 && capsule.images[0].url) {
+    return capsule.images[0].url;
+  }
+
+  // 2. Якщо в даних капсули картинки немає, беремо фолбек зі старого списку
+  return topicHeroImages[capsule.id] || subjectFallbackImages[capsule.category] || subjectFallbackImages.biology;
+}, [capsule]);
 
   if (!capsule) {
     return (
