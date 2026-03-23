@@ -430,8 +430,7 @@ export const sectionNameMap: Record<string, Record<Lang, string>> = {
   "electricity": { ua: "Електрика", en: "Electricity" },
   "magnetism": { ua: "Магнетизм", en: "Magnetism" },
   "optics": { ua: "Оптика", en: "Optics" },
-  "modern-physics": { ua: "Сучасна фізика", en: "Modern Physics"
-  "optics": { ua: "Оптика", en: "Optics" },
+  "modern-physics": { ua: "Сучасна фізика", en: "Modern Physics"},
   "nuclear": { ua: "Ядерна фізика", en: "Nuclear Physics" },
 };
 
