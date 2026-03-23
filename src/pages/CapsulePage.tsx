@@ -220,9 +220,14 @@ const heroImageUrl = useMemo(() => {
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
             {/* Hero Image */}
-            <div className="rounded-2xl overflow-hidden mb-6 border border-border shadow-sm">
-              <img src={heroImageUrl} alt={title} className="w-full h-48 md:h-64 object-cover" />
-            </div>
+{/* Hero Image - No Crop Edition */}
+<div className="w-full rounded-2xl overflow-hidden mb-8 border border-border shadow-md bg-muted/10 flex items-center justify-center">
+  <img 
+    src={heroImageUrl} 
+    alt={title} 
+    className="w-full h-auto max-h-[500px] block object-contain transition-all duration-500" 
+  />
+</div>
 
             {/* Header */}
             <div className="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6 shadow-sm">
