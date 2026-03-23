@@ -207,11 +207,11 @@ const CapsulePage = () => {
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
             {/* Hero Image */}
-            <div className="rounded-2xl overflow-hidden mb-6 border border-border shadow-sm bg-muted/30 flex items-center justify-center">
+<div className="relative w-full aspect-[21/9] md:aspect-[3/1] rounded-2xl overflow-hidden mb-6 border border-border shadow-sm">
   <img 
     src={heroImageUrl} 
     alt={title} 
-    className="w-full h-auto max-h-[300px] md:max-h-[400px] object-contain transition-all duration-500" 
+    className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-500" 
   />
 </div>
 
