@@ -92,13 +92,11 @@ const CapsulePage = () => {
   const [answered, setAnswered] = useState<number | null>(null);
   const [quizDone, setQuizDone] = useState(false);
   const [activeSection, setActiveSection] = useState("intro");
+  // ФІКС №1: Додано lang у деструктуризацію, про що я писав раніше
   const { lang, t, translateCategory, translateDifficulty } = useLanguage();
   const { markRead, saveQuizResult } = useProgress();
 
-  // Mark as read when visiting
-  useEffect(() => {
-    if (capsule) markRead(capsule.id);
-  }, [capsule, markRead]);
+  // ЗМІНА №1: Видалено автоматичне зарахування ( useEffect який тут був)
 
   // Get translated content
   const tr = useMemo(() => {
@@ -134,17 +132,21 @@ const CapsulePage = () => {
     return sameCat.slice(0, 3);
   }, [capsule]);
 
- const heroImageUrl = useMemo(() => {
-  if (!capsule) return "";
-  
-  // 1. Спершу перевіряємо, чи є картинка в даних капсули (те, що ти вставляв)
-  if (capsule.images && capsule.images.length > 0 && capsule.images[0].url) {
-    return capsule.images[0].url;
+  const heroImageUrl = useMemo(() => {
+    if (!capsule) return "";
+    return topicHeroImages[capsule.id] || subjectFallbackImages[capsule.category] || subjectFallbackImages.biology;
+  }, [capsule]);
+
+  if (!capsule) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-4">{t.notFound}</h1>
+          <Link to="/" className="text-primary underline">{t.toHome}</Link>
+        </div>
+      </div>
+    );
   }
-  
-  // 2. Якщо там порожньо — беремо з хардкодженого списку або фолбек
-  return topicHeroImages[capsule.id] || subjectFallbackImages[capsule.category] || subjectFallbackImages.biology;
-}, [capsule]);
 
   const handleAnswer = (idx: number) => {
     if (answered !== null) return;
@@ -156,6 +158,8 @@ const CapsulePage = () => {
     if (currentQ + 1 >= quiz.length) {
       setQuizDone(true);
       saveQuizResult(capsule.id, score + (answered === quiz[currentQ].answer ? 0 : 0), quiz.length);
+      // ЗМІНА №2: Додано markRead у функцію завершення тесту
+      markRead(capsule.id);
     } else {
       setCurrentQ(c => c + 1);
       setAnswered(null);
@@ -166,6 +170,8 @@ const CapsulePage = () => {
   const handleQuizDone = () => {
     setQuizDone(true);
     saveQuizResult(capsule.id, score, quiz.length);
+    // ЗМІНА №3: Додано markRead у handleQuizDone (про всяк випадок, якщо вона десь використовується)
+    markRead(capsule.id);
   };
 
   const sections = [
@@ -207,13 +213,9 @@ const CapsulePage = () => {
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
             {/* Hero Image */}
-<div className="w-full rounded-2xl overflow-hidden mb-8 border border-border shadow-md bg-muted/10">
-  <img 
-    src={heroImageUrl} 
-    alt={title} 
-    className="w-full h-auto block object-contain shadow-inner" 
-  />
-</div>
+            <div className="rounded-2xl overflow-hidden mb-6 border border-border shadow-sm">
+              <img src={heroImageUrl} alt={title} className="w-full h-48 md:h-64 object-cover" />
+            </div>
 
             {/* Header */}
             <div className="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6 shadow-sm">
@@ -451,6 +453,8 @@ const CapsulePage = () => {
                         const finalScore = score + (answered === quiz[currentQ].answer ? 0 : 0);
                         setQuizDone(true);
                         saveQuizResult(capsule.id, score, quiz.length);
+                        // ЗМІНА №4: Додано markRead в інлайнову логіку завершення тесту
+                        markRead(capsule.id);
                       } else {
                         setCurrentQ(c => c + 1);
                         setAnswered(null);
