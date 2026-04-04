@@ -1697,7 +1697,6 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
       q("Who is the primary author of the Theory of Relativity?", ["Isaac Newton", "Albert Einstein", "Stephen Hawking", "Niels Bohr"], 1)
     ],
   },
-  },
 
   "cell-structure": {
     title: "Cell Structure", shortDescription: "Organelles and their functions",
