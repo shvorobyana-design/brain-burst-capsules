@@ -34,7 +34,7 @@ export interface Capsule {
   facts: string[];
   quiz: { question: string; options: string[]; answer: number }[];
   readTime: number;
-  difficulty: "базовий" | "середній" | "поглиблений" | "олімпіадний";
+  difficulty: "базовий" | "середній" | "поглиблений" | "олімпіадний" | "усі рівні";
   icon: string;
   popular?: boolean;
   isNew?: boolean;
