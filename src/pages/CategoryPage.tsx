@@ -10,6 +10,14 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const difficulties = ["усі", "базовий", "середній", "поглиблений", "олімпіадний"] as const;
 
+const difficultyOrder: Record<string, number> = {
+  "усі рівні": 0,
+  "базовий": 1,
+  "середній": 2,
+  "поглиблений": 3,
+  "олімпіадний": 4,
+};
+
 const subjectGradient: Record<string, string> = {
   biology: "from-green-500 to-emerald-600",
   math: "from-blue-500 to-indigo-600",
@@ -84,6 +92,9 @@ const CategoryPage = () => {
             if (difficulty !== "усі") {
               items = items.filter(c => c.difficulty === difficulty);
             }
+            items = [...items].sort(
+              (a, b) => (difficultyOrder[a.difficulty] ?? 99) - (difficultyOrder[b.difficulty] ?? 99)
+            );
             if (items.length === 0) return null;
 
             return (
