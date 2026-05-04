@@ -1853,7 +1853,7 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quiz: [q("Oxidation is:", ["Gaining e⁻", "Losing e⁻", "Gaining protons", "Losing neutrons"], 1), q("Corrosion is:", ["Reduction", "Metal oxidation", "Dissolving", "Heating"], 1)],
   },
   "ua-adjectives": {
-    title: "Adjective (Прикметник)", shortDescription: "Describing characteristics",
+    title: "Adjective", shortDescription: "Describing characteristics",
     introduction: "An adjective denotes a characteristic and answers 'what kind?'",
     beginnerExplanation: "Describes objects: big, blue, tasty. Changes by gender, number, case.",
     detailedExplanation: "Types: qualitative, relative, possessive. Degrees: comparative, superlative.",
@@ -2962,5 +2962,5 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     facts: ["Socrates applied the method of critical questioning 2500 years ago", "Fake news spreads 6 times faster than the truth", "Dunning–Kruger Effect: incompetent people overestimate their knowledge[cite: 2]"],
     quiz: [q("Ad hominem is:", ["logical proof", "attacking the person instead of the argument", "a quote", "a question"], 1), q("Before believing a claim, check:", ["site color", "source and author", "text length", "font"], 1), q("Cognitive bias is:", ["correct logic", "systematic error in thinking", "emotion", "memory"], 1)],
   },
-  
+
 };
