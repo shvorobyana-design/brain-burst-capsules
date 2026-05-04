@@ -2371,9 +2371,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "From sticks to computers: the journey of numbers",
     facts: ["The word «algebra» comes from the Arabic «al-jabr»"],
     quiz: [
-      q("??? ???????? ?????", ["Греки", "Індуси", "Римляни", "Єгиптяни"], 1),
-      q("«???????? ?????» ??????? ?? ?????? ?:", ["Китаю", "Індії через арабів", "Греції", "Риму"], 1),
-      q("??? ??????? ???????????? ???????", ["Піфагор", "Ньютон і Лейбніц", "Евклід", "Архімед"], 1),
+      q("Who invented zero?", ["Greeks", "Indians", "Romans", "Egyptians"], 1),
+      q("The «Arabic numerals» came to Europe from:", ["China", "India via Arabs", "Greece", "Rome"], 1),
+      q("Who invented calculus?", ["Pythagoras", "Newton and Leibniz", "Euclid", "Archimedes"], 1),
     ],
   },
   "ua-history-language": {
@@ -2389,9 +2389,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "From Old Rus' to modern Ukrainian",
     facts: ["Ukrainian ranks 25th in the world by number of speakers"],
     quiz: [
-      q("??? ???????????? ???? ?????????? ???????????", ["Шевченко", "Котляревський", "Франко", "Леся Українка"], 1),
-      q("?? ???? ???'? ???????? ???????????", ["Уральської", "Індоєвропейської", "Алтайської", "Семітської"], 1),
-      q("???? ?????? «??????» ???????????????", ["1698", "1798", "1898", "1998"], 1),
+      q("Who founded modern Ukrainian literature?", ["Shevchenko", "Kotliarevsky", "Franko", "Lesia Ukrainka"], 1),
+      q("Ukrainian belongs to which family?", ["Uralic", "Indo-European", "Altaic", "Semitic"], 1),
+      q("When was «Eneida» published?", ["1698", "1798", "1898", "1998"], 1),
     ],
   },
   "ua-language-tips": {
@@ -2407,9 +2407,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "How to master the language faster",
     facts: ["Regularity matters more than session length"],
     quiz: [
-      q("?? ???? ???????", ["Креслення", "Дослівний переклад", "Синонім", "Антонім"], 1),
-      q("????? ????????? ????????:", ["3 год раз на тиждень", "20 хв щодня", "Тільки правила", "Тільки тести"], 1),
-      q("«???????? ??????» — ??:", ["Норма", "Калька з російської", "Архаїзм", "Діалект"], 1),
+      q("What is a calque?", ["A drawing", "A literal translation", "A synonym", "An antonym"], 1),
+      q("Best learning practice:", ["3 hrs once a week", "20 min daily", "Only rules", "Only tests"], 1),
+      q("«Приймати участь» is:", ["A norm", "A calque from Russian", "An archaism", "A dialect"], 1),
     ],
   },
   "chem-history": {
@@ -2425,9 +2425,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "From alchemy to modern science",
     facts: ["Mendeleev saw the periodic table in a dream"],
     quiz: [
-      q("??? ??????? ?????????? ????????", ["Бойль", "Менделєєв", "Лавуазьє", "Кюрі"], 1),
-      q("? ???? ??????? ??????", ["З математики", "З алхімії", "З астрономії", "З медицини"], 1),
-      q("????? ?????????? ???? ???????????:", ["Ньютон", "Лавуазьє", "Бор", "Резерфорд"], 1),
+      q("Who founded scientific chemistry?", ["Boyle", "Mendeleev", "Lavoisier", "Curie"], 1),
+      q("Chemistry grew out of:", ["Mathematics", "Alchemy", "Astronomy", "Medicine"], 1),
+      q("Who formulated the law of mass conservation:", ["Newton", "Lavoisier", "Bohr", "Rutherford"], 1),
     ],
   },
   "hist-byzantine": {
@@ -2443,9 +2443,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "The thousand-year heir of Rome",
     facts: ["Constantinople was the largest city in Europe for over 1000 years"],
     quiz: [
-      q("???? ????? ?????????", ["1054", "1204", "1453", "1492"], 2),
-      q("??? ??????????? ??????? ??????", ["Костянтин", "Юстиніан", "Феодосій", "Василій"], 1),
-      q("????'?????? ?????? ????????:", ["Юстиніан", "Кирило і Мефодій", "Володимир", "Ярослав"], 1),
+      q("When did Byzantium fall?", ["1054", "1204", "1453", "1492"], 2),
+      q("Who compiled the Justinian Code?", ["Constantine", "Justinian", "Theodosius", "Basil"], 1),
+      q("The Slavic alphabet was created by:", ["Justinian", "Cyril and Methodius", "Volodymyr", "Yaroslav"], 1),
     ],
   },
   "hist-enlightenment": {
@@ -2461,9 +2461,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "Reason against superstition",
     facts: ["Diderot's «Encyclopédie» comprised 35 volumes"],
     quiz: [
-      q("??? ??????????? ????? ??????", ["Локк", "Монтеск'є", "Вольтер", "Руссо"], 1),
-      q("??? ????????? ???????? ??????????????", ["Промислову", "Американську і Французьку", "Жовтневу", "Аграрну"], 1),
-      q("???????? ????? ?? ?????? — ??:", ["Привілеї монарха", "Життя, свобода, власність", "Тільки власність", "Право на бунт"], 1),
+      q("Who proposed separation of powers?", ["Locke", "Montesquieu", "Voltaire", "Rousseau"], 1),
+      q("Enlightenment ideas inspired:", ["The Industrial Revolution", "American and French Revolutions", "October Revolution", "Agrarian reforms"], 1),
+      q("Natural rights according to Locke are:", ["Monarch's privileges", "Life, liberty, property", "Property only", "Right to revolt"], 1),
     ],
   },
   "hist-cold-war-deep": {
@@ -2479,9 +2479,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "Geopolitical clash of two systems",
     facts: ["In 1962, nuclear war was closer than ever"],
     quiz: [
-      q("???? ???? ????????? ??????", ["1956", "1962", "1968", "1979"], 1),
-      q("??? — ??:", ["США + союзники", "СРСР + союзники", "ООН", "ЄС"], 1),
-      q("???? ???????? ?????", ["1989", "1991", "1993", "1985"], 1),
+      q("When was the Cuban Missile Crisis?", ["1956", "1962", "1968", "1979"], 1),
+      q("NATO is:", ["USA + allies", "USSR + allies", "UN", "EU"], 0),
+      q("The Cold War ended in:", ["1989", "1991", "1993", "1985"], 1),
     ],
   },
   "hist-olymp-ukraine-statehood": {
@@ -2497,9 +2497,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "From Kyivan Rus' to today",
     facts: ["Orlyk's Constitution is one of the world's first written constitutions"],
     quiz: [
-      q("???? ???????? ??????????? ???????", ["1648", "1710", "1764", "1848"], 1),
-      q("??? ??????? «?????? ??????»?", ["Володимир", "Ярослав Мудрий", "Данило", "Хмельницький"], 1),
-      q("???? ???????????? ???????????? ???????:", ["22.01.1918", "24.08.1991", "01.12.1991", "28.06.1996"], 1),
+      q("When was Orlyk's Constitution?", ["1648", "1710", "1764", "1848"], 1),
+      q("Who compiled «Rus'ka Pravda»?", ["Volodymyr", "Yaroslav the Wise", "Danylo", "Khmelnytsky"], 1),
+      q("When was Ukrainian independence declared:", ["22.01.1918", "24.08.1991", "01.12.1991", "28.06.1996"], 1),
     ],
   },
   "hist-olymp-revolutions": {
@@ -2515,9 +2515,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "How revolutions reshaped the world",
     facts: ["1989 is called the «year of miracles» for the peaceful fall of communism"],
     quiz: [
-      q("???? ??????????? ??????????", ["1905", "1911", "1917", "1925"], 1),
-      q("???????? ????????? ?????????:", ["1959", "1969", "1979", "1989"], 2),
-      q("«??????????» ????????? ????????? ?:", ["Польщі", "Чехословаччині", "Угорщині", "НДР"], 1),
+      q("When was the Xinhai Revolution?", ["1905", "1911", "1917", "1925"], 1),
+      q("The Iranian Revolution happened in:", ["1959", "1969", "1979", "1989"], 2),
+      q("The «Velvet Revolution» began in:", ["Poland", "Czechoslovakia", "Hungary", "East Germany"], 1),
     ],
   },
   "hist-olymp-totalitarianism": {
@@ -2533,9 +2533,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "Nature and consequences of totalitarianism",
     facts: ["H. Arendt analyzed the phenomenon in «Origins of Totalitarianism» (1951)"],
     quiz: [
-      q("??? ?????? ?????? ??????????????", ["К. Маркс", "Х. Арендт", "М. Вебер", "З. Фройд"], 1),
-      q("????????? ?????? ?:", ["1921–22", "1932–33", "1946–47", "1937–38"], 1),
-      q("????? ?????????:", ["1 млн", "3 млн", "6 млн", "12 млн"], 2),
+      q("Who analyzed totalitarianism?", ["K. Marx", "H. Arendt", "M. Weber", "S. Freud"], 1),
+      q("The Holodomor occurred in:", ["1921–22", "1932–33", "1946–47", "1937–38"], 1),
+      q("Holocaust victims:", ["1 million", "3 million", "6 million", "12 million"], 2),
     ],
   },
   "hist-source-types": {
@@ -2551,9 +2551,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "How historians learn about the past",
     facts: ["The oldest written sources are Sumerian clay tablets (~3500 BCE)"],
     quiz: [
-      q("?? ?????? ???????????", ["Зорі", "Речові джерела", "Документи", "Мови"], 1),
-      q("??????? — ??:", ["Картина", "Хронологічний запис", "Закон", "Карта"], 1),
-      q("??? ??????? ?'??????? ? XX ??.?", ["Писемні", "Аудіовізуальні", "Речові", "Усні"], 1),
+      q("What does archaeology study?", ["Stars", "Material sources", "Documents", "Languages"], 1),
+      q("A chronicle is:", ["A painting", "A chronological record", "A law", "A map"], 1),
+      q("What new source type appeared in the 20th century?", ["Written", "Audiovisual", "Material", "Oral"], 1),
     ],
   },
   "hist-timeline-skill": {
@@ -2569,9 +2569,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "Navigating eras and dates",
     facts: ["The Gregorian (our) calendar was introduced in 1582"],
     quiz: [
-      q("1500 ?. — ??:", ["XV ст.", "XVI ст.", "XIV ст.", "XVII ст."], 0),
-      q("???? ???????? ??????????????", ["476 р.", "1000 р.", "1492 р.", "1914 р."], 0),
-      q("«?? ?.?.» ???????:", ["до нашої ери", "до Нового року", "до неділі", "до наказу"], 0),
+      q("1500 CE belongs to:", ["15th c.", "16th c.", "14th c.", "17th c."], 0),
+      q("When did Ancient history end?", ["476 CE", "1000 CE", "1492 CE", "1914 CE"], 0),
+      q("«BCE» stands for:", ["Before Common Era", "Before New Year", "Before Sunday", "Before Decree"], 0),
     ],
   },
   "hist-why-history": {
@@ -2587,9 +2587,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "Lessons from the past for the future",
     facts: ["Herodotus is called the «father of history» (5th c. BCE)"],
     quiz: [
-      q("??? «?????? ???????»?", ["Платон", "Геродот", "Аристотель", "Цезар"], 1),
-      q("??????? ?????????:", ["Передбачати погоду", "Розуміти сучасність", "Лікувати хвороби", "Будувати мости"], 1),
-      q("?????? ???????? ???:", ["Любов", "Минуле", "Гроші", "Війну"], 1),
+      q("Who is the «father of history»?", ["Plato", "Herodotus", "Aristotle", "Caesar"], 1),
+      q("Studying history helps to:", ["Predict weather", "Understand the present", "Cure diseases", "Build bridges"], 1),
+      q("History studies:", ["Love", "The past", "Money", "War"], 1),
     ],
   },
   "phys-length-time": {
@@ -2605,9 +2605,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "How to accurately measure anything",
     facts: ["The meter was first defined as 1/40,000,000 of the Paris meridian"],
     quiz: [
-      q("1 ? = ? ??", ["10", "100", "1000", "10000"], 2),
-      q("??????? ?????? ? ???????", ["60", "360", "1000", "3600"], 3),
-      q("???????? ??????????????:", ["1 см", "1 мм", "0.1 мм", "0.001 мм"], 2),
+      q("1 m = ? cm", ["10", "100", "1000", "10000"], 1),
+      q("Seconds in one hour:", ["60", "360", "1000", "3600"], 3),
+      q("Caliper precision:", ["1 cm", "1 mm", "0.1 mm", "0.001 mm"], 2),
     ],
   },
   "phys-density": {
@@ -2623,9 +2623,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "Why iron sinks and oil floats",
     facts: ["Osmium has the highest density of natural substances (~22,600 kg/m³)"],
     quiz: [
-      q("??????? ???????:", ["ρ=mV", "ρ=m/V", "ρ=V/m", "ρ=m+V"], 1),
-      q("??????? ????:", ["100 кг/м³", "1000 кг/м³", "10000 кг/м³", "10 кг/м³"], 1),
-      q("???? ???????? ???????", ["Він легкий", "Середня густина < води", "Має мотор", "Магія"], 1),
+      q("Density formula:", ["ρ=mV", "ρ=m/V", "ρ=V/m", "ρ=m+V"], 1),
+      q("Density of water:", ["100 kg/m³", "1000 kg/m³", "10000 kg/m³", "10 kg/m³"], 1),
+      q("Why does a ship float?", ["It's light", "Average density < water", "It has an engine", "Magic"], 1),
     ],
   },
   "phys-olymp-kinematics": {
@@ -2641,9 +2641,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "Complex motion problems",
     facts: ["Max projectile range is at 45° (no air resistance)"],
     quiz: [
-      q("??? ????? ???? ????????? ????????????", ["30°", "45°", "60°", "90°"], 1),
+      q("At what angle is range maximum?", ["30°", "45°", "60°", "90°"], 1),
       q("v² = ?", ["v₀+2ax", "v₀²+2aΔx", "v₀-at", "v₀²-at"], 1),
-      q("?????? ??????? ???????:", ["Заборонена", "Спрощує задачу", "Змінює фізику", "Не існує"], 1),
+      q("Changing reference frame:", ["Is forbidden", "Simplifies the problem", "Changes physics", "Doesn't exist"], 1),
     ],
   },
   "phys-olymp-circuits": {
@@ -2659,9 +2659,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "Complex resistor and capacitor networks",
     facts: ["Resistance of a cube of edges R between opposite vertices = 5R/6"],
     quiz: [
-      q("?????????? ?'??????? ?????????????:", ["C=C₁+C₂", "1/C=1/C₁+1/C₂", "C=C₁·C₂", "C=C₁-C₂"], 1),
-      q("???? ??????? ? ?????:", ["= напрузі", "= 0", "= опору", "= ∞"], 1),
-      q("???? ???? (R ?? ??????) ??? ???????????? ?????????:", ["R", "5R/6", "R/6", "2R"], 1),
+      q("Series capacitors:", ["C=C₁+C₂", "1/C=1/C₁+1/C₂", "C=C₁·C₂", "C=C₁-C₂"], 1),
+      q("Sum of currents at a node:", ["= voltage", "= 0", "= resistance", "= ∞"], 1),
+      q("Cube resistance (R per edge) between opposite vertices:", ["R", "5R/6", "R/6", "2R"], 1),
     ],
   },
   "phys-history": {
@@ -2677,9 +2677,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "From Archimedes to Einstein",
     facts: ["Newton invented calculus for mechanics"],
     quiz: [
-      q("??? ??????????? ????? ????????", ["Архімед", "Галілей", "Ньютон", "Ейнштейн"], 1),
-      q("???????????????? ??????:", ["Ейнштейн", "Максвелл", "Бор", "Планк"], 1),
-      q("????? ?????? ???????? ?:", ["1995", "2005", "2012", "2020"], 2),
+      q("Who formulated the law of inertia?", ["Archimedes", "Galileo", "Newton", "Einstein"], 1),
+      q("Electromagnetism was described by:", ["Einstein", "Maxwell", "Bohr", "Planck"], 1),
+      q("The Higgs boson was discovered in:", ["1995", "2005", "2012", "2020"], 2),
     ],
   },
   "phys-units-si": {
@@ -2695,9 +2695,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "International System of Units",
     facts: ["Since 2019, the kilogram is defined via Planck's constant"],
     quiz: [
-      q("??????? ??????? ??????? ? ???", ["5", "6", "7", "8"], 2),
-      q("??????? «????-» =", ["10⁻³", "10⁻⁶", "10⁻⁹", "10⁻¹²"], 2),
-      q("1 ?????? = ?", ["кг·м", "кг·м/с", "кг·м/с²", "кг/с"], 2),
+      q("How many base SI units are there?", ["5", "6", "7", "8"], 2),
+      q("The prefix «nano-» =", ["10⁻³", "10⁻⁶", "10⁻⁹", "10⁻¹²"], 2),
+      q("1 newton = ?", ["kg·m", "kg·m/s", "kg·m/s²", "kg/s"], 2),
     ],
   },
   "phys-everyday": {
@@ -2713,9 +2713,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     quickSummary: "How physics works every day",
     facts: ["Mars's sky is reddish from dust, not gas"],
     quiz: [
-      q("???? ???? ?????", ["Бо повітря синє", "Розсіювання Релея", "Так бачить око", "Через озон"], 1),
-      q("???? ????? ???????", ["Тяга мотора", "Різниця тиску над/під крилом", "Магніти", "Гелій"], 1),
-      q("?????????????? ????????:", ["Тільки м'ясо", "Молекули води", "Метал", "Повітря"], 1),
+      q("Why is the sky blue?", ["Air is blue", "Rayleigh scattering", "Eyes perceive it so", "Because of ozone"], 1),
+      q("Why does a plane fly?", ["Engine thrust", "Pressure difference above/below wing", "Magnets", "Helium"], 1),
+      q("A microwave heats:", ["Only meat", "Water molecules", "Metal", "Air"], 1),
     ],
   },
 };
