@@ -440,6 +440,7 @@ export const difficultyMap: Record<string, Record<Lang, string>> = {
   "середній": { ua: "середній", en: "medium" },
   "поглиблений": { ua: "поглиблений", en: "advanced" },
   "олімпіадний": { ua: "олімпіадний", en: "olympic" },
+  "усі рівні": { ua: "усі рівні", en: "all levels" },
 };
 
 interface LanguageContextType {
