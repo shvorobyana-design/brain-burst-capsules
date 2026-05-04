@@ -1953,6 +1953,9 @@ export const capsules: Capsule[] = [
       { term: "Лейкоцити", definition: "Білі кров'яні тільця, захист від інфекцій" },
       { term: "Гемоглобін", definition: "Білок еритроцитів, що зв'язує кисень" },
     ],
+    images: [
+      { url: "https://cdn.slidesharecdn.com/ss_thumbnails/random-230527112841-8956eb19-thumbnail.jpg?width=640&height=640&fit=bounds", caption: "" },
+    ],
     quickSummary: "Серце: 4 камери, 2 кола кровообігу. Артерії→капіляри→вени. Еритроцити (O₂), лейкоцити (захист), тромбоцити (згортання).",
     facts: ["Серце б'ється ~100 000 разів на день", "Довжина судин — 100 000 км", "Еритроцит живе ~120 днів"],
     quiz: [q("Кисень переносять:", ["Лейкоцити", "Еритроцити", "Тромбоцити", "Плазма"], 1), q("Камер у серці:", ["2", "3", "4", "6"], 2), q("Кіл кровообігу:", ["1", "2", "3", "4"], 1)],
@@ -1972,6 +1975,9 @@ export const capsules: Capsule[] = [
       { term: "Рецесивний алель", definition: "Алель, що проявляється лише у гомозиготному стані" },
       { term: "Генотип", definition: "Сукупність генів організму" },
       { term: "Фенотип", definition: "Зовнішній прояв генотипу" },
+    ],
+    images: [
+      { url: "https://naurok.com.ua/uploads/files/845544/218267/234197_images/4.jpg", caption: "" },
     ],
     formulas: ["F₁: Aa × Aa → 1AA : 2Aa : 1aa", "Фенотипове розщеплення F₂: 3:1", "Дигібридне: 9:3:3:1"],
     quickSummary: "3 закони Менделя. I: F₁ однорідне. II: F₂ = 3:1. III: незалежне комбінування = 9:3:3:1.",
@@ -2480,6 +2486,9 @@ export const capsules: Capsule[] = [
       q("Скільки кодонів у генетичному коді?", ["20", "32", "64", "128"], 2),
       q("Стартовий кодон:", ["UAA", "AUG", "GCU", "UGA"], 1),
     ],
+    images: [
+      { url: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijezkVX8aU3J0xh1d4eTs75afqICjBST1ZCiR0VVM7H9y6qMvpWnXkN0RPqcxqGx_sE2I7xbeNOhEfzjMPbtk7qrl2Yu2X0YpCf9ETl5o00tIm65p_ZTc0tgvwkRddfm3jENXgNEj_bqQ/s1600/Translation_overall_scheme.jpg", caption: "" },
+    ],
     readTime: 10, difficulty: "поглиблений", icon: "🧬", isNew: true,
   }),
   cap({
@@ -2644,6 +2653,9 @@ export const capsules: Capsule[] = [
       { term: "Кросинговер", definition: "Обмін ділянками гомологічних хромосом" },
       { term: "Закон Харді–Вайнберга", definition: "p² + 2pq + q² = 1 для частот генотипів" },
     ],
+    images: [
+      { url: "https://naurok.com.ua/uploads/files/980342/220322/236302_images/1.jpg", caption: "" },
+    ],
     formulas: ["p + q = 1", "p² + 2pq + q² = 1", "відстань (сМ) = % рекомбінації"],
     quickSummary: "Закон Моргана. X-зчеплення. Аналіз родоводів. Харді–Вайнберг p²+2pq+q²=1.",
     facts: ["Морган дослідив дрозофіл — отримав Нобеля", "Гемофілія була в королівській родині Європи", "Закон Харді–Вайнберга — основа популяційної генетики"],
@@ -2724,6 +2736,9 @@ export const capsules: Capsule[] = [
       q("Конкурентний інгібітор:", ["знижує Vmax", "підвищує Km", "знищує фермент", "не діє"], 1),
       q("Алостерія — регуляція через:", ["активний сайт", "регуляторний сайт", "температуру", "pH"], 1),
     ],
+    images: [
+      { url: "https://studfile.net/html/2706/1060/html_3zRW38uOa3.Gsqf/img-GsDI_a.png", caption: "" },
+    ],
     readTime: 10, difficulty: "поглиблений", icon: "🧪", isNew: true,
   }),
   cap({
@@ -2744,6 +2759,9 @@ export const capsules: Capsule[] = [
       q("Вакцинація формує:", ["вроджений імунітет", "набуту імунну пам'ять", "алергію", "аутоімунітет"], 1),
       q("Фагоцитоз — це:", ["синтез ДНК", "поглинання патогена клітиною", "поділ", "дихання"], 1),
     ],
+    images: [
+      { url: "https://naurok.com.ua/uploads/files/101703/238273/257705_images/8.jpg", caption: "" },
+    ],
     readTime: 10, difficulty: "поглиблений", icon: "🛡️", isNew: true,
   }),
   cap({
@@ -2756,6 +2774,9 @@ export const capsules: Capsule[] = [
       { term: "Ємність середовища (K)", definition: "Максимальна чисельність популяції, яку витримує середовище" },
       { term: "Правило 10%", definition: "На кожному трофічному рівні передається ~10% енергії" },
       { term: "Лотка–Вольтерра", definition: "Модель циклічної динаміки хижак–жертва" },
+    ],
+    images: [
+      { url: "https://www.batrachos.com/%D0%9B%D0%BE%D1%82%D0%BA%D0%B0%26%D0%92%D0%BE%D0%BB%D1%8C%D1%82%D0%B5%D1%80%D1%80%D0%B0", caption: "" },
     ],
     formulas: ["dN/dt = rN(1 − N/K)", "dx/dt = αx − βxy", "dy/dt = δxy − γy"],
     quickSummary: "Логістика: rN(1−N/K). Хижак–жертва: коливання. Енергія: −90% на рівень.",
@@ -2785,6 +2806,9 @@ export const capsules: Capsule[] = [
       q("Цикл Кребса відбувається у:", ["цитозолі", "матриксі мітохондрії", "ядрі", "ЕПР"], 1),
       q("Скільки ~ATP з 1 NADH?", ["1", "2.5", "10", "0"], 1),
       q("АТФ-синтазу обертає:", ["O₂", "градієнт H⁺", "глюкоза", "CO₂"], 1),
+    ],
+    images: [
+      { url: "https://medstudy.online/uploads/Tca/%D0%A6%D1%82%D0%BA.jpeg", caption: "" },
     ],
     readTime: 12, difficulty: "олімпіадний", icon: "⚡", isNew: true,
   }),
@@ -2828,6 +2852,9 @@ export const capsules: Capsule[] = [
       q("Роздільна здатність світлового мікроскопа ~", ["1 мм", "200 нм", "0.1 нм", "1 м"], 1),
       q("ТЕМ — це:", ["світловий", "трансмісійний електронний", "телескоп", "лупа"], 1),
       q("GFP походить з:", ["бактерії", "медузи", "людини", "рослини"], 1),
+    ],
+    images: [
+      { url: "https://rakurs.by/image/data/blog/image3.jpg", caption: "" },
     ],
     readTime: 7, difficulty: "усі рівні", icon: "🔬", isNew: true,
   }),
