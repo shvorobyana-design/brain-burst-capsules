@@ -2776,7 +2776,7 @@ export const capsules: Capsule[] = [
       { term: "Лотка–Вольтерра", definition: "Модель циклічної динаміки хижак–жертва" },
     ],
     images: [
-      { url: "https://www.batrachos.com/%D0%9B%D0%BE%D1%82%D0%BA%D0%B0%26%D0%92%D0%BE%D0%BB%D1%8C%D1%82%D0%B5%D1%80%D1%80%D0%B0", caption: "" },
+      { url: "https://www.elicit-plant.com/app/uploads/sites/4/2026/02/Climate-Review-2025-Water-Stress-Impact-on-Agriculture.jpg", caption: "" },
     ],
     formulas: ["dN/dt = rN(1 − N/K)", "dx/dt = αx − βxy", "dy/dt = δxy − γy"],
     quickSummary: "Логістика: rN(1−N/K). Хижак–жертва: коливання. Енергія: −90% на рівень.",
