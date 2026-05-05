@@ -10,6 +10,7 @@ import CategoryPage from "./pages/CategoryPage";
 import CategoriesPage from "./pages/CategoriesPage";
 import RandomPage from "./pages/RandomPage";
 import ProgressPage from "./pages/ProgressPage";
+import FinalTestPage from "./pages/FinalTestPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/capsule/:id" element={<CapsulePage />} />
             <Route path="/category/:id" element={<CategoryPage />} />
+            <Route path="/category/:id/final-test" element={<FinalTestPage />} />
             <Route path="/categories" element={<CategoriesPage />} />
             <Route path="/random" element={<RandomPage />} />
             <Route path="/progress" element={<ProgressPage />} />
