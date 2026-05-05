@@ -300,7 +300,7 @@ Object.assign(ua, {
   finalTestProgress: "Виконано",
 });
 
-const en: Translations = {
+const en = {
   home: "Home",
   categories: "Categories",
   progress: "Progress",
