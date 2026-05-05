@@ -2123,9 +2123,6 @@ export const capsules: Capsule[] = [
       { term: "Гуманізм", definition: "Філософія, що ставить людину та її цінності в центр" },
       { term: "Ренесанс", definition: "Відродження — культурний рух XIV-XVI ст." },
     ],
-    images: [
-      { url: "https://cdn.pragmatika.media/2023/02/%D1%81%D0%BC%D0%B5%D1%80%D1%82%D1%8C-%D1%81%D0%BE%D0%BA%D1%80%D0%B0%D1%82%D0%B0-%D0%BB%D1%8E%D1%82%D0%B8%D0%B9-2023-scaled.jpg", caption: "" },
-    ],
     quickSummary: "XIV-XVI ст. Гуманізм. Леонардо, Мікеланджело, Рафаель. Коперник, Галілей. Книгодрукування 1450. Людина — міра всього.",
     facts: ["Мона Ліза — найвідоміша картина світу", "Гутенберг змінив світ книгодрукуванням", "Леонардо був і художником, і вченим, і інженером"],
     quiz: [q("Ренесанс почався в:", ["Франції", "Англії", "Італії", "Німеччині"], 2), q("Автор «Мони Лізи»:", ["Мікеланджело", "Рафаель", "Леонардо", "Боттічеллі"], 2), q("Книгодрукування:", ["Гутенберг", "Коперник", "Галілей", "Ньютон"], 0)],
@@ -2231,6 +2228,9 @@ export const capsules: Capsule[] = [
     problemSolving: [
       { problem: "10 г солі в 200 г розчину. ω = ?", solution: "ω = 10/200 × 100% = 5%" },
     ],
+  images: [
+      { url: "https://dovidka.biz.ua/wp-content/uploads/2022/10/rozchynni-ta-nerozchynni-rechovyny-1-642x400.jpg", caption: "" },
+    ],
     quickSummary: "Розчин = розчинник + речовина. ω = m(реч)/m(розч)×100%. C = n/V (моль/л).",
     facts: ["Кров — складний розчин", "Морська вода — ~3.5% солі", "Газовані напої — розчин CO₂ у воді"],
     quiz: [q("ω — це:", ["Молярність", "Масова частка", "Об'єм", "Маса"], 1), q("5 г у 100 г розчину, ω=:", ["5%", "10%", "50%", "0.5%"], 0)],
@@ -2238,7 +2238,7 @@ export const capsules: Capsule[] = [
   }),
 
   cap({
-    id: "organic-chemistry-intro", title: "Основи органічної хімії", category: "chemistry", section: "organic",
+    id: "organic-chemistry-intro", title: "Органічна хімія", category: "chemistry", section: "organic",
     shortDescription: "Хімія сполук Карбону",
     introduction: "Органічна хімія — хімія сполук Карбону. Відомо понад 20 мільйонів органічних речовин — від метану до ДНК.",
     theory: "**Карбон (C)** — основа органіки. Валентність IV, утворює ланцюги та кільця.\n\n**Класи:**\n- **Алкани** CₙH₂ₙ₊₂ (метан CH₄, етан C₂H₆)\n- **Алкени** CₙH₂ₙ (етилен C₂H₄) — подвійний зв'язок\n- **Алкіни** CₙH₂ₙ₋₂ (ацетилен C₂H₂) — потрійний зв'язок\n- **Спирти** R-OH (етанол C₂H₅OH)\n- **Карбонові кислоти** R-COOH (оцтова CH₃COOH)\n- **Естери** — продукт кислоти + спирту\n\n**Ізомерія** — однакова формула, різна будова.",
@@ -2249,6 +2249,9 @@ export const capsules: Capsule[] = [
       { term: "Алкани", definition: "Насичені вуглеводні CₙH₂ₙ₊₂ з одинарними зв'язками" },
       { term: "Ізомерія", definition: "Явище, коли речовини мають однакову формулу, але різну будову" },
       { term: "Функціональна група", definition: "Атом або група атомів, що визначає хімічні властивості" },
+    ],
+    images: [
+      { url: "https://naurok-test2.nyc3.digitaloceanspaces.com/3477247/images/121927_1677835582.jpg", caption: "" },
     ],
     quickSummary: "C — основа. Алкани CₙH₂ₙ₊₂, алкени CₙH₂ₙ, алкіни CₙH₂ₙ₋₂. Спирти -OH, кислоти -COOH. Ізомерія — різна будова.",
     facts: ["Відомо 20+ млн органічних сполук", "Алмаз і графіт — обидва з C", "Нафта — суміш вуглеводнів"],
@@ -2267,6 +2270,9 @@ export const capsules: Capsule[] = [
       { term: "Окиснення", definition: "Процес втрати електронів" },
       { term: "Відновлення", definition: "Процес набуття електронів" },
       { term: "Ступінь окиснення", definition: "Умовний заряд атома в сполуці" },
+    ],
+    images: [
+      { url: "https://naurok.com.ua/uploads/files/290701/386477/440456_images/2.jpg", caption: "" },
     ],
     formulas: ["Окиснення: X - ne⁻ → X⁺ⁿ", "Відновлення: Y + ne⁻ → Y⁻ⁿ"],
     quickSummary: "Окиснення: втрата e⁻. Відновлення: набуття e⁻. Горіння, корозія, дихання — ОВР.",
@@ -2547,6 +2553,9 @@ export const capsules: Capsule[] = [
       { term: "Катод", definition: "Електрод, на якому відбувається відновлення" },
       { term: "Закон Фарадея", definition: "m = (M·I·t)/(n·F)" },
     ],
+    images: [
+      { url: "https://naurok-test2.nyc3.digitaloceanspaces.com/uploads/test/2896/1347457/347395_1647694024.jpg", caption: "" },
+    ],
     formulas: ["E° = E°(к) - E°(а)", "m = (M·I·t)/(n·F)", "F = 96485 Кл/моль"],
     quickSummary: "Гальванічний елемент: E° = E°(к)-E°(а). Електроліз за законом Фарадея m=MIt/(nF).",
     facts: ["Літій-іонні батареї живлять смартфони", "Алюміній отримують саме електролізом", "Корозія металу — мимовільна електрохімічна реакція"],
@@ -2688,6 +2697,9 @@ export const capsules: Capsule[] = [
       { term: "Лімітуючий реагент", definition: "Реагент у нестачі, обмежує кількість продукту" },
       { term: "Вихід реакції η", definition: "Відношення практичної маси до теоретичної" },
       { term: "Закон Дальтона", definition: "P_заг = ΣPᵢ для суміші газів" },
+    ],
+    images: [
+      { url: "https://studfile.net/html/2706/1080/html_zB2cI5YvhS.q80q/img-0T5YlS.png", caption: "" },
     ],
     formulas: ["n = m/M = V/22.4 (н.у.)", "η = (m_практ/m_теор)·100%", "P_заг = ΣPᵢ"],
     quickSummary: "Лімітуючий реагент = min(n/ν). Вихід η. Закон Дальтона для газових сумішей.",
@@ -2935,6 +2947,9 @@ export const capsules: Capsule[] = [
       { term: "Плавлення", definition: "Перехід з твердого в рідкий стан" },
       { term: "Сублімація", definition: "Перехід з твердого одразу в газ (наприклад, сухий лід)" },
     ],
+    images: [
+      { url: "https://svitppt.com.ua/images/18/17273/770/img1.jpg", caption: "" },
+    ],
     examples: ["Лід (тв.) → вода (рід.) → пара (газ)", "Сухий лід (CO₂) сублімує при -78 °C", "Йод сублімує при нагріванні"],
     quickSummary: "4 стани: тверде, рідке, газ, плазма. Переходи залежать від температури і тиску.",
     facts: ["Більшість речовин у Всесвіті — у стані плазми", "Сухий лід не плавиться, а одразу випаровується"],
@@ -2958,6 +2973,9 @@ export const capsules: Capsule[] = [
       { term: "Ентальпія (H)", definition: "Функція стану, енергія системи при p=const" },
       { term: "Екзотермічна реакція", definition: "Виділяє тепло, ΔH < 0" },
       { term: "Закон Гесса", definition: "ΔH реакції не залежить від шляху, лише від стану" },
+    ],
+    images: [
+      { url: "https://disted.edu.vn.ua/media/images/diadera/%D0%97%D0%BC%D1%96%D0%BD%D0%B0_%D0%B5%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BF%D1%96%D1%97_1024x439.png", caption: "" },
     ],
     formulas: ["ΔH = Σ ΔH°f(прод.) − Σ ΔH°f(реаг.)", "Q = c·m·ΔT (теплота нагрівання)"],
     examples: ["Згоряння метану: CH₄ + 2O₂ → CO₂ + 2H₂O, ΔH = −890 кДж/моль", "Розчинення NH₄NO₃ — ендотермічне (охолоджує)"],
@@ -2987,6 +3005,9 @@ export const capsules: Capsule[] = [
       { term: "Енергія активації", definition: "Мінімальна енергія для початку реакції" },
       { term: "Каталізатор", definition: "Речовина, що пришвидшує реакцію без витрати" },
     ],
+    images: [
+      { url: "https://uahistory.co/pidruchniki/savchin-chemistry-9-class-2022-reissue/savchin-chemistry-9-class-2022-reissue.files/image100.jpg", caption: "" },
+    ],
     formulas: ["v = k·[A]^a·[B]^b", "k = A·e^(−Ea/RT)", "v₂/v₁ = γ^(ΔT/10)"],
     examples: ["Pt-каталізатор у автокаталізаторах знижує Ea згоряння CO", "Ферменти — біокаталізатори, що працюють при 37°C"],
     problemSolving: [
@@ -3014,6 +3035,9 @@ export const capsules: Capsule[] = [
       { term: "Константа рівноваги Kc", definition: "Відношення добутків рівноважних концентрацій з показниками = коефіцієнтам" },
       { term: "Принцип Ле Шательє", definition: "Система зміщує рівновагу, протидіючи зовнішньому впливу" },
       { term: "ICE-таблиця", definition: "Метод розрахунку рівноважних концентрацій" },
+    ],
+    images: [
+      { url: "https://naurok.com.ua/uploads/files/294698/201604/217607_images/8.jpg", caption: "" },
     ],
     formulas: ["Kc = [C]^c[D]^d / ([A]^a[B]^b)", "Kp = Kc·(RT)^Δn"],
     examples: ["N₂ + 3H₂ ⇌ 2NH₃: підвищення p зміщує вправо (менше молей)", "Реакція Габера-Боша оптимізована за Ле Шательє"],
@@ -3043,6 +3067,9 @@ export const capsules: Capsule[] = [
       { term: "Відновник", definition: "Віддає електрони, окиснюється" },
       { term: "Диспропорціонування", definition: "Один елемент одночасно і окиснюється, і відновлюється" },
     ],
+    images: [
+      { url: "https://naurok.com.ua/uploads/files/290701/386477/440456_images/9.jpg", caption: "" },
+    ],
     examples: ["KMnO₄+HCl(конц)→MnCl₂+Cl₂+KCl+H₂O", "Cl₂+2NaOH→NaCl+NaClO+H₂O (диспропорц.)"],
     problemSolving: [
       { problem: "Збалансувати: FeSO₄ + KMnO₄ + H₂SO₄ → ...", solution: "Fe²⁺→Fe³⁺ (−1e), Mn⁺⁷→Mn²⁺ (+5e). Множники 5 і 1: 10FeSO₄+2KMnO₄+8H₂SO₄→5Fe₂(SO₄)₃+2MnSO₄+K₂SO₄+8H₂O." },
@@ -3070,6 +3097,9 @@ export const capsules: Capsule[] = [
       { term: "Витяжка", definition: "Шафа з вентиляцією для роботи з леткими речовинами" },
       { term: "SDS", definition: "Паспорт безпеки речовини (Safety Data Sheet)" },
     ],
+    images: [
+      { url: "https://uahistory.co/pidruchniki/yaroshenko-chemistry-7-class-2024-reissue/yaroshenko-chemistry-7-class-2024-reissue.files/image012.jpg", caption: "" },
+    ],
     examples: ["Розведення H₂SO₄: лити кислоту тонким струменем у воду, помішуючи", "Робота з Br₂ — тільки під витяжкою"],
     quickSummary: "Окуляри, халат, кислоту у воду, не нюхати, знати SDS, вогнегасник поруч.",
     facts: ["Перші лабораторії з'явилися в епоху алхімії", "Сучасні SDS-документи мають 16 розділів за міжнародним стандартом"],
@@ -3094,6 +3124,9 @@ export const capsules: Capsule[] = [
       { term: "Розпушувач", definition: "Виділяє CO₂ при нагріванні (NaHCO₃, амоній)" },
       { term: "Накип", definition: "CaCO₃, утворюється при кип'ятінні жорсткої води" },
     ],
+    images: [
+      { url: "https://cdn.abo.media/upload/article/o_1h7uf5ej912ggle11jtb19oqtc51k.jpg", caption: "" },
+    ],
     examples: ["Шипучий напій: сода+лимонна к-та→CO₂", "Видалення накипу оцтом: CaCO₃+2CH₃COOH→Ca(CH₃COO)₂+CO₂+H₂O"],
     quickSummary: "Сода — CO₂. Мило — омилення. Іржа — окиснення Fe. Накип — CaCO₃.",
     facts: ["Перше мило знали ще шумери 4500 років тому", "Тефлон винайшли випадково в 1938 р."],
@@ -3117,6 +3150,9 @@ export const capsules: Capsule[] = [
       { term: "Кислота", definition: "Речовина, що віддає H⁺ у воді" },
       { term: "Основа", definition: "Речовина, що віддає OH⁻ або приймає H⁺" },
       { term: "pH", definition: "Показник кислотності: −lg[H⁺], від 0 до 14" },
+    ],
+    images: [
+      { url: "https://fs02.vseosvita.ua/02006zhs-194e-1200x630.png", caption: "" },
     ],
     formulas: ["pH = −lg[H⁺]", "[H⁺]·[OH⁻] = 10⁻¹⁴"],
     examples: ["Шлунковий сік pH≈1.5 (HCl)", "Кров pH≈7.4", "Мило pH≈9-10"],
@@ -3834,6 +3870,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Алхімія", definition: "Передвісник хімії; пошуки філософського каменя" },
       { term: "Закон збереження маси", definition: "Маса речовин до реакції = масі після (Лавуазьє)" },
+    ],
+    images: [
+      { url: "https://static.cdn.bukischool.com.ua/blog_image/wX/wu/wXwukZvhN5ZnpOMsP5lHyNj2EYIFiK1KABagSTGG.jpg", caption: "" },
     ],
     quickSummary: "Від алхімії до сучасної науки",
     facts: ["Менделєєв побачив періодичну таблицю уві сні"],
