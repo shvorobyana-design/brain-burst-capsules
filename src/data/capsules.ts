@@ -2123,6 +2123,9 @@ export const capsules: Capsule[] = [
       { term: "Гуманізм", definition: "Філософія, що ставить людину та її цінності в центр" },
       { term: "Ренесанс", definition: "Відродження — культурний рух XIV-XVI ст." },
     ],
+    images: [
+      { url: "https://cdn.pragmatika.media/2023/02/%D1%81%D0%BC%D0%B5%D1%80%D1%82%D1%8C-%D1%81%D0%BE%D0%BA%D1%80%D0%B0%D1%82%D0%B0-%D0%BB%D1%8E%D1%82%D0%B8%D0%B9-2023-scaled.jpg", caption: "" },
+    ],
     quickSummary: "XIV-XVI ст. Гуманізм. Леонардо, Мікеланджело, Рафаель. Коперник, Галілей. Книгодрукування 1450. Людина — міра всього.",
     facts: ["Мона Ліза — найвідоміша картина світу", "Гутенберг змінив світ книгодрукуванням", "Леонардо був і художником, і вченим, і інженером"],
     quiz: [q("Ренесанс почався в:", ["Франції", "Англії", "Італії", "Німеччині"], 2), q("Автор «Мони Лізи»:", ["Мікеланджело", "Рафаель", "Леонардо", "Боттічеллі"], 2), q("Книгодрукування:", ["Гутенберг", "Коперник", "Галілей", "Ньютон"], 0)],
@@ -2139,6 +2142,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Бастилія", definition: "Фортеця-в'язниця, штурм якої 14 липня 1789 — початок революції" },
       { term: "Декларація прав людини", definition: "Документ 1789 р. про свободу, рівність та права громадян" },
+    ],
+    images: [
+      { url: "https://24tv.ua/resources/photos/news/201712/905701.jpg?v=1661280596000", caption: "" },
     ],
     quickSummary: "1789-1799. Штурм Бастилії, Декларація прав, республіка, терор, Наполеон. «Свобода, рівність, братерство».",
     facts: ["14 липня — національне свято Франції", "Гільйотину вважали «гуманним» винаходом", "Революція змінила навіть календар"],
@@ -2157,6 +2163,9 @@ export const capsules: Capsule[] = [
       { term: "Акт проголошення незалежності", definition: "Документ від 24 серпня 1991 р. про незалежність України" },
       { term: "Референдум", definition: "Всенародне голосування з важливого питання" },
     ],
+    images: [
+      { url: "https://engage.org.ua/wp-content/uploads/2026/02/d0b4d0b5d0bdd18c-d0bdd0b5d0b7d0b0d0bbd0b5d0b6d0bdd0bed181d182d196-d183d0bad180d0b0d197d0bdd0b8.webp", caption: "" },
+    ],
     quickSummary: "24.08.1991 — Акт незалежності. 01.12.1991 — референдум (90.32% за). Перший Президент: Кравчук. Україна — незалежна держава.",
     facts: ["90.32% проголосували за незалежність", "Україна — найбільша країна Європи (за площею)", "Гривня стала валютою у 1996 р."],
     quiz: [q("Дата незалежності:", ["24.08.1990", "24.08.1991", "01.12.1991", "01.01.1992"], 1), q("Результат референдуму:", ["50%", "75%", "90%", "99%"], 2), q("Перший Президент:", ["Кучма", "Кравчук", "Ющенко", "Порошенко"], 1)],
@@ -2173,6 +2182,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Холодна війна", definition: "Глобальне протистояння США та СРСР без прямого конфлікту" },
       { term: "Залізна завіса", definition: "Умовна межа між капіталістичним та соціалістичним блоками" },
+    ],
+    images: [
+      { url: "https://babel.ua/static/content/nqyjccwr/thumbs/1200x630/7/43/8f63ef371d249dc31f244c24a0abb437.jpeg?v=7534", caption: "" },
     ],
     quickSummary: "1947-1991. США vs СРСР. НАТО vs Варшавський договір. Гонка озброєнь, космос, Берлінська стіна. Кінець: розпад СРСР.",
     facts: ["Карибська криза — найближче до ядерної війни", "Берлінська стіна простояла 28 років", "Гагарін — перша людина в космосі"],
@@ -2275,6 +2287,9 @@ export const capsules: Capsule[] = [
       { term: "Якісний прикметник", definition: "Називає ознаку, що може бути більшою або меншою (великий)" },
       { term: "Відносний прикметник", definition: "Називає ознаку через відношення до предмета (дерев'яний)" },
     ],
+    images: [
+      { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKoAGAt5BwtFL3zexk8Gf44AftClQmfp4geQ&s", caption: "" },
+    ],
     quickSummary: "Який? яка? яке? Розряди: якісні, відносні, присвійні. Ступені порівняння: вищий, найвищий.",
     facts: ["Якісні мають ступені порівняння", "Присвійні — вказують на належність", "Прикметник узгоджується з іменником"],
     quiz: [q("Прикметник відповідає на:", ["Що?", "Який?", "Де?", "Коли?"], 1), q("«Дерев'яний» — який розряд?", ["Якісний", "Відносний", "Присвійний", "Числовий"], 1)],
@@ -2291,6 +2306,9 @@ export const capsules: Capsule[] = [
     simpleExplanation: "Апостроф — маленький значок, який каже: «ці букви читай окремо!»",
     keyTerms: [
       { term: "Апостроф", definition: "Орфографічний знак ('), що вказує на роздільну вимову" },
+    ],
+    images: [
+      { url: "https://redfoxschool.com/media/blog/16/%D0%B0%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D1%84_%D1%82%D0%B5%D0%BA%D1%81%D1%82.jpeg", caption: "" },
     ],
     quickSummary: "Після б, п, в, м, ф, р(+ голосний) перед я, ю, є, ї. Після префіксів (з'їзд). Не ставиться після приголосний + б,п,в,м,ф (свято).",
     facts: ["Апостроф — унікальна риса українського правопису", "Найпоширеніші помилки — саме з апострофом", "У 2019 р. правопис було оновлено"],
@@ -2309,6 +2327,9 @@ export const capsules: Capsule[] = [
     simpleExplanation: "Past Continuous — ніби натиснув паузу у фільмі: «Що відбувалося саме в цей момент?»",
     keyTerms: [
       { term: "Past Continuous", definition: "Час для тривалих дій у минулому: was/were + V-ing" },
+    ],
+    images: [
+      { url: "https://www.onlinemathlearning.com/image-files/past-continuous-tense.png", caption: "" },
     ],
     formulas: ["(+) S + was/were + V-ing", "(-) S + was/were + not + V-ing", "(?) Was/Were + S + V-ing?"],
     quickSummary: "was/were + V-ing. Тривала дія в момент минулого. While — паралельні дії. When — переривання.",
@@ -2331,6 +2352,9 @@ export const capsules: Capsule[] = [
       { term: "Second Conditional", definition: "Нереальна/уявна умова в теперішньому" },
       { term: "Third Conditional", definition: "Нереальна умова в минулому (жаль)" },
     ],
+    images: [
+      { url: "https://naurok.com.ua/uploads/files/57033/234544/250501_images/5.jpg", caption: "" },
+    ],
     quickSummary: "0: факти. 1: if+PrS, will+V. 2: if+PaS, would+V. 3: if+PaPe, would have+V3.",
     facts: ["«If I were» — were для всіх осіб у 2nd", "3rd Conditional — для вираження жалю", "Mixed conditionals теж існують!"],
     quiz: [q("If it rains, I ___ (stay).", ["would stay", "will stay", "stayed", "stay"], 1), q("If I were you, I ___.", ["will go", "would go", "go", "went"], 1), q("2nd Conditional — для:", ["Фактів", "Реального", "Нереального теперішнього", "Минулого"], 2)],
@@ -2347,6 +2371,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Passive Voice", definition: "Пасивний стан: підмет зазнає дії, а не виконує її" },
       { term: "Past Participle (V3)", definition: "Третя форма дієслова (written, done, made)" },
+    ],
+    images: [
+      { url: "https://vkurse.ua/wp-content/uploads/2025/11/10-rechen-v-pasyvnomu-stani-na-anglijskij-movi.png", caption: "" },
     ],
     formulas: ["Passive = be + V3", "Present: is/are + V3", "Past: was/were + V3", "Future: will be + V3"],
     quickSummary: "be + V3. Active→Passive: об'єкт стає підметом. By — вказує виконавця. Всі часи можна зробити пасивними.",
@@ -2733,6 +2760,9 @@ export const capsules: Capsule[] = [
       { term: "Ad hominem", definition: "Помилка: критика особи замість аргументу" },
       { term: "Хибна дилема", definition: "Подача складного питання як вибору з двох варіантів" },
       { term: "Когнітивне упередження", definition: "Систематична помилка мислення" },
+    ],
+    images: [
+      { url: "https://web-dev-goit.s3.eu-north-1.amazonaws.com/app/uploads/2025/02/12164135/chto-takoe-krytycheskoe-m-shlenye.png", caption: "" },
     ],
     quickSummary: "Перевіряй джерела. Шукай логічні помилки. Враховуй когнітивні упередження.",
     facts: ["Сократ застосовував метод критичних запитань 2500 років тому", "Фейкові новини поширюються у 6 разів швидше за справжні", "Ефект Даннінга–Крюгера: некомпетентні переоцінюють свої знання"],
@@ -3267,6 +3297,9 @@ export const capsules: Capsule[] = [
       { term: "Займенник", definition: "Частина мови, що вказує на предмет/ознаку, не називаючи" },
       { term: "Особовий займенник", definition: "Я, ти, він, вона, воно, ми, ви, вони" },
     ],
+    images: [
+      { url: "https://dovidka.biz.ua/wp-content/uploads/2020/09/rechennya-z-zaymennikami.jpg", caption: "" },
+    ],
     examples: ["Я читаю книжку. Вона цікава.", "Хто прийшов? — Ніхто."],
     quickSummary: "9 розрядів займенників. Замінюють іменники/прикметники/числівники.",
     facts: ["Зворотний займенник «себе» не має називного відмінка"],
@@ -3289,6 +3322,9 @@ export const capsules: Capsule[] = [
       { term: "Складносурядне", definition: "Частини рівноправні (і, але, або)" },
       { term: "Складнопідрядне", definition: "Одна частина залежить від іншої" },
     ],
+    images: [
+      { url: "https://wem.ua/wp-content/uploads/2026/03/skladne-rechennya.png", caption: "" },
+    ],
     examples: ["Подув вітер, і впало листя. (складносур.)", "Я знаю, що завтра дощ. (складнопідр.)"],
     quickSummary: "Складне = 2+ основи. Сурядне — рівні; підрядне — залежне; безсполучникове.",
     facts: ["Найдовше речення в укр. літ. — у Шевченка, понад 100 слів"],
@@ -3310,6 +3346,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Пряма мова", definition: "Точно відтворені чужі слова в лапках" },
       { term: "Слова автора", definition: "Текст, що супроводжує пряму мову" },
+    ],
+    images: [
+      { url: "https://r2.cdn.miyklas.com.ua/cde0f650-0c8a-4b15-a409-bf3eae51cba3/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B020211108181420w804.png", caption: "" },
     ],
     examples: ["Він сказав: «Я повернуся».", "— А ти куди? — спитала вона."],
     quickSummary: "А: «П». / «П», — а. / Діалог — тире з нового рядка.",
@@ -3334,6 +3373,9 @@ export const capsules: Capsule[] = [
       { term: "Постійні ознаки", definition: "Не змінюються (рід, відміна)" },
       { term: "Непостійні ознаки", definition: "Залежать від форми (відмінок, число)" },
     ],
+    images: [
+      { url: "https://api.buki.com.ua/news_image/Hf/90/Hf90m7wyXsAiWJeIU4sFQhDLPq8LFZwssw9FkyUW.jpg", caption: "" },
+    ],
     examples: ["«Книга» — іменник, ж.р., І відміна, Н.в., однина, підмет"],
     quickSummary: "Початкова форма → частина мови → постійні → непостійні → синт. роль.",
     facts: ["Морфологічний аналіз — основа NLP та комп'ютерної лінгвістики"],
@@ -3356,6 +3398,9 @@ export const capsules: Capsule[] = [
       { term: "Стиль мовлення", definition: "Сукупність мовних засобів, характерних для певної сфери" },
       { term: "Тропи", definition: "Художні засоби: метафора, епітет, порівняння" },
     ],
+    images: [
+      { url: "https://gimnazia.sumy.ua/wp-content/uploads/2025/10/4079ac4ccf46410c43da2592de9fa57e.webp", caption: "" },
+    ],
     examples: ["«Сонце усміхнулось» — художній (метафора)", "«H₂O — формула води» — науковий"],
     quickSummary: "6 стилів: розмовний, художній, науковий, оф.-діловий, публіц., конфесійний.",
     facts: ["Стилістика як наука сформувалась у XX ст."],
@@ -3377,6 +3422,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Словотвір", definition: "Розділ мовознавства про творення слів" },
       { term: "Афікс", definition: "Морфема (префікс, суфікс), що додається до кореня" },
+    ],
+    images: [
+      { url: "https://r2.cdn.miyklas.com.ua/0ebcde4f-18ef-4473-ab84-435ad8eef289/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B020211212175946w784.png", caption: "" },
     ],
     examples: ["читач (суф.), пере-читати (преф.), сам-о-літ (склад.), УНР (абрев.)"],
     quickSummary: "7 способів: префікс, суфікс, преф+суф, безафіксний, складання, абревіація, перехід.",
@@ -3425,6 +3473,9 @@ export const capsules: Capsule[] = [
       { term: "Відокремлений член", definition: "Виділяється комами/тире, має додаткове смислове навантаження" },
       { term: "Вставне слово", definition: "Виражає ставлення мовця, не є членом речення" },
     ],
+    images: [
+      { url: "https://fs02.vseosvita.ua/0201llj8-c01f-940x561.png", caption: "" },
+    ],
     examples: ["Зморений роботою, він заснув. (відокр. означ.)", "На жаль, не зміг прийти. (вставне)"],
     problemSolving: [
       { problem: "Розставити коми: «Я думаю що він прийде бо обіцяв».", solution: "«Я думаю, що він прийде, бо обіцяв.» — кома перед що (підрядне з'ясув.) і перед бо (підрядне причини)." },
@@ -3450,6 +3501,8 @@ export const capsules: Capsule[] = [
       { term: "Чергування", definition: "Заміна звуків у різних формах одного слова" },
       { term: "Асиміляція", definition: "Уподібнення сусідніх звуків" },
       { term: "Спрощення", definition: "Випадіння звука з групи приголосних" },
+    ],images: [
+      { url: "https://naurok.com.ua/uploads/files/215792/294783/322239_images/2.jpg", caption: "" },
     ],
     examples: ["рука — руці — ручка (к/ц/ч)", "тиждень — тижневий (спрощ. дн→жн)"],
     problemSolving: [
@@ -3480,6 +3533,9 @@ export const capsules: Capsule[] = [
       { term: "Modal verb", definition: "Допоміжне дієслово, що виражає модальність" },
       { term: "Perfect modal", definition: "Modal + have + V3, для коментування минулого" },
     ],
+    images: [
+      { url: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOEAwnuhIExwSzotOzQtUrB3GPWnIczQp0yAIFsKNucz5idM2ydAs8uQALwRrBjeShWCtMkMuFJZCGKhinTG5l_LUyM3o9fQ3LPWsjFTBkhtnwXNd_5MtEF5kxOVQozhCFahHuvt3Ln2Nq/s1600/maxresdefault.jpg", caption: "" },
+    ],
     examples: ["You must wear a seatbelt. (обов'язок)", "She must be tired. (упевненість)", "I should have called. (жаль)"],
     quickSummary: "Can/may/must/should/would — модальні. Perfect: must/should/could + have + V3.",
     facts: ["Англійська має лише ~10 модальних дієслів — порівняно з тисячами звичайних"],
@@ -3501,6 +3557,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Reported speech", definition: "Непряма мова, переказ чужих слів" },
       { term: "Backshift", definition: "Зсув часів на один крок у минуле" },
+    ],
+    images: [
+      { url: "https://i.ytimg.com/vi/ZGdt9apUpqg/mqdefault.jpg", caption: "" },
     ],
     examples: ["\"I work here.\" → He said he worked there.", "\"Are you OK?\" → She asked if I was OK."],
     quickSummary: "Backshift: Pres→Past, will→would, can→could. Питання: if/whether.",
@@ -3524,6 +3583,9 @@ export const capsules: Capsule[] = [
       { term: "Phrasal verb", definition: "Verb + particle (preposition/adverb), має ідіоматичне значення" },
       { term: "Separable", definition: "Можна розділити додатком" },
     ],
+    images: [
+      { url: "https://www.worksheetsplanet.com/wp-content/uploads/2023/09/Phrasal-Verb-Examples.jpg", caption: "" },
+    ],
     examples: ["give up smoking — кинути палити", "run out of milk — закінчилось молоко", "look it up — шукай це (в словнику)"],
     quickSummary: "Verb + particle. Separable/inseparable. Pronoun завжди посередині (separable).",
     facts: ["В англ. ~10 000 фразових дієслів", "Більшість — германського походження"],
@@ -3545,6 +3607,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Inversion", definition: "Зміна порядку слів: допоміжне дієслово перед підметом" },
       { term: "Emphasis", definition: "Підкреслення, виділення частини речення" },
+    ],
+    images: [
+      { url: "https://ted-ielts.com/wp-content/uploads/2023/09/Inversion-2-1024x576.png", caption: "" },
     ],
     examples: ["Never have I been so happy.", "Had I known, I would have called.", "Not only is she smart, but she's also kind."],
     problemSolving: [
@@ -3571,6 +3636,9 @@ export const capsules: Capsule[] = [
       { term: "Subjunctive", definition: "Умовний спосіб для нереального/бажаного" },
       { term: "Mixed conditional", definition: "Поєднує час минулої умови з теперішнім наслідком (або навпаки)" },
     ],
+    images: [
+      { url: "https://englishan.com/wp-content/uploads/2024/03/Subjunctive-mood-featured.png", caption: "" },
+    ],
     examples: ["If I were rich, I would travel.", "I wish I had studied harder.", "He insisted that she be present."],
     problemSolving: [
       { problem: "Translate: «Якби я знав це вчора, я б тобі сказав сьогодні».", solution: "If I had known it yesterday, I would tell you today. (mixed: past perfect + would + V)" },
@@ -3594,6 +3662,9 @@ export const capsules: Capsule[] = [
     simpleExplanation: "Слова мають своїх «друзів». Поважай їх.",
     keyTerms: [
       { term: "Collocation", definition: "Природне, узвичаєне поєднання слів" },
+    ],
+    images: [
+      { url: "https://i.ytimg.com/vi/RcAS_6ZUVgs/maxresdefault.jpg", caption: "" },
     ],
     examples: ["make a mistake (НЕ do), take a decision (BrE) / make a decision (AmE), heavy smoker, fast food (НЕ quick food)"],
     problemSolving: [
@@ -3620,6 +3691,9 @@ export const capsules: Capsule[] = [
       { term: "Comprehensible input", definition: "Матеріал, зрозумілий на 80–90%, з невеликою кількістю нового" },
       { term: "Shadowing", definition: "Повторення за диктором з мінімальною затримкою" },
     ],
+    images: [
+      { url: "https://englishlabs.in/wp-content/uploads/2022/01/how-to-learn-english-effectively.jpg", caption: "" },
+    ],
     examples: ["Дивитися Friends з англ. субтитрами", "Anki з контекстними реченнями замість списків слів"],
     quickSummary: "Input + Anki + shadowing + говорити щодня. Постійність > інтенсивність.",
     facts: ["B2-рівень досягається ~600 годин занурення (CEFR)", "Полігломат Като Ломб вчила мови читанням романів"],
@@ -3642,6 +3716,9 @@ export const capsules: Capsule[] = [
       { term: "BrE", definition: "British English — британський варіант" },
       { term: "AmE", definition: "American English — американський варіант" },
     ],
+    images: [
+      { url: "https://i.ytimg.com/vi/SdSrxJJ7Kfs/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDdkZTZ15MFPZxe0GP2dXRW8Ag9Gg", caption: "" },
+    ],
     examples: ["BrE: I've just eaten. / AmE: I just ate.", "BrE: at the weekend / AmE: on the weekend", "BrE: colour / AmE: color"],
     quickSummary: "Лексика, написання, вимова, частково граматика — відрізняються. Бери одну.",
     facts: ["Ноа Вебстер навмисне спростив написання у словнику 1828 р., щоб відрізнити AmE", "Австралійська ближча до BrE"],
@@ -3663,6 +3740,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Schwa /ə/", definition: "Редукований голосний, найчастіший в англ." },
       { term: "Minimal pair", definition: "Слова, що відрізняються одним звуком (ship/sheep)" },
+    ],
+    images: [
+      { url: "https://i.ytimg.com/vi/GKifPcXo3mE/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGEwgSChZMA8=&rs=AOn4CLDSTg0KGfOFB5IrvK7aP6fCFr7itA", caption: "" },
     ],
     examples: ["think /θɪŋk/, this /ðɪs/, water /ˈwɔːtər/, about /əˈbaʊt/"],
     quickSummary: "/θ/ /ð/ між зубами. /w/ губи. /æ/ широко. /ə/ скрізь у ненаголошених.",
@@ -3707,6 +3787,9 @@ export const capsules: Capsule[] = [
       { term: "Праслов'янська мова", definition: "Спільний предок усіх слов'янських мов" },
       { term: "Літературна норма", definition: "Зразкова форма мови, закріплена у словниках" },
     ],
+    images: [
+      { url: "https://detector.media/doc/images/news/archive/2021/232163/ArticleImage_232163.webp", caption: "" },
+    ],
     quickSummary: "Від давньоруської до сучасної української",
     facts: ["Українська мова посідає 25-те місце у світі за кількістю мовців"],
     quiz: [
@@ -3727,6 +3810,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Калька", definition: "Дослівний переклад слова чи виразу з іншої мови" },
       { term: "Синонім", definition: "Слово, близьке за значенням до іншого" },
+    ],
+    images: [
+      { url: "https://globalvoices.org/wp-content/uploads/2022/09/For-Stories-2-800x450.png", caption: "" },
     ],
     quickSummary: "Як швидше опанувати рідну мову",
     facts: ["Регулярність важливіша за тривалість занять"],
@@ -3770,6 +3856,9 @@ export const capsules: Capsule[] = [
       { term: "Кодекс Юстиніана", definition: "Систематизація римського права (529–534 рр.)" },
       { term: "Іконоборство", definition: "Релігійний рух VIII–IX ст. проти культу ікон" },
     ],
+    images: [
+      { url: "https://elib.lntu.edu.ua/sites/default/files/elib_upload/%D0%A1%D0%9C%D0%90%D0%9B%D0%AC%203%20%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%B8%D0%B9/page10.files/image004.jpg", caption: "" },
+    ],
     quickSummary: "Тисячолітня спадкоємиця Риму",
     facts: ["Константинополь був найбільшим містом Європи понад 1000 років"],
     quiz: [
@@ -3790,6 +3879,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Поділ влади", definition: "Принцип Монтеск'є: законодавча, виконавча, судова" },
       { term: "Природні права", definition: "Невід'ємні права людини: життя, свобода, власність (Локк)" },
+    ],
+    images: [
+      { url: "https://fs06.vseosvita.ua/0600f138-35d9-1200x630.png", caption: "" },
     ],
     quickSummary: "Розум проти забобонів",
     facts: ["«Енциклопедія» Дідро мала 35 томів"],
@@ -3812,6 +3904,9 @@ export const capsules: Capsule[] = [
       { term: "Біполярний світ", definition: "Світовий порядок з двома наддержавами" },
       { term: "Розрядка", definition: "Період пом'якшення відносин у 1970-х (détente)" },
     ],
+    images: [
+      { url: "https://fs02.vseosvita.ua/02006qz5-d2da-1200x630.jpg", caption: "" },
+    ],
     quickSummary: "Геополітичне протистояння двох систем",
     facts: ["У 1962 р. ядерна війна була близькою як ніколи"],
     quiz: [
@@ -3832,6 +3927,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Конституція Пилипа Орлика", definition: "Документ 1710 р., обмежував владу гетьмана" },
       { term: "Гетьманщина", definition: "Українська козацька держава 1648–1764" },
+    ],
+    images: [
+      { url: "https://www.prostir.ua/wp-content/uploads/2019/04/22.jpg", caption: "" },
     ],
     quickSummary: "Від Київської Русі до сьогодення",
     facts: ["Конституція Орлика — одна з перших у світі писаних конституцій"],
@@ -3854,6 +3952,9 @@ export const capsules: Capsule[] = [
       { term: "Революція", definition: "Радикальна якісна зміна суспільного устрою" },
       { term: "«Оксамитова» революція", definition: "Мирне повалення режиму (Чехословаччина 1989)" },
     ],
+    images: [
+      { url: "https://www.mr-kirsanov.com/web/image/3877-bbe31739/avnn.webp?access_token=27e6a7ba-87b7-4cf9-9dc5-0477678f4c1a", caption: "" },
+    ],
     quickSummary: "Як революції змінили світ",
     facts: ["1989 рік називають «роком чудес» через мирне падіння комунізму"],
     quiz: [
@@ -3874,6 +3975,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Тоталітаризм", definition: "Режим тотального контролю над суспільством" },
       { term: "Голодомор", definition: "Геноцид українців 1932–1933 рр., створений радянською владою" },
+    ],
+    images: [
+      { url: "https://fs04.vseosvita.ua/0400zyoq-3261-378x198.jpg", caption: "" },
     ],
     quickSummary: "Природа і наслідки тоталітаризму",
     facts: ["Х. Арендт у книзі «Витоки тоталітаризму» (1951) проаналізувала феномен"],
@@ -3896,6 +4000,9 @@ export const capsules: Capsule[] = [
       { term: "Археологія", definition: "Наука, що вивчає минуле за речовими джерелами" },
       { term: "Літопис", definition: "Хронологічний запис історичних подій" },
     ],
+    images: [
+      { url: "https://uahistory.co/pidruchniki/panarin-explore-history-and-society-integrated-course-5-class-2022/panarin-explore-history-and-society-integrated-course-5-class-2022.files/image052.jpg", caption: "" },
+    ],
     quickSummary: "Як історики дізнаються про минуле",
     facts: ["Найдавніші писемні джерела — глиняні таблички Шумеру (бл. 3500 р. до н.е.)"],
     quiz: [
@@ -3917,6 +4024,9 @@ export const capsules: Capsule[] = [
       { term: "Хронологія", definition: "Послідовність подій у часі" },
       { term: "Епоха", definition: "Тривалий історичний період зі спільними рисами" },
     ],
+    images: [
+      { url: "https://www.historyua.com/wp-content/uploads/2023/09/Liniya-chasu-Istoriya-v-shkoli.png", caption: "" },
+    ],
     quickSummary: "Орієнтація в епохах і датах",
     facts: ["Григоріанський календар (наш) запровадили у 1582 р."],
     quiz: [
@@ -3937,6 +4047,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Історична пам'ять", definition: "Колективні уявлення суспільства про своє минуле" },
       { term: "Пропаганда", definition: "Поширення ідей з метою впливу на думку" },
+    ],
+    images: [
+      { url: "https://ms.detector.media/doc/images/news/27913/i75_ArticleImage_27913.jpg", caption: "" },
     ],
     quickSummary: "Уроки минулого для майбутнього",
     facts: ["Геродота називають «батьком історії» (V ст. до н.е.)"],
