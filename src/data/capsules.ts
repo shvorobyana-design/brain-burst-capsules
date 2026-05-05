@@ -919,7 +919,7 @@ export const capsules: Capsule[] = [
       "sin²α + cos²α = 1",
     ],
     images: [
-      { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_yytlBa-8rqSkLO50ov_PoEWUBbaIZ-8VSA&s?w=600", caption: "Закони Менделя" },
+      { url: "https://naurok.com.ua/uploads/files/646091/256290/276211_html/images/256290001.jpg", caption: "Закони Менделя" },
     ],
     problemSolving: [
       { problem: "У прямокутному трикутнику гіпотенуза = 10, кут α = 30°. Знайти протилежний катет.", solution: "sin 30° = a/10 → a = 10 × sin 30° = 10 × 0.5 = 5." },
@@ -1999,6 +1999,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Метод інтервалів", definition: "Спосіб розв'язання нерівностей через знаки на числовій прямій" },
     ],
+    images: [
+      { url: "https://i.ytimg.com/vi/DrWXDlsIVN0/maxresdefault.jpg", caption: "" },
+    ],
     formulas: ["ax + b > 0 → x > -b/a (a>0)", "При множенні на від'ємне: знак змінюється"],
     problemSolving: [
       { problem: "2x - 6 > 0", solution: "2x > 6, x > 3" },
@@ -2022,6 +2025,9 @@ export const capsules: Capsule[] = [
       { term: "Парабола", definition: "Графік квадратичної функції" },
       { term: "Вершина параболи", definition: "Найвища або найнижча точка параболи" },
     ],
+    images: [
+      { url: "https://math.libretexts.org/@api/deki/files/21394/ad9a69ede2ca4bfea3b459dbce7d8f8dd386efc3", caption: "" },
+    ],
     formulas: ["y = ax² + bx + c", "x₀ = -b/(2a)", "D = b² - 4ac"],
     problemSolving: [
       { problem: "y = x² - 4x + 3. Знайти вершину.", solution: "x₀ = 4/2 = 2, y₀ = 4-8+3 = -1. Вершина (2, -1)." },
@@ -2044,6 +2050,9 @@ export const capsules: Capsule[] = [
       { term: "Діаметр", definition: "d = 2r — найбільша хорда" },
       { term: "π (пі)", definition: "≈ 3.14159 — відношення довжини кола до діаметра" },
     ],
+    images: [
+      { url: "https://fs06.vseosvita.ua/060033yr-405c-1200x630.png", caption: "" },
+    ],
     formulas: ["C = 2πr", "S = πr²", "Дуга: l = πrα/180°"],
     problemSolving: [
       { problem: "r = 5 см. Знайти C і S.", solution: "C = 2π·5 = 10π ≈ 31.4 см. S = π·25 = 25π ≈ 78.5 см²." },
@@ -2065,6 +2074,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Логарифм", definition: "Показник степеня, до якого треба піднести основу, щоб отримати число" },
       { term: "Натуральний логарифм", definition: "Логарифм з основою e ≈ 2.718" },
+    ],
+    images: [
+      { url: "https://shop.urok-ua.com/wp-content/uploads/2020/06/MKA-020-6-scaled.jpg", caption: "" },
     ],
     formulas: ["log_a(b) = c ↔ a^c = b", "log(xy) = log(x) + log(y)", "log(x^n) = n·log(x)"],
     problemSolving: [
@@ -2416,6 +2428,9 @@ export const capsules: Capsule[] = [
       { term: "Модуль |z|", definition: "Відстань від точки z до початку координат" },
       { term: "Формула Муавра", definition: "(cos φ + i sin φ)ⁿ = cos nφ + i sin nφ" },
     ],
+    images: [
+      { url: "https://naurok.com.ua/uploads/files/2810838/354359/407973_images/6.jpg", caption: "" },
+    ],
     formulas: ["z = a + bi", "|z| = √(a²+b²)", "zⁿ = |z|ⁿ(cos nφ + i sin nφ)"],
     quickSummary: "z = a+bi, i²=-1. Геометрично — точка на площині. Формула Муавра для степенів.",
     facts: ["Без комплексних чисел не існувало б квантової механіки", "Формула Ейлера: e^(iπ) + 1 = 0 — найкрасивіше рівняння", "Інженери позначають i як j, щоб не плутати зі струмом"],
@@ -2436,6 +2451,9 @@ export const capsules: Capsule[] = [
       { term: "Визначник (det)", definition: "Скалярна характеристика квадратної матриці" },
       { term: "Обернена матриця", definition: "A⁻¹ така, що A·A⁻¹ = E" },
       { term: "Метод Крамера", definition: "Розв'язання СЛАР через визначники" },
+    ],
+    images: [
+      { url: "https://fs03.vseosvita.ua/030182a8-c41c-1200x630.jpg", caption: "" },
     ],
     formulas: ["det₂ = ad - bc", "AB = Σaᵢₖbₖⱼ", "xᵢ = detᵢ/det"],
     quickSummary: "Матриця — таблиця чисел. det визначає, чи розв'язна система. Метод Крамера: xᵢ = detᵢ/det.",
@@ -2527,6 +2545,9 @@ export const capsules: Capsule[] = [
       { term: "Конгруенція", definition: "a ≡ b (mod m), якщо m ділить (a-b)" },
       { term: "Мала теорема Ферма", definition: "a^(p-1) ≡ 1 (mod p) для простого p" },
     ],
+    images: [
+      { url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7sZuqRTGCkVlS6obg9-PAY67BRcvR-YGH6g&s", caption: "" },
+    ],
     formulas: ["НСД(a,b) = НСД(b, a mod b)", "a^(p-1) ≡ 1 (mod p)", "a^φ(n) ≡ 1 (mod n)"],
     quickSummary: "Алгоритм Евкліда для НСД. Мала теорема Ферма. Китайська теорема про лишки.",
     facts: ["RSA-шифрування побудоване на малій теоремі Ферма", "Простих чисел нескінченно — довів Евклід", "Гіпотеза Рімана — найвідоміша нерозв'язана задача про прості числа"],
@@ -2547,6 +2568,9 @@ export const capsules: Capsule[] = [
       { term: "Сполучення C(n,k)", definition: "Кількість способів вибрати k з n без врахування порядку" },
       { term: "Принцип Діріхле", definition: "n+1 предмет у n коробках → коробка з ≥2 предметами" },
       { term: "Біном Ньютона", definition: "Розклад (a+b)ⁿ через C(n,k)" },
+    ],
+    images: [
+      { url: "https://i.ytimg.com/vi/oBhSh1X7ukM/maxresdefault.jpg", caption: "" },
     ],
     formulas: ["C(n,k) = n!/(k!(n-k)!)", "(a+b)ⁿ = Σ C(n,k)aⁿ⁻ᵏbᵏ", "P(n) = n!"],
     quickSummary: "P=n!, A=n!/(n-k)!, C=n!/(k!(n-k)!). Біном Ньютона. Принцип Діріхле.",
@@ -2569,6 +2593,9 @@ export const capsules: Capsule[] = [
       { term: "Коші–Буняковський", definition: "(Σaᵢbᵢ)² ≤ (Σaᵢ²)(Σbᵢ²)" },
       { term: "SOS-метод", definition: "Зведення нерівності до суми квадратів" },
     ],
+    images: [
+      { url: "https://i.ytimg.com/vi/T0oMfBwTXqU/maxresdefault.jpg", caption: "" },
+    ],
     formulas: ["(a+b)/2 ≥ √(ab)", "(Σaᵢbᵢ)² ≤ (Σaᵢ²)(Σbᵢ²)", "f(Σλᵢxᵢ) ≤ Σλᵢf(xᵢ) для опуклих f (Єнсен)"],
     quickSummary: "AM–GM, Коші–Буняковський, перестановочна, Єнсен. SOS — записати у вигляді суми квадратів.",
     facts: ["Нерівність Коші — одна з найчастіших на IMO", "AM–GM має десятки доведень", "Багато економічних теорем — окремі випадки нерівності Єнсена"],
@@ -2589,6 +2616,9 @@ export const capsules: Capsule[] = [
       { term: "Граф", definition: "Множина вершин і ребер між ними" },
       { term: "Ейлерів цикл", definition: "Цикл, що проходить кожне ребро рівно раз" },
       { term: "Теорема Холла", definition: "Умова існування досконалого парування у дводольному графі" },
+    ],
+    images: [
+      { url: "https://studfile.net/html/2706/360/html_Usc8gQlllG.xibg/img-si9jve.png", caption: "" },
     ],
     formulas: ["Σ deg(v) = 2|E|", "V - E + F = 2 (планарний)", "|N(A)| ≥ |A| ∀A (Холл)"],
     quickSummary: "Сума степенів = 2|E|. Ейлер ⟺ парні степені. Холл для парувань. Ейлерова формула V-E+F=2.",
@@ -3085,6 +3115,9 @@ export const capsules: Capsule[] = [
       { term: "Десятковий дріб", definition: "Дріб зі знаменником 10, 100, 1000, записаний через кому" },
       { term: "Розряд", definition: "Позиція цифри: десяті, соті, тисячні..." },
     ],
+    images: [
+      { url: "https://i0.wp.com/mathema.me/wp-content/uploads/2024/11/dilennia-desiatkovykh-drobiv-2.webp?resize=600%2C298&ssl=1", caption: "" },
+    ],
     formulas: ["a,bc = a + b/10 + c/100"],
     examples: ["1.5 + 2.3 = 3.8", "0.2 × 0.3 = 0.06", "1.25 = 1 + 25/100 = 5/4"],
     problemSolving: [
@@ -3111,6 +3144,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Різниця d", definition: "Стала, що додається в арифм. прогресії" },
       { term: "Знаменник q", definition: "Стале число, на яке множимо в геом. прогресії" },
+    ],
+    images: [
+      { url: "https://naurok.com.ua/uploads/files/393145/286641/314375_images/3.jpg", caption: "" },
     ],
     formulas: ["aₙ = a₁+(n−1)d", "Sₙ = n(a₁+aₙ)/2", "bₙ = b₁·q^(n−1)", "Sₙ = b₁(qⁿ−1)/(q−1)"],
     examples: ["2,5,8,11: d=3, a₁₀=2+9·3=29", "3,6,12,24: q=2, b₅=3·2⁴=48"],
@@ -3139,6 +3175,9 @@ export const capsules: Capsule[] = [
       { term: "Ознака подільності", definition: "Швидкий тест, чи ділиться число" },
       { term: "Усний рахунок", definition: "Обчислення в умі без приладів" },
     ],
+    images: [
+      { url: "https://teachme.expert/storage/media/770/conversions/01KC9QRBCGTF7XWDP62RJXFWY1-large.png", caption: "" },
+    ],
     examples: ["45² = 4·5=20, потім 25 → 2025", "13·11 = 1_(1+3)_3 = 143", "8·9 = 80−8 = 72"],
     problemSolving: [
       { problem: "Обчислити 65² усно.", solution: "6·7=42, додаємо 25 → 4225." },
@@ -3164,6 +3203,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Принцип Діріхле", definition: "Якщо n+1 предмет у n коробок — у якійсь ≥2 предметів" },
       { term: "Інваріант", definition: "Величина, що не змінюється під час перетворень" },
+    ],
+    images: [
+      { url: "https://logiclike.com/files/media/1d/6e/rv55t7fp_5e42a632920a6.png", caption: "" },
     ],
     examples: ["9 монет, 1 фальшива (легша): 2 зважування — 3:3, потім 1:1", "Переливання 5+3 → 4: наповнити 5, перелити 3, лишити 2; вилити 3, з 5 у 3 → 2; долити 5 → 7=3+4"],
     problemSolving: [
@@ -3191,6 +3233,9 @@ export const capsules: Capsule[] = [
       { term: "Система рівнянь", definition: "Кілька рівнянь зі спільними змінними" },
       { term: "Метод підстановки", definition: "Виразити одну змінну і підставити" },
       { term: "Метод додавання", definition: "Скласти рівняння так, щоб одна змінна скоротилася" },
+    ],
+    images: [
+      { url: "https://fs09.vseosvita.ua/0900t9ah-333f-1200x630.jpg", caption: "" },
     ],
     formulas: ["{x+y=a; x−y=b} → x=(a+b)/2, y=(a−b)/2"],
     examples: ["{2x+y=7; x−y=2} → x=3, y=1", "{x+y=5; 2x+2y=10} — безліч розв'язків"],
