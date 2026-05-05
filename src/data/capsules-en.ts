@@ -2269,6 +2269,175 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
   },
 
   // ===== ENGLISH (NEW) =====
+ "en-modal-verbs-deep": {
+    title: "Modal Verbs: Deep Dive",
+    shortDescription: "Can, must, should and their nuances",
+    introduction: "Modal verbs express possibility, obligation, or permission. Mastering them marks the difference between basic and advanced English[cite: 4].",
+    beginnerExplanation: "Can = ability, Must = strong obligation, Should = advice. They don't change form by person[cite: 4].",
+    detailedExplanation: "Advanced study of 'must' vs 'have to' (internal vs external), perfect modals for past regret, and the difference between 'mustn't' and 'don't have to'[cite: 4].",
+    simpleExplanation: "Tiny words that add big meaning to your actions[cite: 4].",
+    keyTerms: [
+      { term: "Modal verb", definition: "An auxiliary verb used to express modality[cite: 4]" },
+      { term: "Perfect modal", definition: "Modal + have + V3, used to comment on past events[cite: 4]" }
+    ],
+    quickSummary: "Can, may, must, should, would. Perfect modals for past commentary[cite: 4].",
+    facts: ["English has only about 10 modal verbs compared to thousands of regular ones[cite: 4]"],
+    quiz: [
+      q("'Must be tired' means:", ["Obligation", "Certainty", "Advice", "Permission"], 1),
+      q("External obligation use:", ["Must", "Should", "Have to", "May"], 2)
+    ],
+  },
+
+  "en-reported-speech": {
+    title: "Reported Speech",
+    shortDescription: "Indirect speech and tense backshift",
+    introduction: "Reported speech allows you to retell someone else's words. In English, this involves a systematic shift in tenses and pronouns[cite: 4].",
+    beginnerExplanation: "He said: 'I am tired' → He said he was tired. Tenses step back into the past[cite: 4].",
+    detailedExplanation: "Includes rules for 'backshift'. Note that if the reporting verb is in the present, or if the info is a universal truth, tenses don't shift[cite: 4].",
+    simpleExplanation: "Telling others what someone else said — every tense takes a step back[cite: 4].",
+    keyTerms: [
+      { term: "Reported speech", definition: "Indirectly retelling someone's words[cite: 4]" },
+      { term: "Backshift", definition: "The process of shifting tenses into the past in indirect speech[cite: 4]" }
+    ],
+    quickSummary: "Pres→Past, will→would, can→could. Yes/No questions start with 'if/whether'[cite: 4].",
+    facts: ["In casual speech, natives often skip the backshift if the info is still relevant[cite: 4]"],
+    quiz: [
+      q("'Will' becomes:", ["Would", "Willed", "Shall", "Could"], 0),
+      q("Questions use:", ["That", "What", "If/Whether", "Who"], 2)
+    ],
+  },
+
+  "en-phrasal-verbs": {
+    title: "Phrasal Verbs",
+    shortDescription: "Look up, give in, run out — learner's nightmare",
+    introduction: "Phrasal verbs combine a base verb with a particle, creating an entirely new idiomatic meaning essential for natural-sounding English[cite: 4].",
+    beginnerExplanation: "Look for = search; look after = care for; look up = check in a dictionary[cite: 4].",
+    detailedExplanation: "Covers separable and inseparable verbs. For separable ones, pronouns always go in the middle (e.g., 'turn it on')[cite: 4].",
+    simpleExplanation: "A verb + a tiny word = a brand new meaning[cite: 4]!",
+    keyTerms: [
+      { term: "Phrasal verb", definition: "Verb + particle with a non-literal meaning[cite: 4]" },
+      { term: "Separable", definition: "A phrasal verb that can be split by an object[cite: 4]" }
+    ],
+    quickSummary: "Verb + particle. Learn if they are separable or inseparable through practice[cite: 4].",
+    facts: ["English has approximately 10,000 phrasal verbs[cite: 4]", "Most phrasal verbs are of Germanic origin[cite: 4]"],
+    quiz: [
+      q("'Give up' means:", ["Return", "Quit", "Lift", "Ask"], 1),
+      q("Correct phrasal use:", ["Turn on it", "Turn it on", "On turn it", "On it turn"], 1)
+    ],
+  },
+
+  "en-olymp-inversion": {
+    title: "Olympiad Inversion",
+    shortDescription: "Inversion for emphasis",
+    introduction: "Inversion changes the standard word order to add emphasis, formal tone, or drama to a sentence[cite: 4].",
+    beginnerExplanation: "Flipping word order for more dramatic or formal effect. 'Never have I seen...'[cite: 4]",
+    detailedExplanation: "Mandatory after specific negative adverbs or in conditionals without 'if' (Had/Were/Should + Subject)[cite: 4].",
+    simpleExplanation: "Flipping the sentence around to add emphasis[cite: 4].",
+    keyTerms: [
+      { term: "Inversion", definition: "Placing the auxiliary verb before the subject[cite: 4]" },
+      { term: "Emphasis", definition: "Highlighting a specific part of the sentence[cite: 4]" }
+    ],
+    quickSummary: "Negative adverbs at the start lead to inversion. Adds a formal or dramatic tone[cite: 4].",
+    facts: ["Inversion is a relic of Old English preserved for modern emphasis[cite: 4]"],
+    quiz: [
+      q("'Never ___ such a thing':", ["I have seen", "Have I seen", "I saw", "Did I saw"], 1),
+      q("Inversion creates:", ["Simplification", "Emphasis", "Translation", "Passive"], 1)
+    ],
+  },
+
+  "en-olymp-subjunctive": {
+    title: "Olympiad Subjunctive",
+    shortDescription: "Conditional and unreal situations",
+    introduction: "The subjunctive mood is used to express wishes, imaginary situations, or demands, requiring precise tense usage[cite: 4].",
+    beginnerExplanation: "Using 'were' for all persons in unreal situations. 'If I were you...'[cite: 4]",
+    detailedExplanation: "Building mixed conditionals, distinguishing 'wish' constructions, and using the subjunctive after 'suggest' or 'insist'[cite: 4].",
+    simpleExplanation: "Special grammar for things that might be, but aren't[cite: 4].",
+    keyTerms: [
+      { term: "Subjunctive", definition: "A mood for unreal or desired situations[cite: 4]" },
+      { term: "Mixed conditional", definition: "Combines a past condition with a present result[cite: 4]" }
+    ],
+    quickSummary: "Wishes, suggestions, and imaginary scenarios. 'If I were...' and 'suggest that he be...'[cite: 4]",
+    facts: ["The subjunctive has mostly disappeared from English, remaining only in fragments[cite: 4]"],
+    quiz: [
+      q("'I wish I ___ earlier':", ["Leave", "Left", "Had left", "Would leave"], 2),
+      q("'I suggest he ___ here':", ["Is", "Be", "Was", "Were"], 1)
+    ],
+  },
+
+  "en-olymp-collocations": {
+    title: "Olympiad Collocations",
+    shortDescription: "Natural word pairings",
+    introduction: "Collocations are word groups that naturally go together. Knowing them is a sign of high linguistic proficiency[cite: 4].",
+    beginnerExplanation: "Words have 'friends' they like to hang out with. 'Heavy rain', not 'thick rain'[cite: 4].",
+    detailedExplanation: "Collocations often defy logic and must be memorized to avoid sounding unnatural to native speakers[cite: 4].",
+    simpleExplanation: "Respecting the habitual pairings words have with one another[cite: 4].",
+    keyTerms: [
+      { term: "Collocation", definition: "A natural, habitual word pairing[cite: 4]" }
+    ],
+    quickSummary: "'Make' vs 'Do' and typical intensifiers like 'heavy', 'strong', or 'deep'[cite: 4].",
+    facts: ["Corpus linguistics identifies about 250,000 typical collocations in English[cite: 4]"],
+    quiz: [
+      q("'___ a decision':", ["Do", "Make", "Have", "Take a"], 1),
+      q("'___ rain':", ["Strong", "Heavy", "Powerful", "Thick"], 1)
+    ],
+  },
+
+  "en-learn-tips": {
+    title: "How to Learn English Effectively",
+    shortDescription: "Best strategies from linguists",
+    introduction: "Effective learning focuses on immersion and consistency rather than intensity, allowing you to reach fluency faster[cite: 4].",
+    beginnerExplanation: "Listen daily, speak aloud, and immerse yourself instead of just cramming[cite: 4].",
+    detailedExplanation: "Uses 'Comprehensible Input' and 'Shadowing'. Consistency of 20 minutes daily is better than a 3-hour weekly session[cite: 4].",
+    simpleExplanation: "Less cramming, more using the language in real life[cite: 4].",
+    keyTerms: [
+      { term: "Shadowing", definition: "Repeating after a speaker with minimal delay[cite: 4]" },
+      { term: "Comprehensible input", definition: "Material that is 80-90% understandable[cite: 4]" }
+    ],
+    quickSummary: "Use Anki for vocab, practice shadowing, and prioritize daily consistency[cite: 4].",
+    facts: ["Reaching level B2 takes about 600 hours of immersion[cite: 4]"],
+    quiz: [
+      q("What is shadowing?", ["Reading", "Repeating after speaker", "Writing", "Listening only"], 1),
+      q("Best strategy:", ["3h weekly", "20m daily", "Grammar only", "Tests only"], 1)
+    ],
+  },
+
+  "en-cultural-notes": {
+    title: "British vs American English",
+    shortDescription: "Two variations — one language",
+    introduction: "While they are the same language, British and American English differ in spelling, vocabulary, and pronunciation[cite: 4].",
+    beginnerExplanation: "Spelling (color vs colour) and vocabulary (lift vs elevator) differences[cite: 4].",
+    detailedExplanation: "Both are standard. The key is to pick one and remain consistent within a single text or conversation[cite: 4].",
+    simpleExplanation: "Two main 'flavors' of English — pick one and stick to it[cite: 4].",
+    keyTerms: [
+      { term: "BrE", definition: "British English[cite: 4]" },
+      { term: "AmE", definition: "American English[cite: 4]" }
+    ],
+    quickSummary: "Key differences in spelling, common words, and accents[cite: 4].",
+    facts: ["Noah Webster simplified spelling in 1828 specifically to distinguish American English[cite: 4]"],
+    quiz: [
+      q("'Lift' (BrE) =", ["Truck", "Elevator", "Lorry", "Trunk"], 1),
+      q("'Color' is:", ["BrE", "AmE", "Both", "Neither"], 1)
+    ],
+  },
+
+  "en-pronunciation-deep": {
+    title: "English Sounds Deep Dive",
+    shortDescription: "Tricky sounds for Ukrainian speakers",
+    introduction: "Specific English sounds like 'th', 'w', and the 'schwa' do not exist in Ukrainian and require targeted practice[cite: 4].",
+    beginnerExplanation: "How to position your tongue and lips for the hardest English sounds[cite: 4].",
+    detailedExplanation: "Focuses on 'minimal pairs' like ship/sheep or bad/bed to help distinguish similar but distinct sounds[cite: 4].",
+    simpleExplanation: "Targeted training to reduce a strong accent and sound more natural[cite: 4].",
+    keyTerms: [
+      { term: "Schwa /ə/", definition: "The most frequent and reduced vowel sound in English[cite: 4]" },
+      { term: "Minimal pair", definition: "Words that differ by only one sound[cite: 4]" }
+    ],
+    quickSummary: "Practice /θ/, /ð/, /w/, and /æ/ sounds along with the schwa vowel[cite: 4].",
+    facts: ["The schwa appears in about 25% of all English syllables[cite: 4]"],
+    quiz: [
+      q("The /θ/ sound is:", ["s", "t", "th in think", "sh"], 2),
+      q("Minimal pair:", ["cat/dog", "ship/sheep", "go/come", "yes/no"], 1)
+    ],
+  },
   "en-modal-verbs-deep": {
     title: "Modal Verbs: Deep Dive", shortDescription: "Can, must, should and their nuances",
     introduction: "Modal verbs express possibility, obligation, permission, probability. Using them correctly is a hallmark of advanced English.",
