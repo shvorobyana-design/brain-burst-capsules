@@ -2204,6 +2204,9 @@ export const capsules: Capsule[] = [
       { term: "Правило Гунда", definition: "У межах підрівня електрони розміщуються по одному з паралельними спінами" },
       { term: "Валентні електрони", definition: "Електрони зовнішнього енергетичного рівня, що беруть участь у зв'язках" },
     ],
+    images: [
+      { url: "https://uahistory.co/pidruchniki/savchin-chemistry-11-class-2019-standard-level/savchin-chemistry-11-class-2019-standard-level.files/image010.jpg", caption: "" },
+    ],
     formulas: [
       "Максимум електронів на рівні: N = 2n²",
       "Місткість підрівнів: s=2, p=6, d=10, f=14",
@@ -2415,6 +2418,9 @@ export const capsules: Capsule[] = [
       { term: "Довжина хвилі (λ)", definition: "Відстань між двома сусідніми гребенями" },
       { term: "Частота (ν)", definition: "Кількість коливань за секунду (Гц)" },
     ],
+    images: [
+      { url: "https://naurok-test2.nyc3.digitaloceanspaces.com/36313/images/310977_1671051476.jpg", caption: "" },
+    ],
     formulas: ["ν = 1/T", "λ = v·T = v/ν", "v(звук) ≈ 340 м/с"],
     quickSummary: "Коливання: A, T, ν=1/T. Хвилі: поперечні, поздовжні. λ=v/ν. Звук: 20-20000 Гц, ~340 м/с.",
     facts: ["Кити спілкуються на частотах нижче 20 Гц", "Світло — електромагнітна хвиля", "Землетрус — хвилі в земній корі"],
@@ -2432,6 +2438,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Ентропія", definition: "Міра хаосу (невпорядкованості) системи" },
       { term: "Абсолютний нуль", definition: "0 K = -273.15°C — мінімально можлива температура" },
+    ],
+    images: [
+      { url: "https://school.home-task.com/images/image415_33.jpg", caption: "" },
     ],
     formulas: ["I закон: ΔU = Q - A", "η = A/Q (ККД)", "η(Карно) = 1 - T₂/T₁"],
     quickSummary: "I: ΔU=Q-A. II: ентропія зростає. III: T→0 K недосяжний. ККД Карно: η=1-T₂/T₁.",
@@ -2452,6 +2461,9 @@ export const capsules: Capsule[] = [
       { term: "Радіоактивність", definition: "Самовільний розпад нестабільних ядер" },
       { term: "Період напіврозпаду", definition: "Час, за який розпадається половина радіоактивних ядер" },
       { term: "Ланцюгова реакція", definition: "Самопідтримуваний процес поділу ядер" },
+    ],
+    images: [
+      { url: "https://naurok-test2.nyc3.digitaloceanspaces.com/73381/images/997514_1652463606.gif", caption: "" },
     ],
     formulas: ["N = N₀ · (1/2)^(t/T₁/₂)", "E = Δm · c²"],
     quickSummary: "Радіоактивність: α, β, γ. T₁/₂. Поділ U-235 → АЕС. Синтез H→He → зірки. E=Δmc².",
@@ -2521,6 +2533,9 @@ export const capsules: Capsule[] = [
       { term: "Хвильова функція ψ", definition: "Функція, що описує квантовий стан системи" },
       { term: "Принцип невизначеності", definition: "Неможливо одночасно точно виміряти координату й імпульс" },
       { term: "Суперпозиція", definition: "Одночасне перебування в кількох станах" },
+    ],
+    images: [
+      { url: "https://static.wixstatic.com/media/2f1e6d_6f43e553f9ff469ba759920acf1e7bb4~mv2.png/v1/fill/w_850,h_500,al_c,q_90,enc_avif,quality_auto/2f1e6d_6f43e553f9ff469ba759920acf1e7bb4~mv2.png", caption: "" },
     ],
     formulas: ["λ = h/p", "Δx·Δp ≥ ℏ/2", "iℏ ∂ψ/∂t = Ĥψ"],
     quickSummary: "Дуалізм хвиля-частинка. Невизначеність Δx·Δp ≥ ℏ/2. ψ-функція задає ймовірність.",
@@ -2689,6 +2704,9 @@ export const capsules: Capsule[] = [
       { term: "Закон збереження імпульсу", definition: "У замкненій системі Σpᵢ = const" },
       { term: "Сила інерції", definition: "Уявна сила в неінерціальній системі: F = -ma₀" },
       { term: "Момент імпульсу", definition: "L = r × p, зберігається при ΣM=0" },
+    ],
+    images: [
+      { url: "https://naurok.com.ua/uploads/files/624076/247504/266899_html/images/247504005.jpg", caption: "" },
     ],
     formulas: ["Σp_до = Σp_після", "E_к + E_п = const", "L = Iω = const"],
     quickSummary: "Збереження p та E. Неінерціальні системи: сила інерції -ma₀. Момент імпульсу L=Iω.",
@@ -4124,6 +4142,10 @@ export const capsules: Capsule[] = [
       { term: "Похибка", definition: "Різниця між виміряним і справжнім значенням" },
       { term: "Штангенциркуль", definition: "Прилад для точного вимірювання довжини (0.1 мм)" },
     ],
+    images: [
+      { url: "https://www.educ.com.ua/wp-content/uploads/2023/02/educ.com.ua-stend-chas-dovzhina-masa.jpg", caption: "" },
+    ],
+    
     quickSummary: "Як точно виміряти будь-що",
     facts: ["Метр спочатку визначався як 1/40 000 000 паризького меридіана"],
     quiz: [
@@ -4144,6 +4166,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Густина", definition: "Маса одиниці об'єму речовини" },
       { term: "Закон Архімеда", definition: "Виштовхувальна сила = вазі витісненої рідини" },
+    ],
+    images: [
+      { url: "https://uahistory.co/pidruchniki/zasekina-physics-7-class-2024-reissue/zasekina-physics-7-class-2024-reissue.files/image190.jpg", caption: "" },
     ],
     quickSummary: "Чому залізо тоне, а олія плаває",
     facts: ["Густина осмію — найбільша серед природних речовин (~22 600 кг/м³)"],
@@ -4166,6 +4191,9 @@ export const capsules: Capsule[] = [
       { term: "Відносна швидкість", definition: "Швидкість одного тіла відносно іншого" },
       { term: "Балістика", definition: "Розділ механіки про рух тіл під дією сили тяжіння" },
     ],
+    images: [
+      { url: "https://fizika.dp.ua/wp-content/uploads/2020/05/513.jpg", caption: "" },
+    ],
     quickSummary: "Складні задачі на рух",
     facts: ["Максимальна дальність кидка — при куті 45° (без опору повітря)"],
     quiz: [
@@ -4186,6 +4214,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Закони Кірхгофа", definition: "Правила для розрахунку складних електричних схем" },
       { term: "Еквіпотенціальні точки", definition: "Точки з однаковим потенціалом — можна об'єднати" },
+    ],
+    images: [
+      { url: "https://carnovato.ru/wp-content/uploads/2014/12/kak-chitat-jelektroshemy-legkovogo-avtomobilja-pricepa-1.jpg", caption: "" },
     ],
     quickSummary: "Складні з'єднання резисторів і конденсаторів",
     facts: ["Опір куба з ребрами R між протилежними вершинами = 5R/6"],
@@ -4208,6 +4239,9 @@ export const capsules: Capsule[] = [
       { term: "Наукова революція", definition: "XVI–XVII ст.: формування експериментальної науки" },
       { term: "Бозон Гіггса", definition: "Частинка, що надає масу іншим (відкрита 2012)" },
     ],
+    images: [
+      { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Three_famous_physicists.png/500px-Three_famous_physicists.png", caption: "" },
+    ],
     quickSummary: "Від Архімеда до Ейнштейна",
     facts: ["Ньютон винайшов диференціальне числення для механіки"],
     quiz: [
@@ -4229,6 +4263,9 @@ export const capsules: Capsule[] = [
       { term: "Базова одиниця", definition: "Незалежна одиниця, з якої виводять інші" },
       { term: "Префікс СІ", definition: "Множник одиниці (кіло, мілі тощо)" },
     ],
+    images: [
+      { url: "https://www.elitclass.com.ua/components/com_jshopping/files/img_products/full_764.jpg", caption: "" },
+    ],
     quickSummary: "Міжнародна система одиниць",
     facts: ["З 2019 р. кілограм визначено через сталу Планка"],
     quiz: [
@@ -4249,6 +4286,9 @@ export const capsules: Capsule[] = [
     keyTerms: [
       { term: "Розсіювання Релея", definition: "Розсіювання світла на дрібних частинках" },
       { term: "Закон Бернуллі", definition: "Чим швидший потік — тим менший тиск" },
+    ],
+    images: [
+      { url: "https://lh3.googleusercontent.com/proxy/dlwUSVL34ShCO96RlNELo3Gm7Fjk9EvpnQer7mzKk_JqpzEjhbsm_Sab83007lnfZsD7LdI9mN-oKS04ulaYFcaapm2Nv_XVIsi3Eg3Ikw-u4o__AqNkC2jFGJI", caption: "" },
     ],
     quickSummary: "Як фізика працює щодня",
     facts: ["На Марсі небо червонувате через пил, а не газ"],
