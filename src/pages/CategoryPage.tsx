@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Filter } from "lucide-react";
+import { ArrowLeft, Filter, GraduationCap, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -119,6 +119,35 @@ const CategoryPage = () => {
               </motion.div>
             );
           })}
+
+          {/* Final test CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5 }}
+            className="mt-4"
+          >
+            <Link
+              to={`/category/${category.id}/final-test`}
+              className={`block rounded-2xl p-6 md:p-8 bg-gradient-to-br ${gradient} text-white shadow-lg hover:shadow-xl transition-all hover:-translate-y-1`}
+            >
+              <div className="flex flex-wrap items-center gap-4 justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center">
+                    <GraduationCap className="w-7 h-7" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-bold">{t.finalTestCardTitle}</h3>
+                    <p className="text-white/85 text-sm mt-1">{t.finalTestCardDesc}</p>
+                  </div>
+                </div>
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/20 hover:bg-white/30 transition-colors text-sm font-medium">
+                  {t.finalTestOpen} <ArrowRight className="w-4 h-4" />
+                </span>
+              </div>
+            </Link>
+          </motion.div>
         </div>
       </div>
       <Footer />
