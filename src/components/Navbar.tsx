@@ -48,7 +48,6 @@ const Navbar = () => {
             >
               <Search className="w-4 h-4" />
               <span className="hidden sm:inline">{t.search}</span>
-              <kbd className="hidden md:inline text-[10px] bg-background px-1.5 py-0.5 rounded border border-border ml-1">⌘K</kbd>
             </button>
 
             {/* Language switcher */}
