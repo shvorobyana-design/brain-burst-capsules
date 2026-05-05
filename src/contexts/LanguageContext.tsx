@@ -278,6 +278,27 @@ const ua: Translations = {
   cat_chemistry: "Хімія",
   cat_physics: "Фізика",
 };
+Object.assign(ua, {
+  finalTestTitle: "Підсумковий тест",
+  finalTestSubtitle: "30 запитань з усіх капсул предмета",
+  finalTestStart: "Готовий перевірити свої знання?",
+  finalTestStartCta: "Розпочати тест",
+  finalTestQuestionLabel: "Запитання",
+  finalTestOf: "з",
+  finalTestNext: "Далі",
+  finalTestFinish: "Завершити тест",
+  finalTestResultTitle: "Твій результат",
+  finalTestRetake: "Пройти ще раз",
+  finalTestBackToSubject: "До предмета",
+  finalTestFromCapsule: "З капсули:",
+  finalTestExcellent: "Бездоганно! Ти справді опанував предмет 🏆",
+  finalTestGood: "Гарний результат! Продовжуй у тому ж дусі 👍",
+  finalTestKeepLearning: "Перечитай капсули та спробуй ще раз — у тебе обов'язково вийде!",
+  finalTestCardTitle: "Підсумковий тест предмета",
+  finalTestCardDesc: "30 запитань зі всіх капсул цього предмета",
+  finalTestOpen: "Відкрити тест",
+  finalTestProgress: "Виконано",
+});
 
 const en: Translations = {
   home: "Home",
@@ -397,6 +418,27 @@ const en: Translations = {
   cat_chemistry: "Chemistry",
   cat_physics: "Physics",
 };
+Object.assign(en, {
+  finalTestTitle: "Final Test",
+  finalTestSubtitle: "30 questions covering every capsule of the subject",
+  finalTestStart: "Ready to test your knowledge?",
+  finalTestStartCta: "Start the test",
+  finalTestQuestionLabel: "Question",
+  finalTestOf: "of",
+  finalTestNext: "Next",
+  finalTestFinish: "Finish test",
+  finalTestResultTitle: "Your result",
+  finalTestRetake: "Retake",
+  finalTestBackToSubject: "Back to subject",
+  finalTestFromCapsule: "From capsule:",
+  finalTestExcellent: "Outstanding! You've truly mastered the subject 🏆",
+  finalTestGood: "Great result! Keep it up 👍",
+  finalTestKeepLearning: "Re-read the capsules and try again — you'll get it!",
+  finalTestCardTitle: "Subject final test",
+  finalTestCardDesc: "30 questions across every capsule of this subject",
+  finalTestOpen: "Open the test",
+  finalTestProgress: "Completed",
+});
 
 // Map for translating category names by id
 export const categoryNameMap: Record<string, Record<Lang, string>> = {
