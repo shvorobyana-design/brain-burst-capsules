@@ -520,7 +520,7 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType>({
   lang: "ua",
   setLang: () => {},
-  t: ua,
+  t: ua as Translations,
   translateCategory: (id) => id,
   translateSection: (id) => id,
   translateDifficulty: (d) => d,
@@ -537,7 +537,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     localStorage.setItem("braincapsule-lang", l);
   };
 
-  const t = lang === "en" ? en : ua;
+  const t = (lang === "en" ? en : ua) as Translations;
 
   const translateCategory = (catId: string) =>
     categoryNameMap[catId]?.[lang] || catId;
