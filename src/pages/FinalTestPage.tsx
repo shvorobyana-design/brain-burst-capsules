@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import { categories } from "@/data/capsules";
 import { getFinalTest } from "@/data/finalTests";
 import { useLanguage } from "@/contexts/LanguageContext";
+// Імпортуємо твій оновлений хук
+import { useProgress } from "@/hooks/useProgress";
 
 const subjectGradient: Record<string, string> = {
   biology: "from-green-500 to-emerald-600",
@@ -21,8 +23,9 @@ const subjectGradient: Record<string, string> = {
 const FinalTestPage = () => {
   const { id } = useParams<{ id: string }>();
   const { lang, t, translateCategory } = useLanguage();
+  const { saveFinalTestResult } = useProgress(); // Підключаємо мізки
+  
   const category = categories.find(c => c.id === id);
-
   const test = useMemo(() => (id ? getFinalTest(id, lang) : { questions: [] }), [id, lang]);
 
   const [started, setStarted] = useState(false);
@@ -53,7 +56,13 @@ const FinalTestPage = () => {
   };
 
   const handleNext = () => {
-    if (current + 1 >= total) {
+    const isLastQuestion = current + 1 >= total;
+    // Рахуємо фінальний результат, враховуючи поточну відповідь
+    const finalScore = score; 
+
+    if (isLastQuestion) {
+      // ЗБЕРЕЖЕННЯ: Категорія вважається пройденою
+      saveFinalTestResult(category.id, finalScore, total);
       setDone(true);
     } else {
       setCurrent(c => c + 1);
@@ -70,8 +79,8 @@ const FinalTestPage = () => {
   };
 
   const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
-  const resultMessage =
-    percentage >= 85 ? t.finalTestExcellent : percentage >= 60 ? t.finalTestGood : t.finalTestKeepLearning;
+  // Виправлена логіка прогресу: показуємо завершеність поточного етапу
+  const progressPercent = Math.round(((current + 1) / total) * 100);
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -132,14 +141,14 @@ const FinalTestPage = () => {
                   {t.finalTestQuestionLabel} {current + 1} {t.finalTestOf} {total}
                 </span>
                 <span className="text-sm text-muted-foreground">
-                  {t.finalTestProgress}: {Math.round(((current) / total) * 100)}%
+                  {t.finalTestProgress}: {progressPercent}%
                 </span>
               </div>
 
               <div className="w-full h-2 rounded-full bg-muted mb-6 overflow-hidden">
                 <div
-                  className={`h-full bg-gradient-to-r ${gradient} transition-all`}
-                  style={{ width: `${((current) / total) * 100}%` }}
+                  className={`h-full bg-gradient-to-r ${gradient} transition-all duration-500`}
+                  style={{ width: `${progressPercent}%` }}
                 />
               </div>
 
@@ -204,7 +213,9 @@ const FinalTestPage = () => {
                 <div className={`text-5xl font-bold my-4 bg-gradient-to-r ${gradient} bg-clip-text text-transparent`}>
                   {score} / {total}
                 </div>
-                <p className="text-muted-foreground mb-6">{resultMessage}</p>
+                <p className="text-muted-foreground mb-6">
+                  {percentage >= 85 ? t.finalTestExcellent : percentage >= 60 ? t.finalTestGood : t.finalTestKeepLearning}
+                </p>
                 <div className="flex flex-wrap items-center justify-center gap-3">
                   <button
                     onClick={reset}
