@@ -137,6 +137,29 @@ interface Translations {
   cat_physics: string;
 }
 
+// Augment translations with final-test strings
+interface Translations {
+  finalTestTitle: string;
+  finalTestSubtitle: string;
+  finalTestStart: string;
+  finalTestStartCta: string;
+  finalTestQuestionLabel: string;
+  finalTestOf: string;
+  finalTestNext: string;
+  finalTestFinish: string;
+  finalTestResultTitle: string;
+  finalTestRetake: string;
+  finalTestBackToSubject: string;
+  finalTestFromCapsule: string;
+  finalTestExcellent: string;
+  finalTestGood: string;
+  finalTestKeepLearning: string;
+  finalTestCardTitle: string;
+  finalTestCardDesc: string;
+  finalTestOpen: string;
+  finalTestProgress: string;
+}
+
 const ua: Translations = {
   home: "Головна",
   categories: "Категорії",
