@@ -160,7 +160,7 @@ interface Translations {
   finalTestProgress: string;
 }
 
-const ua: Translations = {
+const ua = {
   home: "Головна",
   categories: "Категорії",
   progress: "Прогрес",
