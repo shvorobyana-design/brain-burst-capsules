@@ -186,5 +186,281 @@
   },
   "world-war-2": {
     "theory": "Causes: Versailles, Nazism, appeasement. Stages: lightning wars, Stalingrad, liberation of Europe. Holocaust. Atomic bombs. UN."
+  },
+  "en-false-friends": {
+    "theory": "False cognates: magazine (magazine), sympathetic (sympathetic), accurate (accurate), fabric (fabric), actually (actually), prospect (prospect)."
+  },
+  "what-is-chemistry": {
+    "theory": "Sections: inorganic, organic, physical, analytical. Basic concepts: atom, molecule, element, compound, reaction."
+  },
+  "chemical-bonds": {
+    "theory": "Covalent: polar and nonpolar. Ionic: metal+nonmetal. Metallic: delocalized. Hydrogen: weak, but important."
+  },
+  "en-present-perfect": {
+    "theory": "S + have/has + V3. Experience, result, with since/for. Already — affirmative, yet — question/negation."
+  },
+  "energy-physics": {
+    "theory": "Ek = ½mv². Ep = mgh. Law of conservation: Ek + Ep = const in a closed system. Work A = Fs·cos(α). Power P = A/t."
+  },
+  "en-pronunciation-basics": {
+    "theory": "12 vowels + 8 diphthongs + 24 consonants = 44 sounds. Stress affects meaning. Linking — connecting words."
+  },
+  "states-of-matter": {
+    "theory": "Solid: crystalline and amorphous. Liquid: short-range order. Gas: chaotic motion. Phase transitions. Plasma is the fourth state."
+  },
+  "periodic-table": {
+    "theory": "Periodic law: properties = function of atomic number. 7 periods, 18 groups. s, p, d, f blocks. Trends: electronegativity, radius, ionization energy."
+  },
+  "light-basics": {
+    "theory": "Wave-particle duality. c = 3×10⁸ m/s. Laws of reflection and refraction. Dispersion. Interference and diffraction."
+  },
+  "chemical-reactions": {
+    "theory": "By number of substances, thermal effect, reversibility, oxidation states, catalyst. Law of conservation of mass."
+  },
+  "gravity": {
+    "theory": "F = Gm₁m₂/r², G = 6.674×10⁻¹¹. g ≈ 9.8 m/s². First cosmic velocity: v₁ ≈ 7.9 km/s. Einstein: gravity = spacetime curvature."
+  },
+  "magnetism-basics": {
+    "theory": "B — magnetic induction (tesla). Lorentz force: F=qvBsin(α). Ampere force: F=BIlsin(α). Faraday's electromagnetic induction."
+  },
+  "mendel-laws": {
+    "theory": "**I Law (of Uniformity):** When homozygous organisms are crossed, F₁ is uniform.\nAA × aa → Aa (all identical)\n\n**II Law (of Segregation):** In F₂, traits segregate 3:1 (by phenotype).\nAa × Aa → 1AA : 2Aa : 1aa\n\n**III Law (of Independent Assortment):** Genes for different traits are inherited independently.\nAaBb × AaBb → 9:3:3:1\n\n**Incomplete Dominance:** Aa has an intermediate phenotype (1:2:1).",
+    "formulas": [
+      "F₁: Aa × Aa → 1AA : 2Aa : 1aa",
+      "Phenotypic segregation F₂: 3:1",
+      "Dihybrid: 9:3:3:1"
+    ],
+    "quiz": [
+      {
+        "question": "F₂ segregation:",
+        "options": [
+          "1:1",
+          "2:1",
+          "3:1",
+          "4:1"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Dihybrid segregation:",
+        "options": [
+          "3:1",
+          "9:3:3:1",
+          "1:2:1",
+          "1:1"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Father of genetics:",
+        "options": [
+          "Darwin",
+          "Mendel",
+          "Lamarck",
+          "Morgan"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "blood-system": {
+    "theory": "2 circulatory loops. Heart: 4 chambers. Arteries → capillaries → veins. Erythrocytes: O₂. Leukocytes: protection. Platelets: clotting.",
+    "quiz": [
+      {
+        "question": "Oxygen is transported by:",
+        "options": [
+          "Leukocytes",
+          "Erythrocytes",
+          "Platelets",
+          "Plasma"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Chambers in the heart:",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "6"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Circulatory loops:",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "inequalities": {
+    "theory": "**Linear inequality:** ax + b > 0 → x > -b/a (if a>0), x < -b/a (if a<0, sign changes!)\n\n**Quadratic:** ax²+bx+c > 0 — interval method.\n\n**System of inequalities:** solve each separately, find the intersection.\n\n**Rules:**\n- Adding a number does not change the sign\n- Multiplying by a negative number — the sign changes\n- Inequalities with the same sign can be added",
+    "formulas": [
+      "ax + b > 0 → x > -b/a (a>0)",
+      "When multiplying by a negative number: the sign changes"
+    ]
+  },
+  "quadratic-function": {
+    "theory": "**y = ax² + bx + c**\n\nThe graph is a parabola.\n- a > 0: branches up, a < 0: branches down\n- Vertex: x₀ = -b/(2a), y₀ = f(x₀)\n- Axis of symmetry: x = -b/(2a)\n- Roots of the function: D = b²-4ac. D>0: 2 roots, D=0: 1 root, D<0: no roots.\n\n**Canonical form:** y = a(x - x₀)² + y₀",
+    "formulas": [
+      "y = ax² + bx + c",
+      "x₀ = -b/(2a)",
+      "D = b² - 4ac"
+    ],
+    "quiz": [
+      {
+        "question": "The graph of y=ax² is a:",
+        "options": [
+          "Line",
+          "Parabola",
+          "Circle",
+          "Hyperbola"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "a<0, branches:",
+        "options": [
+          "Up",
+          "Down",
+          "Right",
+          "Left"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Vertex x=:",
+        "options": [
+          "-b/a",
+          "b/2a",
+          "-b/2a",
+          "b/a"
+        ],
+        "answer": 2
+      }
+    ]
+  },
+  "circle-area": {
+    "theory": "C=2πr=πd. S=πr². Arc: l=πrα/180. Sector: S=πr²α/360. Segment = sector - triangle.",
+    "formulas": [
+      "C = 2πr",
+      "S = πr²",
+      "Arc: l = πrα/180°"
+    ]
+  },
+  "logarithms": {
+    "theory": "**log_a(b) = c means a^c = b**\n\n**Properties:**\n- log(xy) = log(x) + log(y)\n- log(x/y) = log(x) - log(y)\n- log(x^n) = n·log(x)\n- log_a(a) = 1, log_a(1) = 0\n\n**Special:**\n- lg = log₁₀ (decimal)\n- ln = logₑ (natural, e ≈ 2.718)\n\n**Change of base formula:** log_a(b) = log_c(b)/log_c(a)",
+    "formulas": [
+      "log_a(b) = c ↔ a^c = b",
+      "log(xy) = log(x) + log(y)",
+      "log(x^n) = n·log(x)"
+    ],
+    "quiz": [
+      {
+        "question": "log₂(8) = ?",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "8"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "log_a(1) = ?",
+        "options": [
+          "1",
+          "0",
+          "a",
+          "-1"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "log(xy) = ?",
+        "options": [
+          "log(x)·log(y)",
+          "log(x)+log(y)",
+          "log(x)-log(y)",
+          "log(x)/log(y)"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "ancient-greece": {
+    "theory": "**Periods:**\n- Minoan-Mycenaean (~3000-1100 BCE)\n- Dark Ages (~1100-800)\n- Archaic (~800-500) — poleis, colonization\n- Classical (~500-336) — Golden Age\n- Hellenistic (~336-30) — Alexander the Great\n\n**Poleis:** Athens (democracy) and Sparta (oligarchy/military state).\n\n**Philosophers:** Socrates, Plato, Aristotle.\n\n**Achievements:** democracy, theatre, Olympic Games (776 BCE), geometry (Euclid), medicine (Hippocrates).",
+    "quiz": [
+      {
+        "question": "Democracy was created in:",
+        "options": [
+          "Sparta",
+          "Athens",
+          "Rome",
+          "Egypt"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Who is NOT a Greek philosopher:",
+        "options": [
+          "Socrates",
+          "Plato",
+          "Caesar",
+          "Aristotle"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "First Olympic Games:",
+        "options": [
+          "100 BCE",
+          "776 BCE",
+          "500 CE",
+          "1000 BCE"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "renaissance": {
+    "theory": "14th-16th centuries, Italy. Humanism. Art: Leonardo, Michelangelo, Raphael. Science: Copernicus, Galileo. Printing (Gutenberg, 1450).",
+    "quiz": [
+      {
+        "question": "The Renaissance began in:",
+        "options": [
+          "France",
+          "England",
+          "Italy",
+          "Germany"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Author of \"Mona Lisa\":",
+        "options": [
+          "Michelangelo",
+          "Raphael",
+          "Leonardo",
+          "Botticelli"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "Printing press:",
+        "options": [
+          "Gutenberg",
+          "Copernicus",
+          "Galileo",
+          "Newton"
+        ],
+        "answer": 0
+      }
+    ]
   }
 }
