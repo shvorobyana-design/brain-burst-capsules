@@ -12,6 +12,7 @@ import { capsules, categories } from "@/data/capsules";
 import { capsuleTranslationsEn } from "@/data/capsules-en";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useProgress } from "@/hooks/useProgress";
+import { shuffleQuizAnswers } from "@/lib/shuffleQuiz";
 
 const topicHeroImages: Record<string, string> = {
   "what-is-biology": "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800&h=400&fit=crop",
@@ -120,7 +121,8 @@ const CapsulePage = () => {
   const examples = tr?.examples || capsule?.examples || [];
   const problemSolving = tr?.problemSolving || capsule?.problemSolving || [];
   const facts = tr?.facts || capsule?.facts || [];
-  const quiz = tr?.quiz || capsule?.quiz || [];
+  const rawQuiz = tr?.quiz || capsule?.quiz || [];
+  const quiz = useMemo(() => shuffleQuizAnswers(rawQuiz), [rawQuiz]);
 
   const category = capsule ? categories.find(c => c.id === capsule.category) : null;
 

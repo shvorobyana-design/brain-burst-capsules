@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { categories } from "@/data/capsules";
 import { getFinalTest } from "@/data/finalTests";
+import { shuffleQuizAnswers } from "@/lib/shuffleQuiz";
 import { useLanguage } from "@/contexts/LanguageContext";
 // Імпортуємо твій оновлений хук
 import { useProgress } from "@/hooks/useProgress";
@@ -26,7 +27,10 @@ const FinalTestPage = () => {
   const { saveFinalTestResult } = useProgress(); // Підключаємо мізки
   
   const category = categories.find(c => c.id === id);
-  const test = useMemo(() => (id ? getFinalTest(id, lang) : { questions: [] }), [id, lang]);
+  const test = useMemo(() => {
+    const raw = id ? getFinalTest(id, lang) : { questions: [] };
+    return { ...raw, questions: shuffleQuizAnswers(raw.questions) };
+  }, [id, lang]);
 
   const [started, setStarted] = useState(false);
   const [current, setCurrent] = useState(0);
