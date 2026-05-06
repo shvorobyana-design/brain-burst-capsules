@@ -1,0 +1,190 @@
+{
+  "natural-selection": {
+    "theory": "Forms of selection: directional, stabilizing, disruptive. Sexual selection. Selection acts on the phenotype, changing the gene pool of the population."
+  },
+  "mutations": {
+    "theory": "Gene mutations: nucleotide substitution, insertion, deletion. Chromosomal: deletion, duplication, inversion. Genomic: polyploidy, aneuploidy."
+  },
+  "genetics-mendel": {
+    "theory": "First law: when crossing homozygotes, F1 is uniform. Second: in F2, segregation is 3:1. Third: alleles of different genes combine independently."
+  },
+  "evolution-darwin": {
+    "theory": "Main provisions: variability, heredity, struggle for existence, natural selection. Microevolution – within a species, macroevolution – new taxa."
+  },
+  "integrals": {
+    "theory": "Indefinite: ∫f(x)dx = F(x)+C. Definite: ∫[a,b]f(x)dx = F(b)-F(a). Basic: ∫xⁿdx = xⁿ⁺¹/(n+1)+C."
+  },
+  "linear-function": {
+    "theory": "y = kx + b. k — angular coefficient (tangent of the angle of inclination). b — free term. k > 0 — increasing, k < 0 — decreasing. k = 0 — horizontal."
+  },
+  "fractions-basics": {
+    "theory": "**Fraction** — a number of the form a/b, where a is the numerator, b is the denominator (b ≠ 0).\n\n**Types of fractions:**\n- Proper: numerator < denominator (3/4)\n- Improper: numerator ≥ denominator (7/4)\n- Mixed number: whole part + fraction (1¾)\n\n**Fundamental property of a fraction:**\na/b = (a×k)/(b×k) — a fraction does not change when its numerator and denominator are multiplied by the same number.\n\n**Operations with fractions:**\n- Addition: a/b + c/d = (ad + bc)/bd\n- Subtraction: a/b - c/d = (ad - bc)/bd\n- Multiplication: a/b × c/d = ac/bd\n- Division: a/b ÷ c/d = a/b × d/c\n\n**Reducing to a common denominator:** find the LCM of the denominators.\n\n**Simplifying a fraction:** divide the numerator and denominator by their GCD."
+  },
+  "en-future-simple": {
+    "theory": "S + will + V. Abbreviation: I'll. Won't. Usage: spontaneous decision, prediction, promise. Going to - for plans."
+  },
+  "photosynthesis": {
+    "examples": [
+      "Leaf in the sun: chlorophyll absorbs red and blue light, reflects green — which is why we see green",
+      "In autumn, leaves turn yellow because chlorophyll breaks down and carotenoids (yellow pigments) become visible",
+      "Aquarium plants: oxygen bubbles on leaves — visual confirmation of photosynthesis"
+    ],
+    "quiz": [
+      {
+        "question": "What does a plant release during photosynthesis?",
+        "options": [
+          "CO₂",
+          "Oxygen",
+          "Nitrogen",
+          "Hydrogen"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "Where does photosynthesis take place?",
+        "options": [
+          "In the root",
+          "In the stem",
+          "In chloroplasts",
+          "In flowers"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "What is needed for photosynthesis?",
+        "options": [
+          "Only water",
+          "Light, water, and CO₂",
+          "Only soil",
+          "Oxygen"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What is the general equation?",
+        "options": [
+          "CO₂→O₂",
+          "6CO₂+6H₂O→C₆H₁₂O₆+6O₂",
+          "H₂O→H₂+O₂",
+          "O₂→CO₂"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What is the Calvin cycle?",
+        "options": [
+          "Light-dependent phase",
+          "Light-independent phase",
+          "Respiration",
+          "Cell division"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "en-past-simple": {
+    "theory": "S + V2 (past form). Regular: +ed. Irregular: separate form. Markers: yesterday, last week, ago."
+  },
+  "en-present-continuous": {
+    "theory": "S + am/is/are + V-ing. Usage: right now, temporarily, planned, with always (annoyance). State verbs are not used."
+  },
+  "cell-division": {
+    "theory": "**The cell cycle** consists of interphase and mitosis.\n\n**Interphase** (preparation, ~90% of the time):\n- G₁-phase: cell growth, protein synthesis\n- S-phase: DNA replication (copying)\n- G₂-phase: preparation for division\n\n**Mitosis** (4 phases):\n\n1. **Prophase**: chromosomes condense (become visible), nuclear envelope breaks down, mitotic spindle forms.\n\n2. **Metaphase**: chromosomes align along the cell's equator, each attached to a spindle fiber via a kinetochore.\n\n3. **Anaphase**: sister chromatids separate and move to opposite poles of the cell.\n\n4. **Telophase**: new nuclear envelopes form around each set of chromosomes, chromosomes decondense.\n\n**Cytokinesis** — division of the cytoplasm:\n- In animal cells — cleavage furrow forms\n- In plant cells — cell plate forms\n\nResult: 2 daughter cells with an identical set of chromosomes (2n → 2n).",
+    "examples": [
+      "Wound healing: skin cells divide by mitosis to close the damaged area",
+      "Growth: from one fertilized egg cell to 37 trillion cells — all thanks to mitosis"
+    ],
+    "formulas": [
+      "2n → DNA replication → 4n → mitosis → 2n + 2n",
+      "In humans: 2n = 46 chromosomes → mitosis → 46 + 46"
+    ],
+    "quiz": [
+      {
+        "question": "What is mitosis?",
+        "options": [
+          "Cell death",
+          "Cell division",
+          "Cell growth",
+          "Cell nutrition"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "How many cells are formed after mitosis?",
+        "options": [
+          "1",
+          "2",
+          "4",
+          "8"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What is the first phase of mitosis?",
+        "options": [
+          "Metaphase",
+          "Anaphase",
+          "Prophase",
+          "Telophase"
+        ],
+        "answer": 2
+      },
+      {
+        "question": "When is DNA copied?",
+        "options": [
+          "In prophase",
+          "In interphase (S-phase)",
+          "In metaphase",
+          "In telophase"
+        ],
+        "answer": 1
+      },
+      {
+        "question": "What is cytokinesis?",
+        "options": [
+          "Nuclear division",
+          "Cytoplasm division",
+          "DNA copying",
+          "Chromosome condensation"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "natural-numbers": {
+    "theory": "**Natural numbers** are the numbers 1, 2, 3, 4, 5, ... (some definitions include 0).\n\nNotation: ℕ = {1, 2, 3, 4, ...}\n\n**Properties:**\n- Every natural number has a successor\n- The natural number sequence is infinite\n- The smallest natural number is 1\n\n**Operations with natural numbers:**\n- Addition: a + b = c (commutative, associative)\n- Subtraction: a - b = c (only if a ≥ b)\n- Multiplication: a × b = c (commutative, associative, distributive)\n- Division: a ÷ b = c (not always a natural number)\n\n**Divisibility:**\n- A number a is divisible by b if a = b × k (k is a natural number)\n- A prime number — is divisible only by 1 and itself\n- A composite number — has other divisors",
+    "examples": [
+      "Prime numbers up to 20: 2, 3, 5, 7, 11, 13, 17, 19",
+      "12 is composite: divisors 1, 2, 3, 4, 6, 12"
+    ],
+    "formulas": [
+      "Commutativity: a + b = b + a, a × b = b × a",
+      "Associativity: (a + b) + c = a + (b + c)",
+      "Distributivity: a × (b + c) = a × b + a × c"
+    ]
+  },
+  "world-war-1": {
+    "theory": "Causes: imperialism, militarism, alliances, assassination of Ferdinand. Trench warfare. Outcomes: collapse of 4 empires, Treaty of Versailles, League of Nations."
+  },
+  "ancient-egypt": {
+    "theory": "Periods: Old (pyramids), Middle, New (Tutankhamun, Ramesses II) Kingdoms. Achievements: Pyramid of Cheops, mummification, medicine, calendar, hieroglyphs."
+  },
+  "en-to-be": {
+    "theory": "Present: am/is/are. Past: was/were. To be as:\n\n* **Main verb** (to be)\n* **Auxiliary verb** (Continuous tenses)\n* **Linking verb** (He is tall)."
+  },
+  "food-chains": {
+    "theory": "Trophic levels: producers, consumers of the I, II, III order. 10% rule: only 10% of energy is transferred to each subsequent level. Ecological pyramid.",
+    "formulas": [
+      "10% rule: if plants received 10,000 kJ, herbivores will receive ~1000 kJ, predators ~100 kJ"
+    ]
+  },
+  "organic-chemistry-basics": {
+    "theory": "Carbon: sp³ (alkanes), sp² (alkenes), sp (alkynes). Homologous series. Isomerism. Functional groups: -OH, -COOH, -NH₂."
+  },
+  "ecosystem": {
+    "theory": "Components: biotic (producers, consumers, decomposers) and abiotic (light, water, soil). Food chains. Cycle of substances and energy flow."
+  },
+  "world-war-2": {
+    "theory": "Causes: Versailles, Nazism, appeasement. Stages: lightning wars, Stalingrad, liberation of Europe. Holocaust. Atomic bombs. UN."
+  }
+}
