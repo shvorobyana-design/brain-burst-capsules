@@ -8,8 +8,8 @@ import { getPopularCapsules, getNewCapsules } from "@/data/capsules";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
-  const popular = getPopularCapsules();
-  const newest = getNewCapsules();
+  const popular = getPopularCapsules().slice(0, 10);
+  const newest = getNewCapsules().slice(0, 10);
   const { t } = useLanguage();
 
   return (
