@@ -156,6 +156,7 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     title: "Cell Division (Mitosis)",
     shortDescription: "How cells multiply",
     introduction: "Cell division is the foundation of growth, development, and repair. Without mitosis, a wound wouldn't heal and an organism couldn't grow.",
+    theory: "**The cell cycle** consists of interphase and mitosis.\n\n**Interphase** (preparation, ~90% of the time):\n- G₁ phase: cell growth, protein synthesis\n- S phase: DNA replication (copying)\n- G₂ phase: preparation for division\n\n**Mitosis** (4 phases):\n\n1. **Prophase**: chromosomes condense (become visible), the nuclear envelope breaks down, the spindle apparatus forms.\n\n2. **Metaphase**: chromosomes align along the cell's equator, each attached to a spindle fiber via the kinetochore.\n\n3. **Anaphase**: sister chromatids separate and move to opposite poles of the cell.\n\n4. **Telophase**: a new nuclear envelope forms around each set of chromosomes, chromosomes decondense.\n\n**Cytokinesis** — division of the cytoplasm:\n- In animal cells — cleavage furrow (contractile ring)\n- In plant cells — formation of the cell plate\n\nResult: 2 daughter cells with an identical set of chromosomes (2n → 2n).",
     beginnerExplanation: "Mitosis — cell division with DNA duplication. 4 phases: prophase, metaphase, anaphase, telophase. Result: 2 identical cells.",
     detailedExplanation: "Interphase: DNA replication. Prophase: chromosome condensation. Metaphase: alignment. Anaphase: separation. Telophase: two nuclei. Cytokinesis: cell splitting.",
     simpleExplanation: "Cells divide in two to grow and repair damage!",
@@ -479,6 +480,7 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     title: "Natural Numbers",
     shortDescription: "The simplest and first numbers",
     introduction: "Natural numbers are the first numbers we learn: 1, 2, 3, 4, 5... They're used for counting and ordering.",
+    theory: "**Natural numbers** are the numbers 1, 2, 3, 4, 5, ... (some definitions include 0).\n\nNotation: ℕ = {1, 2, 3, 4, ...}\n\n**Properties:**\n- Every natural number has a successor\n- The natural number sequence is infinite\n- The smallest natural number is 1\n\n**Operations with natural numbers:**\n- Addition: a + b = c (commutative, associative)\n- Subtraction: a - b = c (only if a ≥ b)\n- Multiplication: a × b = c (commutative, associative, distributive)\n- Division: a ÷ b = c (not always a natural number)\n\n**Divisibility:**\n- Number a is divisible by b if a = b × k (k is natural)\n- Prime number — divisible only by 1 and itself\n- Composite number — has other divisors",
     beginnerExplanation: "Natural numbers: 1, 2, 3, 4, 5... Used for counting. The smallest is 1. There's no largest — they go to infinity.",
     detailedExplanation: "N = {1, 2, 3, ...}. Properties: closure under + and ×. Digit systems: decimal, binary. Even: divisible by 2. Odd: not divisible. Prime: divisible only by 1 and itself.",
     simpleExplanation: "Natural numbers are what you count on your fingers: 1, 2, 3, 4, 5!",
@@ -496,6 +498,7 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     title: "Fractions",
     shortDescription: "Parts of a whole",
     introduction: "Fractions allow us to express parts of a whole. Half a pizza, a quarter of an hour, three-fifths of the way — these are all fractions.",
+    theory: "**A fraction** is a number of the form a/b, where a is the numerator, b is the denominator (b ≠ 0).\n\n**Types of fractions:**\n- Proper: numerator < denominator (3/4)\n- Improper: numerator ≥ denominator (7/4)\n- Mixed number: whole part + fraction (1¾)\n\n**Fundamental property of fractions:**\na/b = (a×k)/(b×k) — a fraction is unchanged when both numerator and denominator are multiplied by the same number.\n\n**Operations with fractions:**\n- Addition: a/b + c/d = (ad + bc)/bd\n- Subtraction: a/b - c/d = (ad - bc)/bd\n- Multiplication: a/b × c/d = ac/bd\n- Division: a/b ÷ c/d = a/b × d/c\n\n**Finding a common denominator:** find the LCM of the denominators.\n\n**Reducing a fraction:** divide numerator and denominator by their GCD.",
     beginnerExplanation: "A fraction a/b: numerator (a) — how many parts taken, denominator (b) — how many parts total. 1/2 is half.",
     detailedExplanation: "Proper fraction: numerator < denominator. Improper: numerator ≥ denominator. Addition: common denominator. Multiplication: multiply numerator × numerator, denominator × denominator.",
     simpleExplanation: "Fractions — like pieces of pizza. Cut into 4 pieces, took 1 — that's 1/4!",
@@ -1876,6 +1879,7 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
   "ua-apostrophe": {
     title: "Apostrophe in Ukrainian", shortDescription: "Rules for using apostrophe",
     introduction: "The apostrophe is an important orthographic mark. Incorrect use is one of the most common mistakes.",
+    theory: "**Apostrophe is written** after б, п, в, м, ф and р (if no other consonant precedes р) before я, ю, є, ї:\n\nm'yaso, p'yat, v'yun, b'yut, pirya, m'yaso.\n\n**Not written** after р when preceded by a consonant:\nryad, burya, kryuk, Ryazan.\n\n**Written after prefixes ending in a consonant:**\nz'yizd, vid'yizd, roz'yasnyty, pid'yikhaty.\n\n**Not written** when б, п, в, м, ф are preceded by a consonant (except р):\nsvyato, tsvyakh, tmyanyy.",
     beginnerExplanation: "After б, п, в, м, ф before я, ю, є, ї: m'yaso, p'yat. After prefixes: z'yizd.",
     detailedExplanation: "б, п, в, м, ф + я, ю, є, ї = apostrophe. After prefixes on consonant.",
     simpleExplanation: "The apostrophe says: 'read these letters separately!'",
@@ -2171,6 +2175,7 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
   "ua-pronouns": {
     title: "Pronouns (Ukrainian)", shortDescription: "I, you, he — substitute words",
     introduction: "Pronouns substitute for nouns, adjectives, or numerals without naming them directly. Without them, language would be repetitive and clumsy.",
+    theory: "Categories: personal (я, ти, він, вона, воно, ми, ви, вони), reflexive (себе), possessive (мій, твій, його, наш), demonstrative (цей, той, такий), definite (весь, кожен, сам), interrogative (хто, що, який, чий), relative (same forms but used as connective words), indefinite (хтось, дехто), negative (ніхто, ніщо). Pronouns decline by case; some also change by gender and number.",
     beginnerExplanation: "Instead of \"Taras came. Taras sat down\" — \"Taras came. He sat down\". \"He\" is a pronoun.",
     detailedExplanation: "Personal pronouns have suppletive declension: я — мене, мені. Possessives agree with the noun: моя книга, мій зошит.",
     simpleExplanation: "A pronoun is a stand-in for a noun.",
@@ -2204,6 +2209,7 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
   "ua-morphology-deep": {
     title: "Morphological Analysis (Ukrainian)", shortDescription: "Full word-as-part-of-speech analysis",
     introduction: "Morphological analysis is the detailed study of a word: its part of speech and grammatical features.",
+    theory: "Algorithm: 1) Write the word down, put it in its base form. 2) Name the part of speech. 3) Permanent features (gender, declension — for nouns; aspect, transitivity — for verbs). 4) Variable features (case, number, tense, person). 5) Syntactic role in the sentence. Example: «читаю» — verb, imperfective aspect, transitive, indicative mood, present tense, 1st person singular, predicate.",
     beginnerExplanation: "Take a word and identify everything: part of speech, gender, number, tense, case, role in sentence.",
     detailedExplanation: "Permanent features belong to the word always (noun gender). Variable features depend on form (case, number).",
     simpleExplanation: "Sort the word into grammar shelves.",
