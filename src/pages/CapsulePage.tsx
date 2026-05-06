@@ -120,7 +120,8 @@ const CapsulePage = () => {
   const examples = tr?.examples || capsule?.examples || [];
   const problemSolving = tr?.problemSolving || capsule?.problemSolving || [];
   const facts = tr?.facts || capsule?.facts || [];
-  const quiz = tr?.quiz || capsule?.quiz || [];
+  const rawQuiz = tr?.quiz || capsule?.quiz || [];
+  const quiz = useMemo(() => shuffleQuizAnswers(rawQuiz), [rawQuiz]);
 
   const category = capsule ? categories.find(c => c.id === capsule.category) : null;
 
