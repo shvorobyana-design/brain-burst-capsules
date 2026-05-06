@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ArrowLeft, Clock, BarChart3, Lightbulb, BookOpen, CheckCircle, XCircle,
-  Sparkles, BookMarked, FlaskConical, PenTool, Zap, List, Brain, ArrowRight
+  Sparkles, BookMarked, FlaskConical, PenTool, Zap, List, ArrowRight
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -93,13 +93,10 @@ const CapsulePage = () => {
   const [answered, setAnswered] = useState<number | null>(null);
   const [quizDone, setQuizDone] = useState(false);
   const [activeSection, setActiveSection] = useState("intro");
-  // ФІКС №1: Додано lang у деструктуризацію, про що я писав раніше
+  
   const { lang, t, translateCategory, translateDifficulty } = useLanguage();
   const { markRead, saveQuizResult } = useProgress();
 
-  // ЗМІНА №1: Видалено автоматичне зарахування ( useEffect який тут був)
-
-  // Get translated content
   const tr = useMemo(() => {
     if (!capsule) return null;
     if (lang === "en" && capsuleTranslationsEn[capsule.id]) {
@@ -111,7 +108,6 @@ const CapsulePage = () => {
   const title = tr?.title || capsule?.title || "";
   const shortDesc = tr?.shortDescription || capsule?.shortDescription || "";
   const introduction = tr?.introduction || capsule?.introduction || "";
-  const theory = tr?.theory || capsule?.theory || "";
   const beginnerExp = tr?.beginnerExplanation || capsule?.beginnerExplanation || "";
   const detailedExp = tr?.detailedExplanation || capsule?.detailedExplanation || "";
   const simpleExp = tr?.simpleExplanation || capsule?.simpleExplanation || "";
@@ -137,12 +133,10 @@ const CapsulePage = () => {
 const heroImageUrl = useMemo(() => {
   if (!capsule) return "";
 
-  // 1. Спершу перевіряємо, чи є картинка в масиві images самої капсули (з capsules.ts)
   if (capsule.images && capsule.images.length > 0 && capsule.images[0].url) {
     return capsule.images[0].url;
   }
 
-  // 2. Якщо в даних капсули картинки немає, беремо фолбек зі старого списку
   return topicHeroImages[capsule.id] || subjectFallbackImages[capsule.category] || subjectFallbackImages.biology;
 }, [capsule]);
 
@@ -167,7 +161,6 @@ const heroImageUrl = useMemo(() => {
     if (currentQ + 1 >= quiz.length) {
       setQuizDone(true);
       saveQuizResult(capsule.id, score + (answered === quiz[currentQ].answer ? 0 : 0), quiz.length);
-      // ЗМІНА №2: Додано markRead у функцію завершення тесту
       markRead(capsule.id);
     } else {
       setCurrentQ(c => c + 1);
@@ -175,17 +168,14 @@ const heroImageUrl = useMemo(() => {
     }
   };
 
-  // Save final score when quiz done
   const handleQuizDone = () => {
     setQuizDone(true);
     saveQuizResult(capsule.id, score, quiz.length);
-    // ЗМІНА №3: Додано markRead у handleQuizDone (про всяк випадок, якщо вона десь використовується)
     markRead(capsule.id);
   };
 
   const sections = [
     { id: "intro", label: t.intro, icon: BookOpen, show: true },
-    { id: "theory", label: t.theory, icon: Brain, show: !!theory },
     { id: "simple", label: t.simple, icon: Sparkles, show: true },
     { id: "terms", label: t.terms, icon: BookMarked, show: keyTerms.length > 0 },
     { id: "formulas", label: t.formulas, icon: FlaskConical, show: formulas.length > 0 },
@@ -221,8 +211,7 @@ const heroImageUrl = useMemo(() => {
           </Link>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
-            {/* Hero Image */}
-{/* Hero Image - No Crop Edition */}
+            
 <div className="w-full rounded-2xl overflow-hidden mb-8 border border-border shadow-md bg-muted/10 flex items-center justify-center">
   <img 
     src={heroImageUrl} 
@@ -231,7 +220,6 @@ const heroImageUrl = useMemo(() => {
   />
 </div>
 
-            {/* Header */}
             <div className="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6 shadow-sm">
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center text-3xl shrink-0">
@@ -257,7 +245,6 @@ const heroImageUrl = useMemo(() => {
               </div>
             </div>
 
-            {/* Quick Summary */}
             <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl border border-primary/20 p-5 md:p-6 mb-6">
               <div className="flex items-center gap-2 mb-3">
                 <Zap className="w-5 h-5 text-primary" />
@@ -266,7 +253,6 @@ const heroImageUrl = useMemo(() => {
               <p className="text-foreground/80 text-sm leading-relaxed">{quickSum}</p>
             </div>
 
-            {/* Section Navigation */}
             <div className="bg-card rounded-xl border border-border p-2 mb-6 flex flex-wrap gap-1 sticky top-20 z-10 shadow-sm">
               {sections.map(s => (
                 <button
@@ -284,23 +270,11 @@ const heroImageUrl = useMemo(() => {
               ))}
             </div>
 
-            {/* Introduction */}
             <section id="section-intro" className="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6 shadow-sm">
               <SectionHeader icon={BookOpen} title={t.intro} color="primary" />
               <p className="text-foreground/80 leading-relaxed text-[15px]">{introduction}</p>
             </section>
 
-            {/* Theory */}
-            {theory && (
-              <section id="section-theory" className="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6 shadow-sm">
-                <SectionHeader icon={Brain} title={t.mainTheory} color="secondary" />
-                <div className="prose-custom text-foreground/80 text-[15px] leading-relaxed whitespace-pre-line">
-                  {theory}
-                </div>
-              </section>
-            )}
-
-            {/* Simple Explanation */}
             <section id="section-simple" className="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6 shadow-sm">
               <SectionHeader icon={Sparkles} title={t.simpleExplanation} color="accent" />
               <button
@@ -323,7 +297,6 @@ const heroImageUrl = useMemo(() => {
               )}
             </section>
 
-            {/* Key Terms */}
             {keyTerms.length > 0 && (
               <section id="section-terms" className="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6 shadow-sm">
                 <SectionHeader icon={BookMarked} title={t.keyTerms} color="primary" />
@@ -338,7 +311,6 @@ const heroImageUrl = useMemo(() => {
               </section>
             )}
 
-            {/* Formulas */}
             {formulas.length > 0 && (
               <section id="section-formulas" className="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6 shadow-sm">
                 <SectionHeader icon={FlaskConical} title={t.formulasAndRules} color="secondary" />
@@ -352,7 +324,6 @@ const heroImageUrl = useMemo(() => {
               </section>
             )}
 
-            {/* Examples & Problem Solving */}
             {(examples.length > 0 || problemSolving.length > 0) && (
               <section id="section-examples" className="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6 shadow-sm">
                 <SectionHeader icon={PenTool} title={t.examplesAndProblems} color="accent" />
@@ -389,7 +360,6 @@ const heroImageUrl = useMemo(() => {
               </section>
             )}
 
-            {/* Facts */}
             <section id="section-facts" className="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6 shadow-sm">
               <SectionHeader icon={Lightbulb} title={t.interestingFacts} color="accent" />
               <ul className="space-y-3">
@@ -404,7 +374,6 @@ const heroImageUrl = useMemo(() => {
               </ul>
             </section>
 
-            {/* Quiz */}
             <section id="section-quiz" className="bg-card rounded-2xl border border-border p-6 md:p-8 shadow-sm">
               <SectionHeader icon={CheckCircle} title={t.miniTest} color="primary" />
               {!quizStarted ? (
@@ -467,7 +436,6 @@ const heroImageUrl = useMemo(() => {
                         const finalScore = score + (answered === quiz[currentQ].answer ? 0 : 0);
                         setQuizDone(true);
                         saveQuizResult(capsule.id, score, quiz.length);
-                        // ЗМІНА №4: Додано markRead в інлайнову логіку завершення тесту
                         markRead(capsule.id);
                       } else {
                         setCurrentQ(c => c + 1);
@@ -481,7 +449,6 @@ const heroImageUrl = useMemo(() => {
               )}
             </section>
 
-            {/* Related Topics */}
             {relatedCapsules.length > 0 && (
               <section className="bg-card rounded-2xl border border-border p-6 md:p-8 mt-6 shadow-sm">
                 <div className="flex items-center gap-2 mb-5">
@@ -514,9 +481,8 @@ const heroImageUrl = useMemo(() => {
 
       <AIChatButton
         topicTitle={title}
-        topicContext={introduction + " " + theory}
+        topicContext={introduction}
         capsuleData={{
-          theory: theory,
           simpleExplanation: simpleExp,
           keyTerms: keyTerms,
           formulas: formulas,
