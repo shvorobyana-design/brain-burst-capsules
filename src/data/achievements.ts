@@ -1,6 +1,10 @@
-import type { ProgressData } from "@/hooks/useProgress";
-
 export type Rarity = "common" | "rare" | "epic" | "legendary";
+
+export interface ProgressData {
+  readCapsules: string[];
+  quizResults: Record<string, { score: number; total: number; date: string }>;
+  finalTests: Record<string, { score: number; total: number; date: string }>;
+}
 
 export interface AchievementContext {
   progress: ProgressData;
