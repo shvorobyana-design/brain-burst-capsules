@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Bot, X, Send, Sparkles } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useProgress } from "@/hooks/useProgress";
 
 interface AIChatButtonProps {
   topicTitle: string;
@@ -120,6 +121,7 @@ const AIChatButton = ({ topicTitle, topicContext, capsuleData }: AIChatButtonPro
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { t, lang } = useLanguage();
+  const { trackAi } = useProgress();
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -127,7 +129,7 @@ const AIChatButton = ({ topicTitle, topicContext, capsuleData }: AIChatButtonPro
 
   const sendMessage = (text: string) => {
     if (!text.trim()) return;
-    
+    trackAi();
     const userMsg = { role: "user" as const, text: text.trim() };
     setMessages(prev => [...prev, userMsg]);
     setInput("");
