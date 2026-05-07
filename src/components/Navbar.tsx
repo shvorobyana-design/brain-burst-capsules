@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Brain, Sparkles, Search, Globe } from "lucide-react";
+import { Brain, Sparkles, Search, Globe, Trophy } from "lucide-react";
 import SearchDialog from "./SearchDialog";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useProgress } from "@/hooks/useProgress";
 
 const Navbar = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const { lang, setLang, t } = useLanguage();
+  const { trackLangSwitch, trackLogoClick, trackSearch } = useProgress();
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -24,7 +26,7 @@ const Navbar = () => {
       <SearchDialog open={searchOpen} onClose={() => setSearchOpen(false)} />
       <nav className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-xl border-b border-border shadow-sm">
         <div className="container mx-auto flex items-center justify-between h-16 px-4">
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" onClick={trackLogoClick} className="flex items-center gap-2 group">
           <div className="flex items-center gap-2">
   <img 
     src="https://img.icons8.com/external-flat-land-kalash/64/external-brain-business-concepts-flat-land-kalash.png"
@@ -40,10 +42,13 @@ const Navbar = () => {
             <Link to="/" className="hover:text-primary transition-colors">{t.home}</Link>
             <Link to="/categories" className="hover:text-primary transition-colors">{t.categories}</Link>
             <Link to="/progress" className="hover:text-primary transition-colors">{t.progress}</Link>
+            <Link to="/achievements" className="hover:text-primary transition-colors flex items-center gap-1">
+              <Trophy className="w-4 h-4" />{lang === "en" ? "Achievements" : "Досягнення"}
+            </Link>
           </div>
           <div className="flex items-center gap-2">
             <button
-              onClick={() => setSearchOpen(true)}
+              onClick={() => { setSearchOpen(true); trackSearch(); }}
               className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-muted/60 text-muted-foreground text-sm hover:bg-muted transition-colors border border-border"
             >
               <Search className="w-4 h-4" />
@@ -52,7 +57,7 @@ const Navbar = () => {
 
             {/* Language switcher */}
             <button
-              onClick={() => setLang(lang === "ua" ? "en" : "ua")}
+              onClick={() => { setLang(lang === "ua" ? "en" : "ua"); trackLangSwitch(); }}
               className="flex items-center gap-1 px-2.5 py-2 rounded-xl bg-muted/60 text-muted-foreground text-sm hover:bg-muted transition-colors border border-border"
               title={lang === "ua" ? "Switch to English" : "Переключити на українську"}
             >

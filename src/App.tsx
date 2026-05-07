@@ -11,7 +11,9 @@ import CategoriesPage from "./pages/CategoriesPage";
 import RandomPage from "./pages/RandomPage";
 import ProgressPage from "./pages/ProgressPage";
 import FinalTestPage from "./pages/FinalTestPage";
+import AchievementsPage from "./pages/AchievementsPage";
 import NotFound from "./pages/NotFound";
+import AchievementToast from "./components/AchievementToast";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +24,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <AchievementToast />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/capsule/:id" element={<CapsulePage />} />
@@ -30,6 +33,7 @@ const App = () => (
             <Route path="/categories" element={<CategoriesPage />} />
             <Route path="/random" element={<RandomPage />} />
             <Route path="/progress" element={<ProgressPage />} />
+            <Route path="/achievements" element={<AchievementsPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
