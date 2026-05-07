@@ -16,67 +16,101 @@ interface AIChatButtonProps {
   };
 }
 
-// Покращений двигун "картонного ШІ"
-function findAnswer(query: string, data: AIChatButtonProps["capsuleData"], title: string, t: any): string {
-  if (!data) return `❌ ${t.noDataAbout || "Немає даних про"} "${title}".`;
+// Bilingual local "AI" engine — works for UA and EN inputs.
+const L = {
+  ua: {
+    noData: (t: string) => `❌ Немає достатньо даних про "${t}".`,
+    hi: (t: string) => `👋 Привіт! Я твій асистент з теми **"${t}"**. Можу пояснити простіше, навести приклади чи показати цікаві факти. Що цікавить?`,
+    thanks: (t: string) => `😊 Завжди радий допомогти! Якщо застрягнеш на чомусь у темі **"${t}"** — пиши.`,
+    simpleHdr: "Просте пояснення",
+    formulasHdr: "Формули та правила",
+    noFormulas: "Формул немає, але ось головна суть:",
+    examplesHdr: "Приклади",
+    factsHdr: "Цікаві факти",
+    termsHdr: "Ключові терміни",
+    found: "Ось що я знайшов за твоїм запитом:",
+    fb: (t: string) => [
+      `🤔 Не впевнений, що зрозумів. Спробуй запитати про **приклади**, **просте пояснення** або **факти** по темі "${t}".`,
+      `📚 Тема "${t}" досить широка. Запитай про **ключові терміни** — просто напиши "терміни".`,
+      `🧐 Я орієнтуюся лише в межах цієї капсули. Запитай щось конкретне про "${t}", і я спробую знайти це в теорії.`,
+    ],
+  },
+  en: {
+    noData: (t: string) => `❌ Not enough data about "${t}".`,
+    hi: (t: string) => `👋 Hi! I'm your assistant for **"${t}"**. I can explain it simpler, give examples or share fun facts. What would you like?`,
+    thanks: (t: string) => `😊 Glad to help! If you get stuck on anything else in **"${t}"** — just ask.`,
+    simpleHdr: "Simple explanation",
+    formulasHdr: "Formulas & rules",
+    noFormulas: "No direct formulas, but here is the key idea:",
+    examplesHdr: "Examples",
+    factsHdr: "Fun facts",
+    termsHdr: "Key terms",
+    found: "Here is what I found for your query:",
+    fb: (t: string) => [
+      `🤔 Not sure I got that. Try asking about **examples**, a **simple explanation** or **facts** in "${t}".`,
+      `📚 "${t}" is a broad topic. Want **key terms**? Just type "terms".`,
+      `🧐 I only know what's in this capsule. Ask something specific about "${t}" and I'll search the theory.`,
+    ],
+  },
+};
+
+function findAnswer(
+  query: string,
+  data: AIChatButtonProps["capsuleData"],
+  title: string,
+  lang: "ua" | "en"
+): string {
+  const L_ = L[lang] || L.ua;
+  if (!data) return L_.noData(title);
 
   const q = query.toLowerCase().trim();
   const { theory, simpleExplanation, keyTerms, formulas, examples, facts } = data;
 
-  // 1. Обробка "Small Talk" (Привітання та подяка)
-  if (/привіт|хай|вітаю|добрий/i.test(q)) {
-    return `👋 Привіт! Я твій асистент з теми **"${title}"**. Можу пояснити теорію простіше, навести приклади або показати цікаві факти. Що тебе цікавить?`;
-  }
-  if (/дякую|спасибі|клас|супер|дяк/i.test(q)) {
-    return `😊 Завжди радий допомогти! Якщо застрягнеш на чомусь іншому в темі **"${title}"** — пиши.`;
+  if (/(^|\s)(привіт|хай|вітаю|добрий|hi|hello|hey)(\s|$|!|\?)/i.test(q)) return L_.hi(title);
+  if (/дякую|спасибі|клас|супер|thanks|thank you|thx/i.test(q)) return L_.thanks(title);
+
+  if (/прост|ясно|зрозуміл|simpl|easier|explain/i.test(q)) {
+    if (simpleExplanation) return `🧒 **${L_.simpleHdr}:**\n\n${simpleExplanation}`;
   }
 
-  // 2. Специфічні запити через Регулярні Вирази
-  if (/прост|ясно|зрозуміл|explain|simple/i.test(q)) {
-    if (simpleExplanation) return `🧒 **${t.simpleExplanation || "Просте пояснення"}:**\n\n${simpleExplanation}`;
+  if (/формул|правил|закон|formula|rule|law/i.test(q)) {
+    if (formulas && formulas.length > 0) return `📐 **${L_.formulasHdr}:**\n\n${formulas.join("\n\n")}`;
+    if (theory) return `🧐 ${L_.noFormulas}\n\n${theory.slice(0, 300)}...`;
   }
 
-  if (/формул|правил|закон|formula|rule/i.test(q)) {
-    if (formulas && formulas.length > 0) return `📐 **${t.formulas || "Формули та правила"}:**\n\n${formulas.join("\n\n")}`;
-    if (theory) return `🧐 Прямих формул немає, але ось головна суть:\n\n${theory.slice(0, 300)}...`;
+  if (/приклад|example|кейс|case|sample/i.test(q)) {
+    if (examples && examples.length > 0)
+      return `📝 **${L_.examplesHdr}:**\n\n${examples.map((e, i) => `${i + 1}. ${e}`).join("\n")}`;
   }
 
-  if (/приклад|example|кейс|case/i.test(q)) {
-    if (examples && examples.length > 0) return `📝 **${t.examples || "Приклади"}:**\n\n${examples.map((e, i) => `${i + 1}. ${e}`).join("\n")}`;
+  if (/факт|цікав|fact|interesting|trivia/i.test(q)) {
+    if (facts && facts.length > 0)
+      return `💡 **${L_.factsHdr}:**\n\n${facts.map((f, i) => `${i + 1}. ${f}`).join("\n")}`;
   }
 
-  if (/факт|цікав|fact|interesting/i.test(q)) {
-    if (facts && facts.length > 0) return `💡 **${t.funFactsLabel || "Цікаві факти"}:**\n\n${facts.map((f, i) => `${i + 1}. ${f}`).join("\n")}`;
-  }
-
-  if (/термін|визнач|що таке|definition|term/i.test(q)) {
-    // Пошук конкретного терміну в запиті
-    const matched = keyTerms?.find(kt => q.includes(kt.term.toLowerCase()));
+  if (/термін|визнач|що таке|definition|term|what is|meaning/i.test(q)) {
+    const matched = keyTerms?.find((kt) => q.includes(kt.term.toLowerCase()));
     if (matched) return `📖 **${matched.term}** — ${matched.definition}`;
-    if (keyTerms && keyTerms.length > 0) return `📖 **${t.keyTermsLabel || "Ключові терміни"}:**\n\n${keyTerms.map(kt => `• **${kt.term}** — ${kt.definition}`).join("\n")}`;
+    if (keyTerms && keyTerms.length > 0)
+      return `📖 **${L_.termsHdr}:**\n\n${keyTerms.map((kt) => `• **${kt.term}** — ${kt.definition}`).join("\n")}`;
   }
 
-  // 3. Евристичний пошук по тексту теорії (пошук релевантних речень)
   if (theory) {
     const sentences = theory.split(/[.!?]\s+/);
-    const words = q.split(/\s+/).filter(w => w.length > 3);
-    const relevant = sentences.filter(s => 
-      words.some(word => s.toLowerCase().includes(word.substring(0, word.length - 1)))
+    const stop = new Set([
+      "this","that","what","with","which","there","їхній","який","яка","якi","якi","було","було","було",
+    ]);
+    const words = q.split(/\s+/).filter((w) => w.length > 3 && !stop.has(w));
+    const relevant = sentences.filter((s) =>
+      words.some((word) => s.toLowerCase().includes(word.substring(0, Math.max(3, word.length - 1))))
     );
-
     if (relevant.length > 0) {
-      return `🔍 Ось що я знайшов за твоїм запитом:\n\n${relevant.slice(0, 3).join(". ")}.`;
+      return `🔍 ${L_.found}\n\n${relevant.slice(0, 3).join(". ")}.`;
     }
   }
 
-  // 4. Варіативні відкати (щоб не повторювався)
-  const fallbacks = [
-    `🤔 Не впевнений, що зрозумів. Спробуй запитати про **приклади**, **просте пояснення** або **факти** по темі "${title}".`,
-    `📚 Тема "${title}" досить обширна. Можливо, тобі варто поглянути на ключові терміни? Просто напиши "терміни".`,
-    `🧐 Я орієнтуюся лише в межах цієї капсули. Запитай щось конкретне про "${title}", і я спробую знайти це в теорії.`
-  ];
-
-  return fallbacks[Math.floor(Math.random() * fallbacks.length)];
+  const fb = L_.fb(title);
+  return fb[Math.floor(Math.random() * fb.length)];
 }
 
 const AIChatButton = ({ topicTitle, topicContext, capsuleData }: AIChatButtonProps) => {
@@ -85,7 +119,7 @@ const AIChatButton = ({ topicTitle, topicContext, capsuleData }: AIChatButtonPro
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -101,9 +135,17 @@ const AIChatButton = ({ topicTitle, topicContext, capsuleData }: AIChatButtonPro
 
     // Імітація "думки" бота
     setTimeout(() => {
-      const answer = findAnswer(text, capsuleData, topicTitle, t);
-      setMessages(prev => [...prev, { role: "ai", text: answer }]);
-      setLoading(false);
+      try {
+        const answer = findAnswer(text, capsuleData, topicTitle, lang);
+        setMessages(prev => [...prev, { role: "ai", text: answer }]);
+      } catch (e) {
+        const fallback = lang === "en"
+          ? "Sorry, something went wrong. Try another question."
+          : "Вибач, щось пішло не так. Спробуй інше питання.";
+        setMessages(prev => [...prev, { role: "ai", text: fallback }]);
+      } finally {
+        setLoading(false);
+      }
     }, 600 + Math.random() * 600);
   };
 

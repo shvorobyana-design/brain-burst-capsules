@@ -483,6 +483,7 @@ const heroImageUrl = useMemo(() => {
         topicTitle={title}
         topicContext={introduction}
         capsuleData={{
+          theory: detailedExp || beginnerExp || introduction,
           simpleExplanation: simpleExp,
           keyTerms: keyTerms,
           formulas: formulas,
