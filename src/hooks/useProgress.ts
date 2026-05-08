@@ -1,6 +1,8 @@
 import { useState, useCallback, useEffect } from "react";
 import { ACHIEVEMENTS, AchStats, computeXP, evaluateAchievements, levelFromXP, ProgressData } from "@/data/achievements";
 import { capsules } from "@/data/capsules";
+import { supabase } from "@/integrations/supabase/client";
+import { useAuth } from "@/contexts/AuthContext";
 
 export type { ProgressData };
 
@@ -57,10 +59,84 @@ export function useProgress() {
   const [progress, setProgress] = useState<ProgressData>(loadProgress);
   const [stats, setStats] = useState<StatsState>(loadStats);
   const [unlocked, setUnlocked] = useState<string[]>(loadUnlocked);
+  const { user } = useAuth();
+  const [hydratedFromCloud, setHydratedFromCloud] = useState(false);
 
   useEffect(() => { saveProgress(progress); }, [progress]);
   useEffect(() => { saveStats(stats); }, [stats]);
   useEffect(() => { saveUnlocked(unlocked); }, [unlocked]);
+
+  // ===== Cloud hydration on sign-in (with auto-merge of guest progress) =====
+  useEffect(() => {
+    if (!user) { setHydratedFromCloud(false); return; }
+    let cancelled = false;
+    (async () => {
+      const { data } = await supabase
+        .from("user_progress")
+        .select("*")
+        .eq("user_id", user.id)
+        .maybeSingle();
+      if (cancelled) return;
+      const cloud = data as any;
+      // Merge guest (local) with cloud — keep best of both
+      const localProg = loadProgress();
+      const localStats = loadStats();
+      const localUnlocked = loadUnlocked();
+      const mergedReadCapsules = Array.from(new Set([
+        ...(cloud?.read_capsules || []),
+        ...localProg.readCapsules,
+      ]));
+      const mergeBestScore = (a: any = {}, b: any = {}) => {
+        const out: any = { ...a };
+        for (const k of Object.keys(b)) {
+          const av = a[k]; const bv = b[k];
+          if (!av) out[k] = bv;
+          else if ((bv?.score ?? 0) > (av?.score ?? 0)) out[k] = bv;
+        }
+        return out;
+      };
+      const mergedQuiz = mergeBestScore(cloud?.quiz_results || {}, localProg.quizResults);
+      const mergedFinal = mergeBestScore(cloud?.final_tests || {}, localProg.finalTests);
+      const cloudStats = (cloud?.stats || {}) as Partial<StatsState>;
+      const mergedStats: StatsState = {
+        ...defaultStats,
+        ...cloudStats,
+        ...localStats,
+        // take maximums on counters
+        bestStreak: Math.max(cloudStats.bestStreak || 0, localStats.bestStreak || 0),
+        streakDays: Math.max(cloudStats.streakDays || 0, localStats.streakDays || 0),
+        perfectQuizzes: Math.max(cloudStats.perfectQuizzes || 0, localStats.perfectQuizzes || 0),
+        perfectFinals: Math.max(cloudStats.perfectFinals || 0, localStats.perfectFinals || 0),
+        totalSessions: Math.max(cloudStats.totalSessions || 0, localStats.totalSessions || 0),
+        totalReadTimeMin: Math.max(cloudStats.totalReadTimeMin || 0, localStats.totalReadTimeMin || 0),
+      };
+      const mergedUnlocked = Array.from(new Set([
+        ...(cloud?.unlocked_achievements || []),
+        ...localUnlocked,
+      ]));
+      setProgress({ readCapsules: mergedReadCapsules, quizResults: mergedQuiz, finalTests: mergedFinal });
+      setStats(mergedStats);
+      setUnlocked(mergedUnlocked);
+      setHydratedFromCloud(true);
+    })();
+    return () => { cancelled = true; };
+  }, [user]);
+
+  // ===== Debounced cloud save when authenticated =====
+  useEffect(() => {
+    if (!user || !hydratedFromCloud) return;
+    const t = setTimeout(() => {
+      supabase.from("user_progress").upsert({
+        user_id: user.id,
+        read_capsules: progress.readCapsules,
+        quiz_results: progress.quizResults as any,
+        final_tests: progress.finalTests as any,
+        stats: stats as any,
+        unlocked_achievements: unlocked,
+      }, { onConflict: "user_id" }).then(() => { /* silent */ });
+    }, 800);
+    return () => clearTimeout(t);
+  }, [user, hydratedFromCloud, progress, stats, unlocked]);
 
   // Session + streak (once per mount)
   useEffect(() => {
