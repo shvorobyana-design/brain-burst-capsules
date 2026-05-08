@@ -72,30 +72,30 @@ const AchievementToast = () => {
           animate={{ y: 0, opacity: 1, scale: 1 }}
           exit={{ y: -120, opacity: 0, scale: 0.85 }}
           transition={{ type: "spring", stiffness: 320, damping: 22 }}
-          className="fixed top-20 left-1/2 -translate-x-1/2 z-[100] w-[min(92vw,420px)]"
+          className="fixed top-[72px] sm:top-20 left-1/2 -translate-x-1/2 z-[100] w-[min(94vw,420px)] px-1"
         >
           <div className={`relative rounded-2xl p-[2px] bg-gradient-to-r ${RARITY_META[ach.rarity].gradient} shadow-2xl ${RARITY_META[ach.rarity].glow}`}>
-            <div className="rounded-2xl bg-card p-4 flex items-center gap-3">
+            <div className="rounded-2xl bg-card p-3 sm:p-4 flex items-center gap-2.5 sm:gap-3">
               <motion.div
                 initial={{ scale: 0, rotate: -180 }}
                 animate={{ scale: 1, rotate: 0 }}
                 transition={{ type: "spring", stiffness: 260, damping: 14 }}
-                className={`w-14 h-14 rounded-xl bg-gradient-to-br ${RARITY_META[ach.rarity].gradient} flex items-center justify-center text-3xl shadow-lg`}
+                className={`w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-xl bg-gradient-to-br ${RARITY_META[ach.rarity].gradient} flex items-center justify-center text-2xl sm:text-3xl shadow-lg`}
               >
                 {ach.emoji}
               </motion.div>
               <div className="flex-1 min-w-0">
-                <div className="text-[10px] uppercase tracking-wider font-bold text-muted-foreground">
+                <div className="text-[9px] sm:text-[10px] uppercase tracking-wider font-bold text-muted-foreground truncate">
                   {lang === "en" ? "Achievement unlocked" : "Досягнення відкрито"} · {RARITY_META[ach.rarity][lang]}
                 </div>
-                <div className="font-bold text-foreground text-base truncate">
+                <div className="font-bold text-foreground text-sm sm:text-base leading-tight line-clamp-2">
                   {ach.title[lang]}
                 </div>
-                <div className="text-xs text-muted-foreground truncate">{ach.desc[lang]}</div>
+                <div className="text-[11px] sm:text-xs text-muted-foreground line-clamp-2 mt-0.5">{ach.desc[lang]}</div>
               </div>
-              <div className="text-right">
-                <div className="text-xs text-muted-foreground">+XP</div>
-                <div className="font-bold gradient-text">{ach.xp}</div>
+              <div className="text-right shrink-0">
+                <div className="text-[10px] sm:text-xs text-muted-foreground">+XP</div>
+                <div className="font-bold gradient-text text-sm sm:text-base">{ach.xp}</div>
               </div>
             </div>
           </div>
