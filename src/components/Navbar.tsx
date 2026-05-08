@@ -34,7 +34,7 @@ const Navbar = () => {
     className="w-9 h-9 sm:w-10 sm:h-10 object-contain hover:scale-105 transition-transform duration-200" 
   />
 </div>
-            <span className="hidden xs:inline sm:inline text-base sm:text-lg font-bold tracking-tight text-foreground">
+            <span className="text-base sm:text-lg font-bold tracking-tight text-foreground">
               Brain<span className="gradient-text">Capsule</span>
             </span>
           </Link>
