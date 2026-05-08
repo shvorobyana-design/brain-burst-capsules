@@ -202,3 +202,10 @@
     box-shadow: 0 8px 30px hsl(200 90% 50% / 0.15);
   }
 }
+
+/* Mobile bottom nav clearance */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: calc(3.5rem + env(safe-area-inset-bottom));
+  }
+}
