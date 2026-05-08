@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Brain, Sparkles, Search, Globe, Trophy, BookOpen, BarChart3, Home } from "lucide-react";
+import { Brain, Sparkles, Search, Globe, Trophy, BookOpen, BarChart3, Home, LogIn, LogOut, User as UserIcon } from "lucide-react";
 import SearchDialog from "./SearchDialog";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useProgress } from "@/hooks/useProgress";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Navbar = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const { lang, setLang, t } = useLanguage();
   const { trackLangSwitch, trackLogoClick, trackSearch } = useProgress();
+  const { user, profile, signOut, updateProfile } = useAuth();
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -67,13 +69,39 @@ const Navbar = () => {
 
             {/* Language switcher */}
             <button
-              onClick={() => { setLang(lang === "ua" ? "en" : "ua"); trackLangSwitch(); }}
+              onClick={() => {
+                const next = lang === "ua" ? "en" : "ua";
+                setLang(next);
+                trackLangSwitch();
+                if (user) updateProfile({ language: next });
+              }}
               className="flex items-center gap-1 px-2 sm:px-2.5 py-2 rounded-xl bg-muted/60 text-muted-foreground text-sm hover:bg-muted transition-colors border border-border"
               title={lang === "ua" ? "Switch to English" : "Переключити на українську"}
             >
               <Globe className="w-4 h-4 hidden sm:inline-block" />
               <span className="text-xs font-semibold uppercase">{lang === "ua" ? "EN" : "UA"}</span>
             </button>
+
+            {user ? (
+              <button
+                onClick={() => signOut()}
+                title={profile?.display_name || user.email || ""}
+                className="flex items-center justify-center gap-1.5 w-9 h-9 sm:w-auto sm:h-auto sm:px-3 sm:py-2 rounded-xl bg-muted/60 text-muted-foreground text-sm hover:bg-muted transition-colors border border-border"
+              >
+                <UserIcon className="w-4 h-4" />
+                <span className="hidden md:inline truncate max-w-[80px]">{profile?.display_name || user.email?.split("@")[0]}</span>
+                <LogOut className="w-3.5 h-3.5 hidden sm:inline-block opacity-60" />
+              </button>
+            ) : (
+              <Link
+                to="/auth"
+                className="flex items-center justify-center gap-1.5 w-9 h-9 sm:w-auto sm:h-auto sm:px-3 sm:py-2 rounded-xl bg-muted/60 text-muted-foreground text-sm hover:bg-muted transition-colors border border-border"
+                aria-label={lang === "en" ? "Sign in" : "Увійти"}
+              >
+                <LogIn className="w-4 h-4" />
+                <span className="hidden sm:inline">{lang === "en" ? "Sign in" : "Увійти"}</span>
+              </Link>
+            )}
 
             <Link
               to="/random"
