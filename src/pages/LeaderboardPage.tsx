@@ -167,16 +167,18 @@ function Row({ entry, idx, level, isMe, t }: { entry: LBEntry; idx: number; leve
       }`}
     >
       {/* Rank */}
-      <div className="w-10 sm:w-12 shrink-0 flex items-center justify-center">
-        {isPodium ? (
-          <div className={`relative w-10 h-10 rounded-xl bg-gradient-to-br ${p!.medalColor} flex items-center justify-center text-white shadow-lg ${p!.glow}`}>
-            <p!.medal className="w-5 h-5" />
-            <span className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-card text-foreground text-[10px] font-bold flex items-center justify-center border border-border">{rank}</span>
+      {(() => {
+        if (!isPodium || !p) return <span className="w-10 sm:w-12 shrink-0 text-muted-foreground text-base font-bold text-center">#{rank}</span>;
+        const MedalIcon = p.medal;
+        return (
+          <div className="w-10 sm:w-12 shrink-0 flex items-center justify-center">
+            <div className={`relative w-10 h-10 rounded-xl bg-gradient-to-br ${p.medalColor} flex items-center justify-center text-white shadow-lg ${p.glow}`}>
+              <MedalIcon className="w-5 h-5" />
+              <span className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-card text-foreground text-[10px] font-bold flex items-center justify-center border border-border">{rank}</span>
+            </div>
           </div>
-        ) : (
-          <span className="text-muted-foreground text-base font-bold">#{rank}</span>
-        )}
-      </div>
+        );
+      })()}
 
       {/* Avatar */}
       <div className={`relative w-10 h-10 sm:w-12 sm:h-12 rounded-2xl overflow-hidden bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-primary-foreground font-bold shrink-0 ${
