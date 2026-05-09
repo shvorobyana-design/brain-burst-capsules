@@ -201,7 +201,7 @@ const heroImageUrl = useMemo(() => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="pt-24 pb-24 md:pb-16">
+      <div className="pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <Link
             to={category ? `/category/${category.id}` : "/"}

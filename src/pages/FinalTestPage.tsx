@@ -113,7 +113,7 @@ const FinalTestPage = () => {
         </div>
       </div>
 
-      <div className="flex-1 pb-24 md:pb-16">
+      <div className="flex-1 pb-16">
         <div className="container mx-auto px-4 max-w-3xl -mt-6 relative z-10">
           {!started && !done && (
             <motion.div

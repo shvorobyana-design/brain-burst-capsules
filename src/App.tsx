@@ -15,6 +15,7 @@ import FinalTestPage from "./pages/FinalTestPage";
 import AchievementsPage from "./pages/AchievementsPage";
 import AuthPage from "./pages/AuthPage";
 import ProfilePage from "./pages/ProfilePage";
+import LeaderboardPage from "./pages/LeaderboardPage";
 import NotFound from "./pages/NotFound";
 import AchievementToast from "./components/AchievementToast";
 import Onboarding from "./components/Onboarding";
@@ -42,6 +43,7 @@ const App = () => (
               <Route path="/random" element={<RandomPage />} />
               <Route path="/progress" element={<ProgressPage />} />
               <Route path="/achievements" element={<AchievementsPage />} />
+              <Route path="/leaderboard" element={<LeaderboardPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </AuthProvider>
