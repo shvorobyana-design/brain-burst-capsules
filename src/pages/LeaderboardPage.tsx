@@ -76,7 +76,7 @@ export default function LeaderboardPage() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="pt-20 sm:pt-24 pb-24 md:pb-16">
+      <div className="pt-20 sm:pt-24 pb-16">
         <div className="container mx-auto px-3 sm:px-4 max-w-3xl">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             {/* Header */}
