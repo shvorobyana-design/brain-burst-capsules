@@ -5,20 +5,21 @@ interface QuizQ {
   [k: string]: any;
 }
 
-// Deterministic-ish shuffle: ensures correct answers are spread across
-// different positions across the quiz (round-robin target index based on
-// question order), so the right option is not always in the same row.
+// Fully randomly shuffle each question's options (Fisher–Yates) and remap
+// the `answer` index to the new position of the correct option. This makes
+// the correct answer land in a truly random row each render.
 export function shuffleQuizAnswers<T extends QuizQ>(quiz: T[]): T[] {
   if (!quiz || quiz.length === 0) return quiz;
-  return quiz.map((q, idx) => {
-    const n = q.options.length;
+  return quiz.map((q) => {
+    const n = q.options?.length ?? 0;
     if (n <= 1) return q;
-    const target = idx % n; // distribute correct answer across rows
-    if (q.answer === target) return q;
-    const newOptions = [...q.options];
-    const tmp = newOptions[target];
-    newOptions[target] = newOptions[q.answer];
-    newOptions[q.answer] = tmp;
-    return { ...q, options: newOptions, answer: target };
+    const indices = q.options.map((_, i) => i);
+    for (let i = indices.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [indices[i], indices[j]] = [indices[j], indices[i]];
+    }
+    const newOptions = indices.map((i) => q.options[i]);
+    const newAnswer = indices.indexOf(q.answer);
+    return { ...q, options: newOptions, answer: newAnswer };
   });
 }

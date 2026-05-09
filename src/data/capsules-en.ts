@@ -149,6 +149,15 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     ],
     quickSummary: "6CO₂ + 6H₂O + light → glucose + 6O₂. Light phase: in thylakoids (photolysis, ATP). Dark phase: Calvin cycle (CO₂ fixation). Chlorophyll absorbs red and blue light.",
     facts: ["A large tree produces about 100 kg of oxygen per year", "Photosynthesis efficiency is only about 1-2%", "Cyanobacteria first produced oxygen 2.4 billion years ago", "Without photosynthesis, all oxygen would disappear in ~2000 years"],
+    examples: [
+      "Leaf in sunlight: chlorophyll absorbs red and blue light, reflects green — that's why we see green color",
+      "In autumn leaves turn yellow because chlorophyll breaks down and carotenoids (yellow pigments) appear",
+      "Aquarium plants: oxygen bubbles on leaves — visual proof of photosynthesis",
+    ],
+    problemSolving: [
+      { problem: "Why don't plants photosynthesize at night?", solution: "The light-dependent stage requires photons for water photolysis and the electron transport chain. Without light this stage stops. The dark stage can continue briefly but quickly depletes ATP and NADPH reserves." },
+      { problem: "Why would a plant in a sealed jar die?", solution: "CO₂ is depleted (needed for fixation in the Calvin cycle). Without CO₂ the dark stage is impossible, glucose cannot be synthesized, and the plant starves." },
+    ],
     quiz: [q("Where does photosynthesis occur?", ["Mitochondria", "Chloroplasts", "Nucleus", "Ribosome"], 1), q("What is released?", ["CO₂", "Oxygen", "Nitrogen", "Hydrogen"], 1), q("What is needed?", ["Oxygen", "Light + CO₂ + H₂O", "Only water", "Only soil"], 1), q("In what phase is oxygen released?", ["Dark", "Light", "Both", "Neither"], 1)],
   },
 
@@ -167,6 +176,14 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     ],
     quickSummary: "Mitosis: 1 cell → 2 identical. Phases: prophase → metaphase → anaphase → telophase + cytokinesis. Before: DNA replication in interphase. Purpose: growth, repair.",
     facts: ["The human body produces millions of cells every second", "Some cells never divide (neurons)", "Cancer is uncontrolled mitosis"],
+    formulas: [
+      "2n → DNA replication → 4n → mitosis → 2n + 2n",
+      "In humans: 2n = 46 chromosomes → mitosis → 46 + 46",
+    ],
+    examples: [
+      "Wound healing: skin cells divide by mitosis to close the damaged area",
+      "Growth: from one fertilized egg to 37 trillion cells — all thanks to mitosis",
+    ],
     quiz: [q("The result of mitosis?", ["1 cell", "2 identical cells", "4 cells", "8 cells"], 1), q("In what phase do chromosomes align?", ["Prophase", "Metaphase", "Anaphase", "Telophase"], 1), q("When is DNA copied?", ["Interphase", "Metaphase", "During division", "Anaphase"], 0)],
   },
 
@@ -473,6 +490,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     ],
     quickSummary: "Food chain: producers → primary consumers → secondary → tertiary. Only 10% of energy passes to the next level. Ecological pyramid. Food web = interconnected chains.",
     facts: ["An ecosystem may contain hundreds of food chains", "Losing one species disrupts the entire web", "Humans are at the top of most food chains"],
+    formulas: [
+      "10% rule: if plants received 10,000 kJ, herbivores get ~1,000 kJ, predators ~100 kJ",
+    ],
     quiz: [q("What is a trophic level?", ["Species", "Position in food chain", "Ecosystem type", "Population"], 1), q("How much energy passes to the next level?", ["100%", "10%", "50%", "1%"], 1)],
   },
 
@@ -491,6 +511,18 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     ],
     quickSummary: "N = {1, 2, 3, ...}. Even: 2,4,6... Odd: 1,3,5... Primes: 2,3,5,7,11... Divisibility rules. Decimal system.",
     facts: ["0 is not a natural number (in most conventions)", "There are infinitely many prime numbers", "Eratosthenes' sieve finds primes"],
+    formulas: [
+      "Commutativity: a + b = b + a, a × b = b × a",
+      "Associativity: (a + b) + c = a + (b + c)",
+      "Distributivity: a × (b + c) = a × b + a × c",
+    ],
+    examples: [
+      "Prime numbers up to 20: 2, 3, 5, 7, 11, 13, 17, 19",
+      "12 is composite: divisors 1, 2, 3, 4, 6, 12",
+    ],
+    problemSolving: [
+      { problem: "Find all divisors of 24", solution: "24 = 1×24 = 2×12 = 3×8 = 4×6. Divisors: 1, 2, 3, 4, 6, 8, 12, 24." },
+    ],
     quiz: [q("The smallest natural number?", ["0", "1", "-1", "2"], 1), q("7 — is it prime?", ["Yes", "No", "Maybe", "It's even"], 0), q("12 is divisible by...", ["5", "7", "3", "8"], 2)],
   },
 
@@ -1068,6 +1100,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     ],
     quickSummary: "Present Simple: habits, facts. +V (-s for he/she/it). Questions: Do/Does. Negatives: don't/doesn't. Markers: always, every day, usually.",
     facts: ["Present Simple is the most used tense", "Does 'takes away' -s: Does he play?", "For he/she/it +s: plays, reads"],
+    problemSolving: [
+      { problem: "Put in the correct form: She (not/like) coffee.", solution: "She doesn't like coffee. (doesn't + base form, no -s)" },
+    ],
     quiz: [q("She __ every day (read)", ["read", "reads", "reading", "is read"], 1), q("__ you like coffee?", ["Does", "Do", "Is", "Are"], 1), q("When is it used?", ["Right now", "Habitual actions", "Past", "Plans"], 1)],
   },
 
@@ -1110,6 +1145,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     ],
     quickSummary: "Past Simple: completed past action. Regular +ed, irregular — special form. Did for questions/negatives. Markers: yesterday, ago, last.",
     facts: ["~200 irregular verbs", "Did 'removes' V2: Did he go?", "to be: was/were"],
+    problemSolving: [
+      { problem: "She (go) to school yesterday.", solution: "She went to school yesterday. (go is irregular: go–went–gone)" },
+    ],
     quiz: [q("She __ to school yesterday (go)", ["goes", "went", "going", "goed"], 1), q("__ you see the movie?", ["Do", "Did", "Does", "Are"], 1)],
   },
 
@@ -1721,6 +1759,11 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Dominant allele", definition: "Expressed in heterozygous state" }, { term: "Genotype", definition: "The set of genes" }, { term: "Phenotype", definition: "Observable expression of genotype" }],
     quickSummary: "1st: F₁ uniform. 2nd: F₂=3:1. 3rd: independent assortment=9:3:3:1.",
     facts: ["Published 1866", "Rediscovered in 1900", "Studied 7 pea traits"],
+    formulas: [
+      "F₁: Aa × Aa → 1AA : 2Aa : 1aa",
+      "Phenotypic ratio in F₂: 3:1",
+      "Dihybrid cross: 9:3:3:1",
+    ],
     quiz: [q("F₂ segregation:", ["1:1", "2:1", "3:1", "4:1"], 2), q("Father of genetics:", ["Darwin", "Mendel", "Lamarck", "Morgan"], 1)],
   },
   "inequalities": {
@@ -1732,6 +1775,14 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Interval method", definition: "Solving inequalities using signs on a number line" }],
     quickSummary: "Linear: like equations but sign flips with negative. Quadratic: interval method.",
     facts: ["Systematized by Cauchy", "Interval method works for any polynomial"],
+    formulas: [
+      "ax + b > 0 → x > -b/a (when a > 0)",
+      "When multiplying by a negative number: the inequality sign flips",
+    ],
+    problemSolving: [
+      { problem: "2x - 6 > 0", solution: "2x > 6, x > 3" },
+      { problem: "-3x > 9", solution: "x < -3 (dividing by -3, sign flips)" },
+    ],
     quiz: [q("-2x > 4, then x:", ["> -2", "< -2", "> 2", "< 2"], 1), q("Multiply by -1:", ["Sign stays", "Sign flips", "Disappears", "Becomes equation"], 1)],
   },
   "quadratic-function": {
@@ -1743,6 +1794,14 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Parabola", definition: "Graph of a quadratic function" }, { term: "Vertex", definition: "Highest or lowest point of a parabola" }],
     quickSummary: "y=ax²+bx+c. a>0 up, a<0 down. Vertex: x=-b/2a. Zeros: D=b²-4ac.",
     facts: ["Parabolic antennas focus signals at the vertex", "Projectile trajectory is a parabola"],
+    formulas: [
+      "y = ax² + bx + c",
+      "x₀ = -b/(2a)",
+      "D = b² - 4ac",
+    ],
+    problemSolving: [
+      { problem: "y = x² - 4x + 3. Find the vertex.", solution: "x₀ = 4/2 = 2, y₀ = 4−8+3 = −1. Vertex at (2, −1)." },
+    ],
     quiz: [q("Graph of y=ax²:", ["Line", "Parabola", "Circle", "Hyperbola"], 1), q("Vertex x=:", ["-b/a", "b/2a", "-b/2a", "b/a"], 2)],
   },
   "circle-area": {
@@ -1754,6 +1813,14 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Radius", definition: "Distance from center to circle" }, { term: "π", definition: "≈3.14159" }],
     quickSummary: "C=2πr, S=πr². π≈3.14159.",
     facts: ["π calculated to trillions of digits", "Pi Day is March 14", "Archimedes first calculated π"],
+    formulas: [
+      "C = 2πr",
+      "S = πr²",
+      "Arc length: l = πrα/180°",
+    ],
+    problemSolving: [
+      { problem: "r = 5 cm. Find C and S.", solution: "C = 2π·5 = 10π ≈ 31.4 cm. S = π·25 = 25π ≈ 78.5 cm²." },
+    ],
     quiz: [q("S = ?", ["2πr", "πr²", "πd", "r²"], 1), q("π ≈ ?", ["2.14", "3.14", "4.14", "1.14"], 1)],
   },
   "logarithms": {
@@ -1765,6 +1832,15 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Logarithm", definition: "Exponent to which base must be raised to get a number" }],
     quickSummary: "log_a(b)=c ↔ a^c=b. Product→sum. lg=log₁₀, ln=logₑ.",
     facts: ["Invented by Napier in 1614", "Richter scale is logarithmic", "Decibels are logarithms"],
+    formulas: [
+      "log_a(b) = c ↔ a^c = b",
+      "log(xy) = log(x) + log(y)",
+      "log(x^n) = n·log(x)",
+    ],
+    problemSolving: [
+      { problem: "log₂(32) = ?", solution: "2^? = 32 = 2⁵, answer: 5" },
+      { problem: "log₃(1/9) = ?", solution: "3^? = 1/9 = 3⁻², answer: -2" },
+    ],
     quiz: [q("log₂(8) = ?", ["2", "3", "4", "8"], 1), q("log_a(1) = ?", ["1", "0", "a", "-1"], 1)],
   },
   "renaissance": {
@@ -1825,6 +1901,15 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     ],
     quickSummary: "Order: 1s 2s 2p 3s 3p 4s 3d... Principles: min energy, Pauli, Hund. Capacity: s=2, p=6, d=10, f=14. N=2n².",
     facts: ["Chromium is an exception: [Ar] 4s¹ 3d⁵ instead of 4s² 3d⁴", "Hund's rule makes nitrogen more stable than expected", "Lanthanides and actinides fill the f-subshell"],
+    formulas: [
+      "Maximum electrons per level: N = 2n²",
+      "Sublevel capacity: s=2, p=6, d=10, f=14",
+      "Klechkovsky order: increasing (n + l)",
+    ],
+    problemSolving: [
+      { problem: "Write the electron configuration of Chlorine (Cl, Z=17).", solution: "Fill 17 electrons in order: 1s² 2s² 2p⁶ 3s² 3p⁵. Valence electrons — 7 (3s² 3p⁵), so Cl is in Group VII." },
+      { problem: "How many unpaired electrons does Nitrogen (N, Z=7) have?", solution: "1s² 2s² 2p³. The 2p sublevel has three electrons placed one each in three orbitals (Hund's rule) → 3 unpaired electrons." },
+    ],
     quiz: [
       q("Max electrons on the p-subshell:", ["2", "6", "10", "14"], 1),
       q("Electrons per orbital (Pauli):", ["1", "2", "4", "8"], 1),
@@ -1841,6 +1926,14 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Solution", definition: "Homogeneous mixture of solvent and solute" }, { term: "Mass fraction", definition: "Ratio of solute mass to solution mass" }],
     quickSummary: "Solution = solvent + solute. ω = m/m×100%. C = n/V.",
     facts: ["Blood is a complex solution", "Seawater ~3.5% salt", "Soda is CO₂ dissolved in water"],
+    formulas: [
+      "ω = m(solute)/m(solution) × 100%",
+      "C = n/V (mol/L)",
+      "m(solution) = m(solute) + m(solvent)",
+    ],
+    problemSolving: [
+      { problem: "10 g of salt in 200 g of solution. ω = ?", solution: "ω = 10/200 × 100% = 5%" },
+    ],
     quiz: [q("ω is:", ["Molarity", "Mass fraction", "Volume", "Mass"], 1), q("5g in 100g, ω=:", ["5%", "10%", "50%", "0.5%"], 0)],
   },
   "organic-chemistry-intro": {
@@ -1863,6 +1956,10 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Oxidation", definition: "Losing electrons" }, { term: "Reduction", definition: "Gaining electrons" }],
     quickSummary: "Oxidation: lose e⁻. Reduction: gain e⁻. Combustion, corrosion, respiration = redox.",
     facts: ["Breathing is slow glucose combustion", "Rusting is iron oxidation", "Batteries run on redox"],
+    formulas: [
+      "Oxidation: X - ne⁻ → X⁺ⁿ",
+      "Reduction: Y + ne⁻ → Y⁻ⁿ",
+    ],
     quiz: [q("Oxidation is:", ["Gaining e⁻", "Losing e⁻", "Gaining protons", "Losing neutrons"], 1), q("Corrosion is:", ["Reduction", "Metal oxidation", "Dissolving", "Heating"], 1)],
   },
   "ua-adjectives": {
@@ -1897,6 +1994,11 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Past Continuous", definition: "was/were + V-ing for ongoing past actions" }],
     quickSummary: "was/were + V-ing. Ongoing at past moment. While=parallel. When=interruption.",
     facts: ["While for two ongoing actions", "When + Past Simple interrupts", "Markers: at that moment, all day"],
+    formulas: [
+      "(+) S + was/were + V-ing",
+      "(-) S + was/were + not + V-ing",
+      "(?) Was/Were + S + V-ing?",
+    ],
     quiz: [q("I ___ at 8 PM.", ["read", "was reading", "readed", "am reading"], 1), q("While I ___, phone rang.", ["slept", "was sleeping", "sleep", "sleeping"], 1)],
   },
   "en-conditionals": {
@@ -1919,6 +2021,12 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Passive Voice", definition: "Subject receives the action" }, { term: "Past Participle", definition: "V3: written, done, made" }],
     quickSummary: "be+V3. Object becomes subject. By=doer. All tenses can be passive.",
     facts: ["Common in scientific writing", "By-phrase can be omitted", "Get+V3 is informal"],
+    formulas: [
+      "Passive = be + V3",
+      "Present: is/are + V3",
+      "Past: was/were + V3",
+      "Future: will be + V3",
+    ],
     quiz: [q("The cake ___ by Tom.", ["ate", "was eaten", "is eating", "eats"], 1), q("Passive =", ["do+V", "be+V3", "have+V", "will+V"], 1)],
   },
   "waves": {
@@ -1930,6 +2038,11 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Amplitude", definition: "Maximum displacement from equilibrium" }, { term: "Wavelength", definition: "Distance between two crests" }],
     quickSummary: "A, T, ν=1/T. Transverse, longitudinal. λ=v/ν. Sound: 20-20000 Hz, ~340 m/s.",
     facts: ["Whales communicate below 20 Hz", "Light is electromagnetic wave", "Earthquakes are crustal waves"],
+    formulas: [
+      "ν = 1/T",
+      "λ = v·T = v/ν",
+      "v(sound) ≈ 340 m/s",
+    ],
     quiz: [q("ν = ?", ["T", "1/T", "λ/T", "T/λ"], 1), q("Sound wave type:", ["Transverse", "Longitudinal", "Standing", "EM"], 1)],
   },
   "thermodynamics": {
@@ -1941,6 +2054,11 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Entropy", definition: "Measure of disorder" }, { term: "Absolute zero", definition: "0K = -273.15°C" }],
     quickSummary: "1st: ΔU=Q-A. 2nd: entropy increases. 3rd: 0K unreachable. η=1-T₂/T₁.",
     facts: ["Absolute zero is -273.15°C", "Universe entropy increases", "Engine efficiency always <100%"],
+    formulas: [
+      "1st Law: ΔU = Q - A",
+      "η = A/Q (efficiency)",
+      "η(Carnot) = 1 - T₂/T₁",
+    ],
     quiz: [q("1st law:", ["Entropy", "Energy conservation", "Absolute zero", "Pressure"], 1), q("Heat flows:", ["Cold→hot", "Hot→cold", "Nowhere", "Circles"], 1)],
   },
   "nuclear-physics": {
@@ -1952,6 +2070,10 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Radioactivity", definition: "Spontaneous nuclear decay" }, { term: "Half-life", definition: "Time for half nuclei to decay" }],
     quickSummary: "α, β, γ. T₁/₂. Fission→power plants. Fusion→stars. E=Δmc².",
     facts: ["Chernobyl — 1986", "U-238 half-life: 4.5 billion years", "Sun fuses 600M tons H/sec"],
+    formulas: [
+      "N = N₀ · (1/2)^(t/T₁/₂)",
+      "E = Δm · c²",
+    ],
     quiz: [q("α-particle:", ["Electron", "Helium nucleus", "Photon", "Neutron"], 1), q("Power plants use:", ["Fusion", "Fission", "Combustion", "Chemistry"], 1)],
   },
   "bio-enzymes-kinetics": {
@@ -2034,6 +2156,11 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "State of matter", definition: "Form of existence: solid, liquid, gas, plasma" }, { term: "Melting", definition: "Solid → liquid transition" }, { term: "Sublimation", definition: "Solid → gas directly (e.g., dry ice)" }],
     quickSummary: "4 states: solid, liquid, gas, plasma. Transitions depend on T and p.",
     facts: ["Most matter in the universe is plasma", "Dry ice doesn't melt — it sublimes"],
+    examples: [
+      "Ice (solid) → water (liquid) → steam (gas)",
+      "Dry ice (CO₂) sublimes at -78 °C",
+      "Iodine sublimes when heated",
+    ],
     quiz: [q("How many main states of matter?", ["2", "3", "4", "5"], 2), q("Solid → gas directly is:", ["melting", "sublimation", "condensation", "boiling"], 1), q("Where are particles most mobile?", ["solid", "liquid", "gas", "equal"], 2)],
   },
   "chem-thermochemistry": {
@@ -2045,6 +2172,17 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Enthalpy (H)", definition: "State function — system energy at constant pressure" }, { term: "Exothermic", definition: "Releases heat, ΔH < 0" }, { term: "Hess's law", definition: "ΔH depends only on initial and final state, not the path" }],
     quickSummary: "ΔH<0 — exo, ΔH>0 — endo. Hess: ΔH = Σ H°f(prod) − Σ H°f(react).",
     facts: ["Hess's law was formulated in 1840 in St. Petersburg", "Hydrogen combustion has the highest energy per kg of common fuels"],
+    formulas: [
+      "ΔH = Σ ΔH°f(products) − Σ ΔH°f(reactants)",
+      "Q = c·m·ΔT (heat of warming)",
+    ],
+    examples: [
+      "Combustion of methane: CH₄ + 2O₂ → CO₂ + 2H₂O, ΔH = −890 kJ/mol",
+      "Dissolving NH₄NO₃ is endothermic (cools the solution)",
+    ],
+    problemSolving: [
+      { problem: "Find ΔH of C + O₂ → CO₂ if ΔH°f(CO₂) = −393.5 kJ/mol.", solution: "ΔH = ΔH°f(CO₂) − [ΔH°f(C) + ΔH°f(O₂)] = −393.5 − 0 = −393.5 kJ/mol (exothermic)." },
+    ],
     quiz: [q("A reaction with ΔH < 0 is:", ["endothermic", "exothermic", "reversible", "catalytic"], 1), q("Hess's law states ΔH:", ["depends on catalyst", "depends only on initial/final state", "is always positive", "equals zero"], 1), q("Unit of enthalpy:", ["J/K", "kJ/mol", "Pa·s", "A·h"], 1)],
   },
   "chem-kinetics": {
@@ -2056,6 +2194,18 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Reaction rate", definition: "Change in concentration per unit time" }, { term: "Activation energy", definition: "Minimum energy needed to start a reaction" }, { term: "Catalyst", definition: "Speeds up a reaction without being consumed" }],
     quickSummary: "Rate depends on C, T, catalyst. Van 't Hoff rule: γ=2-4. Arrhenius: k=A·e^(−Ea/RT).",
     facts: ["Enzymes accelerate reactions millions of times", "Platinum is a universal catalyst"],
+    formulas: [
+      "v = k·[A]^a·[B]^b",
+      "k = A·e^(−Ea/RT)",
+      "v₂/v₁ = γ^(ΔT/10)",
+    ],
+    examples: [
+      "Pt catalyst in automotive catalytic converters lowers Ea for CO combustion",
+      "Enzymes are biological catalysts that work at 37 °C",
+    ],
+    problemSolving: [
+      { problem: "When heated by 30 °C the rate increased 27-fold. Find γ.", solution: "γ^3 = 27 → γ = 3. Temperature coefficient of the reaction = 3." },
+    ],
     quiz: [q("What does NOT affect reaction rate?", ["temperature", "concentration", "color of vessel", "catalyst"], 2), q("A catalyst:", ["raises Ea", "lowers Ea", "doesn't affect Ea", "changes products"], 1), q("Van 't Hoff: per +10°C, rate increases by:", ["1×", "2-4×", "100×", "1000×"], 1)],
   },
   "chem-olymp-equilibrium": {
@@ -2067,6 +2217,17 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Equilibrium constant Kc", definition: "Product/reactant concentrations raised to stoichiometric powers" }, { term: "Le Chatelier's principle", definition: "System shifts to oppose external disturbance" }, { term: "ICE table", definition: "Initial-Change-Equilibrium method" }],
     quickSummary: "Kc=prod/react. Le Chatelier: pressure→fewer moles, T→endo. Catalyst doesn't shift.",
     facts: ["Principle formulated in 1884", "Haber process feeds billions through NH₃ production"],
+    formulas: [
+      "Kc = [C]^c[D]^d / ([A]^a[B]^b)",
+      "Kp = Kc·(RT)^Δn",
+    ],
+    examples: [
+      "N₂ + 3H₂ ⇌ 2NH₃: increasing pressure shifts equilibrium right (fewer moles)",
+      "The Haber–Bosch process is optimized using Le Chatelier's principle",
+    ],
+    problemSolving: [
+      { problem: "For H₂ + I₂ ⇌ 2HI, Kc=50. Initially [H₂]=[I₂]=1 mol/L. Find [HI] at equilibrium.", solution: "Let x mol/L react. ICE: [H₂]=[I₂]=1−x, [HI]=2x. Kc=(2x)²/((1−x)²)=50 → 2x/(1−x)=√50≈7.07 → x≈0.78. [HI]≈1.56 mol/L." },
+    ],
     quiz: [q("A catalyst shifts equilibrium:", ["right", "left", "doesn't shift", "depends on T"], 2), q("Increasing pressure on N₂+3H₂⇌2NH₃ shifts:", ["left", "right", "no shift", "decomposes"], 1), q("Kc depends on:", ["concentrations", "pressure", "temperature", "volume"], 2)],
   },
   "chem-olymp-redox": {
@@ -2078,6 +2239,13 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Oxidizer", definition: "Accepts electrons, gets reduced" }, { term: "Reducer", definition: "Donates electrons, gets oxidized" }, { term: "Disproportionation", definition: "One element is simultaneously oxidized and reduced" }],
     quickSummary: "Half-reactions + charge balance. KMnO₄, K₂Cr₂O₇, HNO₃ are olympiad favorites.",
     facts: ["KMnO₄ — \"chemical chameleon\": gives different products in different media"],
+    examples: [
+      "KMnO₄ + HCl(conc) → MnCl₂ + Cl₂ + KCl + H₂O",
+      "Cl₂ + 2NaOH → NaCl + NaClO + H₂O (disproportionation)",
+    ],
+    problemSolving: [
+      { problem: "Balance: FeSO₄ + KMnO₄ + H₂SO₄ → ...", solution: "Fe²⁺→Fe³⁺ (−1e), Mn⁺⁷→Mn²⁺ (+5e). Coefficients 5 and 1: 10FeSO₄+2KMnO₄+8H₂SO₄→5Fe₂(SO₄)₃+2MnSO₄+K₂SO₄+8H₂O." },
+    ],
     quiz: [q("An oxidizer in a reaction:", ["gives e", "accepts e", "doesn't change", "decomposes"], 1), q("KMnO₄ in neutral medium gives:", ["Mn²⁺", "MnO₂", "MnO₄²⁻", "Mn⁰"], 1), q("Cl₂+NaOH is an example of:", ["oxidation", "reduction", "disproportionation", "neutralization"], 2)],
   },
   "chem-safety-lab": {
@@ -2089,6 +2257,10 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "PPE", definition: "Personal Protective Equipment: goggles, coat, gloves" }, { term: "Fume hood", definition: "Ventilated cabinet for volatile substances" }, { term: "SDS", definition: "Safety Data Sheet for a substance" }],
     quickSummary: "Goggles, coat, acid into water, never sniff directly, know SDS, fire extinguisher nearby.",
     facts: ["First labs appeared in the alchemy era", "Modern SDS documents have 16 sections per international standard"],
+    examples: [
+      "Diluting H₂SO₄: pour acid in a thin stream into water while stirring (never the reverse)",
+      "Working with Br₂ — only under a fume hood",
+    ],
     quiz: [q("How to dilute acid correctly?", ["water into acid", "acid into water", "simultaneously", "don't dilute"], 1), q("How to smell a reagent?", ["deep breath", "wave hand toward nose", "don't smell at all", "through a tube"], 1), q("SDS is:", ["a device", "a safety data sheet", "a formula", "a catalyst"], 1)],
   },
   "chem-everyday": {
@@ -2100,6 +2272,10 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Saponification", definition: "Fat + base → soap + glycerol" }, { term: "Leavening agent", definition: "Releases CO₂ on heating (NaHCO₃, ammonium)" }, { term: "Limescale", definition: "CaCO₃, forms when boiling hard water" }],
     quickSummary: "Soda — CO₂. Soap — saponification. Rust — Fe oxidation. Limescale — CaCO₃.",
     facts: ["The first soap was known to Sumerians 4500 years ago", "Teflon was discovered by accident in 1938"],
+    examples: [
+      "Fizzy drink: baking soda + citric acid → CO₂",
+      "Removing limescale with vinegar: CaCO₃ + 2CH₃COOH → Ca(CH₃COO)₂ + CO₂ + H₂O",
+    ],
     quiz: [q("What forms bubbles in dough with soda?", ["O₂", "CO₂", "H₂", "N₂"], 1), q("Limescale in a kettle is:", ["NaCl", "CaCO₃", "Fe₂O₃", "SiO₂"], 1), q("How to remove limescale?", ["oil", "vinegar", "soda", "sugar"], 1)],
   },
   "chem-acids-bases-basics": {
@@ -2111,6 +2287,15 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Acid", definition: "Donates H⁺ in water" }, { term: "Base", definition: "Donates OH⁻ or accepts H⁺" }, { term: "pH", definition: "Acidity measure: −lg[H⁺], 0 to 14" }],
     quickSummary: "Acid → H⁺, base → OH⁻. pH<7 — acid, =7 — neutral, >7 — base.",
     facts: ["pH was introduced by Danish chemist Sørensen in 1909", "Stomach acid can dissolve a nail in a week"],
+    formulas: [
+      "pH = −lg[H⁺]",
+      "[H⁺]·[OH⁻] = 10⁻¹⁴",
+    ],
+    examples: [
+      "Gastric juice pH ≈ 1.5 (HCl)",
+      "Blood pH ≈ 7.4",
+      "Soap pH ≈ 9–10",
+    ],
     quiz: [q("pH of pure water:", ["0", "7", "14", "1"], 1), q("An acid in water donates:", ["OH⁻", "H⁺", "Na⁺", "Cl⁻"], 1), q("Litmus in acid is:", ["blue", "red", "green", "colorless"], 1)],
   },
 
@@ -2124,6 +2309,17 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Decimal fraction", definition: "Fraction with denominator 10, 100, 1000, written with a dot" }, { term: "Place value", definition: "Position: tenths, hundredths, thousandths..." }],
     quickSummary: "Dot separates whole from fraction. Operations: \"dot under dot\". 0.25=1/4.",
     facts: ["Decimal fractions were introduced by Simon Stevin in 1585"],
+    formulas: [
+      "a.bc = a + b/10 + c/100",
+    ],
+    examples: [
+      "1.5 + 2.3 = 3.8",
+      "0.2 × 0.3 = 0.06",
+      "1.25 = 1 + 25/100 = 5/4",
+    ],
+    problemSolving: [
+      { problem: "Calculate 4.5 − 1.27.", solution: "Write in columns: 4.50 − 1.27 = 3.23." },
+    ],
     quiz: [q("0.5 = ?", ["1/3", "1/2", "1/5", "2/5"], 1), q("0.1 + 0.2 =", ["0.12", "0.3", "0.21", "0.03"], 1), q("1/4 as a decimal:", ["0.4", "0.25", "0.14", "0.04"], 1)],
   },
   "math-progressions": {
@@ -2135,6 +2331,19 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Common difference d", definition: "Constant added in arithmetic progression" }, { term: "Common ratio q", definition: "Constant multiplier in geometric progression" }],
     quickSummary: "Arith: aₙ=a₁+(n−1)d. Geom: bₙ=b₁qⁿ⁻¹. Sums via formulas.",
     facts: ["As a child, Gauss instantly summed 1+2+...+100 = 5050"],
+    formulas: [
+      "aₙ = a₁ + (n−1)d",
+      "Sₙ = n(a₁ + aₙ)/2",
+      "bₙ = b₁·q^(n−1)",
+      "Sₙ = b₁(qⁿ−1)/(q−1)",
+    ],
+    examples: [
+      "2, 5, 8, 11: d=3, a₁₀ = 2+9·3 = 29",
+      "3, 6, 12, 24: q=2, b₅ = 3·2⁴ = 48",
+    ],
+    problemSolving: [
+      { problem: "Find the sum of the first 100 natural numbers.", solution: "Arithmetic progression: a₁=1, a₁₀₀=100. S = 100·(1+100)/2 = 5050." },
+    ],
     quiz: [q("3,7,11,15... — what kind of progression?", ["arithmetic", "geometric", "Fibonacci", "none"], 0), q("d in 5,9,13,17:", ["3", "4", "5", "9"], 1), q("S₁₀ for 1,2,3,...,10:", ["45", "50", "55", "100"], 2)],
   },
   "math-mental-tricks": {
@@ -2146,6 +2355,14 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Divisibility rule", definition: "Quick test for whether a number divides evenly" }, { term: "Mental arithmetic", definition: "Computation in your head without tools" }],
     quickSummary: "·11 — \"split and add\". ²5 — n(n+1)|25. ·9 — ·10 minus self.",
     facts: ["Vedic sages had mental math systems 3000 years ago", "Mental math champions multiply 8-digit numbers in a minute"],
+    examples: [
+      "45² = 4·5=20, append 25 → 2025",
+      "13·11 = 1_(1+3)_3 = 143",
+      "8·9 = 80−8 = 72",
+    ],
+    problemSolving: [
+      { problem: "Calculate 65² mentally.", solution: "6·7=42, append 25 → 4225." },
+    ],
     quiz: [q("25² =", ["525", "625", "725", "425"], 1), q("23·11 =", ["233", "253", "263", "2311"], 1), q("Is 123 divisible by 3?", ["yes", "no", "only by 9", "depends"], 0)],
   },
   "math-puzzles-logic": {
@@ -2157,6 +2374,13 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Pigeonhole principle", definition: "If n+1 items go in n boxes, some box has ≥2" }, { term: "Invariant", definition: "A quantity unchanged by transformations" }],
     quickSummary: "Pigeonhole, invariants, weighings, pourings — solver's toolkit.",
     facts: ["First puzzles — Rhind papyrus (1650 BCE)", "Sudoku popularized in Japan, 1986"],
+    examples: [
+      "9 coins, 1 fake (lighter): 2 weighings — split 3:3, then 1:1",
+      "Pouring 5L+3L → 4L: fill 5, pour into 3, keep 2; empty 3, pour 2 into 3 from 5; fill 5 again → 4L left in 5",
+    ],
+    problemSolving: [
+      { problem: "In a class of 30 students, prove that at least two share a birth month.", solution: "12 months (pigeonholes) and 30 students (pigeons). By the Pigeonhole Principle at least ⌈30/12⌉ = 3 share a month." },
+    ],
     quiz: [q("9 coins, 1 fake (heavier) — minimum weighings?", ["1", "2", "3", "4"], 1), q("Pigeonhole principle is about:", ["equations", "distribution", "integrals", "matrices"], 1), q("Invariant is:", ["a variable", "constant under transformations", "a function", "a matrix"], 1)],
   },
   "math-systems-equations": {
@@ -2168,6 +2392,16 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "System of equations", definition: "Multiple equations sharing variables" }, { term: "Substitution", definition: "Express one variable, plug into others" }, { term: "Elimination", definition: "Combine equations so a variable cancels" }],
     quickSummary: "Substitution or elimination. Check uniqueness of the solution.",
     facts: ["Gaussian elimination was described in China ~200 BCE", "Linear algebra is the foundation of machine learning"],
+    formulas: [
+      "{x+y=a; x−y=b} → x=(a+b)/2, y=(a−b)/2",
+    ],
+    examples: [
+      "{2x+y=7; x−y=2} → x=3, y=1",
+      "{x+y=5; 2x+2y=10} — infinitely many solutions",
+    ],
+    problemSolving: [
+      { problem: "Solve: {3x+2y=12; x−y=1}.", solution: "From the 2nd equation: x=y+1. Substitute: 3(y+1)+2y=12 → 5y=9 → y=1.8, x=2.8." },
+    ],
     quiz: [q("How many solutions in {x+y=2; 2x+2y=4}?", ["0", "1", "2", "infinitely many"], 3), q("Method that expresses one variable:", ["elimination", "substitution", "graphical", "matrix"], 1), q("Solution of {x+y=5; x−y=1}:", ["(3,2)", "(2,3)", "(4,1)", "(1,4)"], 0)],
   },
 
@@ -2182,6 +2416,10 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Pronoun", definition: "Part of speech that points to an object/feature without naming it" }, { term: "Personal pronoun", definition: "I, you, he, she, it, we, you, they" }],
     quickSummary: "9 categories of pronouns. Replace nouns/adjectives/numerals.",
     facts: ["The reflexive pronoun «себе» has no nominative case"],
+    examples: [
+      "I am reading a book. It is interesting. (Я читаю книжку. Вона цікава.)",
+      "Who came? — Nobody. (Хто прийшов? — Ніхто.)",
+    ],
     quiz: [q("«Я» is a pronoun of which type?", ["possessive", "personal", "interrogative", "demonstrative"], 1), q("How many pronoun categories?", ["5", "7", "9", "12"], 2), q("«Хтось» is:", ["definite", "indefinite", "negative", "demonstrative"], 1)],
   },
   "ua-complex-sentence": {
@@ -2193,6 +2431,10 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Compound", definition: "Equal parts joined by і, але, або" }, { term: "Complex", definition: "One part subordinate to another" }],
     quickSummary: "Complex = 2+ bases. Compound — equal; complex — subordinate; conjunctionless.",
     facts: ["Shevchenko's longest sentence has 100+ words"],
+    examples: [
+      "The wind blew and the leaves fell. — compound sentence (Подув вітер, і впало листя.)",
+      "I know that it will rain tomorrow. — complex sentence (Я знаю, що завтра дощ.)",
+    ],
     quiz: [q("How many bases in a complex sentence?", ["1", "2 or more", "exactly 2", "doesn't matter"], 1), q("«Я знаю, що ти прийдеш» is:", ["compound", "complex", "simple", "conjunctionless"], 1), q("Conjunction «і» belongs to:", ["subordinate", "coordinate", "both", "neither"], 1)],
   },
   "ua-direct-speech": {
@@ -2204,6 +2446,10 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Direct speech", definition: "Verbatim words of someone in quotation marks" }, { term: "Author's words", definition: "Text that introduces direct speech" }],
     quickSummary: "А: «П». / «П», — а. / Dialogue — dash on a new line.",
     facts: ["Ukrainian uses «herringbone quotes», English uses \" \""],
+    examples: [
+      "He said: «I will return». (Він сказав: «Я повернуся».)",
+      "— Where are you going? — she asked. (— А ти куди? — спитала вона.)",
+    ],
     quiz: [q("Mark for direct speech:", ["( )", "« »", "[ ]", "{ }"], 1), q("Mark for dialogue:", ["quotes", "dash", "period", "colon"], 1), q("Indirect speech is:", ["quoted", "retold without quotes", "dialogue", "monologue"], 1)],
   },
   "ua-morphology-deep": {
@@ -2216,6 +2462,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Morphology", definition: "Branch of linguistics on parts of speech and forms" }, { term: "Permanent features", definition: "Don't change (gender, declension)" }, { term: "Variable features", definition: "Depend on form (case, number)" }],
     quickSummary: "Base form → POS → permanent → variable → syntactic role.",
     facts: ["Morphological analysis is the foundation of NLP"],
+    examples: [
+      "«Книга» — noun, feminine, 1st declension, nominative case, singular, subject",
+    ],
     quiz: [q("Permanent feature of a noun:", ["case", "number", "gender", "role"], 2), q("Base form of a verb is:", ["1st person", "infinitive", "past tense", "participle"], 1), q("Variable feature:", ["declension", "aspect", "case", "gender"], 2)],
   },
   "ua-stylistics": {
@@ -2227,6 +2476,10 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Speech style", definition: "Set of language tools typical of a sphere" }, { term: "Tropes", definition: "Artistic devices: metaphor, epithet, simile" }],
     quickSummary: "6 styles: colloquial, artistic, scientific, official, journalistic, religious.",
     facts: ["Stylistics emerged as a science in the 20th century"],
+    examples: [
+      "«The sun smiled» — artistic style (metaphor) (Сонце усміхнулось)",
+      "«H₂O is the formula for water» — scientific style",
+    ],
     quiz: [q("Style of an application is:", ["artistic", "official", "colloquial", "religious"], 1), q("Metaphors are typical of:", ["scientific", "official", "artistic", "colloquial"], 2), q("Terms are a feature of:", ["artistic", "scientific", "colloquial", "journalistic"], 1)],
   },
   "ua-word-formation-deep": {
@@ -2238,6 +2491,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Word formation", definition: "Branch of linguistics on creating words" }, { term: "Affix", definition: "Morpheme (prefix, suffix) attached to a root" }],
     quickSummary: "7 methods: prefix, suffix, pref+suf, affixless, compounding, abbreviation, conversion.",
     facts: ["«Selfie» entered dictionaries in 2013", "Shevchenko coined ~150 neologisms"],
+    examples: [
+      "reader (suffix), re-read (prefix), aircraft (compound), UN (abbreviation) — читач (суф.), пере-читати (преф.), сам-о-літ (склад.), УНР (абрев.)",
+    ],
     quiz: [q("«Перечитати» is formed by:", ["suffix", "prefix", "compounding", "abbreviation"], 1), q("«ВНЗ» is:", ["prefix", "compounding", "abbreviation", "suffix"], 2), q("«Теплохід» is:", ["suffix", "compounding", "prefix", "conversion"], 1)],
   },
   "ua-olymp-etymology": {
@@ -2249,6 +2505,14 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Etymology", definition: "Study of word origins" }, { term: "Pleophony", definition: "-оро-, -оло-, -ере- (Ukr.) vs -ра-, -ла-, -ре- (OCS)" }],
     quickSummary: "o/e→i in closed syllables, pleophony, ѣ→i, fall of yers ъ ь.",
     facts: ["The word «хліб» is Proto-Slavic, from Gothic hlaifs", "«Кавун» is from Turkic"],
+    examples: [
+      "город (Ukrainian, full vowel) — град (Old Church Slavonic)",
+      "молоко (milk) — млеко (Old Slavonic)",
+      "ніч (night) — genitive ночі (о→і in closed syllable)",
+    ],
+    problemSolving: [
+      { problem: "Why do we write «віл» but in the genitive «вола»?", solution: "In a closed syllable (в-і-л) the vowel о shifted to і. In an open syllable (во-ла) it was preserved." },
+    ],
     quiz: [q("o//i alternation occurs in:", ["open syllables", "closed syllables", "all", "only roots"], 1), q("Pleophony in Ukrainian:", ["-ра-", "-оро-", "-ле-", "-рі-"], 1), q("«Базар» is borrowed from:", ["Greek", "Polish", "Turkic", "German"], 2)],
   },
   "ua-olymp-syntax": {
@@ -2260,6 +2524,13 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Detached member", definition: "Set off by commas/dashes, carries extra meaning" }, { term: "Parenthetical word", definition: "Expresses speaker's attitude, not a sentence member" }],
     quickSummary: "Detachment: extended attributes, adverbial participle phrases. Parenthetical — commas.",
     facts: ["Ukrainian has ~30 types of subordinate clauses"],
+    examples: [
+      "Weary from work, he fell asleep. — detached modifier (Зморений роботою, він заснув.)",
+      "Unfortunately, I couldn't come. — parenthetical word (На жаль, не зміг прийти.)",
+    ],
+    problemSolving: [
+      { problem: "Place commas: «Я думаю що він прийде бо обіцяв».", solution: "«Я думаю, що він прийде, бо обіцяв.» — comma before що (noun clause) and before бо (cause clause)." },
+    ],
     quiz: [q("«На жаль» is:", ["sentence member", "parenthetical word", "conjunction", "particle"], 1), q("Adverbial participle phrase:", ["not set off", "set off by commas", "by dashes", "by quotes"], 1), q("Before «що» in subordinate:", ["no comma", "comma", "dash", "period"], 1)],
   },
   "ua-olymp-phonetics": {
@@ -2271,6 +2542,13 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Alternation", definition: "Sound change across forms of one word" }, { term: "Assimilation", definition: "Adjacent sounds becoming similar" }, { term: "Simplification", definition: "Loss of a sound from a consonant cluster" }],
     quickSummary: "Alternations o/і, г/ж/з. Voicing assimilation. Consonant simplification.",
     facts: ["Ukrainian has 38 sounds and 33 letters"],
+    examples: [
+      "рука — руці — ручка (alternation к/ц/ч)",
+      "тиждень — тижневий (consonant cluster simplification дн→жн)",
+    ],
+    problemSolving: [
+      { problem: "Transcribe the word «просьба».", solution: "[про́зʹба] — assimilation с→з before voiced б." },
+    ],
     quiz: [q("«Нога — нозі» is alternation:", ["о/і", "г/з", "г/ж", "none"], 1), q("Simplification in cluster стн:", ["щасливий", "чесний", "контрастний", "тижневий"], 1), q("Assimilation in «просьба»:", ["с→з", "б→п", "р→л", "none"], 0)],
   },
 
@@ -2284,6 +2562,11 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Modal verb", definition: "Auxiliary verb expressing modality" }, { term: "Perfect modal", definition: "Modal + have + V3, comments on the past" }],
     quickSummary: "Can/may/must/should/would — modals. Perfect: must/should/could + have + V3.",
     facts: ["English has only ~10 modal verbs vs thousands of regular ones"],
+    examples: [
+      "You must wear a seatbelt. (obligation)",
+      "She must be tired. (logical certainty)",
+      "I should have called. (regret about the past)",
+    ],
     quiz: [q("«You must be tired» means:", ["obligation", "certainty", "advice", "permission"], 1), q("«Should have done» is:", ["future", "past regret", "current obligation", "habit"], 1), q("External obligation:", ["must", "should", "have to", "may"], 2)],
   },
   "en-reported-speech": {
@@ -2295,6 +2578,10 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Reported speech", definition: "Indirect speech, retelling someone's words" }, { term: "Backshift", definition: "Shifting tenses one step into the past" }],
     quickSummary: "Backshift: Pres→Past, will→would, can→could. Questions: if/whether.",
     facts: ["In speech, native speakers often skip backshift if info is still relevant"],
+    examples: [
+      "\"I work here.\" → He said he worked there.",
+      "\"Are you OK?\" → She asked if I was OK.",
+    ],
     quiz: [q("«I am happy» in reported:", ["He said he is happy", "He said he was happy", "He said he were happy", "He said he be happy"], 1), q("«Will» in reported:", ["would", "willed", "shall", "could"], 0), q("Yes/No questions are introduced with:", ["that", "what", "if/whether", "who"], 2)],
   },
   "en-phrasal-verbs": {
@@ -2306,6 +2593,11 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Phrasal verb", definition: "Verb + particle with idiomatic meaning" }, { term: "Separable", definition: "Can be split by an object" }],
     quickSummary: "Verb + particle. Separable/inseparable. Pronoun always in the middle (separable).",
     facts: ["English has ~10,000 phrasal verbs", "Most are of Germanic origin"],
+    examples: [
+      "give up smoking — to quit smoking",
+      "run out of milk — the milk has run out",
+      "look it up — search for it (in a dictionary)",
+    ],
     quiz: [q("«Give up» means:", ["return", "quit", "lift", "ask"], 1), q("Correct:", ["turn on it", "turn it on", "turn it up on", "on turn it"], 1), q("«Look after» means:", ["search", "take care of", "forget", "look down"], 1)],
   },
   "en-olymp-inversion": {
@@ -2317,6 +2609,14 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Inversion", definition: "Word-order change: auxiliary before subject" }, { term: "Emphasis", definition: "Highlighting a part of the sentence" }],
     quickSummary: "Negative adv. up front → inversion. Conditionals without if: Had/Were/Should + S.",
     facts: ["Inversion is a relic of Old English preserved in emphasis"],
+    examples: [
+      "Never have I been so happy.",
+      "Had I known, I would have called.",
+      "Not only is she smart, but she's also kind.",
+    ],
+    problemSolving: [
+      { problem: "Rewrite with inversion: «I had hardly sat down when the phone rang».", solution: "Hardly had I sat down when the phone rang." },
+    ],
     quiz: [q("«Never ___ such a thing.» — correct:", ["I have seen", "have I seen", "I saw", "did I saw"], 1), q("«Had I known» = ?", ["I have known", "If I had known", "I had to know", "I knew"], 1), q("Inversion creates:", ["simplification", "emphasis", "translation", "passive"], 1)],
   },
   "en-olymp-subjunctive": {
@@ -2328,6 +2628,14 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Subjunctive", definition: "Mood for unreal/desired" }, { term: "Mixed conditional", definition: "Combines past condition with present result (or vice versa)" }],
     quickSummary: "If I were... / had done. Wish + past/past perfect/would. Suggest that he be...",
     facts: ["The subjunctive has nearly disappeared in English — only fragments remain"],
+    examples: [
+      "If I were rich, I would travel.",
+      "I wish I had studied harder.",
+      "He insisted that she be present.",
+    ],
+    problemSolving: [
+      { problem: "Translate: «Якби я знав це вчора, я б тобі сказав сьогодні».", solution: "If I had known it yesterday, I would tell you today. (mixed conditional: past perfect + would + V)" },
+    ],
     quiz: [q("«If I ___ you, I would go» — correct:", ["am", "was", "were", "be"], 2), q("«I wish I ___ earlier» (regret about past):", ["leave", "left", "had left", "would leave"], 2), q("«I suggest that he ___ here» — formally:", ["is", "be", "was", "were"], 1)],
   },
   "en-olymp-collocations": {
@@ -2339,6 +2647,13 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Collocation", definition: "Natural, habitual word pairing" }],
     quickSummary: "Make = create, do = perform. Heavy/strong/deep — typical intensifiers.",
     facts: ["Corpus linguistics identifies ~250,000 typical collocations in English"],
+    examples: [
+      "make a mistake (NOT do a mistake)",
+      "take/make a decision, heavy smoker, fast food (NOT quick food)",
+    ],
+    problemSolving: [
+      { problem: "Fix: «I did a mistake yesterday».", solution: "I made a mistake yesterday. (mistake collocates with make, not do)" },
+    ],
     quiz: [q("«___ a decision»:", ["do", "make", "have", "take a"], 1), q("«___ rain»:", ["strong", "heavy", "powerful", "thick"], 1), q("«___ homework»:", ["make", "do", "have", "take"], 1)],
   },
   "en-learn-tips": {
@@ -2350,6 +2665,10 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Comprehensible input", definition: "Material 80–90% understandable, with a little new" }, { term: "Shadowing", definition: "Repeat after a speaker with minimal delay" }],
     quickSummary: "Input + Anki + shadowing + speak daily. Consistency > intensity.",
     facts: ["B2 takes ~600 hours of immersion (CEFR)", "Polyglot Kató Lomb learned languages by reading novels"],
+    examples: [
+      "Watch Friends with English subtitles",
+      "Use Anki with context sentences instead of word lists",
+    ],
     quiz: [q("What is shadowing?", ["silent reading", "repeating after a speaker", "translating", "writing"], 1), q("Comprehensible input is:", ["hard material", "80–90% understandable", "grammar only", "vocab only"], 1), q("Better strategy:", ["3h once a week", "20 min daily", "grammar only", "translation only"], 1)],
   },
   "en-cultural-notes": {
@@ -2361,6 +2680,11 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "BrE", definition: "British English" }, { term: "AmE", definition: "American English" }],
     quickSummary: "Vocabulary, spelling, pronunciation, partly grammar — differ. Pick one.",
     facts: ["Noah Webster deliberately simplified spelling in his 1828 dictionary to distinguish AmE", "Australian English is closer to BrE"],
+    examples: [
+      "BrE: I've just eaten. / AmE: I just ate.",
+      "BrE: at the weekend / AmE: on the weekend",
+      "BrE: colour / AmE: color",
+    ],
     quiz: [q("«Lift» (BrE) = ?", ["truck", "elevator", "lorry", "trunk"], 1), q("«Color» is:", ["BrE", "AmE", "both", "neither"], 1), q("«I have got» is typical of:", ["AmE", "BrE", "both", "Australia only"], 1)],
   },
   "en-pronunciation-deep": {
@@ -2372,6 +2696,9 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
     keyTerms: [{ term: "Schwa /ə/", definition: "Reduced vowel, the most frequent in English" }, { term: "Minimal pair", definition: "Words differing by one sound (ship/sheep)" }],
     quickSummary: "/θ/ /ð/ between teeth. /w/ lips. /æ/ wide. /ə/ everywhere unstressed.",
     facts: ["Schwa appears in ~25% of syllables in English speech", "/θ/ exists in only ~7% of world languages"],
+    examples: [
+      "think /θɪŋk/, this /ðɪs/, water /ˈwɔːtər/, about /əˈbaʊt/",
+    ],
     quiz: [q("The /θ/ sound is:", ["s", "t", "th in think", "sh"], 2), q("Schwa /ə/ is:", ["stressed", "unstressed reduced", "long", "nasal"], 1), q("Minimal pair:", ["cat/dog", "ship/sheep", "go/come", "yes/no"], 1)],
   },
   "math-history": {

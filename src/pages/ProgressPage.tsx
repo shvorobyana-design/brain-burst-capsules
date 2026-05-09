@@ -26,7 +26,7 @@ const ProgressPage = () => {
   const totalTestsCount = capsuleTestsCount + finalTestsCount;
 
   // ОБ'ЄДНУЄМО: Розрахунок середнього балу для всіх типів
-  const allResults = [
+  const allResults: Array<{ score: number; total: number; date: string }> = [
     ...Object.values(progress.quizResults || {}),
     ...Object.values(progress.finalTests || {})
   ];
