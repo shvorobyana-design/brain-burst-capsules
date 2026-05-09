@@ -167,12 +167,15 @@ function Row({ entry, idx, level, isMe, t }: { entry: LBEntry; idx: number; leve
       }`}
     >
       {/* Rank */}
-      <div className={`w-10 sm:w-12 shrink-0 flex items-center justify-center font-bold ${
-        isPodium ? `text-transparent bg-clip-text bg-gradient-to-br ${p.medalColor} text-2xl sm:text-3xl` : "text-muted-foreground text-lg"
-      }`}>
-        {isPodium ? <p.medal className={`w-7 h-7 sm:w-8 sm:h-8 text-transparent`} fill="url(#g)" style={{}} /> : null}
-        {!isPodium && `#${rank}`}
-        {isPodium && <span className="absolute">{rank}</span>}
+      <div className="w-10 sm:w-12 shrink-0 flex items-center justify-center">
+        {isPodium ? (
+          <div className={`relative w-10 h-10 rounded-xl bg-gradient-to-br ${p!.medalColor} flex items-center justify-center text-white shadow-lg ${p!.glow}`}>
+            <p!.medal className="w-5 h-5" />
+            <span className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-card text-foreground text-[10px] font-bold flex items-center justify-center border border-border">{rank}</span>
+          </div>
+        ) : (
+          <span className="text-muted-foreground text-base font-bold">#{rank}</span>
+        )}
       </div>
 
       {/* Avatar */}
