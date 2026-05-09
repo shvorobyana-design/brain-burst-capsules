@@ -66,7 +66,7 @@ const ProgressPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="pt-24 pb-16">
+      <div className="pt-24 pb-24 md:pb-16">
         <div className="container mx-auto px-4 max-w-2xl">
           <h1 className="text-3xl font-bold mb-8">
             {t.yourProgress} <span className="gradient-text">{t.yourProgressHighlight}</span>
