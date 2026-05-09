@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Brain, Sparkles, Search, Globe, Trophy, BookOpen, BarChart3, Home, LogIn, LogOut, User as UserIcon } from "lucide-react";
+import { Brain, Sparkles, Search, Globe, Trophy, BookOpen, BarChart3, Home, LogIn, User as UserIcon } from "lucide-react";
 import SearchDialog from "./SearchDialog";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useProgress } from "@/hooks/useProgress";
@@ -10,7 +10,7 @@ const Navbar = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const { lang, setLang, t } = useLanguage();
   const { trackLangSwitch, trackLogoClick, trackSearch } = useProgress();
-  const { user, profile, signOut, updateProfile } = useAuth();
+  const { user, profile, updateProfile } = useAuth();
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
