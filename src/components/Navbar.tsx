@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Brain, Sparkles, Search, Globe, Trophy, BookOpen, BarChart3, Home, LogIn, LogOut, User as UserIcon } from "lucide-react";
+import { Brain, Sparkles, Search, Globe, Trophy, BookOpen, BarChart3, Home, LogIn, User as UserIcon } from "lucide-react";
 import SearchDialog from "./SearchDialog";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useProgress } from "@/hooks/useProgress";
@@ -10,7 +10,7 @@ const Navbar = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const { lang, setLang, t } = useLanguage();
   const { trackLangSwitch, trackLogoClick, trackSearch } = useProgress();
-  const { user, profile, signOut, updateProfile } = useAuth();
+  const { user, profile, updateProfile } = useAuth();
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -83,15 +83,14 @@ const Navbar = () => {
             </button>
 
             {user ? (
-              <button
-                onClick={() => signOut()}
+              <Link
+                to="/profile"
                 title={profile?.display_name || user.email || ""}
-                className="flex items-center justify-center gap-1.5 w-9 h-9 sm:w-auto sm:h-auto sm:px-3 sm:py-2 rounded-xl bg-muted/60 text-muted-foreground text-sm hover:bg-muted transition-colors border border-border"
+                className="flex items-center justify-center gap-1.5 w-9 h-9 sm:w-auto sm:h-auto sm:px-3 sm:py-2 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 text-foreground text-sm hover:from-primary/30 hover:to-secondary/30 transition-colors border border-primary/30"
               >
                 <UserIcon className="w-4 h-4" />
-                <span className="hidden md:inline truncate max-w-[80px]">{profile?.display_name || user.email?.split("@")[0]}</span>
-                <LogOut className="w-3.5 h-3.5 hidden sm:inline-block opacity-60" />
-              </button>
+                <span className="hidden md:inline truncate max-w-[80px] font-medium">{profile?.display_name || user.email?.split("@")[0]}</span>
+              </Link>
             ) : (
               <Link
                 to="/auth"

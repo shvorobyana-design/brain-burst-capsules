@@ -14,8 +14,10 @@ import ProgressPage from "./pages/ProgressPage";
 import FinalTestPage from "./pages/FinalTestPage";
 import AchievementsPage from "./pages/AchievementsPage";
 import AuthPage from "./pages/AuthPage";
+import ProfilePage from "./pages/ProfilePage";
 import NotFound from "./pages/NotFound";
 import AchievementToast from "./components/AchievementToast";
+import Onboarding from "./components/Onboarding";
 
 const queryClient = new QueryClient();
 
@@ -28,9 +30,11 @@ const App = () => (
             <Toaster />
             <Sonner />
             <AchievementToast />
+            <Onboarding />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/auth" element={<AuthPage />} />
+              <Route path="/profile" element={<ProfilePage />} />
               <Route path="/capsule/:id" element={<CapsulePage />} />
               <Route path="/category/:id" element={<CategoryPage />} />
               <Route path="/category/:id/final-test" element={<FinalTestPage />} />
