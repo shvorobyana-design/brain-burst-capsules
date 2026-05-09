@@ -9,6 +9,7 @@ export type { ProgressData };
 const STORAGE_KEY = "braincapsule-progress";
 const STATS_KEY = "braincapsule-stats";
 const ACH_KEY = "braincapsule-achievements";
+const ACH_DATES_KEY = "braincapsule-ach-dates";
 
 function loadProgress(): ProgressData {
   try {
@@ -52,6 +53,10 @@ function loadUnlocked(): string[] {
   try { return JSON.parse(localStorage.getItem(ACH_KEY) || "[]"); } catch { return []; }
 }
 function saveUnlocked(a: string[]) { localStorage.setItem(ACH_KEY, JSON.stringify(a)); }
+function loadDates(): Record<string, string> {
+  try { return JSON.parse(localStorage.getItem(ACH_DATES_KEY) || "{}"); } catch { return {}; }
+}
+function saveDates(d: Record<string, string>) { localStorage.setItem(ACH_DATES_KEY, JSON.stringify(d)); }
 
 export const achievementBus = new EventTarget();
 
@@ -59,12 +64,14 @@ export function useProgress() {
   const [progress, setProgress] = useState<ProgressData>(loadProgress);
   const [stats, setStats] = useState<StatsState>(loadStats);
   const [unlocked, setUnlocked] = useState<string[]>(loadUnlocked);
+  const [unlockDates, setUnlockDates] = useState<Record<string,string>>(loadDates);
   const { user } = useAuth();
   const [hydratedFromCloud, setHydratedFromCloud] = useState(false);
 
   useEffect(() => { saveProgress(progress); }, [progress]);
   useEffect(() => { saveStats(stats); }, [stats]);
   useEffect(() => { saveUnlocked(unlocked); }, [unlocked]);
+  useEffect(() => { saveDates(unlockDates); }, [unlockDates]);
 
   // ===== Cloud hydration on sign-in (with auto-merge of guest progress) =====
   useEffect(() => {
@@ -114,9 +121,13 @@ export function useProgress() {
         ...(cloud?.unlocked_achievements || []),
         ...localUnlocked,
       ]));
+      const cloudDates = (cloudStats as any).achievementDates || {};
+      const localDates = loadDates();
+      const mergedDates: Record<string,string> = { ...cloudDates, ...localDates };
       setProgress({ readCapsules: mergedReadCapsules, quizResults: mergedQuiz, finalTests: mergedFinal });
       setStats(mergedStats);
       setUnlocked(mergedUnlocked);
+      setUnlockDates(mergedDates);
       setHydratedFromCloud(true);
     })();
     return () => { cancelled = true; };
@@ -131,12 +142,15 @@ export function useProgress() {
         read_capsules: progress.readCapsules,
         quiz_results: progress.quizResults as any,
         final_tests: progress.finalTests as any,
-        stats: stats as any,
+        stats: { ...stats, achievementDates: unlockDates } as any,
         unlocked_achievements: unlocked,
       }, { onConflict: "user_id" }).then(() => { /* silent */ });
+      // Also sync XP to profile so leaderboard works
+      const xpNow = computeXP({ progress, totalCapsules: capsules.length, stats });
+      supabase.from("profiles").update({ xp: xpNow }).eq("id", user.id).then(() => {});
     }, 800);
     return () => clearTimeout(t);
-  }, [user, hydratedFromCloud, progress, stats, unlocked]);
+  }, [user, hydratedFromCloud, progress, stats, unlocked, unlockDates]);
 
   // Session + streak (once per mount)
   useEffect(() => {
@@ -183,6 +197,12 @@ export function useProgress() {
     const newOnes = [...set].filter(id => !unlocked.includes(id));
     if (newOnes.length) {
       setUnlocked(prev => [...prev, ...newOnes]);
+      setUnlockDates(prev => {
+        const out = { ...prev };
+        const now = new Date().toISOString();
+        newOnes.forEach(id => { if (!out[id]) out[id] = now; });
+        return out;
+      });
       newOnes.forEach(id => achievementBus.dispatchEvent(new CustomEvent("unlock", { detail: id })));
     }
   }, [progress, stats, unlocked]);
@@ -245,7 +265,7 @@ export function useProgress() {
   }, [levelInfo.level]);
 
   return {
-    progress, stats, unlocked,
+    progress, stats, unlocked, unlockDates,
     markRead, saveQuizResult, saveFinalTestResult,
     trackAi, trackSearch, trackRandom, trackLangSwitch, trackLogoClick,
     getLevel, xp, levelInfo,
