@@ -1,6 +1,6 @@
-import { useMemo, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Search, Trophy, Lock, Sparkles, Filter, Download, Upload, Save, X, Calendar, Target, Award } from "lucide-react";
+import { useMemo, useState } from "react";
+import { motion } from "framer-motion";
+import { Search, Trophy, Lock, Sparkles, Filter, X, Calendar, Target, Award } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ACHIEVEMENTS, RARITY_META, Rarity, Achievement } from "@/data/achievements";
@@ -8,7 +8,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useProgress } from "@/hooks/useProgress";
 import { capsules } from "@/data/capsules";
 import { Progress } from "@/components/ui/progress";
-import { toast } from "@/hooks/use-toast";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const rarities: (Rarity | "all")[] = ["all","common","rare","epic","legendary"];
@@ -20,36 +19,6 @@ const AchievementsPage = () => {
   const [query, setQuery] = useState("");
   const [showLocked, setShowLocked] = useState(true);
   const [selected, setSelected] = useState<Achievement | null>(null);
-  const fileRef = useRef<HTMLInputElement>(null);
-
-  const exportData = () => {
-    const payload = {
-      version: 1,
-      exportedAt: new Date().toISOString(),
-      progress: localStorage.getItem("braincapsule-progress"),
-      stats: localStorage.getItem("braincapsule-stats"),
-      achievements: localStorage.getItem("braincapsule-achievements"),
-    };
-    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url; a.download = `braincapsule-backup-${new Date().toISOString().slice(0,10)}.json`;
-    a.click(); URL.revokeObjectURL(url);
-    toast({ title: lang === "en" ? "Backup downloaded" : "Резервну копію збережено" });
-  };
-  const importData = async (file: File) => {
-    try {
-      const text = await file.text();
-      const data = JSON.parse(text);
-      if (data.progress) localStorage.setItem("braincapsule-progress", data.progress);
-      if (data.stats) localStorage.setItem("braincapsule-stats", data.stats);
-      if (data.achievements) localStorage.setItem("braincapsule-achievements", data.achievements);
-      toast({ title: lang === "en" ? "Restored! Reloading…" : "Відновлено! Перезавантаження…" });
-      setTimeout(() => window.location.reload(), 800);
-    } catch {
-      toast({ title: lang === "en" ? "Invalid backup file" : "Невірний файл резервної копії", variant: "destructive" as any });
-    }
-  };
 
   const ctx = { progress, totalCapsules: capsules.length, stats };
 
@@ -113,23 +82,6 @@ const AchievementsPage = () => {
             </div>
             <p className="text-muted-foreground mb-8">{STR.sub[lang]}</p>
 
-            {/* Save / backup bar */}
-            <div className="flex flex-wrap items-center gap-2 mb-4 p-3 rounded-xl bg-muted/40 border border-border">
-              <div className="flex items-center gap-2 text-xs text-muted-foreground flex-1 min-w-[180px]">
-                <Save className="w-4 h-4 text-emerald-500" />
-                {STR.autosave[lang]}
-              </div>
-              <button onClick={exportData}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-card border border-border text-xs font-medium hover:border-primary transition-colors">
-                <Download className="w-3.5 h-3.5" />{STR.export[lang]}
-              </button>
-              <button onClick={() => fileRef.current?.click()}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-card border border-border text-xs font-medium hover:border-primary transition-colors">
-                <Upload className="w-3.5 h-3.5" />{STR.import[lang]}
-              </button>
-              <input ref={fileRef} type="file" accept="application/json" className="hidden"
-                onChange={e => { const f = e.target.files?.[0]; if (f) importData(f); e.target.value = ""; }} />
-            </div>
 
             {/* Stats card */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
