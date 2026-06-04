@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import { ACHIEVEMENTS, AchStats, computeXP, evaluateAchievements, levelFromXP, ProgressData } from "@/data/achievements";
 import { capsules } from "@/data/capsules";
 import { supabase } from "@/integrations/supabase/client";
@@ -10,6 +10,7 @@ const STORAGE_KEY = "braincapsule-progress";
 const STATS_KEY = "braincapsule-stats";
 const ACH_KEY = "braincapsule-achievements";
 const ACH_DATES_KEY = "braincapsule-ach-dates";
+const SESSION_INIT_FLAG = "braincapsule-session-init-v1";
 
 function loadProgress(): ProgressData {
   try {
@@ -67,15 +68,42 @@ export function useProgress() {
   const [unlockDates, setUnlockDates] = useState<Record<string,string>>(loadDates);
   const { user } = useAuth();
   const [hydratedFromCloud, setHydratedFromCloud] = useState(false);
+  // Track previous user id to detect logout/account change → clear local cache.
+  const prevUserIdRef = useRef<string | null>(null);
 
-  useEffect(() => { saveProgress(progress); }, [progress]);
-  useEffect(() => { saveStats(stats); }, [stats]);
-  useEffect(() => { saveUnlocked(unlocked); }, [unlocked]);
-  useEffect(() => { saveDates(unlockDates); }, [unlockDates]);
+  // Persist to localStorage. For logged-in users we wait for cloud hydration
+  // so we don't clobber the cached state during the hydration race.
+  useEffect(() => { if (!user || hydratedFromCloud) saveProgress(progress); }, [progress, user, hydratedFromCloud]);
+  useEffect(() => { if (!user || hydratedFromCloud) saveStats(stats); }, [stats, user, hydratedFromCloud]);
+  useEffect(() => { if (!user || hydratedFromCloud) saveUnlocked(unlocked); }, [unlocked, user, hydratedFromCloud]);
+  useEffect(() => { if (!user || hydratedFromCloud) saveDates(unlockDates); }, [unlockDates, user, hydratedFromCloud]);
 
   // ===== Cloud hydration on sign-in (with auto-merge of guest progress) =====
   useEffect(() => {
-    if (!user) { setHydratedFromCloud(false); return; }
+    if (!user) {
+      // Logged out → reset hydration flag; clear local data if we were logged in before.
+      if (prevUserIdRef.current) {
+        localStorage.removeItem(STORAGE_KEY);
+        localStorage.removeItem(STATS_KEY);
+        localStorage.removeItem(ACH_KEY);
+        localStorage.removeItem(ACH_DATES_KEY);
+        setProgress({ readCapsules: [], quizResults: {}, finalTests: {} });
+        setStats({ ...defaultStats });
+        setUnlocked([]);
+        setUnlockDates({});
+      }
+      prevUserIdRef.current = null;
+      setHydratedFromCloud(false);
+      return;
+    }
+    // If the account changed, wipe local cache before hydrating the new account.
+    if (prevUserIdRef.current && prevUserIdRef.current !== user.id) {
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem(STATS_KEY);
+      localStorage.removeItem(ACH_KEY);
+      localStorage.removeItem(ACH_DATES_KEY);
+    }
+    prevUserIdRef.current = user.id;
     let cancelled = false;
     (async () => {
       const { data } = await supabase
@@ -112,10 +140,12 @@ export function useProgress() {
         // take maximums on counters
         bestStreak: Math.max(cloudStats.bestStreak || 0, localStats.bestStreak || 0),
         streakDays: Math.max(cloudStats.streakDays || 0, localStats.streakDays || 0),
-        perfectQuizzes: Math.max(cloudStats.perfectQuizzes || 0, localStats.perfectQuizzes || 0),
-        perfectFinals: Math.max(cloudStats.perfectFinals || 0, localStats.perfectFinals || 0),
         totalSessions: Math.max(cloudStats.totalSessions || 0, localStats.totalSessions || 0),
         totalReadTimeMin: Math.max(cloudStats.totalReadTimeMin || 0, localStats.totalReadTimeMin || 0),
+        wrongAnswers: Math.max(cloudStats.wrongAnswers || 0, localStats.wrongAnswers || 0),
+        totalAnswers: Math.max(cloudStats.totalAnswers || 0, localStats.totalAnswers || 0),
+        fastQuizzes: Math.max(cloudStats.fastQuizzes || 0, localStats.fastQuizzes || 0),
+        retakes: Math.max(cloudStats.retakes || 0, localStats.retakes || 0),
       };
       const mergedUnlocked = Array.from(new Set([
         ...(cloud?.unlocked_achievements || []),
@@ -152,8 +182,11 @@ export function useProgress() {
     return () => clearTimeout(t);
   }, [user, hydratedFromCloud, progress, stats, unlocked, unlockDates]);
 
-  // Session + streak (once per mount)
+  // Session + streak (run ONCE per browser session, not per useProgress() mount)
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (sessionStorage.getItem(SESSION_INIT_FLAG)) return;
+    sessionStorage.setItem(SESSION_INIT_FLAG, "1");
     const now = new Date();
     const today = now.toISOString().slice(0,10);
     const hour = now.getHours();
@@ -190,9 +223,37 @@ export function useProgress() {
     return () => window.removeEventListener("keydown", handler);
   }, []);
 
+  // ===== Derived stats — always consistent with progress =====
+  const effectiveStats: AchStats = useMemo(() => {
+    const perSubject: Record<string, number> = {};
+    let readMin = 0;
+    for (const id of progress.readCapsules) {
+      const cap = capsules.find(c => c.id === id);
+      if (!cap) continue;
+      perSubject[cap.category] = (perSubject[cap.category] || 0) + 1;
+      readMin += cap.readTime || 2;
+    }
+    const perfectQuizzes = Object.values(progress.quizResults).filter(r => r.score === r.total).length;
+    const finalsPerfect: Record<string, boolean> = {};
+    for (const [k, v] of Object.entries(progress.finalTests)) {
+      finalsPerfect[k] = v.score === v.total;
+    }
+    const perfectFinals = Object.values(finalsPerfect).filter(Boolean).length;
+    const finalTestsPassed = Object.keys(progress.finalTests).length;
+    return {
+      ...stats,
+      capsulesPerSubject: perSubject,
+      totalReadTimeMin: Math.max(stats.totalReadTimeMin || 0, readMin),
+      perfectQuizzes,
+      perfectFinals,
+      finalTestsPassed,
+      finalsPerfect,
+    };
+  }, [progress, stats]);
+
   // Re-evaluate achievements
   useEffect(() => {
-    const ctx = { progress, totalCapsules: capsules.length, stats };
+    const ctx = { progress, totalCapsules: capsules.length, stats: effectiveStats };
     const set = evaluateAchievements(ctx);
     const newOnes = [...set].filter(id => !unlocked.includes(id));
     if (newOnes.length) {
@@ -205,45 +266,48 @@ export function useProgress() {
       });
       newOnes.forEach(id => achievementBus.dispatchEvent(new CustomEvent("unlock", { detail: id })));
     }
-  }, [progress, stats, unlocked]);
+  }, [effectiveStats, progress, unlocked]);
 
   const markRead = useCallback((capsuleId: string) => {
-    setProgress(prev => prev.readCapsules.includes(capsuleId) ? prev : { ...prev, readCapsules: [...prev.readCapsules, capsuleId] });
-    const cap = capsules.find(c => c.id === capsuleId);
-    setStats(prev => ({
-      ...prev,
-      capsulesOpenedToday: (prev.capsulesOpenedToday||0) + 1,
-      capsulesPerSubject: { ...prev.capsulesPerSubject, [cap?.category || "unknown"]: (prev.capsulesPerSubject?.[cap?.category || "unknown"]||0) + 1 },
-      totalReadTimeMin: (prev.totalReadTimeMin||0) + (cap?.readTime || 2),
-    }));
+    let isNew = false;
+    setProgress(prev => {
+      if (prev.readCapsules.includes(capsuleId)) return prev;
+      isNew = true;
+      return { ...prev, readCapsules: [...prev.readCapsules, capsuleId] };
+    });
+    // Only bump the "today" counter when we actually added a new capsule.
+    // Use a microtask so it runs after the setProgress updater (whose return value
+    // is the source of truth for `isNew`).
+    queueMicrotask(() => {
+      if (isNew) {
+        setStats(prev => ({ ...prev, capsulesOpenedToday: (prev.capsulesOpenedToday || 0) + 1 }));
+      }
+    });
   }, []);
 
   const saveQuizResult = useCallback((capsuleId: string, score: number, total: number, meta?: { durationSec?: number; wrongCount?: number; isRetake?: boolean }) => {
-    setProgress(prev => {
-      const isRetake = meta?.isRetake ?? !!prev.quizResults[capsuleId];
-      if (isRetake) setStats(s => ({ ...s, retakes: s.retakes + 1 }));
-      return { ...prev, quizResults: { ...prev.quizResults, [capsuleId]: { score, total, date: new Date().toISOString() } } };
-    });
+    // Detect retake from current state (read once, outside the setter).
+    const wasTaken = !!progress.quizResults[capsuleId];
+    const isRetake = meta?.isRetake ?? wasTaken;
+    setProgress(prev => ({
+      ...prev,
+      quizResults: { ...prev.quizResults, [capsuleId]: { score, total, date: new Date().toISOString() } },
+    }));
     setStats(prev => ({
       ...prev,
-      perfectQuizzes: prev.perfectQuizzes + (score === total ? 1 : 0),
+      retakes: prev.retakes + (isRetake ? 1 : 0),
       fastQuizzes: prev.fastQuizzes + ((meta?.durationSec ?? 999) < 30 ? 1 : 0),
       wrongAnswers: prev.wrongAnswers + (meta?.wrongCount ?? Math.max(0, total - score)),
       totalAnswers: prev.totalAnswers + total,
     }));
-  }, []);
+  }, [progress.quizResults]);
 
   const saveFinalTestResult = useCallback((categoryId: string, score: number, total: number) => {
-    setProgress(prev => ({ ...prev, finalTests: { ...prev.finalTests, [categoryId]: { score, total, date: new Date().toISOString() } } }));
-    setStats(prev => {
-      const fp = { ...prev.finalsPerfect, [categoryId]: score === total };
-      return {
-        ...prev,
-        finalsPerfect: fp,
-        perfectFinals: Object.values(fp).filter(Boolean).length,
-        finalTestsPassed: Object.keys({ ...prev.finalsPerfect, [categoryId]: true }).length,
-      };
-    });
+    setProgress(prev => ({
+      ...prev,
+      finalTests: { ...prev.finalTests, [categoryId]: { score, total, date: new Date().toISOString() } },
+    }));
+    // perfectFinals / finalTestsPassed / finalsPerfect are now derived from progress.finalTests.
   }, []);
 
   const trackAi = useCallback(() => setStats(p => ({ ...p, aiQuestionsAsked: p.aiQuestionsAsked + 1 })), []);
@@ -252,7 +316,7 @@ export function useProgress() {
   const trackLangSwitch = useCallback(() => setStats(p => ({ ...p, languageSwitches: p.languageSwitches + 1 })), []);
   const trackLogoClick = useCallback(() => setStats(p => ({ ...p, clickedLogo: p.clickedLogo + 1 })), []);
 
-  const xp = computeXP({ progress, totalCapsules: capsules.length, stats });
+  const xp = computeXP({ progress, totalCapsules: capsules.length, stats: effectiveStats });
   const levelInfo = levelFromXP(xp);
 
   const getLevel = useCallback(() => {
@@ -265,7 +329,7 @@ export function useProgress() {
   }, [levelInfo.level]);
 
   return {
-    progress, stats, unlocked, unlockDates,
+    progress, stats: effectiveStats, unlocked, unlockDates,
     markRead, saveQuizResult, saveFinalTestResult,
     trackAi, trackSearch, trackRandom, trackLangSwitch, trackLogoClick,
     getLevel, xp, levelInfo,
