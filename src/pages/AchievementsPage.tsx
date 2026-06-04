@@ -113,23 +113,6 @@ const AchievementsPage = () => {
             </div>
             <p className="text-muted-foreground mb-8">{STR.sub[lang]}</p>
 
-            {/* Save / backup bar */}
-            <div className="flex flex-wrap items-center gap-2 mb-4 p-3 rounded-xl bg-muted/40 border border-border">
-              <div className="flex items-center gap-2 text-xs text-muted-foreground flex-1 min-w-[180px]">
-                <Save className="w-4 h-4 text-emerald-500" />
-                {STR.autosave[lang]}
-              </div>
-              <button onClick={exportData}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-card border border-border text-xs font-medium hover:border-primary transition-colors">
-                <Download className="w-3.5 h-3.5" />{STR.export[lang]}
-              </button>
-              <button onClick={() => fileRef.current?.click()}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-card border border-border text-xs font-medium hover:border-primary transition-colors">
-                <Upload className="w-3.5 h-3.5" />{STR.import[lang]}
-              </button>
-              <input ref={fileRef} type="file" accept="application/json" className="hidden"
-                onChange={e => { const f = e.target.files?.[0]; if (f) importData(f); e.target.value = ""; }} />
-            </div>
 
             {/* Stats card */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
