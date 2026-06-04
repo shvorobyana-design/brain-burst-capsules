@@ -232,6 +232,25 @@ export function useProgress() {
     };
   }, [progress, stats]);
 
+  // ===== Debounced cloud save when authenticated =====
+  useEffect(() => {
+    if (!user || !hydratedFromCloud) return;
+    const t = setTimeout(() => {
+      supabase.from("user_progress").upsert({
+        user_id: user.id,
+        read_capsules: progress.readCapsules,
+        quiz_results: progress.quizResults as any,
+        final_tests: progress.finalTests as any,
+        stats: { ...stats, achievementDates: unlockDates } as any,
+        unlocked_achievements: unlocked,
+      }, { onConflict: "user_id" }).then(() => { /* silent */ });
+      // Sync XP to profile so the leaderboard reflects the up-to-date value.
+      const xpNow = computeXP({ progress, totalCapsules: capsules.length, stats: effectiveStats });
+      supabase.from("profiles").update({ xp: xpNow }).eq("id", user.id).then(() => {});
+    }, 800);
+    return () => clearTimeout(t);
+  }, [user, hydratedFromCloud, progress, stats, effectiveStats, unlocked, unlockDates]);
+
   // Re-evaluate achievements
   useEffect(() => {
     const ctx = { progress, totalCapsules: capsules.length, stats: effectiveStats };
