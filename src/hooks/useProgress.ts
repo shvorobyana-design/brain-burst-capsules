@@ -163,25 +163,6 @@ export function useProgress() {
     return () => { cancelled = true; };
   }, [user]);
 
-  // ===== Debounced cloud save when authenticated =====
-  useEffect(() => {
-    if (!user || !hydratedFromCloud) return;
-    const t = setTimeout(() => {
-      supabase.from("user_progress").upsert({
-        user_id: user.id,
-        read_capsules: progress.readCapsules,
-        quiz_results: progress.quizResults as any,
-        final_tests: progress.finalTests as any,
-        stats: { ...stats, achievementDates: unlockDates } as any,
-        unlocked_achievements: unlocked,
-      }, { onConflict: "user_id" }).then(() => { /* silent */ });
-      // Also sync XP to profile so leaderboard works
-      const xpNow = computeXP({ progress, totalCapsules: capsules.length, stats });
-      supabase.from("profiles").update({ xp: xpNow }).eq("id", user.id).then(() => {});
-    }, 800);
-    return () => clearTimeout(t);
-  }, [user, hydratedFromCloud, progress, stats, unlocked, unlockDates]);
-
   // Session + streak (run ONCE per browser session, not per useProgress() mount)
   useEffect(() => {
     if (typeof window === "undefined") return;
