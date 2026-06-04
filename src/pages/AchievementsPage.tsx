@@ -1,6 +1,6 @@
-import { useMemo, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Search, Trophy, Lock, Sparkles, Filter, Download, Upload, Save, X, Calendar, Target, Award } from "lucide-react";
+import { useMemo, useState } from "react";
+import { motion } from "framer-motion";
+import { Search, Trophy, Lock, Sparkles, Filter, X, Calendar, Target, Award } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ACHIEVEMENTS, RARITY_META, Rarity, Achievement } from "@/data/achievements";
@@ -8,7 +8,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useProgress } from "@/hooks/useProgress";
 import { capsules } from "@/data/capsules";
 import { Progress } from "@/components/ui/progress";
-import { toast } from "@/hooks/use-toast";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const rarities: (Rarity | "all")[] = ["all","common","rare","epic","legendary"];
@@ -20,36 +19,6 @@ const AchievementsPage = () => {
   const [query, setQuery] = useState("");
   const [showLocked, setShowLocked] = useState(true);
   const [selected, setSelected] = useState<Achievement | null>(null);
-  const fileRef = useRef<HTMLInputElement>(null);
-
-  const exportData = () => {
-    const payload = {
-      version: 1,
-      exportedAt: new Date().toISOString(),
-      progress: localStorage.getItem("braincapsule-progress"),
-      stats: localStorage.getItem("braincapsule-stats"),
-      achievements: localStorage.getItem("braincapsule-achievements"),
-    };
-    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url; a.download = `braincapsule-backup-${new Date().toISOString().slice(0,10)}.json`;
-    a.click(); URL.revokeObjectURL(url);
-    toast({ title: lang === "en" ? "Backup downloaded" : "Резервну копію збережено" });
-  };
-  const importData = async (file: File) => {
-    try {
-      const text = await file.text();
-      const data = JSON.parse(text);
-      if (data.progress) localStorage.setItem("braincapsule-progress", data.progress);
-      if (data.stats) localStorage.setItem("braincapsule-stats", data.stats);
-      if (data.achievements) localStorage.setItem("braincapsule-achievements", data.achievements);
-      toast({ title: lang === "en" ? "Restored! Reloading…" : "Відновлено! Перезавантаження…" });
-      setTimeout(() => window.location.reload(), 800);
-    } catch {
-      toast({ title: lang === "en" ? "Invalid backup file" : "Невірний файл резервної копії", variant: "destructive" as any });
-    }
-  };
 
   const ctx = { progress, totalCapsules: capsules.length, stats };
 
