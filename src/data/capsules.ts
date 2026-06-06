@@ -139,6 +139,19 @@ export const categories: Category[] = [
       { id: "modern-physics", name: "Сучасна фізика" },
     ],
   },
+  {
+    id: "geography", name: "Географія", icon: "🌍", color: "from-teal-500 to-cyan-600",
+    count: 0,
+    sections: [
+      { id: "physical-geo", name: "Фізична географія" },
+      { id: "continents", name: "Материки і океани" },
+      { id: "atmosphere", name: "Атмосфера і клімат" },
+      { id: "hydrosphere", name: "Гідросфера" },
+      { id: "countries", name: "Країни світу" },
+      { id: "ukraine-geo", name: "Географія України" },
+      { id: "economic-geo", name: "Економічна географія" },
+    ],
+  },
 ];
 
 function q(question: string, options: string[], answer: number) {
