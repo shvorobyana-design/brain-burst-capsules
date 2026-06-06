@@ -139,14 +139,30 @@ export const categories: Category[] = [
       { id: "modern-physics", name: "Сучасна фізика" },
     ],
   },
+  {
+    id: "geography", name: "Географія", icon: "🌍", color: "from-teal-500 to-cyan-600",
+    count: 0,
+    sections: [
+      { id: "physical-geo", name: "Фізична географія" },
+      { id: "continents", name: "Материки і океани" },
+      { id: "atmosphere", name: "Атмосфера і клімат" },
+      { id: "hydrosphere", name: "Гідросфера" },
+      { id: "countries", name: "Країни світу" },
+      { id: "ukraine-geo", name: "Географія України" },
+      { id: "economic-geo", name: "Економічна географія" },
+    ],
+  },
 ];
 
 function q(question: string, options: string[], answer: number) {
   return { question, options, answer };
 }
 
+// Re-export helpers so per-subject capsule files can use them
+export { q };
+
 // Helper to create a capsule with default empty arrays for new fields
-function cap(data: {
+export function cap(data: {
   id: string; title: string; category: string; section: string;
   shortDescription: string; beginnerExplanation: string; detailedExplanation: string; simpleExplanation: string;
   facts: string[]; quiz: { question: string; options: string[]; answer: number }[];
@@ -4303,6 +4319,10 @@ export const capsules: Capsule[] = [
     readTime: 5, difficulty: "усі рівні", icon: "🌍", isNew: true,
   }),
 ];
+
+// Inject geography subject (kept in a separate file for readability)
+import { geographyCapsules } from "./capsules-geography";
+capsules.push(...geographyCapsules);
 
 // Update category counts
 categories.forEach(cat => {
