@@ -3307,3 +3307,7 @@ export const capsuleTranslationsEn: Record<string, CapsuleTranslation> = {
   },
 
 };
+
+// Inject geography translations (kept in a separate file for readability)
+import { geographyTranslationsEn } from "./capsules-en-geography";
+Object.assign(capsuleTranslationsEn, geographyTranslationsEn);
