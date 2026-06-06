@@ -449,6 +449,7 @@ export const categoryNameMap: Record<string, Record<Lang, string>> = {
   history: { ua: "Історія", en: "History" },
   chemistry: { ua: "Хімія", en: "Chemistry" },
   physics: { ua: "Фізика", en: "Physics" },
+  geography: { ua: "Географія", en: "Geography" },
 };
 
 // Map for translating section names
@@ -497,6 +498,13 @@ export const sectionNameMap: Record<string, Record<Lang, string>> = {
   "optics": { ua: "Оптика", en: "Optics" },
   "modern-physics": { ua: "Сучасна фізика", en: "Modern Physics"},
   "nuclear": { ua: "Ядерна фізика", en: "Nuclear Physics" },
+  "physical-geo": { ua: "Фізична географія", en: "Physical Geography" },
+  "continents": { ua: "Материки і океани", en: "Continents & Oceans" },
+  "atmosphere": { ua: "Атмосфера і клімат", en: "Atmosphere & Climate" },
+  "hydrosphere": { ua: "Гідросфера", en: "Hydrosphere" },
+  "countries": { ua: "Країни світу", en: "Countries of the World" },
+  "ukraine-geo": { ua: "Географія України", en: "Geography of Ukraine" },
+  "economic-geo": { ua: "Економічна географія", en: "Economic Geography" },
 };
 
 // Difficulty translation map
