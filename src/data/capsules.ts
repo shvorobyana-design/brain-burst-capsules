@@ -4320,6 +4320,10 @@ export const capsules: Capsule[] = [
   }),
 ];
 
+// Inject geography subject (kept in a separate file for readability)
+import { geographyCapsules } from "./capsules-geography";
+capsules.push(...geographyCapsules);
+
 // Update category counts
 categories.forEach(cat => {
   cat.count = capsules.filter(c => c.category === cat.id).length;
