@@ -145,8 +145,11 @@ function q(question: string, options: string[], answer: number) {
   return { question, options, answer };
 }
 
+// Re-export helpers so per-subject capsule files can use them
+export { q };
+
 // Helper to create a capsule with default empty arrays for new fields
-function cap(data: {
+export function cap(data: {
   id: string; title: string; category: string; section: string;
   shortDescription: string; beginnerExplanation: string; detailedExplanation: string; simpleExplanation: string;
   facts: string[]; quiz: { question: string; options: string[]; answer: number }[];
