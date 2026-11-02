@@ -83,7 +83,7 @@ const CategoryPage = () => {
                     : "bg-muted text-muted-foreground hover:text-foreground hover:bg-muted/80"
                 }`}
               >
-                {d === "усі" ? t.allLevels : translateDifficulty(d)}
+                {d === "усі" ? (lang === "en" ? "All" : "Усі") : d === "усі рівні" ? (lang === "en" ? "For everyone" : "Для всіх") : translateDifficulty(d)}
               </button>
             ))}
           </div>
