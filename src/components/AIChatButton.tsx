@@ -225,7 +225,7 @@ const AIChatButton = ({ topicTitle, topicContext, capsuleData }: AIChatButtonPro
                       ? "bg-primary text-primary-foreground rounded-tr-none"
                       : "bg-muted/60 text-foreground border border-border/50 rounded-tl-none"
                   }`}>
-                    {m.text}
+                    {m.text.split(/(\*\*[^*]+\*\*)/g).map((part, pi) => part.startsWith("**") && part.endsWith("**") ? <strong key={pi}>{part.slice(2, -2)}</strong> : <span key={pi}>{part}</span>)}
                   </div>
                 </motion.div>
               ))}

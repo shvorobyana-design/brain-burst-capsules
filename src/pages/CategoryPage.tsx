@@ -8,7 +8,7 @@ import CapsuleCard from "@/components/CapsuleCard";
 import { categories, getCapsulesBySection } from "@/data/capsules";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const difficulties = ["усі", "базовий", "середній", "поглиблений", "олімпіадний"] as const;
+const difficulties = ["усі", "базовий", "середній", "поглиблений", "олімпіадний", "усі рівні"] as const;
 
 const difficultyOrder: Record<string, number> = {
   "усі рівні": 0,
@@ -26,13 +26,14 @@ const subjectGradient: Record<string, string> = {
   history: "from-orange-500 to-amber-700",
   chemistry: "from-purple-500 to-violet-600",
   physics: "from-cyan-500 to-blue-600",
+  geography: "from-teal-500 to-cyan-600",
 };
 
 const CategoryPage = () => {
   const { id } = useParams();
   const category = categories.find(c => c.id === id);
   const [difficulty, setDifficulty] = useState<string>("усі");
-  const { t, translateCategory, translateSection, translateDifficulty } = useLanguage();
+  const { t, lang, translateCategory, translateSection, translateDifficulty } = useLanguage();
 
   if (!category) {
     return (
@@ -82,7 +83,7 @@ const CategoryPage = () => {
                     : "bg-muted text-muted-foreground hover:text-foreground hover:bg-muted/80"
                 }`}
               >
-                {d === "усі" ? t.allLevels : translateDifficulty(d)}
+                {d === "усі" ? (lang === "en" ? "All" : "Усі") : d === "усі рівні" ? (lang === "en" ? "For everyone" : "Для всіх") : translateDifficulty(d)}
               </button>
             ))}
           </div>

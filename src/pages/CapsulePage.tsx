@@ -74,6 +74,7 @@ const subjectFallbackImages: Record<string, string> = {
   history: "https://images.unsplash.com/photo-1461360370896-922624d12ebb?w=800&h=400&fit=crop",
   chemistry: "https://images.unsplash.com/photo-1532187863486-abf4dbce1253?w=800&h=400&fit=crop",
   physics: "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=800&h=400&fit=crop",
+  geography: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&h=400&fit=crop",
 };
 
 const diffColor: Record<string, string> = {
