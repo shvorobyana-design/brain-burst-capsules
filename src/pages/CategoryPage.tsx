@@ -33,7 +33,7 @@ const CategoryPage = () => {
   const { id } = useParams();
   const category = categories.find(c => c.id === id);
   const [difficulty, setDifficulty] = useState<string>("усі");
-  const { t, translateCategory, translateSection, translateDifficulty } = useLanguage();
+  const { t, lang, translateCategory, translateSection, translateDifficulty } = useLanguage();
 
   if (!category) {
     return (
