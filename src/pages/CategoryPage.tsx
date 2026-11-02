@@ -8,7 +8,7 @@ import CapsuleCard from "@/components/CapsuleCard";
 import { categories, getCapsulesBySection } from "@/data/capsules";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const difficulties = ["усі", "базовий", "середній", "поглиблений", "олімпіадний"] as const;
+const difficulties = ["усі", "базовий", "середній", "поглиблений", "олімпіадний", "усі рівні"] as const;
 
 const difficultyOrder: Record<string, number> = {
   "усі рівні": 0,
@@ -26,6 +26,7 @@ const subjectGradient: Record<string, string> = {
   history: "from-orange-500 to-amber-700",
   chemistry: "from-purple-500 to-violet-600",
   physics: "from-cyan-500 to-blue-600",
+  geography: "from-teal-500 to-cyan-600",
 };
 
 const CategoryPage = () => {

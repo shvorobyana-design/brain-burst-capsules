@@ -13,6 +13,7 @@ const subjectCardClass: Record<string, string> = {
   history: "subject-card-history",
   chemistry: "subject-card-chemistry",
   physics: "subject-card-physics",
+  geography: "subject-card-geography",
 };
 
 const CategoriesPage = () => {
